@@ -40,5 +40,5 @@ RUN mkdir -p static/uploads
 # Expose port (default 5000)
 EXPOSE 5000
 
-# Start with Gunicorn production WSGI server
-CMD exec gunicorn --bind 0.0.0.0:$PORT --workers 2 --threads 4 --timeout 120 server:app
+# Start with Gunicorn production WSGI server (optimized for Render 512MB RAM free tier)
+CMD exec gunicorn --bind 0.0.0.0:${PORT:-5000} --workers 1 --threads 4 --timeout 180 server:app

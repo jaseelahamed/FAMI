@@ -42,19 +42,25 @@ def index():
 
 @app.route("/health", methods=["GET"])
 def health():
-    return jsonify({"status": "ok", "service": "Pharma Label Scanner", "version": "1.0.0"}), 200
+    tess_installed = False
+    try:
+        import pytesseract
+        pytesseract.get_tesseract_version()
+        tess_installed = True
+    except Exception:
+        tess_installed = False
+
+    return jsonify({
+        "status": "ok",
+        "service": "Pharma Label Scanner",
+        "version": "1.0.0",
+        "tesseract_detected": tess_installed
+    }), 200
 
 
 @app.route("/api/scan", methods=["POST"])
 def scan_label():
     try:
-        # Dynamically reload app module to ensure latest validation rules are applied
-        import importlib
-        import app as app_module
-        importlib.reload(app_module)
-        ValidatorClass = app_module.MedicineLabelValidator
-        sample_generator = app_module.generate_sample_medicine_label
-
         # Check if sample button was clicked
         is_sample = request.form.get("is_sample") == "true"
 
@@ -62,7 +68,7 @@ def scan_label():
             unique_id = str(uuid.uuid4())[:8]
             input_filename = f"sample_{unique_id}.png"
             input_path = os.path.join(app.config["UPLOAD_FOLDER"], input_filename)
-            sample_generator(input_path)
+            generate_sample_medicine_label(input_path)
         else:
             if "image" not in request.files:
                 return jsonify({"success": False, "error": "No image file provided"}), 400
@@ -84,7 +90,7 @@ def scan_label():
             file.save(input_path)
 
         # Run validation pipeline
-        validator = ValidatorClass(input_path)
+        validator = MedicineLabelValidator(input_path)
         report = validator.run_full_pipeline()
 
         # Generate annotated visual output

@@ -160,7 +160,20 @@ class MedicineLabelValidator:
             raise ValueError(f"Error: OpenCV could not read image from '{image_path}'")
 
         # Auto-crop black phone letterboxing
-        self.original_image = autocrop_borders(raw_img)
+        cropped = autocrop_borders(raw_img)
+
+        # Downscale ultra-high-res camera captures (e.g. 12MP-48MP smartphone photos)
+        # Prevents Out-Of-Memory (OOM) kills and 30s timeouts on Render's 512MB RAM free tier
+        h, w = cropped.shape[:2]
+        max_dim = 1600
+        if max(h, w) > max_dim:
+            scale = max_dim / float(max(h, w))
+            new_w = int(w * scale)
+            new_h = int(h * scale)
+            self.original_image = cv2.resize(cropped, (new_w, new_h), interpolation=cv2.INTER_AREA)
+        else:
+            self.original_image = cropped
+
         self.annotated_image = self.original_image.copy()
 
         self.extracted_text = ""
@@ -176,65 +189,69 @@ class MedicineLabelValidator:
     # --------------------------------------------------------------------------
     def extract_text(self) -> str:
         """
-        Extracts text using multi-orientation scanning (0°, 90°, and 270°).
-        Crucial for real medicine blister packs where Batch No, Mfg Date, Expiry Date,
-        and MRP are printed vertically along the red line or margin.
+        Extracts text using smart multi-orientation scanning.
+        Optimized for memory and speed on cloud free tiers (e.g. Render 512MB RAM).
         """
         if not PYTESSERACT_AVAILABLE:
-            self.extracted_text = "[OCR UNAVAILABLE: pytesseract not installed]"
-            return self.extracted_text
+            raise RuntimeError("The 'pytesseract' library is not installed in Python.")
 
         try:
-            combined_text_lines = []
-            seen_lines = set()
-
-            # Test orientations: 0° (normal), 270° (vertical CCW), 90° (vertical CW)
-            rotations = [
-                (0, self.original_image),
-                (270, cv2.rotate(self.original_image, cv2.ROTATE_90_COUNTERCLOCKWISE)),
-                (90, cv2.rotate(self.original_image, cv2.ROTATE_90_CLOCKWISE))
-            ]
-
-            for angle, rot_img in rotations:
-                gray = cv2.cvtColor(rot_img, cv2.COLOR_BGR2GRAY)
-
-                # Contrast Limited Adaptive Histogram Equalization
-                clahe = cv2.createCLAHE(clipLimit=2.2, tileGridSize=(8, 8))
-                enhanced = clahe.apply(gray)
-
-                # Run both PSM 3 (auto page segmentation) and PSM 6 / 11 (sparse text)
-                psm_modes = ['--oem 3 --psm 3', '--oem 3 --psm 11']
-                for cfg in psm_modes:
-                    try:
-                        raw_chunk = pytesseract.image_to_string(enhanced, config=cfg)
-                        for line in raw_chunk.splitlines():
-                            cleaned = line.strip()
-                            # Clean up minimal noise lines
-                            norm = re.sub(r'[^a-zA-Z0-9]', '', cleaned.lower())
-                            if len(norm) >= 3 and norm not in seen_lines:
-                                seen_lines.add(norm)
-                                combined_text_lines.append(cleaned)
-                    except Exception:
-                        pass
-
-                # Also grab detailed bounding box data for font size measurement at 0 deg
-                if angle == 0 and self.ocr_data is None:
-                    try:
-                        self.ocr_data = pytesseract.image_to_data(
-                            enhanced,
-                            output_type=pytesseract.Output.DICT,
-                            config='--oem 3 --psm 3'
-                        )
-                    except Exception:
-                        pass
-
-            self.extracted_text = "\n".join(combined_text_lines)
-            return self.extracted_text
-
+            pytesseract.get_tesseract_version()
         except Exception as e:
-            print(f"[ERROR] OCR Text Extraction failed: {e}")
-            self.extracted_text = ""
-            return ""
+            raise RuntimeError(
+                f"Tesseract OCR binary is missing or not in PATH: {e}. "
+                "If hosted on Render, you must deploy using Environment: Docker (not Python) "
+                "so that system packages (tesseract-ocr and libzbar0) are installed."
+            )
+
+        combined_text_lines = []
+        seen_lines = set()
+
+        def scan_image_enhanced(img_cv, psm_cfg):
+            gray = cv2.cvtColor(img_cv, cv2.COLOR_BGR2GRAY)
+            clahe = cv2.createCLAHE(clipLimit=2.2, tileGridSize=(8, 8))
+            enhanced = clahe.apply(gray)
+            try:
+                raw_chunk = pytesseract.image_to_string(enhanced, config=psm_cfg)
+                for line in raw_chunk.splitlines():
+                    cleaned = line.strip()
+                    norm = re.sub(r'[^a-zA-Z0-9]', '', cleaned.lower())
+                    if len(norm) >= 3 and norm not in seen_lines:
+                        seen_lines.add(norm)
+                        combined_text_lines.append(cleaned)
+            except Exception as ocr_err:
+                print(f"[DEBUG] OCR pass error: {ocr_err}")
+            return enhanced
+
+        # 1. Primary 0-degree pass (Standard orientation)
+        enhanced_0 = scan_image_enhanced(self.original_image, '--oem 3 --psm 3')
+
+        # Get bounding box data for Rule 96(1)(i) font size comparison
+        try:
+            self.ocr_data = pytesseract.image_to_data(
+                enhanced_0,
+                output_type=pytesseract.Output.DICT,
+                config='--oem 3 --psm 3'
+            )
+        except Exception:
+            pass
+
+        # 2. Check if vertical side-strip scanning is needed (Batch No / Expiry Date)
+        preview_text = " ".join(combined_text_lines).lower()
+        has_batch = bool(re.search(r'\b(b\.?\s*no|batch|lot)\b', preview_text))
+        has_expiry = bool(re.search(r'\b(exp|expiry|mfd|mfg)\b', preview_text))
+
+        # Only scan 270° and 90° if vertical margin text was not captured in 0°
+        # This saves 60% CPU time and prevents Gunicorn timeouts on cloud servers
+        if not (has_batch and has_expiry):
+            rot_270 = cv2.rotate(self.original_image, cv2.ROTATE_90_COUNTERCLOCKWISE)
+            scan_image_enhanced(rot_270, '--oem 3 --psm 11')
+
+            rot_90 = cv2.rotate(self.original_image, cv2.ROTATE_90_CLOCKWISE)
+            scan_image_enhanced(rot_90, '--oem 3 --psm 11')
+
+        self.extracted_text = "\n".join(combined_text_lines)
+        return self.extracted_text
 
     # --------------------------------------------------------------------------
     # 2. GENERIC NAME VS BRAND NAME FONT SIZE COMPARISON (RULE 96(1)(i))

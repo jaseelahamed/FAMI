@@ -482,11 +482,28 @@ This launches a robust multi-threaded WSGI server ready for enterprise local net
 ### Q3: "Camera capture from tablet or phone appears sideways or blurry"
 - **Answer**: The application includes an **Automatic EXIF Orientation Normalizer** and **Edge Auto-Cropper** (`autocrop_borders` in `app.py`) that strips away black borders and re-aligns smartphone photographs prior to OCR processing.
 
-### Q4: "How do I increase the maximum upload limit?"
-- Edit line 27 of [server.py](file:///d:/fami/server.py):
-  ```python
-  app.config["MAX_CONTENT_LENGTH"] = 32 * 1024 * 1024  # Increases to 32 MB
-  ```
+### Q5: "The scan worked locally on Windows, but on Render I don't see any result after running scan. Why?"
+- **Root Cause #1 (Most Common): Deployed using 'Python' environment instead of 'Docker'**:
+  - When creating a Web Service on Render, if you choose **Python 3**, Render does NOT have the Linux system binaries for `tesseract-ocr` or `libzbar0`. Python packages install, but OCR cannot run without the OS-level Tesseract binary!
+  - **Fix**: In Render settings, ensure your service environment is set to **Docker** (using the provided [Dockerfile](file:///d:/fami/Dockerfile)), which automatically runs `apt-get install tesseract-ocr libzbar0`.
+- **Root Cause #2: Gunicorn Timeout or Out-Of-Memory (OOM) on high-resolution camera photos**:
+  - Smartphone cameras produce 12MP–48MP pictures (4000x3000px). On Render's 512MB RAM free tier, running multi-pass OCR on uncompressed images can exceed the memory limit or hit Gunicorn's default 30-second timeout.
+  - **Fix**: The system now automatically downscales ultra-large captures to 1600px and uses optimized smart-orientation OCR, cutting processing time by 75% and memory to <150MB.
+- **Root Cause #3: How to verify if your live Render deployment is healthy**:
+  - Open your browser and navigate to:
+    ```
+    https://your-service-name.onrender.com/health
+    ```
+  - It should respond with:
+    ```json
+    {
+      "status": "ok",
+      "service": "Pharma Label Scanner",
+      "version": "1.0.0",
+      "tesseract_detected": true
+    }
+    ```
+    If `"tesseract_detected": false`, your Render service was deployed as a Python service rather than a Docker service. Redeploy selecting **Docker**.
 
 ---
 

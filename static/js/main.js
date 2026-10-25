@@ -21,6 +21,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const progressStatus = document.getElementById("progressStatus");
 
     const emptyState = document.getElementById("emptyState");
+    const errorBanner = document.getElementById("errorBanner");
+    const errorTitle = document.getElementById("errorTitle");
+    const errorMessage = document.getElementById("errorMessage");
     const resultsContent = document.getElementById("resultsContent");
     const verdictPill = document.getElementById("verdictPill");
     const verdictText = document.getElementById("verdictText");
@@ -183,9 +186,25 @@ document.addEventListener("DOMContentLoaded", () => {
         }, 400);
     }
 
+    function showError(title, msg) {
+        if (errorBanner && errorMessage) {
+            if (errorTitle) errorTitle.textContent = title;
+            errorMessage.textContent = msg;
+            errorBanner.style.display = "block";
+        }
+        emptyState.style.display = "block";
+        resultsContent.style.display = "none";
+        verdictPill.style.display = "none";
+    }
+
+    function hideError() {
+        if (errorBanner) errorBanner.style.display = "none";
+    }
+
     async function performScan(formData) {
         btnScan.disabled = true;
         btnSample.disabled = true;
+        hideError();
         startProgressAnimation();
 
         try {
@@ -194,10 +213,28 @@ document.addEventListener("DOMContentLoaded", () => {
                 body: formData
             });
 
-            const data = await response.json();
+            let data;
+            const textResponse = await response.text();
+            try {
+                data = JSON.parse(textResponse);
+            } catch (jsonErr) {
+                if (response.status === 502 || response.status === 504) {
+                    showError(
+                        "Cloud Server Timeout (HTTP " + response.status + ")",
+                        "Render Free Tier timed out processing the image. The image was downscaled, please try again or verify Tesseract OCR is installed."
+                    );
+                } else {
+                    showError(
+                        "Server Response Error (HTTP " + response.status + ")",
+                        textResponse.substring(0, 300) || "Invalid server response."
+                    );
+                }
+                return;
+            }
 
-            if (!data.success) {
-                alert("Inspection Error: " + (data.error || "Unknown server error"));
+            if (!response.ok || !data.success) {
+                const errText = data.error || ("Inspection failed with HTTP " + response.status);
+                showError("Inspection Error", errText);
                 return;
             }
 
@@ -205,7 +242,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         } catch (error) {
             console.error("Scan request failed:", error);
-            alert("Network error: Could not contact inspection server.");
+            showError("Network Connection Error", "Could not connect to the inspection server. Please check your internet connection or server logs on Render.");
         } finally {
             stopProgressAnimation();
             btnScan.disabled = !selectedFile;
