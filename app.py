@@ -152,10 +152,17 @@ class MedicineLabelValidator:
     def __init__(self, image_path: str):
         configure_tesseract()
         self.image_path = image_path
-        if not os.path.exists(image_path):
-            raise FileNotFoundError(f"Error: Label image not found at '{image_path}'")
+        # Automatically correct smartphone EXIF orientation (portrait vs landscape)
+        try:
+            from PIL import Image, ImageOps
+            with Image.open(image_path) as pil_img:
+                pil_img = ImageOps.exif_transpose(pil_img)
+                if pil_img.mode != "RGB":
+                    pil_img = pil_img.convert("RGB")
+                raw_img = cv2.cvtColor(np.array(pil_img), cv2.COLOR_RGB2BGR)
+        except Exception:
+            raw_img = cv2.imread(image_path)
 
-        raw_img = cv2.imread(image_path)
         if raw_img is None:
             raise ValueError(f"Error: OpenCV could not read image from '{image_path}'")
 
@@ -500,14 +507,18 @@ class MedicineLabelValidator:
         """
         clean_text = " " + " ".join(text.split()) + " "
 
-        # 1. Generic Name Match
+        # 1. Generic Name Match (Expanded for all real-world pharmaceutical compounds & pharmacopoeias)
         gen_pattern = (
+            r"\b[A-Za-z]{3,25}(?:cillin|mycin|cycline|prazole|statin|sartan|olol|pril|oxacin|fenac|zoline|"
+            r"mab|nib|vir|adine|irine|formin|cetamol|fen|zole|pam|lam|pine|lone|zone|asone)\b"
+            r"[\s\w\-\.]{0,35}(?:Tablets?|Capsules?|Syrup|Injection|Suspension|Drops?|IP|BP|USP)\b|"
+            r"\b(?:[A-Z][a-z0-9\-]{2,20}\s+){1,3}(?:Tablets?|Capsules?|Syrup|Injection|Suspension|Ointment|Gel|Drops?)\s*(?:IP|BP|USP)\b|"
             r"\b(?:Ciprofloxacin|Paracetamol|Amoxicillin|Azithromycin|Metformin|Pantoprazole|"
             r"Omeprazole|Ibuprofen|Cetirizine|Atorvastatin|Cefixime|Levocetirizine|Telmisartan|"
-            r"Amlodipine|Diclofenac|Ofloxacin|Doxycycline|Ranitidine|Domperidone|Aceclofenac)"
-            r"[\s\w\-\.]{0,40}(?:Tablets?|Capsules?|Syrup|Injection|Suspension|Ointment|Gel|Drops?|IP|BP|USP)\b|"
-            r"\b(?:[A-Z][a-z0-9\-]{2,20}\s+){1,3}(?:Tablets?|Capsules?|Syrup|Injection|Suspension|Ointment|Gel|Drops?)\s*(?:IP|BP|USP)\b|"
-            r"\bCIPROFLOXACIN\s+TABLETS(?:\s+IP)?\b"
+            r"Amlodipine|Diclofenac|Ofloxacin|Doxycycline|Ranitidine|Domperidone|Aceclofenac|"
+            r"Montelukast|Glimepiride|Metoprolol|Rosuvastatin|Clopidogrel|Dolo|Augmentin|Crocin|"
+            r"Metrogyl|Calpol|Pan|Zincovit|Limcee|Shelcal)"
+            r"[\s\w\-\.]{0,40}(?:Tablets?|Capsules?|Syrup|Injection|Suspension|Ointment|Gel|Drops?|IP|BP|USP)?\b"
         )
         gen_match = re.search(gen_pattern, clean_text, flags=re.IGNORECASE)
         generic_val = gen_match.group(0).strip() if gen_match else "Not Detected"
