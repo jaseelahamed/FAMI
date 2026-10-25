@@ -163,9 +163,9 @@ class MedicineLabelValidator:
         cropped = autocrop_borders(raw_img)
 
         # Downscale ultra-high-res camera captures (e.g. 12MP-48MP smartphone photos)
-        # Prevents Out-Of-Memory (OOM) kills and 30s timeouts on Render's 512MB RAM free tier
+        # Prevents Out-Of-Memory (OOM) kills and timeout on Render's 512MB RAM free tier
         h, w = cropped.shape[:2]
-        max_dim = 1600
+        max_dim = 1200
         if max(h, w) > max_dim:
             scale = max_dim / float(max(h, w))
             new_w = int(w * scale)
@@ -207,48 +207,65 @@ class MedicineLabelValidator:
         combined_text_lines = []
         seen_lines = set()
 
-        def scan_image_enhanced(img_cv, psm_cfg):
-            gray = cv2.cvtColor(img_cv, cv2.COLOR_BGR2GRAY)
-            clahe = cv2.createCLAHE(clipLimit=2.2, tileGridSize=(8, 8))
-            enhanced = clahe.apply(gray)
-            try:
-                raw_chunk = pytesseract.image_to_string(enhanced, config=psm_cfg)
-                for line in raw_chunk.splitlines():
-                    cleaned = line.strip()
-                    norm = re.sub(r'[^a-zA-Z0-9]', '', cleaned.lower())
-                    if len(norm) >= 3 and norm not in seen_lines:
-                        seen_lines.add(norm)
-                        combined_text_lines.append(cleaned)
-            except Exception as ocr_err:
-                print(f"[DEBUG] OCR pass error: {ocr_err}")
-            return enhanced
+        # 1. Single-pass 0-degree extraction: get text + bounding boxes in 1 call
+        gray = cv2.cvtColor(self.original_image, cv2.COLOR_BGR2GRAY)
+        clahe = cv2.createCLAHE(clipLimit=2.2, tileGridSize=(8, 8))
+        enhanced_0 = clahe.apply(gray)
 
-        # 1. Primary 0-degree pass (Standard orientation)
-        enhanced_0 = scan_image_enhanced(self.original_image, '--oem 3 --psm 3')
-
-        # Get bounding box data for Rule 96(1)(i) font size comparison
         try:
             self.ocr_data = pytesseract.image_to_data(
                 enhanced_0,
                 output_type=pytesseract.Output.DICT,
                 config='--oem 3 --psm 3'
             )
+            texts = self.ocr_data.get("text", [])
+            line_nums = self.ocr_data.get("line_num", [])
+            current_line = []
+            last_line_num = -1
+            for i, word in enumerate(texts):
+                w_str = word.strip()
+                if not w_str:
+                    continue
+                ln = line_nums[i] if i < len(line_nums) else 0
+                if ln != last_line_num and current_line:
+                    line_str = " ".join(current_line)
+                    combined_text_lines.append(line_str)
+                    seen_lines.add(re.sub(r'[^a-zA-Z0-9]', '', line_str.lower()))
+                    current_line = []
+                current_line.append(w_str)
+                last_line_num = ln
+            if current_line:
+                line_str = " ".join(current_line)
+                combined_text_lines.append(line_str)
+                seen_lines.add(re.sub(r'[^a-zA-Z0-9]', '', line_str.lower()))
         except Exception:
-            pass
+            raw = pytesseract.image_to_string(enhanced_0, config='--oem 3 --psm 3')
+            for line in raw.splitlines():
+                cl = line.strip()
+                if cl:
+                    combined_text_lines.append(cl)
 
         # 2. Check if vertical side-strip scanning is needed (Batch No / Expiry Date)
         preview_text = " ".join(combined_text_lines).lower()
-        has_batch = bool(re.search(r'\b(b\.?\s*no|batch|lot)\b', preview_text))
-        has_expiry = bool(re.search(r'\b(exp|expiry|mfd|mfg)\b', preview_text))
+        has_batch = any(k in preview_text for k in ["b.no", "b. no", "b no", "batch", "lot"])
+        has_expiry = any(k in preview_text for k in ["exp", "expiry", "mfg", "mfd"])
 
-        # Only scan 270° and 90° if vertical margin text was not captured in 0°
-        # This saves 60% CPU time and prevents Gunicorn timeouts on cloud servers
+        # Only scan rotations if vertical margin text was not captured in 0°
         if not (has_batch and has_expiry):
-            rot_270 = cv2.rotate(self.original_image, cv2.ROTATE_90_COUNTERCLOCKWISE)
-            scan_image_enhanced(rot_270, '--oem 3 --psm 11')
-
-            rot_90 = cv2.rotate(self.original_image, cv2.ROTATE_90_CLOCKWISE)
-            scan_image_enhanced(rot_90, '--oem 3 --psm 11')
+            for rot_angle in [cv2.ROTATE_90_COUNTERCLOCKWISE, cv2.ROTATE_90_CLOCKWISE]:
+                rot_img = cv2.rotate(self.original_image, rot_angle)
+                rot_gray = cv2.cvtColor(rot_img, cv2.COLOR_BGR2GRAY)
+                rot_enh = clahe.apply(rot_gray)
+                try:
+                    raw_chunk = pytesseract.image_to_string(rot_enh, config='--oem 3 --psm 11')
+                    for line in raw_chunk.splitlines():
+                        cleaned = line.strip()
+                        norm = re.sub(r'[^a-zA-Z0-9]', '', cleaned.lower())
+                        if len(norm) >= 3 and norm not in seen_lines:
+                            seen_lines.add(norm)
+                            combined_text_lines.append(cleaned)
+                except Exception:
+                    pass
 
         self.extracted_text = "\n".join(combined_text_lines)
         return self.extracted_text
