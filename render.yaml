@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: pharma-label-scanner
+    env: docker
+    plan: free
+    region: oregon
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /health
+    autoDeploy: true
+    envVars:
+      - key: PORT
+        value: 5000

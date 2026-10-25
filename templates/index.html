@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PharmaScan AI - Medicine Label Validation & Regulatory Compliance</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <!-- Top Navigation Bar -->
+    <header class="navbar">
+        <div class="nav-container">
+            <div class="brand">
+                <div class="brand-icon">💊</div>
+                <div class="brand-text">
+                    <span class="brand-title">PharmaScan<span class="accent">AI</span></span>
+                    <span class="brand-subtitle">Medicine Label Regulatory Inspection System</span>
+                </div>
+            </div>
+            <div class="system-status">
+                <span class="pulse-dot"></span>
+                <span>OpenCV &bull; Tesseract OCR &bull; Pyzbar Active</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <main class="main-container">
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <h1 class="hero-title">Automated Pharmaceutical Label Audit</h1>
+            <p class="hero-subtitle">Upload any medicine packaging photo or blister strip. Our computer vision engine verifies all 14 statutory Pharmacopoeia criteria: Schedule Redline, GS1 Barcodes, Generic vs Brand Font Size (Rule 96(1)(i)), Composition in metric units, Batch & Expiry, Warnings, and Manufacturer details.</p>
+        </section>
+
+        <!-- Workbench Grid -->
+        <div class="workbench-grid">
+            <!-- Left Column: Upload Panel -->
+            <div class="card upload-card">
+                <div class="card-header">
+                    <h2><span class="icon">📤</span> Upload Label Image</h2>
+                    <span class="badge badge-info">PNG, JPG, WEBP</span>
+                </div>
+
+                <div class="dropzone" id="dropzone">
+                    <input type="file" id="fileInput" accept="image/*" hidden>
+                    <div class="dropzone-content" id="dropzonePrompt">
+                        <div class="upload-icon-circle">
+                            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                <polyline points="17 8 12 3 7 8"></polyline>
+                                <line x1="12" y1="3" x2="12" y2="15"></line>
+                            </svg>
+                        </div>
+                        <h3>Drag & drop medicine label here</h3>
+                        <p>or click to browse your files</p>
+                    </div>
+
+                    <!-- Image Preview Container -->
+                    <div class="preview-wrapper" id="previewWrapper" style="display: none;">
+                        <img id="imagePreview" src="" alt="Label Preview">
+                        <button type="button" class="btn-clear" id="btnClearFile" title="Remove image">&times;</button>
+                    </div>
+                </div>
+
+                <!-- Action Controls -->
+                <div class="button-group">
+                    <button class="btn btn-primary" id="btnScan" disabled>
+                        <span class="btn-icon">⚡</span>
+                        <span class="btn-text">Run Regulatory Scan</span>
+                    </button>
+                    <button class="btn btn-secondary" id="btnSample">
+                        <span class="btn-icon">🧪</span>
+                        <span>Use Demo Label</span>
+                    </button>
+                </div>
+
+                <!-- Scanning Progress Animation -->
+                <div class="scan-progress" id="scanProgress" style="display: none;">
+                    <div class="progress-bar-container">
+                        <div class="progress-bar-fill" id="progressBarFill"></div>
+                    </div>
+                    <div class="progress-status" id="progressStatus">Initializing OCR engine...</div>
+                </div>
+            </div>
+
+            <!-- Right Column: Results Overview & Scorecard -->
+            <div class="card results-card" id="resultsCard">
+                <div class="card-header">
+                    <h2><span class="icon">📊</span> Inspection Scorecard</h2>
+                    <div class="verdict-pill" id="verdictPill" style="display: none;">
+                        <span id="verdictText">Awaiting Scan</span>
+                    </div>
+                </div>
+
+                <!-- Empty State -->
+                <div class="empty-state" id="emptyState">
+                    <div class="empty-icon">🔍</div>
+                    <h3>No Audit Performed Yet</h3>
+                    <p>Upload a label image or click "Use Demo Label" to generate real-time compliance results.</p>
+                </div>
+
+                <!-- Results Content (Hidden Initially) -->
+                <div class="results-content" id="resultsContent" style="display: none;">
+                    <!-- Key Highlight Metrics -->
+                    <div class="metrics-grid">
+                        <div class="metric-card score-metric">
+                            <span class="metric-label">Compliance Score</span>
+                            <span class="metric-value" id="metricScore">0%</span>
+                            <span class="metric-sub" id="metricRatio">0/14 Passed</span>
+                        </div>
+                        <div class="metric-card" id="metricFontCard">
+                            <span class="metric-label">Generic Font Size</span>
+                            <span class="metric-value status-badge" id="metricFont">--</span>
+                            <span class="metric-sub" id="metricFontSub">Rule 96(1)(i) Ratio</span>
+                        </div>
+                        <div class="metric-card" id="metricRedlineCard">
+                            <span class="metric-label">Schedule Redline</span>
+                            <span class="metric-value status-badge" id="metricRedline">--</span>
+                            <span class="metric-sub" id="metricRedlineSub">HSV Contour Analysis</span>
+                        </div>
+                        <div class="metric-card" id="metricBarcodeCard">
+                            <span class="metric-label">Barcode / QR Code</span>
+                            <span class="metric-value status-badge" id="metricBarcode">--</span>
+                            <span class="metric-sub" id="metricBarcodeSub">GS1 Standards</span>
+                        </div>
+                    </div>
+
+                    <!-- Navigation Tabs -->
+                    <div class="results-tabs">
+                        <button class="tab-btn active" data-tab="tabChecklist">14 Pharmacopoeia Criteria</button>
+                        <button class="tab-btn" data-tab="tabVisual">Annotated HUD Image</button>
+                        <button class="tab-btn" data-tab="tabOcr">Extracted OCR Text</button>
+                        <button class="tab-btn" data-tab="tabJson">Audit JSON</button>
+                    </div>
+
+                    <!-- Tab 1: Regulatory Checklist -->
+                    <div class="tab-pane active" id="tabChecklist">
+                        <div class="checklist-grid" id="checklistContainer">
+                            <!-- Populated dynamically via JavaScript -->
+                        </div>
+                    </div>
+
+                    <!-- Tab 2: Visual Inspection Image -->
+                    <div class="tab-pane" id="tabVisual">
+                        <div class="visual-container">
+                            <div class="image-box">
+                                <div class="image-box-header">
+                                    <span>AI Computer Vision Overlay (Bounding Boxes + HUD)</span>
+                                    <a id="btnDownloadImage" class="btn-link" download="annotated_label.jpg" href="#">Download Annotated JPG</a>
+                                </div>
+                                <img id="annotatedImage" src="" alt="Annotated Label Result">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tab 3: OCR Extracted Text -->
+                    <div class="tab-pane" id="tabOcr">
+                        <div class="ocr-container">
+                            <div class="ocr-header">
+                                <span>Pytesseract LSTM Character Stream</span>
+                                <button class="btn-copy" id="btnCopyOcr">Copy Text</button>
+                            </div>
+                            <pre class="ocr-text-box" id="ocrTextBox"></pre>
+                        </div>
+                    </div>
+
+                    <!-- Tab 4: JSON Audit Report -->
+                    <div class="tab-pane" id="tabJson">
+                        <div class="ocr-container">
+                            <div class="ocr-header">
+                                <span>Regulatory Audit Data (JSON Standard)</span>
+                                <a id="btnDownloadJson" class="btn-link" download="audit_report.json" href="#">Export JSON</a>
+                            </div>
+                            <pre class="ocr-text-box json-box" id="jsonTextBox"></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>Pharmaceutical Medicine Label Validation System &bull; College Engineering Project</p>
+        <p class="footer-tech">Engineered with Python, OpenCV, Pytesseract, Pyzbar, and Regex.</p>
+    </footer>
+
+    <script src="/static/js/main.js"></script>
+</body>
+</html>

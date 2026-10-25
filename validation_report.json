@@ -1,0 +1,127 @@
+{
+    "image_path": "static/uploads/upload_1b43c992.jpg",
+    "ocr_text_preview": "Mies TT SuORIOR\nPRODAC 500 CIPROUAGS0D \u00a9 =\nOCatnposition: os \u201c~\n* Each-film coated tabl tainss\u2019 >\nCiprofloxacin Hydrochlo wy\nequivalent to Ciproflo: \\\nExcipients : 9.8.\nColour : Titanium Dioxi\u00a2\nDosage: As directed by \\\n. Store Protected fro n\nequivalent to Ciprofloxacin 600g\nYe We We 5 %\nhet\n\u201cwes \u201cSs\naA 4A\nABA TZ1, Stet OR,\nLOS\nPRODAC 500 cenoae\nVi...",
+    "barcode_detection": {
+        "detected": false,
+        "count": 0,
+        "details": [],
+        "status": "FAIL",
+        "regulatory_note": "Mandatory on Secondary Carton / Outer Box under GS1 / Top-300 Brand notification."
+    },
+    "redline_detection": {
+        "detected": true,
+        "count": 1,
+        "strips": [
+            {
+                "bounding_box": [
+                    982,
+                    0,
+                    98,
+                    500
+                ],
+                "orientation": "Vertical",
+                "aspect_ratio": 5.1,
+                "area": 13645
+            }
+        ],
+        "status": "PASS (Schedule Redline Present)"
+    },
+    "font_ratio_analysis": {
+        "status": "PASS",
+        "generic_font_height_px": 47.2,
+        "brand_font_height_px": 46.1,
+        "ratio": 1.02,
+        "details": "Generic (47px) is 1.02x larger than Brand (46px) [Complies with Rule 96(1)(i)]"
+    },
+    "regulatory_validation": {
+        "score_percentage": 25.0,
+        "passed_required": "3/12",
+        "overall_status": "NON-COMPLIANT / REJECT",
+        "field_checks": {
+            "Generic Name": {
+                "status": "FAIL",
+                "required": true,
+                "description": "Statutory generic / proper name (e.g., Ciprofloxacin, Paracetamol)",
+                "extracted_value": "Not Detected"
+            },
+            "Generic Font Size >= Brand (Rule 96(1)(i))": {
+                "status": "PASS",
+                "required": true,
+                "description": "Generic name font size must be larger than brand name under Rule 96(1)(i)",
+                "extracted_value": "Generic (47px) is 1.02x larger than Brand (46px) [Complies with Rule 96(1)(i)]"
+            },
+            "Dosage Form and Strength": {
+                "status": "FAIL",
+                "required": true,
+                "description": "Dosage form (tablets, capsules, etc.) and quantitative strength (e.g., 500 mg)",
+                "extracted_value": "Not Detected"
+            },
+            "Active Ingredients in Metric Units": {
+                "status": "FAIL",
+                "required": true,
+                "description": "Statement of active composition in metric units (mg, g, mcg, ml, iu)",
+                "extracted_value": "Not Detected"
+            },
+            "Name and Address of Manufacturer": {
+                "status": "FAIL",
+                "required": true,
+                "description": "Full name and manufacturing plant address with state/PIN",
+                "extracted_value": "Not Detected"
+            },
+            "Mfg License Number": {
+                "status": "FAIL",
+                "required": true,
+                "description": "Drug Manufacturing License Number (Mfg. Lic. No. / M.L. No.)",
+                "extracted_value": "Not Detected"
+            },
+            "Batch / Lot Number": {
+                "status": "FAIL",
+                "required": true,
+                "description": "Manufacturing Batch or Lot identifier for product traceability",
+                "extracted_value": "Not Detected"
+            },
+            "Mfg Date / Expiry Date": {
+                "status": "FAIL",
+                "required": true,
+                "description": "Production and mandatory Expiry / Best Before date",
+                "extracted_value": "Not Detected"
+            },
+            "Storage Conditions": {
+                "status": "FAIL",
+                "required": true,
+                "description": "Statutory storage instructions (e.g., store below 25\u00b0C, protect from moisture)",
+                "extracted_value": "Not Detected"
+            },
+            "Directions for Use / Dosage": {
+                "status": "PASS",
+                "required": true,
+                "description": "Dosage instructions (e.g., As directed by the physician)",
+                "extracted_value": "Dosage: As directed by"
+            },
+            "Prescription Symbol (Rx, NRx, XRx)": {
+                "status": "INFO / CONDITIONAL",
+                "required": false,
+                "description": "Prescription drug identifier symbol (Rx / NRx / XRx)",
+                "extracted_value": "Not Detected"
+            },
+            "Required Barcode or QR Code": {
+                "status": "INFO / CONDITIONAL",
+                "required": false,
+                "description": "GS1 1D Barcode, DataMatrix, or 2D QR Code for traceability",
+                "extracted_value": "Not on Primary Blister (Secondary Carton Mandate under GS1 / Top-300)"
+            },
+            "Schedule Warning (Prescription Drugs)": {
+                "status": "FAIL",
+                "required": true,
+                "description": "Mandatory Schedule H/H1/X statutory warning box & retail restriction",
+                "extracted_value": "Not Detected"
+            },
+            "Schedule Redline (Prescription Drugs)": {
+                "status": "PASS",
+                "required": true,
+                "description": "Continuous vertical or horizontal red line prescribed for Schedule H/H1 drugs",
+                "extracted_value": "PRESENT (Vertical, Ratio: 5.1)"
+            }
+        }
+    }
+}
