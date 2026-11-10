@@ -28,6 +28,11 @@ app.config["MAX_CONTENT_LENGTH"] = 16 * 1024 * 1024  # 16 MB max image upload
 ALLOWED_EXTENSIONS = {"png", "jpg", "jpeg", "webp", "bmp", "tiff"}
 
 os.makedirs(app.config["UPLOAD_FOLDER"], exist_ok=True)
+
+# Remember which version of app.py this server process loaded, so /health can
+# tell you when the running server is out of date and needs a restart.
+_APP_PY = os.path.join(BASE_DIR, "app.py")
+_APP_PY_MTIME_AT_START = os.path.getmtime(_APP_PY)
 configure_tesseract()
 
 
@@ -54,7 +59,9 @@ def health():
         "status": "ok",
         "service": "Pharma Label Scanner",
         "version": "1.0.0",
-        "tesseract_detected": tess_installed
+        "tesseract_detected": tess_installed,
+        # True means app.py was edited after this server started: restart the server
+        "restart_needed": os.path.getmtime(_APP_PY) != _APP_PY_MTIME_AT_START
     }), 200
 
 

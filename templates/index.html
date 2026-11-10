@@ -3,11 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PharmaScan AI - Medicine Label Validation & Regulatory Compliance</title>
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <title>PharmaScan - Medicine Label Validation & Regulatory Compliance</title>
+    <script>
+        // Apply saved/preferred theme before first paint to avoid a flash
+        (function () {
+            var t = null;
+            try { t = localStorage.getItem("theme"); } catch (e) {}
+            if (!t) t = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+            document.documentElement.setAttribute("data-theme", t);
+        })();
+    </script>
     <link rel="stylesheet" href="/static/css/style.css">
 </head>
 <body>
@@ -15,15 +20,20 @@
     <header class="navbar">
         <div class="nav-container">
             <div class="brand">
-                <div class="brand-icon">💊</div>
+                <div class="brand-icon">P</div>
                 <div class="brand-text">
-                    <span class="brand-title">PharmaScan<span class="accent">AI</span></span>
+                    <span class="brand-title">PharmaScan</span>
                     <span class="brand-subtitle">Medicine Label Regulatory Inspection System</span>
                 </div>
             </div>
+            <div class="nav-actions">
+            <button type="button" class="theme-toggle" id="themeToggle" aria-label="Switch to dark mode">
+                <span id="themeToggleText">Dark mode</span>
+            </button>
             <div class="system-status">
                 <span class="pulse-dot"></span>
                 <span>OpenCV &bull; Tesseract OCR &bull; Pyzbar Active</span>
+            </div>
             </div>
         </div>
     </header>
@@ -41,7 +51,7 @@
             <!-- Left Column: Upload Panel -->
             <div class="card upload-card">
                 <div class="card-header">
-                    <h2><span class="icon">📤</span> Upload Label Image</h2>
+                    <h2>Upload Label Image</h2>
                     <span class="badge badge-info">PNG, JPG, WEBP</span>
                 </div>
 
@@ -69,11 +79,9 @@
                 <!-- Action Controls -->
                 <div class="button-group">
                     <button class="btn btn-primary" id="btnScan" disabled>
-                        <span class="btn-icon">⚡</span>
                         <span class="btn-text">Run Regulatory Scan</span>
                     </button>
                     <button class="btn btn-secondary" id="btnSample">
-                        <span class="btn-icon">🧪</span>
                         <span>Use Demo Label</span>
                     </button>
                 </div>
@@ -90,26 +98,21 @@
             <!-- Right Column: Results Overview & Scorecard -->
             <div class="card results-card" id="resultsCard">
                 <div class="card-header">
-                    <h2><span class="icon">📊</span> Inspection Scorecard</h2>
+                    <h2>Inspection Scorecard</h2>
                     <div class="verdict-pill" id="verdictPill" style="display: none;">
                         <span id="verdictText">Awaiting Scan</span>
                     </div>
                 </div>
 
                 <!-- Error Alert Box -->
-                <div class="error-banner" id="errorBanner" style="display: none; background: rgba(239, 68, 68, 0.15); border: 1px solid #ef4444; border-radius: 8px; padding: 16px; margin: 15px; color: #fca5a5;">
-                    <div style="display: flex; align-items: flex-start; gap: 12px;">
-                        <span style="font-size: 1.5rem;">⚠️</span>
-                        <div>
-                            <h4 style="margin: 0 0 6px 0; color: #ef4444; font-size: 1rem;" id="errorTitle">Inspection Server Error</h4>
-                            <p id="errorMessage" style="margin: 0; font-size: 0.88rem; line-height: 1.4; word-break: break-word;"></p>
-                        </div>
-                    </div>
+                <div class="error-banner" id="errorBanner" style="display: none;">
+                    <h4 id="errorTitle">Inspection Server Error</h4>
+                    <p id="errorMessage"></p>
                 </div>
 
                 <!-- Empty State -->
                 <div class="empty-state" id="emptyState">
-                    <div class="empty-icon">🔍</div>
+                    <div class="empty-icon"></div>
                     <h3>No Audit Performed Yet</h3>
                     <p>Upload a label image or click "Use Demo Label" to generate real-time compliance results.</p>
                 </div>
@@ -143,7 +146,7 @@
                     <!-- Navigation Tabs -->
                     <div class="results-tabs">
                         <button class="tab-btn active" data-tab="tabChecklist">14 Pharmacopoeia Criteria</button>
-                        <button class="tab-btn" data-tab="tabVisual">Annotated HUD Image</button>
+                        <button class="tab-btn" data-tab="tabVisual">Annotated Image</button>
                         <button class="tab-btn" data-tab="tabOcr">Extracted OCR Text</button>
                         <button class="tab-btn" data-tab="tabJson">Audit JSON</button>
                     </div>
@@ -160,7 +163,7 @@
                         <div class="visual-container">
                             <div class="image-box">
                                 <div class="image-box-header">
-                                    <span>AI Computer Vision Overlay (Bounding Boxes + HUD)</span>
+                                    <span>AI Computer Vision Overlay (Bounding Boxes + Scorecard)</span>
                                     <a id="btnDownloadImage" class="btn-link" download="annotated_label.jpg" href="#">Download Annotated JPG</a>
                                 </div>
                                 <img id="annotatedImage" src="" alt="Annotated Label Result">
@@ -196,7 +199,7 @@
 
     <!-- Footer -->
     <footer class="footer">
-        <p>Pharmaceutical Medicine Label Validation System &bull; College Engineering Project</p>
+        <p>Pharmaceutical Medicine Label Validation System &bull; Regulatory Compliance Inspection</p>
         <p class="footer-tech">Engineered with Python, OpenCV, Pytesseract, Pyzbar, and Regex.</p>
     </footer>
 

@@ -1,6 +1,6 @@
 /**
  * ==============================================================================
- * PHARMASCAN AI - CLIENT JAVASCRIPT CONTROLLER
+ * PHARMASCAN - CLIENT JAVASCRIPT CONTROLLER
  * ==============================================================================
  */
 
@@ -48,8 +48,30 @@ document.addEventListener("DOMContentLoaded", () => {
     const tabButtons = document.querySelectorAll(".tab-btn");
     const tabPanes = document.querySelectorAll(".tab-pane");
 
+    // --------------------------------------------------------------------------
+    // Light / Dark theme toggle (preference saved in localStorage)
+    // --------------------------------------------------------------------------
+    const themeToggle = document.getElementById("themeToggle");
+    const themeToggleText = document.getElementById("themeToggleText");
+
+    function applyTheme(theme) {
+        document.documentElement.setAttribute("data-theme", theme);
+        const toDark = theme !== "dark";
+        themeToggleText.textContent = toDark ? "Dark mode" : "Light mode";
+        themeToggle.setAttribute("aria-label", toDark ? "Switch to dark mode" : "Switch to light mode");
+    }
+
+    applyTheme(document.documentElement.getAttribute("data-theme") || "light");
+
+    themeToggle.addEventListener("click", () => {
+        const next = document.documentElement.getAttribute("data-theme") === "dark" ? "light" : "dark";
+        applyTheme(next);
+        try { localStorage.setItem("theme", next); } catch (e) {}
+    });
+
     let selectedFile = null;
     let progressTimer = null;
+    let scanToken = 0; // invalidates in-flight scans when the image is removed
 
     // --------------------------------------------------------------------------
     // Drag & Drop / File Selection
@@ -92,6 +114,7 @@ document.addEventListener("DOMContentLoaded", () => {
             return;
         }
 
+        clearResults();
         selectedFile = file;
         const reader = new FileReader();
         reader.onload = (e) => {
@@ -108,7 +131,42 @@ document.addEventListener("DOMContentLoaded", () => {
         clearFileSelection();
     });
 
+    function clearResults() {
+        scanToken++; // ignore any scan response still in flight
+        clearInterval(progressTimer);
+        scanProgress.style.display = "none";
+        hideError();
+        resultsContent.style.display = "none";
+        emptyState.style.display = "block";
+        verdictPill.style.display = "none";
+        verdictPill.className = "verdict-pill";
+        verdictText.textContent = "Awaiting Scan";
+        checklistContainer.innerHTML = "";
+        annotatedImage.removeAttribute("src");
+        btnDownloadImage.href = "#";
+        ocrTextBox.textContent = "";
+        jsonTextBox.textContent = "";
+        btnDownloadJson.href = "#";
+        metricScore.textContent = "0%";
+        metricScore.style.color = "";
+        metricRatio.textContent = "0/14 Passed";
+        [metricFont, metricRedline, metricBarcode].forEach((el) => {
+            el.textContent = "--";
+            el.style.color = "";
+        });
+        metricFontSub.textContent = "Rule 96(1)(i) Ratio";
+        metricRedlineSub.textContent = "HSV Contour Analysis";
+        metricBarcodeSub.textContent = "GS1 Standards";
+        // Return to the first tab
+        tabButtons.forEach((b) => b.classList.remove("active"));
+        tabPanes.forEach((p) => p.classList.remove("active"));
+        tabButtons[0].classList.add("active");
+        tabPanes[0].classList.add("active");
+        btnSample.disabled = false;
+    }
+
     function clearFileSelection() {
+        clearResults();
         selectedFile = null;
         fileInput.value = "";
         imagePreview.src = "";
@@ -156,7 +214,7 @@ document.addEventListener("DOMContentLoaded", () => {
         let percent = 5;
         const steps = [
             { threshold: 18, text: "Auto-Cropping Letterbox Margins & Enhancing Contrast..." },
-            { threshold: 40, text: "Multi-Orientation OCR (0°, 90°, 270° Text Scanning)..." },
+            { threshold: 40, text: "Multi-orientation OCR text scanning..." },
             { threshold: 65, text: "HSV Dual-Band Schedule Redline Detection..." },
             { threshold: 80, text: "Measuring Font Size Bounding Boxes (Rule 96(1)(i))..." },
             { threshold: 92, text: "Verifying 14 Pharmacopoeia Statutory Regulatory Criteria..." }
@@ -202,6 +260,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     async function performScan(formData) {
+        const myToken = ++scanToken;
         btnScan.disabled = true;
         btnSample.disabled = true;
         hideError();
@@ -215,6 +274,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             let data;
             const textResponse = await response.text();
+            if (myToken !== scanToken) return; // image was removed while scanning
             try {
                 data = JSON.parse(textResponse);
             } catch (jsonErr) {
@@ -241,12 +301,15 @@ document.addEventListener("DOMContentLoaded", () => {
             renderResults(data);
 
         } catch (error) {
+            if (myToken !== scanToken) return;
             console.error("Scan request failed:", error);
             showError("Network Connection Error", "Could not connect to the inspection server. Please check your internet connection or server logs on Render.");
         } finally {
-            stopProgressAnimation();
-            btnScan.disabled = !selectedFile;
-            btnSample.disabled = false;
+            if (myToken === scanToken) {
+                stopProgressAnimation();
+                btnScan.disabled = !selectedFile;
+                btnSample.disabled = false;
+            }
         }
     }
 
@@ -353,7 +416,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         // 6. OCR Text View
-        ocrTextBox.textContent = report.ocr_text_preview || "No text could be extracted.";
+        ocrTextBox.textContent = report.ocr_text_full || report.ocr_text_preview || "No text could be extracted.";
 
         // 7. JSON View
         jsonTextBox.textContent = JSON.stringify(report, null, 2);

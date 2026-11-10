@@ -311,12 +311,17 @@ class MedicineLabelValidator:
             words = [w.lower() for w in re.findall(r'[a-zA-Z0-9]+', target_str) if len(w) > 2]
             matched_heights = []
             for i, word in enumerate(texts):
-                w_clean = word.lower().strip()
-                if any(target in w_clean or w_clean in target for target in words):
+                # Exact word match only (ignoring punctuation). Substring matching
+                # wrongly pulled in unrelated small-print words (e.g. "ip" inside
+                # "ciprofloxacin"), which skewed the average.
+                w_clean = re.sub(r'[^a-z0-9]', '', word.lower())
+                if w_clean and w_clean in words:
                     h = heights[i]
                     if 10 < h < 200:  # Valid character pixel height
                         matched_heights.append(h)
-            return float(np.mean(matched_heights)) if matched_heights else 0.0
+            # The name is printed large once and may be repeated in small print
+            # (e.g. in the composition), so use the tallest occurrence.
+            return float(max(matched_heights)) if matched_heights else 0.0
 
         gen_h = get_word_height(generic_match)
         br_h = get_word_height(brand_match)
@@ -573,8 +578,8 @@ class MedicineLabelValidator:
 
         # 6. Mfg License Number
         lic_pattern = (
-            r"(?:mfg\.?\s*(?:lic\.?|license)\s*(?:no\.?)?|licence\s*no\.?|lic\.?\s*no\.?|m\.l\.?\s*no\.?)"
-            r"[:\s.-]*([a-zA-Z0-9\/\-]{4,30})"
+            r"(?:mfg[\.,]?\s*(?:lic[\.,]?|license)\s*(?:no[\.,]?)?|licence\s*no[\.,]?|lic[\.,]?\s*no[\.,]?|m\.l[\.,]?\s*no[\.,]?)"
+            r"[:\s.,-]*([a-zA-Z0-9\/\-]{4,30})"
         )
         lic_match = re.search(lic_pattern, clean_text, flags=re.IGNORECASE)
         lic_val = lic_match.group(0).strip() if lic_match else "Not Detected"
@@ -782,6 +787,7 @@ class MedicineLabelValidator:
         full_report = {
             "image_path": self.image_path,
             "ocr_text_preview": text[:350] + ("..." if len(text) > 350 else ""),
+            "ocr_text_full": text,
             "barcode_detection": barcode_info,
             "redline_detection": redline_info,
             "font_ratio_analysis": self.font_ratio_results,
