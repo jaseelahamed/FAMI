@@ -1,127 +1,128 @@
 {
-    "image_path": "static/uploads/upload_1b43c992.jpg",
-    "ocr_text_preview": "Mies TT SuORIOR\nPRODAC 500 CIPROUAGS0D \u00a9 =\nOCatnposition: os \u201c~\n* Each-film coated tabl tainss\u2019 >\nCiprofloxacin Hydrochlo wy\nequivalent to Ciproflo: \\\nExcipients : 9.8.\nColour : Titanium Dioxi\u00a2\nDosage: As directed by \\\n. Store Protected fro n\nequivalent to Ciprofloxacin 600g\nYe We We 5 %\nhet\n\u201cwes \u201cSs\naA 4A\nABA TZ1, Stet OR,\nLOS\nPRODAC 500 cenoae\nVi...",
+    "image_path": "sample_medicine_label.png",
+    "ai_engine": "Google Gemini Multimodal Vision AI (gemini-3.5-flash-lite)",
+    "ocr_text_preview": "Rx CIPRODAC 500 CIPROFLOXACIN TABLETS IP 500MG Composition: Each film-coated tablet contains: Ciprofloxacin Hydrochloride IP equivalent to Ciprofloxacin 500 mg Dosage: As directed by the Physician. Directions for use: Swallow whole with water. Storage: Store Protected from light and moisture. Below 25 deg C. SCHEDULE H PRESCRIPTION DRUG - CAUTION Warning: To be sold by retail without the prescription of a Registered Medical Practitioner. B.No. JKBD26020 Mfg. Date: FEB 2026 Exp. Date: JAN 2029 Mfg. Lic. No.: JK/01/06-07/110 Manufactured by: CADILA PHARMACEUTICALS LIMITED, SIDCO, Samba - 184 121, State of J & K GS1 QR CODE",
     "barcode_detection": {
-        "detected": false,
-        "count": 0,
-        "details": [],
-        "status": "FAIL",
-        "regulatory_note": "Mandatory on Secondary Carton / Outer Box under GS1 / Top-300 Brand notification."
+        "detected": true,
+        "count": 1,
+        "details": [
+            {
+                "type": "GS1 / Barcode / QR",
+                "data": "GS1 QR CODE"
+            }
+        ],
+        "status": "PASS",
+        "regulatory_note": "GS1 Traceability Code Verified"
     },
     "redline_detection": {
         "detected": true,
         "count": 1,
         "strips": [
             {
-                "bounding_box": [
-                    982,
-                    0,
-                    98,
-                    500
-                ],
-                "orientation": "Vertical",
-                "aspect_ratio": 5.1,
-                "area": 13645
+                "orientation": "Horizontal",
+                "aspect_ratio": 4.5,
+                "details": "Red border box containing the Schedule H statutory warning."
             }
         ],
-        "status": "PASS (Schedule Redline Present)"
+        "status": "PASS (Red border box containing the Schedule H statutory warning.)"
     },
     "font_ratio_analysis": {
-        "status": "PASS",
-        "generic_font_height_px": 47.2,
-        "brand_font_height_px": 46.1,
-        "ratio": 1.02,
-        "details": "Generic (47px) is 1.02x larger than Brand (46px) [Complies with Rule 96(1)(i)]"
+        "status": "FAIL",
+        "generic_font_height_px": 28.0,
+        "brand_font_height_px": 38.0,
+        "ratio": 0.74,
+        "details": "Under Rule 96(1)(i), generic proper name is smaller than the brand name, failing statutory prominence requirements."
     },
     "regulatory_validation": {
-        "score_percentage": 25.0,
-        "passed_required": "3/12",
-        "overall_status": "NON-COMPLIANT / REJECT",
+        "score_percentage": 91.67,
+        "passed_required": "11/12",
+        "overall_status": "COMPLIANT / PASS",
         "field_checks": {
             "Generic Name": {
-                "status": "FAIL",
-                "required": true,
-                "description": "Statutory generic / proper name (e.g., Ciprofloxacin, Paracetamol)",
-                "extracted_value": "Not Detected"
-            },
-            "Generic Font Size >= Brand (Rule 96(1)(i))": {
                 "status": "PASS",
                 "required": true,
+                "description": "Statutory generic / proper name (e.g., Ciprofloxacin, Paracetamol)",
+                "extracted_value": "CIPROFLOXACIN TABLETS IP 500MG"
+            },
+            "Generic Font Size >= Brand (Rule 96(1)(i))": {
+                "status": "FAIL",
+                "required": true,
                 "description": "Generic name font size must be larger than brand name under Rule 96(1)(i)",
-                "extracted_value": "Generic (47px) is 1.02x larger than Brand (46px) [Complies with Rule 96(1)(i)]"
+                "extracted_value": "Under Rule 96(1)(i), generic proper name is smaller than the brand name, failing statutory prominence requirements."
             },
             "Dosage Form and Strength": {
-                "status": "FAIL",
+                "status": "PASS",
                 "required": true,
                 "description": "Dosage form (tablets, capsules, etc.) and quantitative strength (e.g., 500 mg)",
-                "extracted_value": "Not Detected"
+                "extracted_value": "Film-coated Tablets 500 mg"
             },
             "Active Ingredients in Metric Units": {
-                "status": "FAIL",
+                "status": "PASS",
                 "required": true,
                 "description": "Statement of active composition in metric units (mg, g, mcg, ml, iu)",
-                "extracted_value": "Not Detected"
+                "extracted_value": "Each film-coated tablet contains: Ciprofloxacin Hydrochloride IP equivalent to Ciprofloxacin 500 mg"
             },
             "Name and Address of Manufacturer": {
-                "status": "FAIL",
+                "status": "PASS",
                 "required": true,
                 "description": "Full name and manufacturing plant address with state/PIN",
-                "extracted_value": "Not Detected"
+                "extracted_value": "CADILA PHARMACEUTICALS LIMITED, SIDCO, Samba - 184 121, State of J & K"
             },
             "Mfg License Number": {
-                "status": "FAIL",
+                "status": "PASS",
                 "required": true,
                 "description": "Drug Manufacturing License Number (Mfg. Lic. No. / M.L. No.)",
-                "extracted_value": "Not Detected"
+                "extracted_value": "JK/01/06-07/110"
             },
             "Batch / Lot Number": {
-                "status": "FAIL",
+                "status": "PASS",
                 "required": true,
                 "description": "Manufacturing Batch or Lot identifier for product traceability",
-                "extracted_value": "Not Detected"
+                "extracted_value": "JKBD26020"
             },
             "Mfg Date / Expiry Date": {
-                "status": "FAIL",
+                "status": "PASS",
                 "required": true,
                 "description": "Production and mandatory Expiry / Best Before date",
-                "extracted_value": "Not Detected"
+                "extracted_value": "MFG: FEB 2026 | EXP: JAN 2029"
             },
             "Storage Conditions": {
-                "status": "FAIL",
+                "status": "PASS",
                 "required": true,
                 "description": "Statutory storage instructions (e.g., store below 25\u00b0C, protect from moisture)",
-                "extracted_value": "Not Detected"
+                "extracted_value": "Store Protected from light and moisture. Below 25 deg C."
             },
             "Directions for Use / Dosage": {
                 "status": "PASS",
                 "required": true,
                 "description": "Dosage instructions (e.g., As directed by the physician)",
-                "extracted_value": "Dosage: As directed by"
+                "extracted_value": "Dosage: As directed by the Physician. Directions for use: Swallow whole with water."
             },
             "Prescription Symbol (Rx, NRx, XRx)": {
-                "status": "INFO / CONDITIONAL",
+                "status": "PASS",
                 "required": false,
                 "description": "Prescription drug identifier symbol (Rx / NRx / XRx)",
-                "extracted_value": "Not Detected"
+                "extracted_value": "Rx"
             },
             "Required Barcode or QR Code": {
-                "status": "INFO / CONDITIONAL",
+                "status": "PASS",
                 "required": false,
                 "description": "GS1 1D Barcode, DataMatrix, or 2D QR Code for traceability",
-                "extracted_value": "Not on Primary Blister (Secondary Carton Mandate under GS1 / Top-300)"
+                "extracted_value": "GS1 QR CODE"
             },
             "Schedule Warning (Prescription Drugs)": {
-                "status": "FAIL",
+                "status": "PASS",
                 "required": true,
                 "description": "Mandatory Schedule H/H1/X statutory warning box & retail restriction",
-                "extracted_value": "Not Detected"
+                "extracted_value": "SCHEDULE H PRESCRIPTION DRUG - CAUTION: Warning: To be sold by retail without the prescription of a Registered Medical Practitioner."
             },
             "Schedule Redline (Prescription Drugs)": {
                 "status": "PASS",
                 "required": true,
                 "description": "Continuous vertical or horizontal red line prescribed for Schedule H/H1 drugs",
-                "extracted_value": "PRESENT (Vertical, Ratio: 5.1)"
+                "extracted_value": "Red border box containing the Schedule H statutory warning."
             }
         }
-    }
+    },
+    "audit_summary": "The label fails CDSCO Rule 96(1)(i) font size requirements because the brand name is printed significantly larger than the generic proper name."
 }

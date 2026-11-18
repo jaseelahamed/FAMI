@@ -1,3 +1,6 @@
+# Environment variables and secrets
+.env
+
 # Python cache
 __pycache__/
 *.py[cod]
@@ -5,10 +8,14 @@ __pycache__/
 # Virtual environments
 venv/
 .venv/
-
-# Environment variables
-.env
+env/
 
 # Debug files
 ocr_debug.txt
 ocr_debug.json
+
+# IDE
+.vscode/
+
+# Logs
+*.log

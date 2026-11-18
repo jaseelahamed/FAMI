@@ -1,12 +1,3 @@
-"""
-================================================================================
-PHARMACEUTICAL MEDICINE LABEL VALIDATOR - WEB SERVER (FLASK)
-================================================================================
-Provides a modern REST API & Web Dashboard to upload, scan, and inspect
-medicine packaging labels with AI, OCR, Barcode, and Redline verification.
-================================================================================
-"""
-
 import os
 import sys
 import uuid
@@ -20,6 +11,7 @@ if BASE_DIR not in sys.path:
     sys.path.insert(0, BASE_DIR)
 
 from app import MedicineLabelValidator, configure_tesseract, generate_sample_medicine_label
+from gemini_validator import is_gemini_available
 
 # Initialize Flask
 app = Flask(__name__)
@@ -55,10 +47,14 @@ def health():
     except Exception:
         tess_installed = False
 
+    gemini_ready = is_gemini_available()
+
     return jsonify({
         "status": "ok",
         "service": "Pharma Label Scanner",
-        "version": "1.0.0",
+        "version": "2.0.0",
+        "ai_engine": "Google Gemini Multimodal Vision AI" if gemini_ready else "Local OpenCV/Tesseract Pipeline",
+        "gemini_active": gemini_ready,
         "tesseract_detected": tess_installed,
         # True means app.py was edited after this server started: restart the server
         "restart_needed": os.path.getmtime(_APP_PY) != _APP_PY_MTIME_AT_START
@@ -128,6 +124,7 @@ if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
     print("\n" + "=" * 70)
     print("  PHARMA LABEL SCANNER WEB SERVER READY")
+    print(f"  AI Engine: {'Google Gemini Multimodal Vision AI' if is_gemini_available() else 'Local Pipeline'}")
     print(f"  Listening on: http://{host}:{port}")
     print("=" * 70 + "\n")
     app.run(host=host, port=port, debug=False)

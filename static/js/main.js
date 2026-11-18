@@ -1,11 +1,4 @@
-/**
- * ==============================================================================
- * PHARMASCAN - CLIENT JAVASCRIPT CONTROLLER
- * ==============================================================================
- */
-
 document.addEventListener("DOMContentLoaded", () => {
-    // Elements
     const dropzone = document.getElementById("dropzone");
     const fileInput = document.getElementById("fileInput");
     const dropzonePrompt = document.getElementById("dropzonePrompt");
@@ -48,9 +41,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const tabButtons = document.querySelectorAll(".tab-btn");
     const tabPanes = document.querySelectorAll(".tab-pane");
 
-    // --------------------------------------------------------------------------
-    // Light / Dark theme toggle (preference saved in localStorage)
-    // --------------------------------------------------------------------------
     const themeToggle = document.getElementById("themeToggle");
     const themeToggleText = document.getElementById("themeToggleText");
 
@@ -73,9 +63,17 @@ document.addEventListener("DOMContentLoaded", () => {
     let progressTimer = null;
     let scanToken = 0; // invalidates in-flight scans when the image is removed
 
-    // --------------------------------------------------------------------------
-    // Drag & Drop / File Selection
-    // --------------------------------------------------------------------------
+    // Check engine status
+    fetch("/health")
+        .then(res => res.json())
+        .then(data => {
+            const badge = document.getElementById("systemStatusBadge");
+            if (badge && data.ai_engine) {
+                badge.innerHTML = `${data.ai_engine} &bull; Active`;
+            }
+        })
+        .catch(() => {});
+
     dropzone.addEventListener("click", (e) => {
         if (e.target !== btnClearFile) {
             fileInput.click();
@@ -177,33 +175,28 @@ document.addEventListener("DOMContentLoaded", () => {
         selectedFile = null;
         fileInput.value = "";
         imagePreview.src = "";
-        dropzonePrompt.style.display = "block";
         previewWrapper.style.display = "none";
+        dropzonePrompt.style.display = "flex";
         btnScan.disabled = true;
-    }
+    };
 
-    // --------------------------------------------------------------------------
-    // Tab Navigation
-    // --------------------------------------------------------------------------
     tabButtons.forEach((btn) => {
         btn.addEventListener("click", () => {
             const targetTab = btn.getAttribute("data-tab");
-
             tabButtons.forEach((b) => b.classList.remove("active"));
             tabPanes.forEach((p) => p.classList.remove("active"));
 
             btn.classList.add("active");
-            document.getElementById(targetTab).classList.add("active");
+            const targetPane = document.getElementById("tab-" + targetTab);
+            if (targetPane) targetPane.classList.add("active");
         });
     });
 
-    // --------------------------------------------------------------------------
-    // Scanning API Trigger
-    // --------------------------------------------------------------------------
     btnScan.addEventListener("click", () => {
         if (!selectedFile) return;
         const formData = new FormData();
         formData.append("image", selectedFile);
+        formData.append("is_sample", "false");
         performScan(formData);
     });
 
@@ -224,7 +217,12 @@ document.addEventListener("DOMContentLoaded", () => {
             { threshold: 40, text: "Multi-orientation OCR text scanning..." },
             { threshold: 65, text: "HSV Dual-Band Schedule Redline Detection..." },
             { threshold: 80, text: "Measuring Font Size Bounding Boxes (Rule 96(1)(i))..." },
-            { threshold: 92, text: "Verifying 14 Pharmacopoeia Statutory Regulatory Criteria..." }
+            { threshold: 92, text: "Verifying 14 Pharmacopoeia Statutory Regulatory Criteria..." },
+            { threshold: 18, text: "Auto-Cropping Letterbox Margins & Enhancing Image..." },
+            { threshold: 38, text: "Connecting to Google Gemini Multimodal Vision AI..." },
+            { threshold: 60, text: "Semantically Auditing 14 Pharmacopoeia Statutory Criteria..." },
+            { threshold: 78, text: "Verifying Rule 96(1)(i) Brand vs Generic Font Hierarchy..." },
+            { threshold: 90, text: "Generating Inspection Scorecard & Annotated Overlay..." }
         ];
 
         let currentStep = 0;
@@ -288,7 +286,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 if (response.status === 502 || response.status === 504) {
                     showError(
                         "Cloud Server Timeout (HTTP " + response.status + ")",
-                        "Render Free Tier timed out processing the image. The image was downscaled, please try again or verify Tesseract OCR is installed."
+                        "The server timed out processing the image. Please try again."
                     );
                 } else {
                     showError(
@@ -310,7 +308,7 @@ document.addEventListener("DOMContentLoaded", () => {
         } catch (error) {
             if (myToken !== scanToken) return;
             console.error("Scan request failed:", error);
-            showError("Network Connection Error", "Could not connect to the inspection server. Please check your internet connection or server logs on Render.");
+            showError("Network Connection Error", "Could not connect to the inspection server.");
         } finally {
             if (myToken === scanToken) {
                 stopProgressAnimation();
@@ -320,9 +318,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    // --------------------------------------------------------------------------
-    // Render Inspection Results
-    // --------------------------------------------------------------------------
     function renderResults(data) {
         const report = data.report;
         const val = report.regulatory_validation;
@@ -367,7 +362,7 @@ document.addEventListener("DOMContentLoaded", () => {
             metricRedline.textContent = "PRESENT";
             metricRedline.style.color = "var(--accent)";
             const strip = rl.strips[0];
-            metricRedlineSub.textContent = `${strip?.orientation || "Line"} (Ratio: ${strip?.aspect_ratio || "3.5+"})`;
+            metricRedlineSub.textContent = `${strip?.orientation || "Line"} (Schedule H)`;
         } else {
             metricRedline.textContent = "NONE";
             metricRedline.style.color = "var(--text-muted)";
@@ -410,7 +405,7 @@ document.addEventListener("DOMContentLoaded", () => {
             checklistContainer.appendChild(card);
         }
 
-        // 5. Annotated Image
+        // 6. Annotated Image
         annotatedImage.src = data.annotated_image_url + "?t=" + new Date().getTime();
         btnDownloadImage.href = data.annotated_image_url;
 
@@ -423,8 +418,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // 6. OCR Text View
         ocrTextBox.textContent = report.ocr_text_full || report.ocr_text_preview || "No text could be extracted.";
+        // 7. OCR Text View
+        ocrTextBox.textContent = report.ocr_text_preview || "No text could be extracted.";
 
-        // 7. JSON View
+        // 8. JSON View
         jsonTextBox.textContent = JSON.stringify(report, null, 2);
         btnDownloadJson.href = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(report, null, 2));
     }
