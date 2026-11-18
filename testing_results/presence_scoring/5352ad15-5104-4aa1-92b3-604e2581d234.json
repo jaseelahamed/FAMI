@@ -1,0 +1,160 @@
+{
+  "method": "Revalidated saved OCR and measured font results; no fresh OCR inference.",
+  "regulatory_validation": {
+    "score_percentage": 91.67,
+    "passed_required": "11/12",
+    "overall_status": "NON-COMPLIANT / REJECT",
+    "requires_review": false,
+    "validation_mode": "presence",
+    "field_checks": {
+      "Generic Name": {
+        "status": "PASS",
+        "required": true,
+        "description": "Generic name printed on the label",
+        "extracted_value": "Telmisartan",
+        "presence_state": "detected",
+        "ocr_confidence": 96.4,
+        "diagnostic_notes": [],
+        "review_notes": []
+      },
+      "Generic Font Size >= Brand (Rule 96(1)(i))": {
+        "status": "FAIL",
+        "required": true,
+        "description": "Comparison of measured generic and brand text heights",
+        "extracted_value": "Unable to measure both generic and brand names reliably",
+        "presence_state": "not_detected",
+        "ocr_confidence": null,
+        "diagnostic_notes": [],
+        "review_notes": []
+      },
+      "Dosage Form and Strength": {
+        "status": "PASS",
+        "required": true,
+        "description": "Dosage form and quantitative strength",
+        "extracted_value": "Tablets | 40mg",
+        "presence_state": "detected",
+        "ocr_confidence": 95.6,
+        "diagnostic_notes": [],
+        "review_notes": []
+      },
+      "Active Ingredients in Metric Units": {
+        "status": "PASS",
+        "required": true,
+        "description": "Composition statement with a readable metric quantity",
+        "extracted_value": "Composition Each uncoated tablet contains 40mg. Telmisartan",
+        "presence_state": "detected",
+        "ocr_confidence": 95.6,
+        "diagnostic_notes": [],
+        "review_notes": [],
+        "raw_extracted_value": "Composition Each uncoated tablet contains 40mg. Telmisartan",
+        "spelling_corrected": false
+      },
+      "Name and Address of Manufacturer": {
+        "status": "PASS",
+        "required": true,
+        "description": "Manufacturer statement and following address lines",
+        "extracted_value": "Mfd.by:L.V.LIFE SCIENCES VPO Gurumajra, Baddi, Distt Solan (H.P)-174101 (An IS0 9001:2015& GMP, GLP CertifiedCo.)",
+        "presence_state": "detected",
+        "ocr_confidence": 90.2,
+        "diagnostic_notes": [],
+        "review_notes": []
+      },
+      "Mfg License Number": {
+        "status": "PASS",
+        "required": true,
+        "description": "Printed manufacturing or import licence identifier",
+        "extracted_value": "Mfg. Lic.No.:MNB/07/656",
+        "presence_state": "detected",
+        "ocr_confidence": 97.7,
+        "diagnostic_notes": [],
+        "review_notes": []
+      },
+      "Batch / Lot Number": {
+        "status": "PASS",
+        "required": true,
+        "description": "Printed batch or lot identifier",
+        "extracted_value": "B.No.LV25DT-127B",
+        "presence_state": "detected",
+        "ocr_confidence": 96.1,
+        "diagnostic_notes": [],
+        "review_notes": []
+      },
+      "Mfg Date / Expiry Date": {
+        "status": "PASS",
+        "required": true,
+        "description": "Both manufacturing and expiry dates must be readable",
+        "extracted_value": "MFG.04/2025 | EXP.03/2027",
+        "presence_state": "detected",
+        "ocr_confidence": 96.1,
+        "diagnostic_notes": [],
+        "review_notes": []
+      },
+      "Storage Conditions": {
+        "status": "PASS",
+        "required": true,
+        "description": "Storage and child-safety instructions",
+        "extracted_value": "Storage: Store in a cool & dry place; at a temperature not exceeding 25C.; Protect from light & moisture.; Protect from light & moisture",
+        "presence_state": "detected",
+        "ocr_confidence": 92.6,
+        "diagnostic_notes": [],
+        "review_notes": []
+      },
+      "Directions for Use / Dosage": {
+        "status": "PASS",
+        "required": true,
+        "description": "Dosage or directions statement",
+        "extracted_value": "Dosage: As directed by the Physician.",
+        "presence_state": "detected",
+        "ocr_confidence": 95.8,
+        "diagnostic_notes": [],
+        "review_notes": []
+      },
+      "Prescription Symbol (Rx, NRx, XRx)": {
+        "status": "PASS",
+        "required": false,
+        "description": "Readable prescription symbol",
+        "extracted_value": "R$",
+        "presence_state": "detected",
+        "ocr_confidence": 53.5,
+        "diagnostic_notes": [
+          "Low OCR confidence; compare with the image",
+          "Required part of this field is missing or unreadable"
+        ],
+        "review_notes": [
+          "Low OCR confidence; compare with the image",
+          "Required part of this field is missing or unreadable"
+        ]
+      },
+      "Required Barcode or QR Code": {
+        "status": "FAIL",
+        "required": false,
+        "description": "Barcode or QR presence check",
+        "extracted_value": "Not present in extracted image content",
+        "presence_state": "not_detected",
+        "ocr_confidence": null,
+        "diagnostic_notes": [],
+        "review_notes": []
+      },
+      "Schedule Warning (Prescription Drugs)": {
+        "status": "PASS",
+        "required": true,
+        "description": "Readable schedule or prescription restriction statement",
+        "extracted_value": "SCHEDULE H PRESCRIPTION DRUG - CAUTION Not to be sold by retail without the prescription of a Registered Medical Practitioner",
+        "presence_state": "detected",
+        "ocr_confidence": 93.0,
+        "diagnostic_notes": [],
+        "review_notes": []
+      },
+      "Schedule Redline (Prescription Drugs)": {
+        "status": "PASS",
+        "required": true,
+        "description": "Elongated red marking detected by color and geometry",
+        "extracted_value": "Red marking detected (color/shape check only)",
+        "presence_state": "detected",
+        "ocr_confidence": null,
+        "diagnostic_notes": [],
+        "review_notes": []
+      }
+    }
+  }
+}

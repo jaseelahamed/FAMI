@@ -1,0 +1,434 @@
+{
+  "image_path": "/tmp/demo_check.png",
+  "ocr_text_preview": "Rx CIPRODAC 500\nCIPROFLOXACIN TABLETS IP 500MG\nComposition:\nEach film-coated tablet contains: Ciprofloxacin Hydrochloride IP equivalent to Ciprofloxacin 500 mg\nDosage: As directed by the Physician.\nDirections for use: Swallow whole with water.\nStoroge: Store Protected from light and moisture. Below 25 deg C.\nSCHEDULE H PRESCRIPTION DRUG - CAUTION\nW...",
+  "ocr_text_full": "Rx CIPRODAC 500\nCIPROFLOXACIN TABLETS IP 500MG\nComposition:\nEach film-coated tablet contains: Ciprofloxacin Hydrochloride IP equivalent to Ciprofloxacin 500 mg\nDosage: As directed by the Physician.\nDirections for use: Swallow whole with water.\nStoroge: Store Protected from light and moisture. Below 25 deg C.\nSCHEDULE H PRESCRIPTION DRUG - CAUTION\nWarning: To be sold by retail without the prescription of o Registered Medicol Practitioner.\nB.No. JKBD26020\nMfg. Date: FEB 2026\nExp. Date: JAN 2029\nMfg. Lic.No.: JK/01/06-07/110\nManufactured by: CADILA PHARMACEUTICALS LIMITED, SIDCO, Samba \u2013 184 121, State of J &: K\nGS1 QR CODE",
+  "ocr_engine": "paddle",
+  "ocr_lines": [
+    {
+      "text": "Rx CIPRODAC 500",
+      "confidence": 91.7,
+      "box": [
+        31.0,
+        25.0,
+        266.0,
+        44.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "CIPROFLOXACIN TABLETS IP 500MG",
+      "confidence": 90.0,
+      "box": [
+        87.0,
+        52.0,
+        641.0,
+        39.0
+      ],
+      "source": "paddle",
+      "alternatives": [],
+      "original_text": "CIPROFLOXACIN TABLETS IP SOOMG",
+      "quantity_corrections": [
+        {
+          "original": "SOOMG",
+          "confirmed": "500MG",
+          "confidence": 90.0,
+          "source": "tesseract_quantity_crop",
+          "crop_reading": "CIPROFLOXACIN TABLETS IP 500MG"
+        }
+      ]
+    },
+    {
+      "text": "Composition:",
+      "confidence": 99.5,
+      "box": [
+        23.0,
+        111.0,
+        125.0,
+        25.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "Each film-coated tablet contains: Ciprofloxacin Hydrochloride IP equivalent to Ciprofloxacin 500 mg",
+      "confidence": 82.0,
+      "box": [
+        21.0,
+        137.0,
+        810.0,
+        26.0
+      ],
+      "source": "paddle",
+      "alternatives": [],
+      "original_text": "Each film-coated tablet contains: Ciprofloxacin Hydrochloride IP equivalent to Ciprofloxacin 5OO mg",
+      "quantity_corrections": [
+        {
+          "original": "5OO mg",
+          "confirmed": "500 mg",
+          "confidence": 82.0,
+          "source": "tesseract_quantity_crop",
+          "crop_reading": "Each film\u2014coated tablet contains: Ciprofloxacin Hydrochloride IP equivalent to Ciproflaxacin 500 mg"
+        }
+      ]
+    },
+    {
+      "text": "Dosage: As directed by the Physician.",
+      "confidence": 96.6,
+      "box": [
+        24.0,
+        174.0,
+        332.0,
+        21.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "Directions for use: Swallow whole with water.",
+      "confidence": 97.8,
+      "box": [
+        24.0,
+        200.0,
+        359.0,
+        20.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "Storoge: Store Protected from light and moisture. Below 25 deg C.",
+      "confidence": 96.4,
+      "box": [
+        24.0,
+        235.0,
+        564.0,
+        20.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "SCHEDULE H PRESCRIPTION DRUG - CAUTION",
+      "confidence": 94.7,
+      "box": [
+        32.0,
+        329.0,
+        424.0,
+        24.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "Warning: To be sold by retail without the prescription of o Registered Medicol Practitioner.",
+      "confidence": 96.5,
+      "box": [
+        33.0,
+        359.0,
+        667.0,
+        17.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "B.No. JKBD26020",
+      "confidence": 92.5,
+      "box": [
+        23.0,
+        408.0,
+        165.0,
+        21.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "Mfg. Date: FEB 2026",
+      "confidence": 97.6,
+      "box": [
+        23.0,
+        436.0,
+        197.0,
+        25.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "Exp. Date: JAN 2029",
+      "confidence": 95.5,
+      "box": [
+        21.0,
+        464.0,
+        198.0,
+        30.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "Mfg. Lic.No.: JK/01/06-07/110",
+      "confidence": 95.4,
+      "box": [
+        22.0,
+        496.0,
+        305.0,
+        25.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "Manufactured by: CADILA PHARMACEUTICALS LIMITED, SIDCO, Samba \u2013 184 121, State of J &: K",
+      "confidence": 94.5,
+      "box": [
+        24.0,
+        534.0,
+        740.0,
+        21.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "GS1 QR CODE",
+      "confidence": 96.3,
+      "box": [
+        815.0,
+        534.0,
+        97.0,
+        19.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    }
+  ],
+  "ocr_warnings": [],
+  "barcode_detection": {
+    "detected": true,
+    "decoded": true,
+    "gs1_verified": false,
+    "count": 1,
+    "details": [
+      {
+        "type": "QRCODE",
+        "data": "https://verify.mohfw.gov.in/pharma/JKBD26020",
+        "rect": [
+          816,
+          426,
+          98,
+          98
+        ]
+      }
+    ],
+    "status": "PASS",
+    "regulatory_note": "Code detected; GS1 structure and authenticity not verified"
+  },
+  "redline_detection": {
+    "detected": true,
+    "count": 5,
+    "strips": [
+      {
+        "bounding_box": [
+          0,
+          300,
+          960,
+          87
+        ],
+        "orientation": "Horizontal",
+        "aspect_ratio": 11.03,
+        "area": 81538
+      },
+      {
+        "bounding_box": [
+          25,
+          25,
+          271,
+          51
+        ],
+        "orientation": "Horizontal",
+        "aspect_ratio": 5.31,
+        "area": 7100
+      },
+      {
+        "bounding_box": [
+          26,
+          384,
+          911,
+          3
+        ],
+        "orientation": "Horizontal",
+        "aspect_ratio": 303.67,
+        "area": 1820
+      },
+      {
+        "bounding_box": [
+          26,
+          324,
+          911,
+          3
+        ],
+        "orientation": "Horizontal",
+        "aspect_ratio": 303.67,
+        "area": 1820
+      },
+      {
+        "bounding_box": [
+          26,
+          300,
+          911,
+          13
+        ],
+        "orientation": "Horizontal",
+        "aspect_ratio": 70.08,
+        "area": 10920
+      }
+    ],
+    "status": "PASS (Schedule Redline Present)"
+  },
+  "font_ratio_analysis": {
+    "status": "REVIEW",
+    "generic_font_height_px": 0,
+    "brand_font_height_px": 0,
+    "ratio": null,
+    "details": "Unable to measure both generic and brand names reliably"
+  },
+  "regulatory_validation": {
+    "score_percentage": 91.67,
+    "passed_required": "11/12",
+    "overall_status": "MANUAL REVIEW REQUIRED",
+    "requires_review": true,
+    "field_checks": {
+      "Generic Name": {
+        "status": "PASS",
+        "required": true,
+        "description": "Generic name printed on the label",
+        "extracted_value": "CIPROFLOXACIN",
+        "presence_state": "detected",
+        "ocr_confidence": 90.0,
+        "review_notes": []
+      },
+      "Generic Font Size >= Brand (Rule 96(1)(i))": {
+        "status": "REVIEW",
+        "required": true,
+        "description": "Comparison of measured generic and brand text heights",
+        "extracted_value": "Unable to measure both generic and brand names reliably",
+        "presence_state": "uncertain",
+        "ocr_confidence": null,
+        "review_notes": []
+      },
+      "Dosage Form and Strength": {
+        "status": "PASS",
+        "required": true,
+        "description": "Dosage form and quantitative strength",
+        "extracted_value": "TABLETS | 500 mg",
+        "presence_state": "detected",
+        "ocr_confidence": 82.0,
+        "review_notes": []
+      },
+      "Active Ingredients in Metric Units": {
+        "status": "PASS",
+        "required": true,
+        "description": "Composition statement with a readable metric quantity",
+        "extracted_value": "Composition: Each film-coated tablet contains: CIPROFLOXACIN Hydrochloride IP equivalent to Ciprofloxacin 500 mg",
+        "presence_state": "detected",
+        "ocr_confidence": 82.0,
+        "review_notes": [],
+        "raw_extracted_value": "Composition: Each film-coated tablet contains: Ciprofloxacin Hydrochloride IP equivalent to Ciprofloxacin 500 mg",
+        "spelling_corrected": true
+      },
+      "Name and Address of Manufacturer": {
+        "status": "PASS",
+        "required": true,
+        "description": "Manufacturer statement and following address lines",
+        "extracted_value": "Manufactured by: CADILA PHARMACEUTICALS LIMITED, SIDCO, Samba \u2013 184 121, State of J &: K",
+        "presence_state": "detected",
+        "ocr_confidence": 94.5,
+        "review_notes": []
+      },
+      "Mfg License Number": {
+        "status": "PASS",
+        "required": true,
+        "description": "Printed manufacturing or import licence identifier",
+        "extracted_value": "Mfg. Lic.No.: JK/01/06-07/110",
+        "presence_state": "detected",
+        "ocr_confidence": 95.4,
+        "review_notes": []
+      },
+      "Batch / Lot Number": {
+        "status": "PASS",
+        "required": true,
+        "description": "Printed batch or lot identifier",
+        "extracted_value": "B.No. JKBD26020",
+        "presence_state": "detected",
+        "ocr_confidence": 92.5,
+        "review_notes": []
+      },
+      "Mfg Date / Expiry Date": {
+        "status": "PASS",
+        "required": true,
+        "description": "Both manufacturing and expiry dates must be readable",
+        "extracted_value": "Mfg. Date: FEB 2026 | Exp. Date: JAN 2029",
+        "presence_state": "detected",
+        "ocr_confidence": 95.5,
+        "review_notes": []
+      },
+      "Storage Conditions": {
+        "status": "PASS",
+        "required": true,
+        "description": "Storage and child-safety instructions",
+        "extracted_value": "Store Protected from light and moisture",
+        "presence_state": "detected",
+        "ocr_confidence": 96.4,
+        "review_notes": []
+      },
+      "Directions for Use / Dosage": {
+        "status": "PASS",
+        "required": true,
+        "description": "Dosage or directions statement",
+        "extracted_value": "Dosage: As directed by the Physician.",
+        "presence_state": "detected",
+        "ocr_confidence": 96.6,
+        "review_notes": []
+      },
+      "Prescription Symbol (Rx, NRx, XRx)": {
+        "status": "PASS",
+        "required": false,
+        "description": "Readable prescription symbol",
+        "extracted_value": "Rx",
+        "presence_state": "detected",
+        "ocr_confidence": 91.7,
+        "review_notes": []
+      },
+      "Required Barcode or QR Code": {
+        "status": "PASS",
+        "required": false,
+        "description": "Barcode or QR presence check",
+        "extracted_value": "Barcode / QR code present",
+        "presence_state": "detected",
+        "ocr_confidence": null,
+        "review_notes": []
+      },
+      "Schedule Warning (Prescription Drugs)": {
+        "status": "PASS",
+        "required": true,
+        "description": "Readable schedule or prescription restriction statement",
+        "extracted_value": "SCHEDULE H PRESCRIPTION DRUG - CAUTION Warning: To be sold by retail without the prescription of o Registered Medicol Practitioner.",
+        "presence_state": "detected",
+        "ocr_confidence": 94.7,
+        "review_notes": []
+      },
+      "Schedule Redline (Prescription Drugs)": {
+        "status": "PASS",
+        "required": true,
+        "description": "Elongated red marking detected by color and geometry",
+        "extracted_value": "Red marking detected (color/shape check only)",
+        "presence_state": "detected",
+        "ocr_confidence": null,
+        "review_notes": []
+      }
+    }
+  }
+}

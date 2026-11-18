@@ -1,0 +1,158 @@
+{
+  "method": "Revalidated saved OCR and measured font results; no fresh OCR inference.",
+  "regulatory_validation": {
+    "score_percentage": 91.67,
+    "passed_required": "11/12",
+    "overall_status": "NON-COMPLIANT / REJECT",
+    "requires_review": false,
+    "validation_mode": "presence",
+    "field_checks": {
+      "Generic Name": {
+        "status": "PASS",
+        "required": true,
+        "description": "Generic name printed on the label",
+        "extracted_value": "RAceclofenac, Paracetamol & Serratiopeptidase",
+        "presence_state": "detected",
+        "ocr_confidence": 94.8,
+        "diagnostic_notes": [],
+        "review_notes": []
+      },
+      "Generic Font Size >= Brand (Rule 96(1)(i))": {
+        "status": "FAIL",
+        "required": true,
+        "description": "Comparison of measured generic and brand text heights",
+        "extracted_value": "Unable to measure both generic and brand names reliably",
+        "presence_state": "not_detected",
+        "ocr_confidence": null,
+        "diagnostic_notes": [],
+        "review_notes": []
+      },
+      "Dosage Form and Strength": {
+        "status": "PASS",
+        "required": true,
+        "description": "Dosage form and quantitative strength",
+        "extracted_value": "Tablets | 100.mg + 325.mg + 15mg",
+        "presence_state": "detected",
+        "ocr_confidence": 90.2,
+        "diagnostic_notes": [],
+        "review_notes": []
+      },
+      "Active Ingredients in Metric Units": {
+        "status": "PASS",
+        "required": true,
+        "description": "Composition statement with a readable metric quantity",
+        "extracted_value": "Composition Each film coated tablet con Aceclofenac 100.mg Paracetamol 325.mg Serratiopeptidase 15mg (as enteric coated granules) (eq.to enzyme activity 30000units)",
+        "presence_state": "detected",
+        "ocr_confidence": 90.2,
+        "diagnostic_notes": [],
+        "review_notes": [],
+        "raw_extracted_value": "Composition Each film coated tablet con Aceclofenac 100.mg Paracetamol 325.mg Serratiopeptidase 15mg (as enteric coated granules) (eq.to enzyme activity 30000units)",
+        "spelling_corrected": false
+      },
+      "Name and Address of Manufacturer": {
+        "status": "PASS",
+        "required": true,
+        "description": "Manufacturer statement and following address lines",
+        "extracted_value": "Manufactured by:Brit Lifescience nlera ALVUNAC-SP V.P.O. Moginand, Nahan Road, Distt.Sirmour(H.P)173030 Inlera Healthcare",
+        "presence_state": "detected",
+        "ocr_confidence": 93.7,
+        "diagnostic_notes": [],
+        "review_notes": []
+      },
+      "Mfg License Number": {
+        "status": "PASS",
+        "required": true,
+        "description": "Printed manufacturing or import licence identifier",
+        "extracted_value": "Mfg.LicNo:N-MNB/18/202",
+        "presence_state": "detected",
+        "ocr_confidence": 98.7,
+        "diagnostic_notes": [],
+        "review_notes": []
+      },
+      "Batch / Lot Number": {
+        "status": "PASS",
+        "required": true,
+        "description": "Printed batch or lot identifier",
+        "extracted_value": "B.NO.BLT-26487A",
+        "presence_state": "detected",
+        "ocr_confidence": 94.4,
+        "diagnostic_notes": [],
+        "review_notes": []
+      },
+      "Mfg Date / Expiry Date": {
+        "status": "PASS",
+        "required": true,
+        "description": "Both manufacturing and expiry dates must be readable",
+        "extracted_value": "MFG.06/2026",
+        "presence_state": "detected",
+        "ocr_confidence": 94.4,
+        "diagnostic_notes": [
+          "Required part of this field is missing or unreadable"
+        ],
+        "review_notes": [
+          "Required part of this field is missing or unreadable"
+        ]
+      },
+      "Storage Conditions": {
+        "status": "PASS",
+        "required": true,
+        "description": "Storage and child-safety instructions",
+        "extracted_value": "Storage Instructions:Store in a cool, dry &darkpl",
+        "presence_state": "detected",
+        "ocr_confidence": 91.4,
+        "diagnostic_notes": [],
+        "review_notes": []
+      },
+      "Directions for Use / Dosage": {
+        "status": "PASS",
+        "required": true,
+        "description": "Dosage or directions statement",
+        "extracted_value": "Dosage:As directed by the Physician.",
+        "presence_state": "detected",
+        "ocr_confidence": 94.2,
+        "diagnostic_notes": [],
+        "review_notes": []
+      },
+      "Prescription Symbol (Rx, NRx, XRx)": {
+        "status": "FAIL",
+        "required": false,
+        "description": "Readable prescription symbol",
+        "extracted_value": "Not present in extracted image content",
+        "presence_state": "not_detected",
+        "ocr_confidence": null,
+        "diagnostic_notes": [],
+        "review_notes": []
+      },
+      "Required Barcode or QR Code": {
+        "status": "FAIL",
+        "required": false,
+        "description": "Barcode or QR presence check",
+        "extracted_value": "Not present in extracted image content",
+        "presence_state": "not_detected",
+        "ocr_confidence": null,
+        "diagnostic_notes": [],
+        "review_notes": []
+      },
+      "Schedule Warning (Prescription Drugs)": {
+        "status": "PASS",
+        "required": true,
+        "description": "Readable schedule or prescription restriction statement",
+        "extracted_value": "SCHEDULE H' PRESCRIFTION DRUG -CAUTION Not to be sold by retail without the prescription Reqstered Medlcal Practitioner",
+        "presence_state": "detected",
+        "ocr_confidence": 90.6,
+        "diagnostic_notes": [],
+        "review_notes": []
+      },
+      "Schedule Redline (Prescription Drugs)": {
+        "status": "PASS",
+        "required": true,
+        "description": "Elongated red marking detected by color and geometry",
+        "extracted_value": "Red marking detected (color/shape check only)",
+        "presence_state": "detected",
+        "ocr_confidence": null,
+        "diagnostic_notes": [],
+        "review_notes": []
+      }
+    }
+  }
+}

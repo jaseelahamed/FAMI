@@ -1,0 +1,46 @@
+{
+  "date": "2026-11-18",
+  "images_tested": 9,
+  "engine": "PaddleOCR PP-OCRv5_mobile_det + PP-OCRv5_mobile_rec",
+  "baseline_detector_max_side": 1280,
+  "final_detector_max_side": 2000,
+  "cpu_threads": 4,
+  "runtime_versions": {
+    "paddleocr": "3.7.0",
+    "paddlepaddle": "3.3.1",
+    "paddlex": "3.7.2",
+    "opencv-contrib-python": "4.10.0.84"
+  },
+  "python": "3.12.3",
+  "mean_seconds": 28.6,
+  "revalidation": "Full inference completed on all nine images, followed by field-only revalidation from unchanged saved OCR evidence. Barcode and red markings checked on all nine with current implementation.",
+  "source_sha256": {
+    "app.py": "61e66b0440fc78ef0fca034b80df35c4fd602f1e71fbc722a64903eab7a32d6c",
+    "ocr_paddle.py": "9245b2f96e659a7c959ba92dc51e55565837eeb7686bdaf1854bc2be703b29d1",
+    "ocr_pipeline.py": "b42eed48bd4dc253d5b33040ac72e3e6aba5f766fad59c6ce253cb70acc3a09e",
+    "label_fields.py": "86e3f36562a6add26f2ea0fcc2ee834f4dec95793741a842a2fde6768b02c610",
+    "barcode_evidence.py": "2cec3a68d4279360e9369fbbfcbe8e0ad0cf46adb1fd51fe45fb6fd5b98ce9f8"
+  },
+  "image_sha256": {
+    "df4c15c9-8c7c-4f0b-ad9f-88c733b72a24.jpeg": "76837203984fbd395e17cead3652d6adc2dd45f35e8d9f70adb14a470c57c898",
+    "79bc8f4b-d729-436f-94bf-f975b8df0956.jpeg": "5d188df48d047fd611b9a1d9160c1b8a664a6a10e3ea8f45bcc572c45e0fb303",
+    "d589e274-b02b-4e2e-a401-5dc480b9be4e.jpeg": "5cc686a740eb6f74bb57286f64d3dc0f2e16402b00b45b8472834a49f2710616",
+    "67686598-b982-43a2-bbf5-d9da97efbfcb.jpeg": "a16335595414aa35809be702ad3dbd41fb31acdb486eadf6c75ea5f59b5dda46",
+    "16f5d93b-6f37-49fd-a83d-f2297a8e53db.jpeg": "22a192340c7693352719fa4ee1534dd6176635aa0df077434ec4f49ff0be4205",
+    "9aeaedfd-f337-49a4-b2fd-de465727985c.jpeg": "f2a697ae241a7cfaa16c0d93937cf963278a376c19ca6c606efd29a4bb93e7ad",
+    "0dfb0b74-c01c-4f1c-aac5-b72cae74e38e.jpeg": "7d73ec9e454cafc077b7533144f9e56c2e0b462d46975f7f7bd755066122d175",
+    "f70dc928-34b2-4666-98d5-98e2f337ff3a.jpeg": "125aaec9d39605ba248aa067bf78424b6314e46efbc35231335220393f685f20",
+    "5352ad15-5104-4aa1-92b3-604e2581d234.jpeg": "48df7ffd7149c0dce712c83084d606adf2c015104d8bdc6ba0835d3a2e85f4bf"
+  },
+  "overall_verdicts": {
+    "0dfb0b74-c01c-4f1c-aac5-b72cae74e38e.jpeg": "MANUAL REVIEW REQUIRED",
+    "d589e274-b02b-4e2e-a401-5dc480b9be4e.jpeg": "MANUAL REVIEW REQUIRED",
+    "9aeaedfd-f337-49a4-b2fd-de465727985c.jpeg": "MANUAL REVIEW REQUIRED",
+    "df4c15c9-8c7c-4f0b-ad9f-88c733b72a24.jpeg": "MANUAL REVIEW REQUIRED",
+    "16f5d93b-6f37-49fd-a83d-f2297a8e53db.jpeg": "MANUAL REVIEW REQUIRED",
+    "f70dc928-34b2-4666-98d5-98e2f337ff3a.jpeg": "MANUAL REVIEW REQUIRED",
+    "5352ad15-5104-4aa1-92b3-604e2581d234.jpeg": "MANUAL REVIEW REQUIRED",
+    "67686598-b982-43a2-bbf5-d9da97efbfcb.jpeg": "MANUAL REVIEW REQUIRED",
+    "79bc8f4b-d729-436f-94bf-f975b8df0956.jpeg": "MANUAL REVIEW REQUIRED"
+  }
+}

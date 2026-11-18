@@ -1,0 +1,1038 @@
+{
+  "image_path": "static/uploads/TestingMedicineLabels/f70dc928-34b2-4666-98d5-98e2f337ff3a.jpeg",
+  "ocr_text_preview": "B.No.DLT-260291\nMFG.MAY 2026\nEXP.APR.2028\nManulactured in Indla by CAFFOHLS.LABORATORIESPVT.LTO AWHO-CAR.CUPCarued ComDany F.109-110.UPSiOC indusural Area. Selaou. Dehradun U.K-24a 041 (IND1A\nexclpients\nLOPERWELI LOPERWE\nSCHEDULEH PRESC\nFo be sctlby rehil oo\nDosage:As directed by the Physician.\nMfg.UicNo.\nINTRA LIFE\nStore at a temperature not excee...",
+  "ocr_text_full": "B.No.DLT-260291\nMFG.MAY 2026\nEXP.APR.2028\nManulactured in Indla by CAFFOHLS.LABORATORIESPVT.LTO AWHO-CAR.CUPCarued ComDany F.109-110.UPSiOC indusural Area. Selaou. Dehradun U.K-24a 041 (IND1A\nexclpients\nLOPERWELI LOPERWE\nSCHEDULEH PRESC\nFo be sctlby rehil oo\nDosage:As directed by the Physician.\nMfg.UicNo.\nINTRA LIFE\nStore at a temperature not exceeding 30\u00b0c.\nPRIVATE LIMITED\nProtected from light & moisture.\n61/C. 6th Main Road.Ath Pnase\n7th Block.B.S.K. 3rd Stage\nKeep the medicine out of reach of children.\nB.No. .DET -260291\nBangalore-560 085.\nTAB5\nMFG M Y 20 6\n24. 5 5\n2 8\nRLoperamide Hydrochloride Tablets IP\nO\nLc.NO:107/UA2007G0GNASCP-2007\nNot to be adminisiorgdnchidrgn below 12 yeans.\nLOPERWELL\nR\nManyachund in ndaoy\nOHLSCAORATORESPVCOO\nTablets\nComposition:\nSelaoul, Denradun U-alog Nol\nEach uncoated tablet contains:\nMarketed by\nEXP\n.R\nLoperamide Hydrochlonide IP 2mg.\nERYIEL\nI.\nExcipients\nq.S.\nDosage :As directed by the Physician.\nFo hu uby.l\nStore at a temperature not exceeding 30c.\n61y/C.6th Main Road.4\nProtected from light & molsture.\nTth Block, B.S.K3ud Sta\nKeep the medicineoutolreach ofchildren\nBangalore-560086",
+  "ocr_engine": "paddle",
+  "ocr_lines": [
+    {
+      "text": "B.No.DLT-260291",
+      "confidence": 97.8,
+      "box": [
+        2209,
+        102,
+        868,
+        1004
+      ],
+      "source": "paddle_field_recovery",
+      "alternatives": [],
+      "recovered_field": "batch",
+      "recovery_model": "PP-OCRv6_medium",
+      "crop_rotation": 90,
+      "preprocessing": "original",
+      "crop_ocr_text": "Mfg. Lic. N\nLic. No.: 107/UA/2007 &UG/UASC/P-2007\nERWELL LOPERWELL LOPER\nB.No.DLT-260291\nMFG.MAY 2026\nEXP.ANR.2028\nM.R.F.95.24.55\nDTABS"
+    },
+    {
+      "text": "MFG.MAY 2026",
+      "confidence": 95.3,
+      "box": [
+        2209,
+        102,
+        868,
+        1004
+      ],
+      "source": "paddle_field_recovery",
+      "alternatives": [],
+      "recovered_field": "mfg_date",
+      "recovery_model": "PP-OCRv6_medium",
+      "crop_rotation": 90,
+      "preprocessing": "original",
+      "crop_ocr_text": "Mfg. Lic. N\nLic. No.: 107/UA/2007 &UG/UASC/P-2007\nERWELL LOPERWELL LOPER\nB.No.DLT-260291\nMFG.MAY 2026\nEXP.ANR.2028\nM.R.F.95.24.55\nDTABS"
+    },
+    {
+      "text": "EXP.APR.2028",
+      "confidence": 96.3,
+      "box": [
+        2209,
+        102,
+        868,
+        1004
+      ],
+      "source": "paddle_field_recovery",
+      "alternatives": [],
+      "recovered_field": "exp_date",
+      "recovery_model": "PP-OCRv6_medium",
+      "crop_rotation": 90,
+      "preprocessing": "blue_ink",
+      "crop_ocr_text": "B.No.D.T-260291\nMFG.MAY 2026\nEXP.APR.2028\n1.R.290.24.55\nL.A.T.,1C TAB5."
+    },
+    {
+      "text": "Manulactured in Indla by CAFFOHLS.LABORATORIESPVT.LTO AWHO-CAR.CUPCarued ComDany F.109-110.UPSiOC indusural Area. Selaou. Dehradun U.K-24a 041 (IND1A",
+      "confidence": 72.3,
+      "box": [
+        1415,
+        554,
+        614,
+        300
+      ],
+      "source": "paddle_field_recovery",
+      "alternatives": [],
+      "recovered_field": "manufacturer",
+      "recovery_model": "PP-OCRv6_medium",
+      "crop_rotation": 0,
+      "preprocessing": "original",
+      "crop_ocr_text": "Manulactured in Indla by\nCAFFOHLS.LABORATORIESPVT.LTO\nAWHO-CAR.CUPCarued ComDany\nF.109-110.UPSiOC indusural Area.\nSelaou. Dehradun U.K-24a 041 (IND1A\nMarketed by"
+    },
+    {
+      "text": "exclpients",
+      "confidence": 72.8,
+      "box": [
+        171.0,
+        0.0,
+        223.0,
+        41.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "LOPERWELI LOPERWE",
+      "confidence": 87.0,
+      "box": [
+        2334.0,
+        15.0,
+        67.0,
+        764.0
+      ],
+      "source": "paddle_rotated",
+      "alternatives": []
+    },
+    {
+      "text": "SCHEDULEH PRESC",
+      "confidence": 86.6,
+      "box": [
+        1196.0,
+        17.0,
+        43.0,
+        266.0
+      ],
+      "source": "paddle_rotated",
+      "alternatives": []
+    },
+    {
+      "text": "Fo be sctlby rehil oo",
+      "confidence": 70.7,
+      "box": [
+        1242.0,
+        17.0,
+        47.0,
+        266.0
+      ],
+      "source": "paddle_rotated",
+      "alternatives": []
+    },
+    {
+      "text": "Dosage:As directed by the Physician.",
+      "confidence": 95.0,
+      "box": [
+        170.0,
+        52.0,
+        807.0,
+        68.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "Mfg.UicNo.",
+      "confidence": 77.8,
+      "box": [
+        2249.0,
+        56.0,
+        53.0,
+        217.0
+      ],
+      "source": "paddle_rotated",
+      "alternatives": []
+    },
+    {
+      "text": "INTRA LIFE",
+      "confidence": 96.9,
+      "box": [
+        1413.0,
+        73.0,
+        402.0,
+        85.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "Store at a temperature not exceeding 30\u00b0c.",
+      "confidence": 94.8,
+      "box": [
+        166.0,
+        117.0,
+        957.0,
+        83.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "PRIVATE LIMITED",
+      "confidence": 97.3,
+      "box": [
+        1421.0,
+        154.0,
+        384.0,
+        51.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "Protected from light & moisture.",
+      "confidence": 96.9,
+      "box": [
+        169.0,
+        193.0,
+        720.0,
+        72.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "61/C. 6th Main Road.Ath Pnase",
+      "confidence": 85.5,
+      "box": [
+        1419.0,
+        202.0,
+        498.0,
+        46.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "7th Block.B.S.K. 3rd Stage",
+      "confidence": 86.5,
+      "box": [
+        1421.0,
+        243.0,
+        418.0,
+        46.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "Keep the medicine out of reach of children.",
+      "confidence": 96.3,
+      "box": [
+        164.0,
+        262.0,
+        899.0,
+        78.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "B.No. .DET -260291",
+      "confidence": 87.4,
+      "box": [
+        2584.0,
+        276.0,
+        95.0,
+        656.0
+      ],
+      "source": "paddle_rotated",
+      "alternatives": []
+    },
+    {
+      "text": "Bangalore-560 085.",
+      "confidence": 96.6,
+      "box": [
+        1421.0,
+        283.0,
+        332.0,
+        52.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "TAB5",
+      "confidence": 94.9,
+      "box": [
+        2884.0,
+        302.0,
+        80.0,
+        222.0
+      ],
+      "source": "paddle_rotated",
+      "alternatives": []
+    },
+    {
+      "text": "MFG M Y 20 6",
+      "confidence": 97.8,
+      "box": [
+        2651.0,
+        304.0,
+        102.0,
+        628.0
+      ],
+      "source": "paddle_rotated",
+      "alternatives": [
+        {
+          "text": "6",
+          "confidence": 85.9,
+          "source": "paddle"
+        }
+      ]
+    },
+    {
+      "text": "24. 5 5",
+      "confidence": 99.7,
+      "box": [
+        2808.0,
+        312.0,
+        80.0,
+        233.0
+      ],
+      "source": "paddle_rotated",
+      "alternatives": [
+        {
+          "text": "N 50",
+          "confidence": 76.4,
+          "source": "paddle"
+        },
+        {
+          "text": "55",
+          "confidence": 71.3,
+          "source": "paddle"
+        }
+      ]
+    },
+    {
+      "text": "2 8",
+      "confidence": 96.7,
+      "box": [
+        2733.0,
+        314.0,
+        87.0,
+        105.0
+      ],
+      "source": "paddle_rotated",
+      "alternatives": []
+    },
+    {
+      "text": "RLoperamide Hydrochloride Tablets IP",
+      "confidence": 96.8,
+      "box": [
+        62.0,
+        341.0,
+        2193.0,
+        186.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "O",
+      "confidence": 54.3,
+      "box": [
+        2745.0,
+        415.0,
+        68.0,
+        61.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "Lc.NO:107/UA2007G0GNASCP-2007",
+      "confidence": 82.0,
+      "box": [
+        2246.0,
+        423.0,
+        56.0,
+        703.0
+      ],
+      "source": "paddle_rotated",
+      "alternatives": []
+    },
+    {
+      "text": "Not to be adminisiorgdnchidrgn below 12 yeans.",
+      "confidence": 85.9,
+      "box": [
+        1416.0,
+        511.0,
+        816.0,
+        58.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "LOPERWELL",
+      "confidence": 96.7,
+      "box": [
+        155.0,
+        534.0,
+        563.0,
+        99.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "R",
+      "confidence": 98.8,
+      "box": [
+        2725.0,
+        560.0,
+        84.0,
+        62.0
+      ],
+      "source": "paddle_rotated",
+      "alternatives": []
+    },
+    {
+      "text": "Manyachund in ndaoy",
+      "confidence": 63.0,
+      "box": [
+        1430.0,
+        569.0,
+        292.0,
+        45.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "OHLSCAORATORESPVCOO",
+      "confidence": 60.5,
+      "box": [
+        1487.0,
+        603.0,
+        431.0,
+        47.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "Tablets",
+      "confidence": 98.1,
+      "box": [
+        571.0,
+        626.0,
+        149.0,
+        54.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "Composition:",
+      "confidence": 92.6,
+      "box": [
+        158.0,
+        675.0,
+        318.0,
+        74.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "Selaoul, Denradun U-alog Nol",
+      "confidence": 56.5,
+      "box": [
+        1424.0,
+        717.0,
+        502.0,
+        47.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "Each uncoated tablet contains:",
+      "confidence": 96.9,
+      "box": [
+        160.0,
+        752.0,
+        664.0,
+        64.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "Marketed by",
+      "confidence": 95.8,
+      "box": [
+        1490.0,
+        756.0,
+        233.0,
+        54.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "EXP",
+      "confidence": 97.3,
+      "box": [
+        2719.0,
+        756.0,
+        85.0,
+        183.0
+      ],
+      "source": "paddle_rotated",
+      "alternatives": []
+    },
+    {
+      "text": ".R",
+      "confidence": 95.3,
+      "box": [
+        2801.0,
+        779.0,
+        68.0,
+        98.0
+      ],
+      "source": "paddle_rotated",
+      "alternatives": []
+    },
+    {
+      "text": "Loperamide Hydrochlonide IP 2mg.",
+      "confidence": 95.1,
+      "box": [
+        155.0,
+        817.0,
+        873.0,
+        86.0
+      ],
+      "source": "paddle",
+      "alternatives": [
+        {
+          "text": "q.S. 2mg.",
+          "confidence": 88.4,
+          "source": "paddle_rotated"
+        }
+      ]
+    },
+    {
+      "text": "ERYIEL",
+      "confidence": 62.4,
+      "box": [
+        2340.0,
+        861.0,
+        65.0,
+        228.0
+      ],
+      "source": "paddle_rotated",
+      "alternatives": []
+    },
+    {
+      "text": "I.",
+      "confidence": 76.5,
+      "box": [
+        2869.0,
+        868.0,
+        65.0,
+        76.0
+      ],
+      "source": "paddle_rotated",
+      "alternatives": []
+    },
+    {
+      "text": "Excipients",
+      "confidence": 98.7,
+      "box": [
+        152.0,
+        895.0,
+        235.0,
+        73.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "q.S.",
+      "confidence": 85.1,
+      "box": [
+        926.0,
+        903.0,
+        94.0,
+        62.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "Dosage :As directed by the Physician.",
+      "confidence": 95.1,
+      "box": [
+        152.0,
+        966.0,
+        827.0,
+        72.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "Fo hu uby.l",
+      "confidence": 61.3,
+      "box": [
+        1240.0,
+        975.0,
+        49.0,
+        220.0
+      ],
+      "source": "paddle_rotated",
+      "alternatives": []
+    },
+    {
+      "text": "INTRA LIFE",
+      "confidence": 98.0,
+      "box": [
+        1413.0,
+        986.0,
+        399.0,
+        83.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "Store at a temperature not exceeding 30c.",
+      "confidence": 92.6,
+      "box": [
+        149.0,
+        1032.0,
+        966.0,
+        87.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "PRIVATE LIMITED",
+      "confidence": 96.6,
+      "box": [
+        1417.0,
+        1061.0,
+        393.0,
+        55.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "61y/C.6th Main Road.4",
+      "confidence": 77.6,
+      "box": [
+        1420.0,
+        1114.0,
+        424.0,
+        47.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "Protected from light & molsture.",
+      "confidence": 94.6,
+      "box": [
+        149.0,
+        1115.0,
+        732.0,
+        69.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "Tth Block, B.S.K3ud Sta",
+      "confidence": 79.5,
+      "box": [
+        1417.0,
+        1150.0,
+        427.0,
+        60.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "Keep the medicineoutolreach ofchildren",
+      "confidence": 89.1,
+      "box": [
+        149.0,
+        1189.0,
+        889.0,
+        68.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "Bangalore-560086",
+      "confidence": 81.2,
+      "box": [
+        1419.0,
+        1195.0,
+        332.0,
+        52.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    }
+  ],
+  "ocr_warnings": [],
+  "barcode_detection": {
+    "detected": false,
+    "decoded": false,
+    "gs1_verified": false,
+    "count": 0,
+    "details": [],
+    "status": "FAIL",
+    "regulatory_note": "Detection alone does not verify GS1 structure or product authenticity."
+  },
+  "redline_detection": {
+    "detected": true,
+    "count": 10,
+    "strips": [
+      {
+        "bounding_box": [
+          182,
+          214,
+          94,
+          28
+        ],
+        "orientation": "Horizontal",
+        "aspect_ratio": 3.36,
+        "area": 2063
+      },
+      {
+        "bounding_box": [
+          457,
+          207,
+          72,
+          268
+        ],
+        "orientation": "Vertical",
+        "aspect_ratio": 3.72,
+        "area": 18654
+      },
+      {
+        "bounding_box": [
+          498,
+          209,
+          31,
+          267
+        ],
+        "orientation": "Vertical",
+        "aspect_ratio": 8.61,
+        "area": 6434
+      },
+      {
+        "bounding_box": [
+          480,
+          209,
+          11,
+          266
+        ],
+        "orientation": "Vertical",
+        "aspect_ratio": 24.18,
+        "area": 2321
+      },
+      {
+        "bounding_box": [
+          516,
+          7,
+          13,
+          113
+        ],
+        "orientation": "Vertical",
+        "aspect_ratio": 8.69,
+        "area": 1343
+      },
+      {
+        "bounding_box": [
+          481,
+          7,
+          8,
+          113
+        ],
+        "orientation": "Vertical",
+        "aspect_ratio": 14.12,
+        "area": 783
+      },
+      {
+        "bounding_box": [
+          499,
+          6,
+          6,
+          114
+        ],
+        "orientation": "Vertical",
+        "aspect_ratio": 19.0,
+        "area": 562
+      },
+      {
+        "bounding_box": [
+          460,
+          6,
+          11,
+          114
+        ],
+        "orientation": "Vertical",
+        "aspect_ratio": 10.36,
+        "area": 1123
+      },
+      {
+        "bounding_box": [
+          935,
+          5,
+          13,
+          507
+        ],
+        "orientation": "Vertical",
+        "aspect_ratio": 39.0,
+        "area": 3604
+      },
+      {
+        "bounding_box": [
+          903,
+          5,
+          17,
+          417
+        ],
+        "orientation": "Vertical",
+        "aspect_ratio": 24.53,
+        "area": 3895
+      }
+    ],
+    "status": "PASS (Schedule Redline Present)"
+  },
+  "warning_panel_detection": {
+    "detected": false,
+    "panels": [],
+    "wording_verified": false
+  },
+  "font_ratio_analysis": {
+    "status": "PASS",
+    "generic_font_height_px": 44.0,
+    "brand_font_height_px": 30.4,
+    "ratio": 1.45,
+    "details": "Generic (44.0px) / Brand (30.4px): 1.45x (measured word heights)",
+    "measurement_source": "tesseract_heading_crops",
+    "generic_name": "RLoperamide Hydrochloride Tablets IP",
+    "brand_name": "LOPERWELL",
+    "measurement_evidence": {
+      "generic": {
+        "name": "RLoperamide Hydrochloride Tablets IP",
+        "height_px": 43.99695817490494,
+        "confidence": 91.0,
+        "words": [
+          {
+            "text": "Hydrochloride",
+            "height_px": 43.99695817490494,
+            "confidence": 91.0,
+            "box": [
+              887.7,
+              308.0,
+              759.5,
+              252.65
+            ],
+            "height_method": "character_components_in_recognized_word"
+          }
+        ],
+        "region": [
+          62.0,
+          341.0,
+          2193.0,
+          186.0
+        ]
+      },
+      "brand": {
+        "name": "LOPERWELL",
+        "height_px": 30.369581749049427,
+        "confidence": 91.0,
+        "words": [
+          {
+            "text": "LOPERWELL",
+            "height_px": 30.369581749049427,
+            "confidence": 91.0,
+            "box": [
+              166.7,
+              524.25,
+              561.8249999999999,
+              127.05
+            ],
+            "height_method": "character_components_in_recognized_word"
+          }
+        ],
+        "region": [
+          155.0,
+          534.0,
+          563.0,
+          99.0
+        ]
+      },
+      "source": "tesseract_heading_crops"
+    }
+  },
+  "regulatory_validation": {
+    "score_percentage": 91.67,
+    "passed_required": "11/12",
+    "overall_status": "NON-COMPLIANT / REJECT",
+    "requires_review": false,
+    "validation_mode": "presence",
+    "field_checks": {
+      "Generic Name": {
+        "status": "PASS",
+        "required": true,
+        "description": "Generic name printed on the label",
+        "extracted_value": "RLoperamide Hydrochloride",
+        "presence_state": "detected",
+        "ocr_confidence": 96.8,
+        "diagnostic_notes": [],
+        "review_notes": []
+      },
+      "Generic Font Size >= Brand (Rule 96(1)(i))": {
+        "status": "PASS",
+        "required": true,
+        "description": "Comparison of measured generic and brand text heights",
+        "extracted_value": "Generic (44.0px) / Brand (30.4px): 1.45x (measured word heights)",
+        "presence_state": "detected",
+        "ocr_confidence": null,
+        "diagnostic_notes": [],
+        "review_notes": []
+      },
+      "Dosage Form and Strength": {
+        "status": "PASS",
+        "required": true,
+        "description": "Dosage form and quantitative strength",
+        "extracted_value": "Tablets",
+        "presence_state": "detected",
+        "ocr_confidence": 96.8,
+        "diagnostic_notes": [
+          "Required part of this field is missing or unreadable"
+        ],
+        "review_notes": [
+          "Required part of this field is missing or unreadable"
+        ]
+      },
+      "Active Ingredients in Metric Units": {
+        "status": "PASS",
+        "required": true,
+        "description": "Composition statement with a readable metric quantity",
+        "extracted_value": "Composition: Each uncoated tablet contains: Loperamide Hydrochlonide IP 2mg.",
+        "presence_state": "detected",
+        "ocr_confidence": 92.6,
+        "diagnostic_notes": [],
+        "review_notes": [],
+        "raw_extracted_value": "Composition: Each uncoated tablet contains: Loperamide Hydrochlonide IP 2mg.",
+        "spelling_corrected": false
+      },
+      "Name and Address of Manufacturer": {
+        "status": "PASS",
+        "required": true,
+        "description": "Manufacturer statement and following address lines",
+        "extracted_value": "Manulactured in Indla by CAFFOHLS.LABORATORIESPVT.LTO AWHO-CAR.CUPCarued ComDany F.109-110.UPSiOC indusural Area. Selaou. Dehradun U.K-24a 041 (IND1A",
+        "presence_state": "detected",
+        "ocr_confidence": 72.3,
+        "diagnostic_notes": [],
+        "review_notes": []
+      },
+      "Mfg License Number": {
+        "status": "FAIL",
+        "required": true,
+        "description": "Printed manufacturing or import licence identifier",
+        "extracted_value": "Not present in extracted image content",
+        "presence_state": "not_detected",
+        "ocr_confidence": null,
+        "diagnostic_notes": [],
+        "review_notes": []
+      },
+      "Batch / Lot Number": {
+        "status": "PASS",
+        "required": true,
+        "description": "Printed batch or lot identifier",
+        "extracted_value": "B.No.DLT-260291",
+        "presence_state": "detected",
+        "ocr_confidence": 97.8,
+        "diagnostic_notes": [],
+        "review_notes": []
+      },
+      "Mfg Date / Expiry Date": {
+        "status": "PASS",
+        "required": true,
+        "description": "Both manufacturing and expiry dates must be readable",
+        "extracted_value": "MFG.MAY 2026 | EXP.APR.2028",
+        "presence_state": "detected",
+        "ocr_confidence": 95.3,
+        "diagnostic_notes": [],
+        "review_notes": []
+      },
+      "Storage Conditions": {
+        "status": "PASS",
+        "required": true,
+        "description": "Storage and child-safety instructions",
+        "extracted_value": "Store at a temperature not exceeding 30\u00b0c; Store at a temperature not exceeding 30c",
+        "presence_state": "detected",
+        "ocr_confidence": 92.6,
+        "diagnostic_notes": [],
+        "review_notes": []
+      },
+      "Directions for Use / Dosage": {
+        "status": "PASS",
+        "required": true,
+        "description": "Dosage or directions statement",
+        "extracted_value": "Dosage:As directed by the Physician.",
+        "presence_state": "detected",
+        "ocr_confidence": 95.0,
+        "diagnostic_notes": [],
+        "review_notes": []
+      },
+      "Prescription Symbol (Rx, NRx, XRx)": {
+        "status": "OPTIONAL",
+        "required": false,
+        "description": "Readable prescription symbol",
+        "extracted_value": "Not detected (optional)",
+        "presence_state": "not_detected",
+        "ocr_confidence": null,
+        "diagnostic_notes": [],
+        "review_notes": []
+      },
+      "Required Barcode or QR Code": {
+        "status": "OPTIONAL",
+        "required": false,
+        "description": "Barcode or QR presence check",
+        "extracted_value": "Not detected (optional)",
+        "presence_state": "not_detected",
+        "ocr_confidence": null,
+        "diagnostic_notes": [],
+        "review_notes": []
+      },
+      "Schedule Warning (Prescription Drugs)": {
+        "status": "PASS",
+        "required": true,
+        "description": "Readable schedule or prescription restriction statement",
+        "extracted_value": "SCHEDULEH PRESC Fo be sctlby rehil oo Dosage:As directed by the Physician.",
+        "presence_state": "detected",
+        "ocr_confidence": 70.7,
+        "diagnostic_notes": [],
+        "review_notes": []
+      },
+      "Schedule Redline (Prescription Drugs)": {
+        "status": "PASS",
+        "required": true,
+        "description": "Elongated red marking detected by color and geometry",
+        "extracted_value": "Red marking detected (color/shape check only)",
+        "presence_state": "detected",
+        "ocr_confidence": null,
+        "diagnostic_notes": [],
+        "review_notes": []
+      }
+    }
+  },
+  "audit_note": "Final end-to-end rerun with both primary and targeted OCR; no saved OCR inputs."
+}

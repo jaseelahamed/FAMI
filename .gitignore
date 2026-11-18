@@ -11,3 +11,4 @@ venv/
 
 # Debug files
 ocr_debug.txt
+ocr_debug.json

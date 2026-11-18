@@ -1,0 +1,679 @@
+{
+  "image_path": "static/uploads/TestingMedicineLabels/16f5d93b-6f37-49fd-a83d-f2297a8e53db.jpeg",
+  "ocr_text_preview": "P(R&T\nLERAPREG-PN LERAPREG-PN LERAPREG-PN LERAPREG-PN\nLERAPREG-PN Tablets\nEach film coated tablet contains\n75mg\nI.P.\nPregabalin\n(In Sustained Release Form)\n1.P.\nNortriptyline Hydrochloride\nM.R.P.Rs.149.00 PER 10 TABS.INCL.ALL TAXES\nB.No.T26B267B MFG.FEB.2026 EXP.JAN.2028\n10mg\nEq. to Nortriptyline\nq.s\nExcipients\nColour: Erythrosine\nDosage : As direc...",
+  "ocr_text_full": "P(R&T\nLERAPREG-PN LERAPREG-PN LERAPREG-PN LERAPREG-PN\nLERAPREG-PN Tablets\nEach film coated tablet contains\n75mg\nI.P.\nPregabalin\n(In Sustained Release Form)\n1.P.\nNortriptyline Hydrochloride\nM.R.P.Rs.149.00 PER 10 TABS.INCL.ALL TAXES\nB.No.T26B267B MFG.FEB.2026 EXP.JAN.2028\n10mg\nEq. to Nortriptyline\nq.s\nExcipients\nColour: Erythrosine\nDosage : As directed by the Physician.\nSTORAGE STORE IN A COOL & DRY\nPLACE.PROTECTFROMLIGHT.\nKeep the medicine out of the reach of children\nCAUTION : Not to be sold by retail without the\nprescriptfion of a:Registered Medical\nPractitioner.\nMfg. Lic No. 89/UA/SC/P-2016\n& 90/UA/2016 WHO-GMP\nMfg. by: Bajaj Formulations\n(A WHO-GMP & ISO 9001: 2015 Certified Co.)\nKhasra No. 161, Viliage-Lakeshwary.\nBhagwanpur, Roorkee, Distt.Haridwar (U.K)\nManufactured in India for\nnlera\nHEALTHCARE\nINLERA HEALTHCARE\n(A Division of Alcolabs)\nPlot No. 356, Industrial Area, Phase 1\nPanchkula-134113,Haryana\nEmail:Inlerahealthcare@gmail.com\n®-Registered Trademark",
+  "ocr_engine": "paddle",
+  "ocr_lines": [
+    {
+      "text": "P(R&T",
+      "confidence": 68.2,
+      "box": [
+        83.0,
+        27.0,
+        1699.0,
+        248.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "LERAPREG-PN LERAPREG-PN LERAPREG-PN LERAPREG-PN",
+      "confidence": 100.0,
+      "box": [
+        1795.0,
+        114.0,
+        147.0,
+        2973.0
+      ],
+      "source": "paddle_rotated",
+      "alternatives": []
+    },
+    {
+      "text": "LERAPREG-PN Tablets",
+      "confidence": 100.0,
+      "box": [
+        396.0,
+        280.0,
+        1054.0,
+        132.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "Each film coated tablet contains",
+      "confidence": 100.0,
+      "box": [
+        116.0,
+        424.0,
+        1047.0,
+        94.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "75mg",
+      "confidence": 100.0,
+      "box": [
+        1413.0,
+        492.0,
+        229.0,
+        98.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "I.P.",
+      "confidence": 93.5,
+      "box": [
+        986.0,
+        502.0,
+        122.0,
+        93.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "Pregabalin",
+      "confidence": 100.0,
+      "box": [
+        118.0,
+        524.0,
+        372.0,
+        86.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "(In Sustained Release Form)",
+      "confidence": 100.0,
+      "box": [
+        114.0,
+        597.0,
+        954.0,
+        105.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "1.P.",
+      "confidence": 88.8,
+      "box": [
+        1531.0,
+        667.0,
+        120.0,
+        88.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "Nortriptyline Hydrochloride",
+      "confidence": 99.9,
+      "box": [
+        116.0,
+        693.0,
+        894.0,
+        94.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "M.R.P.Rs.149.00 PER 10 TABS.INCL.ALL TAXES",
+      "confidence": 96.9,
+      "box": [
+        2120.0,
+        698.0,
+        186.0,
+        1898.0
+      ],
+      "source": "paddle_rotated",
+      "alternatives": []
+    },
+    {
+      "text": "B.No.T26B267B MFG.FEB.2026 EXP.JAN.2028",
+      "confidence": 99.8,
+      "box": [
+        1975.0,
+        703.0,
+        185.0,
+        1890.0
+      ],
+      "source": "paddle_rotated",
+      "alternatives": []
+    },
+    {
+      "text": "10mg",
+      "confidence": 100.0,
+      "box": [
+        1390.0,
+        762.0,
+        240.0,
+        90.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "Eq. to Nortriptyline",
+      "confidence": 96.2,
+      "box": [
+        121.0,
+        786.0,
+        617.0,
+        83.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "q.s",
+      "confidence": 95.8,
+      "box": [
+        1527.0,
+        867.0,
+        127.0,
+        81.0
+      ],
+      "source": "paddle_rotated",
+      "alternatives": [
+        {
+          "text": "q.s.",
+          "confidence": 94.8,
+          "source": "paddle"
+        }
+      ]
+    },
+    {
+      "text": "Excipients",
+      "confidence": 100.0,
+      "box": [
+        125.0,
+        877.0,
+        354.0,
+        82.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "Colour: Erythrosine",
+      "confidence": 97.8,
+      "box": [
+        123.0,
+        962.0,
+        689.0,
+        83.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "Dosage : As directed by the Physician.",
+      "confidence": 98.2,
+      "box": [
+        123.0,
+        1043.0,
+        1250.0,
+        99.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "STORAGE STORE IN A COOL & DRY",
+      "confidence": 99.9,
+      "box": [
+        128.0,
+        1128.0,
+        1579.0,
+        100.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "PLACE.PROTECTFROMLIGHT.",
+      "confidence": 100.0,
+      "box": [
+        129.0,
+        1224.0,
+        1131.0,
+        92.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "Keep the medicine out of the reach of children",
+      "confidence": 99.7,
+      "box": [
+        126.0,
+        1313.0,
+        1478.0,
+        107.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "CAUTION : Not to be sold by retail without the",
+      "confidence": 98.2,
+      "box": [
+        156.0,
+        1461.0,
+        1541.0,
+        99.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "prescriptfion of a:Registered Medical",
+      "confidence": 94.0,
+      "box": [
+        159.0,
+        1548.0,
+        1530.0,
+        103.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "Practitioner.",
+      "confidence": 97.0,
+      "box": [
+        157.0,
+        1652.0,
+        406.0,
+        72.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "Mfg. Lic No. 89/UA/SC/P-2016",
+      "confidence": 98.1,
+      "box": [
+        127.0,
+        1768.0,
+        851.0,
+        102.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "& 90/UA/2016 WHO-GMP",
+      "confidence": 95.0,
+      "box": [
+        575.0,
+        1848.0,
+        665.0,
+        85.0
+      ],
+      "source": "paddle",
+      "alternatives": [
+        {
+          "text": "Certified",
+          "confidence": 94.5,
+          "source": "paddle"
+        },
+        {
+          "text": "福",
+          "confidence": 58.6,
+          "source": "paddle_rotated"
+        }
+      ]
+    },
+    {
+      "text": "Mfg. by: Bajaj Formulations",
+      "confidence": 98.5,
+      "box": [
+        131.0,
+        1937.0,
+        878.0,
+        99.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "(A WHO-GMP & ISO 9001: 2015 Certified Co.)",
+      "confidence": 99.6,
+      "box": [
+        132.0,
+        2012.0,
+        1341.0,
+        97.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "Khasra No. 161, Viliage-Lakeshwary.",
+      "confidence": 98.3,
+      "box": [
+        136.0,
+        2093.0,
+        1153.0,
+        87.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "Bhagwanpur, Roorkee, Distt.Haridwar (U.K)",
+      "confidence": 97.4,
+      "box": [
+        134.0,
+        2163.0,
+        1370.0,
+        102.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "Manufactured in India for",
+      "confidence": 98.4,
+      "box": [
+        151.0,
+        2261.0,
+        738.0,
+        75.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "nlera",
+      "confidence": 99.5,
+      "box": [
+        218.0,
+        2463.0,
+        328.0,
+        128.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "HEALTHCARE",
+      "confidence": 100.0,
+      "box": [
+        247.0,
+        2577.0,
+        327.0,
+        57.0
+      ],
+      "source": "paddle",
+      "alternatives": [
+        {
+          "text": "inlera",
+          "confidence": 88.7,
+          "source": "paddle_rotated"
+        }
+      ]
+    },
+    {
+      "text": "INLERA HEALTHCARE",
+      "confidence": 99.6,
+      "box": [
+        159.0,
+        2647.0,
+        804.0,
+        82.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "(A Division of Alcolabs)",
+      "confidence": 100.0,
+      "box": [
+        159.0,
+        2735.0,
+        766.0,
+        83.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "Plot No. 356, Industrial Area, Phase 1",
+      "confidence": 99.1,
+      "box": [
+        159.0,
+        2816.0,
+        1243.0,
+        85.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "Panchkula-134113,Haryana",
+      "confidence": 98.5,
+      "box": [
+        162.0,
+        2908.0,
+        945.0,
+        73.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "Email:Inlerahealthcare@gmail.com",
+      "confidence": 99.0,
+      "box": [
+        159.0,
+        2984.0,
+        1212.0,
+        86.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "®-Registered Trademark",
+      "confidence": 99.1,
+      "box": [
+        162.0,
+        3075.0,
+        825.0,
+        78.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    }
+  ],
+  "ocr_warnings": [],
+  "barcode_detection": {
+    "detected": true,
+    "decoded": false,
+    "gs1_verified": false,
+    "count": 1,
+    "details": [
+      {
+        "type": "QRCODE",
+        "data": "",
+        "rect": [
+          -263,
+          201,
+          725,
+          647
+        ]
+      }
+    ],
+    "status": "PASS",
+    "regulatory_note": "Code detected; GS1 structure and authenticity not verified"
+  },
+  "redline_detection": {
+    "detected": true,
+    "count": 2,
+    "strips": [
+      {
+        "bounding_box": [
+          152,
+          110,
+          369,
+          36
+        ],
+        "orientation": "Horizontal",
+        "aspect_ratio": 10.25,
+        "area": 9920
+      },
+      {
+        "bounding_box": [
+          875,
+          0,
+          24,
+          360
+        ],
+        "orientation": "Vertical",
+        "aspect_ratio": 15.0,
+        "area": 1832
+      }
+    ],
+    "status": "PASS (Schedule Redline Present)"
+  },
+  "font_ratio_analysis": {
+    "status": "REVIEW",
+    "generic_font_height_px": 0,
+    "brand_font_height_px": 0,
+    "ratio": null,
+    "details": "Unable to measure both generic and brand names reliably"
+  },
+  "regulatory_validation": {
+    "score_percentage": 75.0,
+    "passed_required": "9/12",
+    "overall_status": "MANUAL REVIEW REQUIRED",
+    "requires_review": true,
+    "field_checks": {
+      "Generic Name": {
+        "status": "PASS",
+        "required": true,
+        "description": "Generic name printed on the label",
+        "extracted_value": "LERAPREG-PN",
+        "ocr_confidence": 100.0,
+        "review_notes": []
+      },
+      "Generic Font Size >= Brand (Rule 96(1)(i))": {
+        "status": "REVIEW",
+        "required": true,
+        "description": "Comparison of measured generic and brand text heights",
+        "extracted_value": "Unable to measure both generic and brand names reliably",
+        "ocr_confidence": null,
+        "review_notes": []
+      },
+      "Dosage Form and Strength": {
+        "status": "REVIEW",
+        "required": true,
+        "description": "Dosage form and quantitative strength",
+        "extracted_value": "Tablets",
+        "ocr_confidence": 100.0,
+        "review_notes": [
+          "Required part of this field is missing or unreadable"
+        ]
+      },
+      "Active Ingredients in Metric Units": {
+        "status": "FAIL",
+        "required": true,
+        "description": "Composition statement with a readable metric quantity",
+        "extracted_value": "Not Detected",
+        "ocr_confidence": null,
+        "review_notes": []
+      },
+      "Name and Address of Manufacturer": {
+        "status": "PASS",
+        "required": true,
+        "description": "Manufacturer statement and following address lines",
+        "extracted_value": "Mfg. by: Bajaj Formulations (A WHO-GMP & ISO 9001: 2015 Certified Co.) Khasra No. 161, Viliage-Lakeshwary. Bhagwanpur, Roorkee, Distt.Haridwar (U.K)",
+        "ocr_confidence": 97.4,
+        "review_notes": []
+      },
+      "Mfg License Number": {
+        "status": "PASS",
+        "required": true,
+        "description": "Printed manufacturing or import licence identifier",
+        "extracted_value": "Mfg. Lic No. 89/UA/SC/P-2016",
+        "ocr_confidence": 98.1,
+        "review_notes": []
+      },
+      "Batch / Lot Number": {
+        "status": "PASS",
+        "required": true,
+        "description": "Printed batch or lot identifier",
+        "extracted_value": "B.No.T26B267B",
+        "ocr_confidence": 99.8,
+        "review_notes": []
+      },
+      "Mfg Date / Expiry Date": {
+        "status": "PASS",
+        "required": true,
+        "description": "Both manufacturing and expiry dates must be readable",
+        "extracted_value": "MFG.FEB.2026 | EXP.JAN.2028",
+        "ocr_confidence": 99.8,
+        "review_notes": []
+      },
+      "Storage Conditions": {
+        "status": "PASS",
+        "required": true,
+        "description": "Storage and child-safety instructions",
+        "extracted_value": "STORE IN A COOL & DRY",
+        "ocr_confidence": 99.9,
+        "review_notes": []
+      },
+      "Directions for Use / Dosage": {
+        "status": "PASS",
+        "required": true,
+        "description": "Dosage or directions statement",
+        "extracted_value": "As directed by the Physician.",
+        "ocr_confidence": 98.2,
+        "review_notes": []
+      },
+      "Prescription Symbol (Rx, NRx, XRx)": {
+        "status": "INFO / CONDITIONAL",
+        "required": false,
+        "description": "Readable prescription symbol",
+        "extracted_value": "Not Detected",
+        "ocr_confidence": null,
+        "review_notes": []
+      },
+      "Required Barcode or QR Code": {
+        "status": "PASS",
+        "required": false,
+        "description": "Barcode or QR presence check",
+        "extracted_value": "Barcode / QR code present",
+        "ocr_confidence": null,
+        "review_notes": []
+      },
+      "Schedule Warning (Prescription Drugs)": {
+        "status": "PASS",
+        "required": true,
+        "description": "Readable schedule or prescription restriction statement",
+        "extracted_value": "Not to be sold by retail without the prescriptfion of a:Registered Medical Practitioner.",
+        "ocr_confidence": 94.0,
+        "review_notes": []
+      },
+      "Schedule Redline (Prescription Drugs)": {
+        "status": "PASS",
+        "required": true,
+        "description": "Elongated red marking detected by color and geometry",
+        "extracted_value": "Red marking detected (color/shape check only)",
+        "ocr_confidence": null,
+        "review_notes": []
+      }
+    }
+  },
+  "elapsed_seconds": 116.95
+}

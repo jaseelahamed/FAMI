@@ -1,0 +1,236 @@
+{
+  "image": "9aeaedfd-f337-49a4-b2fd-de465727985c.jpeg",
+  "brand": "ALVUNAC-SP",
+  "font": {
+    "status": "PASS",
+    "generic_font_height_px": 30.4,
+    "brand_font_height_px": 21.5,
+    "ratio": 1.42,
+    "details": "Generic (30.4px) / Brand (21.5px): 1.42x (measured word heights)",
+    "measurement_source": "tesseract_heading_crops",
+    "generic_name": "RAceclofenac, Paracetamol",
+    "brand_name": "ALVUNAC-SP",
+    "measurement_evidence": {
+      "generic": {
+        "name": "RAceclofenac, Paracetamol",
+        "height_px": 30.425963488843813,
+        "confidence": 91.0,
+        "words": [
+          {
+            "text": "Aceclofenac,",
+            "height_px": 30.02028397565923,
+            "confidence": 90.0,
+            "box": [
+              201.68333333333334,
+              796.15,
+              460.64166666666665,
+              93.24166666666666
+            ],
+            "height_method": "character_components_in_recognized_word"
+          },
+          {
+            "text": "Paracetamol",
+            "height_px": 30.425963488843813,
+            "confidence": 92.0,
+            "box": [
+              690.1583333333333,
+              791.975,
+              438.375,
+              104.375
+            ],
+            "height_method": "character_components_in_recognized_word"
+          }
+        ],
+        "region": [
+          112.0,
+          751.0,
+          1041.0,
+          167.0
+        ]
+      },
+      "brand": {
+        "name": "ALVUNAC-SP",
+        "height_px": 21.50101419878296,
+        "confidence": 90.0,
+        "words": [
+          {
+            "text": "ALVUNAC-SP",
+            "height_px": 21.50101419878296,
+            "confidence": 90.0,
+            "box": [
+              175.66666666666666,
+              1004.0,
+              435.3333333333333,
+              108.0
+            ],
+            "height_method": "character_components_in_recognized_word"
+          }
+        ],
+        "region": [
+          169.0,
+          1018.0,
+          428.0,
+          80.0
+        ]
+      },
+      "source": "tesseract_heading_crops"
+    }
+  },
+  "other_criteria_changed": [],
+  "overall_status": "COMPLIANT / PASS",
+  "font_seconds": 5.4,
+  "method": "Fresh Tesseract font pass on image; existing Paddle text and detections replayed unchanged.",
+  "font_recognized_names": {},
+  "field_checks": {
+    "Generic Name": {
+      "status": "PASS",
+      "required": true,
+      "description": "Generic name printed on the label",
+      "extracted_value": "RAceclofenac, Paracetamol & Serratiopeptidase",
+      "presence_state": "detected",
+      "ocr_confidence": 94.8,
+      "diagnostic_notes": [],
+      "review_notes": []
+    },
+    "Generic Font Size >= Brand (Rule 96(1)(i))": {
+      "status": "PASS",
+      "required": true,
+      "description": "Comparison of measured generic and brand text heights",
+      "extracted_value": "Generic (30.4px) / Brand (21.5px): 1.42x (measured word heights)",
+      "presence_state": "detected",
+      "ocr_confidence": null,
+      "diagnostic_notes": [],
+      "review_notes": []
+    },
+    "Dosage Form and Strength": {
+      "status": "PASS",
+      "required": true,
+      "description": "Dosage form and quantitative strength",
+      "extracted_value": "Tablets",
+      "presence_state": "detected",
+      "ocr_confidence": 94.8,
+      "diagnostic_notes": [
+        "Required part of this field is missing or unreadable"
+      ],
+      "review_notes": [
+        "Required part of this field is missing or unreadable"
+      ]
+    },
+    "Active Ingredients in Metric Units": {
+      "status": "PASS",
+      "required": true,
+      "description": "Composition statement with a readable metric quantity",
+      "extracted_value": "Composition Each film coated tablet con Aceclofenac 100.mg Paracetamol 325.mg Serratiopeptidase 15mg (as enteric coated granules) (eq.to enzyme activity 30000units)",
+      "presence_state": "detected",
+      "ocr_confidence": 90.2,
+      "diagnostic_notes": [],
+      "review_notes": [],
+      "raw_extracted_value": "Composition Each film coated tablet con Aceclofenac 100.mg Paracetamol 325.mg Serratiopeptidase 15mg (as enteric coated granules) (eq.to enzyme activity 30000units)",
+      "spelling_corrected": false
+    },
+    "Name and Address of Manufacturer": {
+      "status": "PASS",
+      "required": true,
+      "description": "Manufacturer statement and following address lines",
+      "extracted_value": "Manufactured by:Brit Lifescience nlera ALVUNAC-SP V.P.O. Moginand, Nahan Road, Distt.Sirmour(H.P)173030 Inlera Healthcare",
+      "presence_state": "detected",
+      "ocr_confidence": 93.7,
+      "diagnostic_notes": [],
+      "review_notes": []
+    },
+    "Mfg License Number": {
+      "status": "PASS",
+      "required": true,
+      "description": "Printed manufacturing or import licence identifier",
+      "extracted_value": "Mfg.LicNo:N-MNB/18/202",
+      "presence_state": "detected",
+      "ocr_confidence": 98.7,
+      "diagnostic_notes": [],
+      "review_notes": []
+    },
+    "Batch / Lot Number": {
+      "status": "PASS",
+      "required": true,
+      "description": "Printed batch or lot identifier",
+      "extracted_value": "B.NO.BLT-26487A",
+      "presence_state": "detected",
+      "ocr_confidence": 94.4,
+      "diagnostic_notes": [],
+      "review_notes": []
+    },
+    "Mfg Date / Expiry Date": {
+      "status": "PASS",
+      "required": true,
+      "description": "Both manufacturing and expiry dates must be readable",
+      "extracted_value": "MFG.06/2026",
+      "presence_state": "detected",
+      "ocr_confidence": 94.4,
+      "diagnostic_notes": [
+        "Required part of this field is missing or unreadable"
+      ],
+      "review_notes": [
+        "Required part of this field is missing or unreadable"
+      ]
+    },
+    "Storage Conditions": {
+      "status": "PASS",
+      "required": true,
+      "description": "Storage and child-safety instructions",
+      "extracted_value": "Storage Instructions:Store in a cool, dry &darkpl",
+      "presence_state": "detected",
+      "ocr_confidence": 91.4,
+      "diagnostic_notes": [],
+      "review_notes": []
+    },
+    "Directions for Use / Dosage": {
+      "status": "PASS",
+      "required": true,
+      "description": "Dosage or directions statement",
+      "extracted_value": "Dosage:As directed by the Physician.",
+      "presence_state": "detected",
+      "ocr_confidence": 94.2,
+      "diagnostic_notes": [],
+      "review_notes": []
+    },
+    "Prescription Symbol (Rx, NRx, XRx)": {
+      "status": "OPTIONAL",
+      "required": false,
+      "description": "Readable prescription symbol",
+      "extracted_value": "Not detected (optional)",
+      "presence_state": "not_detected",
+      "ocr_confidence": null,
+      "diagnostic_notes": [],
+      "review_notes": []
+    },
+    "Required Barcode or QR Code": {
+      "status": "OPTIONAL",
+      "required": false,
+      "description": "Barcode or QR presence check",
+      "extracted_value": "Not detected (optional)",
+      "presence_state": "not_detected",
+      "ocr_confidence": null,
+      "diagnostic_notes": [],
+      "review_notes": []
+    },
+    "Schedule Warning (Prescription Drugs)": {
+      "status": "PASS",
+      "required": true,
+      "description": "Readable schedule or prescription restriction statement",
+      "extracted_value": "SCHEDULE H' PRESCRIFTION DRUG -CAUTION Not to be sold by retail without the prescription Reqstered Medlcal Practitioner",
+      "presence_state": "detected",
+      "ocr_confidence": 90.6,
+      "diagnostic_notes": [],
+      "review_notes": []
+    },
+    "Schedule Redline (Prescription Drugs)": {
+      "status": "PASS",
+      "required": true,
+      "description": "Elongated red marking detected by color and geometry",
+      "extracted_value": "Red marking detected (color/shape check only)",
+      "presence_state": "detected",
+      "ocr_confidence": null,
+      "diagnostic_notes": [],
+      "review_notes": []
+    }
+  }
+}

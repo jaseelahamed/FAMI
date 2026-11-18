@@ -1,0 +1,806 @@
+{
+  "image_path": "static/uploads/TestingMedicineLabels/d589e274-b02b-4e2e-a401-5dc480b9be4e.jpeg",
+  "ocr_text_preview": "Aziinromycin lablets IP soo mg\nKeep themedicineoutof ceach ofchildren.\nMfg.LicNo.MLF282025JKO000028\nTablets\nMfd.by:JamkasPharmaceutiealsPvt.Ltd.\nA Azy\n(AWHO-GMPCERTIFIEDCOMPANYY\nSIDCO, Industrial Complex, Phase-1,Ghati\nEach film coated tablet contains\nzitrmyiiyda\neq. to Anhydrous Azithromycin\nColour:Titanium Dioxide IP\nDosage:As directed by the phy...",
+  "ocr_text_full": "B.NoT260158D\nMFG.DATE:MAY 2026\nEXP.DATE:APR.2028\nAziinromycin lablets IP soo mg\nKeep themedicineoutof ceach ofchildren.\nMfg.LicNo.MLF282025JKO000028\nTablets\nMfd.by:JamkasPharmaceutiealsPvt.Ltd.\nA Azy\n(AWHO-GMPCERTIFIEDCOMPANYY\nSIDCO, Industrial Complex, Phase-1,Ghati\nEach film coated tablet contains\nzitrmyiiyda\neq. to Anhydrous Azithromycin\nColour:Titanium Dioxide IP\nDosage:As directed by the physician\nStorage: Store at a temperature hot\nPlotNo. 356, Industrial Area, Phase\nexceeding 30C, Proteot trom light\nPanohkula (Haryana)-134113\nE-mallID:alcolabs2017@gmall.com\n01\nKeep themedicine qutofreach of children.\nMIg.LIoNo.MLF282025JK0000Q2&\nalets\nMfd. by.Jamkas Pharmaceuticals Pvt. Ltd.\n(AWHO-GMPCERTIFIED COMPANY)\nSIDCO, Industrial Complex, Phase-1, Ghati\nDistKathua-184143(JaK\uff09",
+  "ocr_engine": "paddle",
+  "ocr_lines": [
+    {
+      "text": "B.NoT260158D",
+      "confidence": 90.0,
+      "box": [
+        1467,
+        27,
+        431,
+        1013
+      ],
+      "source": "paddle_field_recovery",
+      "words": [],
+      "alternatives": [],
+      "recovered_field": "batch",
+      "recovery_model": "PP-OCRv6_medium",
+      "crop_rotation": 90,
+      "preprocessing": "original",
+      "crop_ocr_text": "zycl@-500 Azyclb-500 Azyclo-5\nB.NoT260158D\nM.R.P.F76.04\nMEG.DATE:MAY 2026 PER 3 TAB5\nEXP.DATE:APR.2028 (INCL.OF ALLTAXES)"
+    },
+    {
+      "text": "MFG.DATE:MAY 2026",
+      "confidence": 90.3,
+      "box": [
+        1467,
+        27,
+        431,
+        1013
+      ],
+      "source": "paddle_field_recovery",
+      "words": [],
+      "alternatives": [],
+      "recovered_field": "mfg_date",
+      "recovery_model": "PP-OCRv6_medium",
+      "crop_rotation": 90,
+      "preprocessing": "original",
+      "crop_ocr_text": "zycl@-500 Azyclb-500 Azyclo-5\nB.NoT260158D\nM.R.P.F76.04\nMEG.DATE:MAY 2026 PER 3 TAB5\nEXP.DATE:APR.2028 (INCL.OF ALLTAXES)"
+    },
+    {
+      "text": "EXP.DATE:APR.2028",
+      "confidence": 98.2,
+      "box": [
+        1467,
+        27,
+        431,
+        1013
+      ],
+      "source": "paddle_field_recovery",
+      "words": [],
+      "alternatives": [],
+      "recovered_field": "exp_date",
+      "recovery_model": "PP-OCRv6_medium",
+      "crop_rotation": 90,
+      "preprocessing": "original",
+      "crop_ocr_text": "zycl@-500 Azyclb-500 Azyclo-5\nB.NoT260158D\nM.R.P.F76.04\nMEG.DATE:MAY 2026 PER 3 TAB5\nEXP.DATE:APR.2028 (INCL.OF ALLTAXES)"
+    },
+    {
+      "text": "Aziinromycin lablets IP soo mg",
+      "confidence": 77.9,
+      "box": [
+        98.0,
+        0.0,
+        1357.0,
+        95.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "Keep themedicineoutof ceach ofchildren.",
+      "confidence": 90.9,
+      "box": [
+        649.0,
+        82.0,
+        432.0,
+        46.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "Mfg.LicNo.MLF282025JKO000028",
+      "confidence": 93.3,
+      "box": [
+        649.0,
+        123.0,
+        421.0,
+        40.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "Tablets",
+      "confidence": 56.4,
+      "box": [
+        370.0,
+        164.0,
+        130.0,
+        50.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "Mfd.by:JamkasPharmaceutiealsPvt.Ltd.",
+      "confidence": 89.0,
+      "box": [
+        646.0,
+        192.0,
+        469.0,
+        48.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "A Azy",
+      "confidence": 59.7,
+      "box": [
+        1449.0,
+        197.0,
+        63.0,
+        467.0
+      ],
+      "source": "paddle_rotated",
+      "alternatives": []
+    },
+    {
+      "text": "(AWHO-GMPCERTIFIEDCOMPANYY",
+      "confidence": 95.2,
+      "box": [
+        647.0,
+        228.0,
+        430.0,
+        41.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "SIDCO, Industrial Complex, Phase-1,Ghati",
+      "confidence": 86.5,
+      "box": [
+        645.0,
+        261.0,
+        479.0,
+        48.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "Each film coated tablet contains",
+      "confidence": 95.0,
+      "box": [
+        95.0,
+        263.0,
+        428.0,
+        48.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "zitrmyiiyda",
+      "confidence": 53.1,
+      "box": [
+        95.0,
+        301.0,
+        300.0,
+        45.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "eq. to Anhydrous Azithromycin",
+      "confidence": 94.4,
+      "box": [
+        93.0,
+        340.0,
+        391.0,
+        45.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "Colour:Titanium Dioxide IP",
+      "confidence": 92.5,
+      "box": [
+        94.0,
+        414.0,
+        353.0,
+        42.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "Dosage:As directed by the physician",
+      "confidence": 95.9,
+      "box": [
+        90.0,
+        469.0,
+        470.0,
+        49.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "Storage: Store at a temperature hot",
+      "confidence": 95.2,
+      "box": [
+        90.0,
+        523.0,
+        479.0,
+        48.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "PlotNo. 356, Industrial Area, Phase",
+      "confidence": 91.9,
+      "box": [
+        639.0,
+        555.0,
+        394.0,
+        40.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "exceeding 30C, Proteot trom light",
+      "confidence": 89.2,
+      "box": [
+        88.0,
+        562.0,
+        464.0,
+        44.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "Panohkula (Haryana)-134113",
+      "confidence": 93.4,
+      "box": [
+        641.0,
+        584.0,
+        334.0,
+        37.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "E-mallID:alcolabs2017@gmall.com",
+      "confidence": 94.0,
+      "box": [
+        641.0,
+        609.0,
+        400.0,
+        41.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "01",
+      "confidence": 52.6,
+      "box": [
+        1542.0,
+        670.0,
+        115.0,
+        336.0
+      ],
+      "source": "paddle_rotated",
+      "alternatives": []
+    },
+    {
+      "text": "Keep themedicine qutofreach of children.",
+      "confidence": 85.7,
+      "box": [
+        632.0,
+        807.0,
+        432.0,
+        51.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "MIg.LIoNo.MLF282025JK0000Q2&",
+      "confidence": 88.7,
+      "box": [
+        632.0,
+        846.0,
+        423.0,
+        45.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "alets",
+      "confidence": 65.8,
+      "box": [
+        360.0,
+        895.0,
+        128.0,
+        45.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "Mfd. by.Jamkas Pharmaceuticals Pvt. Ltd.",
+      "confidence": 88.8,
+      "box": [
+        632.0,
+        915.0,
+        463.0,
+        45.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "(AWHO-GMPCERTIFIED COMPANY)",
+      "confidence": 94.7,
+      "box": [
+        632.0,
+        948.0,
+        425.0,
+        39.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "SIDCO, Industrial Complex, Phase-1, Ghati",
+      "confidence": 90.4,
+      "box": [
+        630.0,
+        978.0,
+        477.0,
+        43.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "Each film coated tablet contains",
+      "confidence": 92.7,
+      "box": [
+        91.0,
+        990.0,
+        424.0,
+        42.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "DistKathua-184143(JaK\uff09",
+      "confidence": 91.1,
+      "box": [
+        637.0,
+        1016.0,
+        311.0,
+        24.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    }
+  ],
+  "ocr_warnings": [],
+  "barcode_detection": {
+    "detected": true,
+    "decoded": true,
+    "gs1_verified": false,
+    "count": 1,
+    "details": [
+      {
+        "type": "QRCODE",
+        "data": "AZYCLO-500 TABLETS 10X3 BLISTER",
+        "rect": [
+          557,
+          240,
+          92,
+          92
+        ]
+      }
+    ],
+    "status": "PASS",
+    "regulatory_note": "Code detected; GS1 structure and authenticity not verified"
+  },
+  "redline_detection": {
+    "detected": true,
+    "count": 18,
+    "strips": [
+      {
+        "bounding_box": [
+          61,
+          533,
+          163,
+          42
+        ],
+        "orientation": "Horizontal",
+        "aspect_ratio": 3.88,
+        "area": 3913
+      },
+      {
+        "bounding_box": [
+          1188,
+          415,
+          12,
+          124
+        ],
+        "orientation": "Vertical",
+        "aspect_ratio": 10.33,
+        "area": 712
+      },
+      {
+        "bounding_box": [
+          70,
+          71,
+          163,
+          43
+        ],
+        "orientation": "Horizontal",
+        "aspect_ratio": 3.79,
+        "area": 3892
+      },
+      {
+        "bounding_box": [
+          773,
+          0,
+          194,
+          657
+        ],
+        "orientation": "Vertical",
+        "aspect_ratio": 3.39,
+        "area": 81544
+      },
+      {
+        "bounding_box": [
+          848,
+          552,
+          8,
+          105
+        ],
+        "orientation": "Vertical",
+        "aspect_ratio": 13.12,
+        "area": 728
+      },
+      {
+        "bounding_box": [
+          841,
+          551,
+          3,
+          106
+        ],
+        "orientation": "Vertical",
+        "aspect_ratio": 35.33,
+        "area": 210
+      },
+      {
+        "bounding_box": [
+          831,
+          551,
+          5,
+          106
+        ],
+        "orientation": "Vertical",
+        "aspect_ratio": 21.2,
+        "area": 420
+      },
+      {
+        "bounding_box": [
+          810,
+          551,
+          9,
+          106
+        ],
+        "orientation": "Vertical",
+        "aspect_ratio": 11.78,
+        "area": 782
+      },
+      {
+        "bounding_box": [
+          778,
+          550,
+          26,
+          107
+        ],
+        "orientation": "Vertical",
+        "aspect_ratio": 4.12,
+        "area": 2598
+      },
+      {
+        "bounding_box": [
+          930,
+          543,
+          7,
+          114
+        ],
+        "orientation": "Vertical",
+        "aspect_ratio": 16.29,
+        "area": 631
+      },
+      {
+        "bounding_box": [
+          910,
+          255,
+          14,
+          361
+        ],
+        "orientation": "Vertical",
+        "aspect_ratio": 25.79,
+        "area": 2554
+      },
+      {
+        "bounding_box": [
+          865,
+          96,
+          12,
+          316
+        ],
+        "orientation": "Vertical",
+        "aspect_ratio": 26.33,
+        "area": 2091
+      },
+      {
+        "bounding_box": [
+          846,
+          96,
+          7,
+          243
+        ],
+        "orientation": "Vertical",
+        "aspect_ratio": 34.71,
+        "area": 1032
+      },
+      {
+        "bounding_box": [
+          829,
+          95,
+          6,
+          201
+        ],
+        "orientation": "Vertical",
+        "aspect_ratio": 33.5,
+        "area": 936
+      },
+      {
+        "bounding_box": [
+          807,
+          95,
+          8,
+          314
+        ],
+        "orientation": "Vertical",
+        "aspect_ratio": 39.25,
+        "area": 967
+      },
+      {
+        "bounding_box": [
+          790,
+          95,
+          10,
+          314
+        ],
+        "orientation": "Vertical",
+        "aspect_ratio": 31.4,
+        "area": 2061
+      },
+      {
+        "bounding_box": [
+          939,
+          6,
+          25,
+          620
+        ],
+        "orientation": "Vertical",
+        "aspect_ratio": 24.8,
+        "area": 4662
+      },
+      {
+        "bounding_box": [
+          923,
+          6,
+          8,
+          203
+        ],
+        "orientation": "Vertical",
+        "aspect_ratio": 25.38,
+        "area": 1343
+      }
+    ],
+    "status": "PASS (Schedule Redline Present)"
+  },
+  "warning_panel_detection": {
+    "detected": true,
+    "panels": [
+      {
+        "box": [
+          785,
+          95,
+          95,
+          317
+        ],
+        "text_rows": 5
+      }
+    ],
+    "wording_verified": false
+  },
+  "font_ratio_analysis": {
+    "status": "FAIL",
+    "generic_font_height_px": 0,
+    "brand_font_height_px": 0,
+    "ratio": null,
+    "details": "Unable to measure both generic and brand names reliably",
+    "measurement_source": "tesseract_font_only",
+    "generic_name": "omycin",
+    "brand_name": ""
+  },
+  "regulatory_validation": {
+    "score_percentage": 83.33,
+    "passed_required": "10/12",
+    "overall_status": "NON-COMPLIANT / REJECT",
+    "requires_review": false,
+    "validation_mode": "presence",
+    "field_checks": {
+      "Generic Name": {
+        "status": "FAIL",
+        "required": true,
+        "description": "Generic name printed on the label",
+        "extracted_value": "Not present in extracted image content",
+        "presence_state": "not_detected",
+        "ocr_confidence": null,
+        "diagnostic_notes": [],
+        "review_notes": []
+      },
+      "Generic Font Size >= Brand (Rule 96(1)(i))": {
+        "status": "FAIL",
+        "required": true,
+        "description": "Comparison of measured generic and brand text heights",
+        "extracted_value": "Unable to measure both generic and brand names reliably",
+        "presence_state": "not_detected",
+        "ocr_confidence": null,
+        "diagnostic_notes": [],
+        "review_notes": []
+      },
+      "Dosage Form and Strength": {
+        "status": "PASS",
+        "required": true,
+        "description": "Dosage form and quantitative strength",
+        "extracted_value": "Tablets",
+        "presence_state": "detected",
+        "ocr_confidence": 56.4,
+        "diagnostic_notes": [
+          "Low OCR confidence; compare with the image",
+          "Required part of this field is missing or unreadable"
+        ],
+        "review_notes": [
+          "Low OCR confidence; compare with the image",
+          "Required part of this field is missing or unreadable"
+        ]
+      },
+      "Active Ingredients in Metric Units": {
+        "status": "PASS",
+        "required": true,
+        "description": "Composition statement with a readable metric quantity",
+        "extracted_value": "Each film coated tablet contains zitrmyiiyda eq. to Anhydrous Azithromycin",
+        "presence_state": "detected",
+        "ocr_confidence": 53.1,
+        "diagnostic_notes": [
+          "Low OCR confidence; compare with the image",
+          "Required part of this field is missing or unreadable"
+        ],
+        "review_notes": [
+          "Low OCR confidence; compare with the image",
+          "Required part of this field is missing or unreadable"
+        ],
+        "raw_extracted_value": "Each film coated tablet contains zitrmyiiyda eq. to Anhydrous Azithromycin",
+        "spelling_corrected": false
+      },
+      "Name and Address of Manufacturer": {
+        "status": "PASS",
+        "required": true,
+        "description": "Manufacturer statement and following address lines",
+        "extracted_value": "Mfd.by:JamkasPharmaceutiealsPvt.Ltd. (AWHO-GMPCERTIFIEDCOMPANYY SIDCO, Industrial Complex, Phase-1,Ghati",
+        "presence_state": "detected",
+        "ocr_confidence": 86.5,
+        "diagnostic_notes": [],
+        "review_notes": []
+      },
+      "Mfg License Number": {
+        "status": "PASS",
+        "required": true,
+        "description": "Printed manufacturing or import licence identifier",
+        "extracted_value": "Mfg.LicNo.MLF282025JKO000028",
+        "presence_state": "detected",
+        "ocr_confidence": 93.3,
+        "diagnostic_notes": [],
+        "review_notes": []
+      },
+      "Batch / Lot Number": {
+        "status": "PASS",
+        "required": true,
+        "description": "Printed batch or lot identifier",
+        "extracted_value": "B.NoT260158D",
+        "presence_state": "detected",
+        "ocr_confidence": 90.0,
+        "diagnostic_notes": [],
+        "review_notes": []
+      },
+      "Mfg Date / Expiry Date": {
+        "status": "PASS",
+        "required": true,
+        "description": "Both manufacturing and expiry dates must be readable",
+        "extracted_value": "MFG.DATE:MAY 2026 | EXP.DATE:APR.2028",
+        "presence_state": "detected",
+        "ocr_confidence": 90.3,
+        "diagnostic_notes": [],
+        "review_notes": []
+      },
+      "Storage Conditions": {
+        "status": "PASS",
+        "required": true,
+        "description": "Storage and child-safety instructions",
+        "extracted_value": "Storage: Store at a temperature hot",
+        "presence_state": "detected",
+        "ocr_confidence": 95.2,
+        "diagnostic_notes": [],
+        "review_notes": []
+      },
+      "Directions for Use / Dosage": {
+        "status": "PASS",
+        "required": true,
+        "description": "Dosage or directions statement",
+        "extracted_value": "Dosage:As directed by the physician",
+        "presence_state": "detected",
+        "ocr_confidence": 95.9,
+        "diagnostic_notes": [],
+        "review_notes": []
+      },
+      "Prescription Symbol (Rx, NRx, XRx)": {
+        "status": "OPTIONAL",
+        "required": false,
+        "description": "Readable prescription symbol",
+        "extracted_value": "Not detected (optional)",
+        "presence_state": "not_detected",
+        "ocr_confidence": null,
+        "diagnostic_notes": [],
+        "review_notes": []
+      },
+      "Required Barcode or QR Code": {
+        "status": "PASS",
+        "required": false,
+        "description": "Barcode or QR presence check",
+        "extracted_value": "Barcode / QR code present",
+        "presence_state": "detected",
+        "ocr_confidence": null,
+        "diagnostic_notes": [],
+        "review_notes": []
+      },
+      "Schedule Warning (Prescription Drugs)": {
+        "status": "PASS",
+        "required": true,
+        "description": "Readable schedule or prescription restriction statement",
+        "extracted_value": "Red panel with printed warning-style text detected; wording unreadable",
+        "presence_state": "detected",
+        "ocr_confidence": null,
+        "diagnostic_notes": [
+          "Visual presence only; prescription wording has not been verified"
+        ],
+        "review_notes": [
+          "Visual presence only; prescription wording has not been verified"
+        ]
+      },
+      "Schedule Redline (Prescription Drugs)": {
+        "status": "PASS",
+        "required": true,
+        "description": "Elongated red marking detected by color and geometry",
+        "extracted_value": "Red marking detected (color/shape check only)",
+        "presence_state": "detected",
+        "ocr_confidence": null,
+        "diagnostic_notes": [],
+        "review_notes": []
+      }
+    }
+  },
+  "elapsed_seconds": 19.15,
+  "audit_note": "Fresh primary OCR followed by revised crop recovery and parsing; font measurements preserved."
+}

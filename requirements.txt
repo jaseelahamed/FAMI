@@ -9,3 +9,7 @@ Pillow>=9.5.0
 flask>=3.0.0
 gunicorn>=21.2.0
 waitress>=2.1.2
+
+# Primary CPU OCR engine; Tesseract remains a fallback.
+paddlepaddle>=3.0,<4
+paddleocr>=3.7,<4

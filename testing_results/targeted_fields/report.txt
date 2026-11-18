@@ -1,0 +1,45 @@
+TARGETED MANUFACTURER / STAMP / WARNING AUDIT
+
+Five requested photos were freshly scanned. Revised crop recovery and parsing were then rerun on their saved primary OCR.
+LOPERWELL additionally received a final full pipeline rerun.
+PASS retains the requested presence-only semantics; it does not certify exact transcription.
+Additional recovery: PP-OCRv6 medium on missing-field crops. Primary OCR remains PP-OCRv5 mobile.
+
+LERAPREG-PN — 16f5d93b-6f37-49fd-a83d-f2297a8e53db.jpeg
+Name and Address of Manufacturer [PASS]: Mfg.by:Bajaj Formulations (AWHO-GMP &ISO9001:2015CertifiedCo） Khasra No. 161, Village-Lakeshwary. Bhagwanpur,RoorkeeDistt.Haridwar (U.K)
+Batch / Lot Number [PASS]: T26B267B
+Mfg Date / Expiry Date [PASS]: MFGFEB:2026 | EXP.JAN.2028
+Schedule Warning (Prescription Drugs) [PASS]: CAUTION:Not to be sold by retail without the prescription orya Registered Medipal
+
+Viameta-500SR — 79bc8f4b-d729-436f-94bf-f975b8df0956.jpeg
+Name and Address of Manufacturer [PASS]: Mariutactured in India by: Mediforce Healthcare Pvt.Ltd. Plot No.8-13, Phase-lll, Industrial Area, Gondpur, Paonta Sahib.Distt Sirmour, H.P.173025
+Batch / Lot Number [PASS]: B.No.BGAFZ001
+Mfg Date / Expiry Date [PASS]: MFG.05/2026 | EXP.04/2028
+Schedule Warning (Prescription Drugs) [PASS]: SCHEDULE G PRESCRIPTION DRUG-ION lt is dangerous to take this preparation
+
+Azyclo-500 — d589e274-b02b-4e2e-a401-5dc480b9be4e.jpeg
+Name and Address of Manufacturer [PASS]: Mfd.by:JamkasPharmaceutiealsPvt.Ltd. (AWHO-GMPCERTIFIEDCOMPANYY SIDCO, Industrial Complex, Phase-1,Ghati
+Batch / Lot Number [PASS]: B.NoT260158D
+Mfg Date / Expiry Date [PASS]: MFG.DATE:MAY 2026 | EXP.DATE:APR.2028
+Schedule Warning (Prescription Drugs) [PASS]: Red panel with printed warning-style text detected; wording unreadable
+
+Chymobit-Forte — df4c15c9-8c7c-4f0b-ad9f-88c733b72a24.jpeg
+Name and Address of Manufacturer [PASS]: Mfg.by:Bajaj Formulations (AWHO-GMP &ISO 9001:2015 CertifiedCo.） Khasra No. 161, Village-Lakeshwary, Bhagwanpur.Roorkee, Distt. Haridwar （(U.K)
+Batch / Lot Number [PASS]: B.No.T25E637A
+Mfg Date / Expiry Date [PASS]: MFG.MAY.2025 | EXP.APR.2027
+Schedule Warning (Prescription Drugs) [PASS]: CAUTON Not tabe sold by retail without h prescrlption ofa Reglstered MedicslPracitionsr
+
+LOPERWELL — f70dc928-34b2-4666-98d5-98e2f337ff3a.jpeg
+Name and Address of Manufacturer [PASS]: Manulactured in Indla by CAFFOHLS.LABORATORIESPVT.LTO AWHO-CAR.CUPCarued ComDany F.109-110.UPSiOC indusural Area. Selaou. Dehradun U.K-24a 041 (IND1A
+Batch / Lot Number [PASS]: B.No.DLT-260291
+Mfg Date / Expiry Date [PASS]: MFG.MAY 2026 | EXP.APR.2028
+Schedule Warning (Prescription Drugs) [PASS]: SCHEDULEH PRESC Fo be sctlby rehil oo Dosage:As directed by the Physician.
+
+Remaining limitations:
+- LOPERWELL manufacturer presence is recovered, but its company name and address still have significant OCR character errors. Do not treat that text as verified.
+- The Azyclo warning result is visual panel/text presence only; no prescription wording was verified.
+- Other partially read warning/address text is retained as OCR evidence, not claimed as exact transcription.
+- These changes do not make all fourteen fields accurate on arbitrary photos.
+
+Validation: 43 tests passed, 1 skipped. Python modules compile.
+Install updated requirements (PaddleOCR >=3.7), then restart the app. Additional models download once if uncached.

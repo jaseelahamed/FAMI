@@ -1,0 +1,170 @@
+[
+  {
+    "image": "0dfb0b74-c01c-4f1c-aac5-b72cae74e38e.jpeg",
+    "brand": "SOBICLO-500",
+    "font": {
+      "status": "PASS",
+      "generic_font_height_px": 108.0,
+      "brand_font_height_px": 101.0,
+      "ratio": 1.07,
+      "details": "Generic (108px) is 1.07x larger than Brand (101px) (measured pixel heights)",
+      "measurement_source": "tesseract_font_only",
+      "generic_name": "Sodium Bicarbonate",
+      "brand_name": "OBICLO-500 SOBICLO-"
+    },
+    "other_criteria_changed": [],
+    "overall_status": "COMPLIANT / PASS",
+    "font_recognized_names": {
+      "generic": "Sodium Bicarbonate",
+      "brand": "SOBICLO-5"
+    }
+  },
+  {
+    "image": "16f5d93b-6f37-49fd-a83d-f2297a8e53db.jpeg",
+    "brand": "LERAPREG-PN",
+    "font": {
+      "status": "REVIEW",
+      "generic_font_height_px": 0,
+      "brand_font_height_px": 0,
+      "ratio": null,
+      "details": "Unable to measure both generic and brand names reliably",
+      "measurement_source": "tesseract_font_only",
+      "generic_name": "Pregabalin (SR)&Noriptine",
+      "brand_name": ""
+    },
+    "other_criteria_changed": [],
+    "overall_status": "MANUAL REVIEW REQUIRED",
+    "font_recognized_names": {
+      "generic": "Pregabalin + Nortriptyline Hydrochloride"
+    }
+  },
+  {
+    "image": "5352ad15-5104-4aa1-92b3-604e2581d234.jpeg",
+    "brand": "Telney-40",
+    "font": {
+      "status": "REVIEW",
+      "generic_font_height_px": 0,
+      "brand_font_height_px": 0,
+      "ratio": null,
+      "details": "Unable to measure both generic and brand names reliably",
+      "measurement_source": "tesseract_font_only",
+      "generic_name": "Telmisartan",
+      "brand_name": ""
+    },
+    "other_criteria_changed": [],
+    "overall_status": "MANUAL REVIEW REQUIRED",
+    "font_recognized_names": {
+      "generic": "Telmisartan"
+    }
+  },
+  {
+    "image": "67686598-b982-43a2-bbf5-d9da97efbfcb.jpeg",
+    "brand": "Lerahist-16",
+    "font": {
+      "status": "REVIEW",
+      "generic_font_height_px": 0,
+      "brand_font_height_px": 0,
+      "ratio": null,
+      "details": "Unable to measure both generic and brand names reliably",
+      "measurement_source": "tesseract_font_only",
+      "generic_name": "Betahistine",
+      "brand_name": "RPRS1"
+    },
+    "other_criteria_changed": [],
+    "overall_status": "MANUAL REVIEW REQUIRED",
+    "font_recognized_names": {
+      "generic": "Betahistine + Hydrochloride"
+    }
+  },
+  {
+    "image": "79bc8f4b-d729-436f-94bf-f975b8df0956.jpeg",
+    "brand": "Viameta-500SR",
+    "font": {
+      "status": "REVIEW",
+      "generic_font_height_px": 0,
+      "brand_font_height_px": 0,
+      "ratio": null,
+      "details": "Unable to measure both generic and brand names reliably",
+      "measurement_source": "tesseract_font_only",
+      "generic_name": "Metformin Hydrochloride Sustained Release",
+      "brand_name": "AFBGTPFOFT0"
+    },
+    "other_criteria_changed": [],
+    "overall_status": "MANUAL REVIEW REQUIRED",
+    "font_recognized_names": {}
+  },
+  {
+    "image": "9aeaedfd-f337-49a4-b2fd-de465727985c.jpeg",
+    "brand": "ALVUNAC-SP",
+    "font": {
+      "status": "REVIEW",
+      "generic_font_height_px": 0,
+      "brand_font_height_px": 0,
+      "ratio": null,
+      "details": "Unable to measure both generic and brand names reliably",
+      "measurement_source": "tesseract_font_only",
+      "generic_name": "RAceclofenac, Paracetamol & Serratiopeptidase",
+      "brand_name": ""
+    },
+    "other_criteria_changed": [],
+    "overall_status": "MANUAL REVIEW REQUIRED",
+    "font_recognized_names": {}
+  },
+  {
+    "image": "d589e274-b02b-4e2e-a401-5dc480b9be4e.jpeg",
+    "brand": "Azyclo-500",
+    "font": {
+      "status": "REVIEW",
+      "generic_font_height_px": 0,
+      "brand_font_height_px": 0,
+      "ratio": null,
+      "details": "Unable to measure both generic and brand names reliably",
+      "measurement_source": "tesseract_font_only",
+      "generic_name": "Azithromycin",
+      "brand_name": "MLF252025JK0000"
+    },
+    "other_criteria_changed": [],
+    "overall_status": "MANUAL REVIEW REQUIRED",
+    "font_recognized_names": {
+      "generic": "omycin"
+    }
+  },
+  {
+    "image": "df4c15c9-8c7c-4f0b-ad9f-88c733b72a24.jpeg",
+    "brand": "Chymobit-Forte",
+    "font": {
+      "status": "REVIEW",
+      "generic_font_height_px": 0,
+      "brand_font_height_px": 0,
+      "ratio": null,
+      "details": "Unable to measure both generic and brand names reliably",
+      "measurement_source": "tesseract_font_only",
+      "generic_name": "Trypsin-Chymotrypsin",
+      "brand_name": "ISO"
+    },
+    "other_criteria_changed": [],
+    "overall_status": "MANUAL REVIEW REQUIRED",
+    "font_recognized_names": {
+      "generic": "Trypsin-Chymotrypsin"
+    }
+  },
+  {
+    "image": "f70dc928-34b2-4666-98d5-98e2f337ff3a.jpeg",
+    "brand": "LOPERWELL",
+    "font": {
+      "status": "REVIEW",
+      "generic_font_height_px": 0,
+      "brand_font_height_px": 0,
+      "ratio": null,
+      "details": "Unable to measure both generic and brand names reliably",
+      "measurement_source": "tesseract_font_only",
+      "generic_name": "RLoperamide Hydrochloride",
+      "brand_name": ""
+    },
+    "other_criteria_changed": [],
+    "overall_status": "MANUAL REVIEW REQUIRED",
+    "font_recognized_names": {
+      "generic": "Loperamide Hysroctiya"
+    }
+  }
+]

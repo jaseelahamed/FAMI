@@ -1,0 +1,232 @@
+{
+  "image": "16f5d93b-6f37-49fd-a83d-f2297a8e53db.jpeg",
+  "brand": "LERAPREG-PN",
+  "font": {
+    "status": "PASS",
+    "generic_font_height_px": 46.7,
+    "brand_font_height_px": 32.1,
+    "ratio": 1.45,
+    "details": "Generic (46.7px) / Brand (32.1px): 1.45x (measured word heights)",
+    "measurement_source": "tesseract_heading_crops",
+    "generic_name": "Pregabalin (SR)&NoriptineTablet",
+    "brand_name": "LERAPREG-PN",
+    "measurement_evidence": {
+      "generic": {
+        "name": "Pregabalin (SR)&NoriptineTablet",
+        "height_px": 46.672743846855056,
+        "confidence": 90.0,
+        "words": [
+          {
+            "text": "Pregabalin",
+            "height_px": 46.672743846855056,
+            "confidence": 90.0,
+            "box": [
+              120.0,
+              91.66666666666667,
+              445.0,
+              165.0
+            ],
+            "height_method": "character_components_in_recognized_word"
+          }
+        ],
+        "region": [
+          81.0,
+          23.0,
+          1703.0,
+          254.0
+        ]
+      },
+      "brand": {
+        "name": "LERAPREG-PN",
+        "height_px": 32.08751139471285,
+        "confidence": 92.0,
+        "words": [
+          {
+            "text": "LERAPREG-PN",
+            "height_px": 32.08751139471285,
+            "confidence": 92.0,
+            "box": [
+              415.93333333333334,
+              243.0,
+              762.5333333333333,
+              206.46666666666667
+            ],
+            "height_method": "character_components_in_recognized_word"
+          }
+        ],
+        "region": [
+          391.0,
+          270.0,
+          1061.0,
+          152.0
+        ]
+      },
+      "source": "tesseract_heading_crops"
+    }
+  },
+  "other_criteria_changed": [],
+  "overall_status": "COMPLIANT / PASS",
+  "font_seconds": 4.49,
+  "method": "Fresh Tesseract font pass on image; existing Paddle text and detections replayed unchanged.",
+  "font_recognized_names": {},
+  "field_checks": {
+    "Generic Name": {
+      "status": "PASS",
+      "required": true,
+      "description": "Generic name printed on the label",
+      "extracted_value": "Pregabalin (SR)&Noriptine",
+      "presence_state": "detected",
+      "ocr_confidence": 80.0,
+      "diagnostic_notes": [],
+      "review_notes": []
+    },
+    "Generic Font Size >= Brand (Rule 96(1)(i))": {
+      "status": "PASS",
+      "required": true,
+      "description": "Comparison of measured generic and brand text heights",
+      "extracted_value": "Generic (46.7px) / Brand (32.1px): 1.45x (measured word heights)",
+      "presence_state": "detected",
+      "ocr_confidence": null,
+      "diagnostic_notes": [],
+      "review_notes": []
+    },
+    "Dosage Form and Strength": {
+      "status": "PASS",
+      "required": true,
+      "description": "Dosage form and quantitative strength",
+      "extracted_value": "Tablet",
+      "presence_state": "detected",
+      "ocr_confidence": 80.0,
+      "diagnostic_notes": [
+        "Required part of this field is missing or unreadable"
+      ],
+      "review_notes": [
+        "Required part of this field is missing or unreadable"
+      ]
+    },
+    "Active Ingredients in Metric Units": {
+      "status": "PASS",
+      "required": true,
+      "description": "Composition statement with a readable metric quantity",
+      "extracted_value": "Each filmcoated tablet contains: 75mg. Pregabalin (In SustainedReleaseForm) Nortriptyline Hydrochloride 10mg Eg toNortriptyline",
+      "presence_state": "detected",
+      "ocr_confidence": 91.1,
+      "diagnostic_notes": [
+        "OCR passes disagree: 0.S 5r$"
+      ],
+      "review_notes": [
+        "OCR passes disagree: 0.S 5r$"
+      ],
+      "raw_extracted_value": "Each filmcoated tablet contains: 75mg. Pregabalin (In SustainedReleaseForm) Nortriptyline Hydrochloride 10mg Eg toNortriptyline",
+      "spelling_corrected": false
+    },
+    "Name and Address of Manufacturer": {
+      "status": "PASS",
+      "required": true,
+      "description": "Manufacturer statement and following address lines",
+      "extracted_value": "Mfg.by:Bajaj Formulations (AWHO-GMP &ISO9001:2015CertifiedCo\uff09 Khasra No. 161, Village-Lakeshwary. Bhagwanpur,RoorkeeDistt.Haridwar (U.K)",
+      "presence_state": "detected",
+      "ocr_confidence": 91.3,
+      "diagnostic_notes": [],
+      "review_notes": []
+    },
+    "Mfg License Number": {
+      "status": "PASS",
+      "required": true,
+      "description": "Printed manufacturing or import licence identifier",
+      "extracted_value": "Mfg.LicNo.89/UA/SC/P-2016",
+      "presence_state": "detected",
+      "ocr_confidence": 95.1,
+      "diagnostic_notes": [],
+      "review_notes": []
+    },
+    "Batch / Lot Number": {
+      "status": "PASS",
+      "required": true,
+      "description": "Printed batch or lot identifier",
+      "extracted_value": "T26B267B",
+      "presence_state": "detected",
+      "ocr_confidence": 92.2,
+      "diagnostic_notes": [
+        "Required part of this field is missing or unreadable"
+      ],
+      "review_notes": [
+        "Required part of this field is missing or unreadable"
+      ]
+    },
+    "Mfg Date / Expiry Date": {
+      "status": "PASS",
+      "required": true,
+      "description": "Both manufacturing and expiry dates must be readable",
+      "extracted_value": "EXP.JAN.2028",
+      "presence_state": "detected",
+      "ocr_confidence": 92.2,
+      "diagnostic_notes": [
+        "Required part of this field is missing or unreadable"
+      ],
+      "review_notes": [
+        "Required part of this field is missing or unreadable"
+      ]
+    },
+    "Storage Conditions": {
+      "status": "PASS",
+      "required": true,
+      "description": "Storage and child-safety instructions",
+      "extracted_value": "STORAGE: STORE IN A COOL & DRY; PLACE.PROTECTFROMLIGHT.",
+      "presence_state": "detected",
+      "ocr_confidence": 91.5,
+      "diagnostic_notes": [],
+      "review_notes": []
+    },
+    "Directions for Use / Dosage": {
+      "status": "PASS",
+      "required": true,
+      "description": "Dosage or directions statement",
+      "extracted_value": "Dosage:As directed bythe Physician",
+      "presence_state": "detected",
+      "ocr_confidence": 96.2,
+      "diagnostic_notes": [],
+      "review_notes": []
+    },
+    "Prescription Symbol (Rx, NRx, XRx)": {
+      "status": "OPTIONAL",
+      "required": false,
+      "description": "Readable prescription symbol",
+      "extracted_value": "Not detected (optional)",
+      "presence_state": "not_detected",
+      "ocr_confidence": null,
+      "diagnostic_notes": [],
+      "review_notes": []
+    },
+    "Required Barcode or QR Code": {
+      "status": "OPTIONAL",
+      "required": false,
+      "description": "Barcode or QR presence check",
+      "extracted_value": "Not detected (optional)",
+      "presence_state": "not_detected",
+      "ocr_confidence": null,
+      "diagnostic_notes": [],
+      "review_notes": []
+    },
+    "Schedule Warning (Prescription Drugs)": {
+      "status": "PASS",
+      "required": true,
+      "description": "Readable schedule or prescription restriction statement",
+      "extracted_value": "CAUTION:Not to be sold by retail without the prescription orya Registered Medipal Piactitioner",
+      "presence_state": "detected",
+      "ocr_confidence": 88.5,
+      "diagnostic_notes": [],
+      "review_notes": []
+    },
+    "Schedule Redline (Prescription Drugs)": {
+      "status": "PASS",
+      "required": true,
+      "description": "Elongated red marking detected by color and geometry",
+      "extracted_value": "Red marking detected (color/shape check only)",
+      "presence_state": "detected",
+      "ocr_confidence": null,
+      "diagnostic_notes": [],
+      "review_notes": []
+    }
+  }
+}

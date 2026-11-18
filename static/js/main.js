@@ -88,6 +88,13 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
+    dropzonePrompt.addEventListener("keydown", (e) => {
+        if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            fileInput.click();
+        }
+    });
+
     ["dragenter", "dragover"].forEach((eventName) => {
         dropzone.addEventListener(eventName, (e) => {
             e.preventDefault();
@@ -332,7 +339,7 @@ document.addEventListener("DOMContentLoaded", () => {
         metricScore.textContent = score + "%";
         metricRatio.textContent = `${val.passed_required} Mandatory Criteria Passed`;
 
-        if (score >= 80.0) {
+        if (val.overall_status === "COMPLIANT / PASS") {
             verdictPill.className = "verdict-pill verdict-pass";
             verdictText.textContent = "COMPLIANT / PASS";
             metricScore.style.color = "var(--success)";
@@ -347,11 +354,11 @@ document.addEventListener("DOMContentLoaded", () => {
             if (fontData.status === "PASS") {
                 metricFont.textContent = "PASS";
                 metricFont.style.color = "var(--success)";
-                metricFontSub.textContent = `Ratio: ${fontData.ratio || '1.3'}x (Rule 96(1)(i))`;
+                metricFontSub.textContent = `Measured ratio: ${fontData.ratio}x`;
             } else {
                 metricFont.textContent = "FAIL";
                 metricFont.style.color = "var(--danger)";
-                metricFontSub.textContent = "Brand larger than generic";
+                metricFontSub.textContent = fontData.details || "Font measurement unavailable";
             }
         }
 
@@ -371,12 +378,11 @@ document.addEventListener("DOMContentLoaded", () => {
         if (bc.detected) {
             metricBarcode.textContent = "PASS";
             metricBarcode.style.color = "var(--success)";
-            const payload = bc.details[0] ? bc.details[0].data : "Detected";
-            metricBarcodeSub.textContent = `${bc.details[0]?.type || "1D/2D"} Verified`;
+            metricBarcodeSub.textContent = "Barcode / QR code present";
         } else {
-            metricBarcode.textContent = "CONDITIONAL";
+            metricBarcode.textContent = "OPTIONAL";
             metricBarcode.style.color = "var(--accent)";
-            metricBarcodeSub.textContent = "Outer Carton Mandate";
+            metricBarcodeSub.textContent = "Not detected — optional";
         }
 
         // 5. Populate Checklist Cards (All 14 Pharmacopoeia Criteria)
@@ -385,8 +391,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         for (const [field, info] of Object.entries(checks)) {
             const isPass = info.status === "PASS";
-            const isInfo = info.status.includes("INFO") || info.status.includes("CONDITIONAL");
-            const badgeClass = isPass ? "pill-pass" : (isInfo ? "pill-info" : "pill-fail");
+            const badgeClass = isPass ? "pill-pass" : (info.required === false ? "pill-info" : "pill-fail");
 
             const card = document.createElement("div");
             card.className = "check-item";
@@ -394,12 +399,13 @@ document.addEventListener("DOMContentLoaded", () => {
             card.innerHTML = `
                 <div>
                     <div class="check-item-header">
-                        <span class="check-title">${field}</span>
+                        <span class="check-title">${field}${info.required === false ? " (Optional)" : ""}</span>
                         <span class="pill-badge ${badgeClass}">${info.status}</span>
                     </div>
                     <div class="check-desc">${info.description}</div>
                 </div>
                 <div class="check-match">${escapeHtml(info.extracted_value)}</div>
+                ${info.review_notes?.length ? `<div class="check-desc">${info.review_notes.map(escapeHtml).join("<br>")}</div>` : ""}
             `;
             checklistContainer.appendChild(card);
         }

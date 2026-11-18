@@ -169,6 +169,16 @@ class MedicineLabelValidator:
         # Auto-crop black phone letterboxing
         cropped = autocrop_borders(raw_img)
 
+        # Keep a higher-resolution copy (capped at OCR_MAX_DIM (4800 px by default)) for the deep OCR pass, which
+        # needs the extra detail to read small print on hard images (foil photos).
+        fh, fw = cropped.shape[:2]
+        ocr_max_dim = max(1200, int(os.environ.get("OCR_MAX_DIM", "4800")))
+        if max(fh, fw) > ocr_max_dim:
+            fs = ocr_max_dim / float(max(fh, fw))
+            self.full_res_image = cv2.resize(cropped, (int(fw * fs), int(fh * fs)), interpolation=cv2.INTER_AREA)
+        else:
+            self.full_res_image = cropped
+
         # Downscale ultra-high-res camera captures (e.g. 12MP-48MP smartphone photos)
         # Prevents Out-Of-Memory (OOM) kills and timeout on Render's 512MB RAM free tier
         h, w = cropped.shape[:2]
@@ -195,91 +205,107 @@ class MedicineLabelValidator:
     # 1. MULTI-ORIENTATION & ENHANCED OCR EXTRACTION
     # --------------------------------------------------------------------------
     def extract_text(self) -> str:
-        """
-        Extracts text using smart multi-orientation scanning.
-        Optimized for memory and speed on cloud free tiers (e.g. Render 512MB RAM).
-        """
-        if not PYTESSERACT_AVAILABLE:
-            raise RuntimeError("The 'pytesseract' library is not installed in Python.")
-
-        try:
-            pytesseract.get_tesseract_version()
-        except Exception as e:
-            raise RuntimeError(
-                f"Tesseract OCR binary is missing or not in PATH: {e}. "
-                "If hosted on Render, you must deploy using Environment: Docker (not Python) "
-                "so that system packages (tesseract-ocr and libzbar0) are installed."
-            )
-
-        combined_text_lines = []
-        seen_lines = set()
-
-        # 1. Single-pass 0-degree extraction: get text + bounding boxes in 1 call
-        gray = cv2.cvtColor(self.original_image, cv2.COLOR_BGR2GRAY)
-        clahe = cv2.createCLAHE(clipLimit=2.2, tileGridSize=(8, 8))
-        enhanced_0 = clahe.apply(gray)
-
-        try:
-            self.ocr_data = pytesseract.image_to_data(
-                enhanced_0,
-                output_type=pytesseract.Output.DICT,
-                config='--oem 3 --psm 3'
-            )
-            texts = self.ocr_data.get("text", [])
-            line_nums = self.ocr_data.get("line_num", [])
-            current_line = []
-            last_line_num = -1
-            for i, word in enumerate(texts):
-                w_str = word.strip()
-                if not w_str:
-                    continue
-                ln = line_nums[i] if i < len(line_nums) else 0
-                if ln != last_line_num and current_line:
-                    line_str = " ".join(current_line)
-                    combined_text_lines.append(line_str)
-                    seen_lines.add(re.sub(r'[^a-zA-Z0-9]', '', line_str.lower()))
-                    current_line = []
-                current_line.append(w_str)
-                last_line_num = ln
-            if current_line:
-                line_str = " ".join(current_line)
-                combined_text_lines.append(line_str)
-                seen_lines.add(re.sub(r'[^a-zA-Z0-9]', '', line_str.lower()))
-        except Exception:
-            raw = pytesseract.image_to_string(enhanced_0, config='--oem 3 --psm 3')
-            for line in raw.splitlines():
-                cl = line.strip()
-                if cl:
-                    combined_text_lines.append(cl)
-
-        # 2. Check if vertical side-strip scanning is needed (Batch No / Expiry Date)
-        preview_text = " ".join(combined_text_lines).lower()
-        has_batch = any(k in preview_text for k in ["b.no", "b. no", "b no", "batch", "lot"])
-        has_expiry = any(k in preview_text for k in ["exp", "expiry", "mfg", "mfd"])
-
-        # Only scan rotations if vertical margin text was not captured in 0°
-        if not (has_batch and has_expiry):
-            for rot_angle in [cv2.ROTATE_90_COUNTERCLOCKWISE, cv2.ROTATE_90_CLOCKWISE]:
-                rot_img = cv2.rotate(self.original_image, rot_angle)
-                rot_gray = cv2.cvtColor(rot_img, cv2.COLOR_BGR2GRAY)
-                rot_enh = clahe.apply(rot_gray)
+        """Recover separate, confidence-scored lines without concatenating OCR noise."""
+        import ocr_paddle
+        from ocr_pipeline import extract_lines
+        mode = ocr_paddle.engine_mode()
+        self.ocr_lines, self.ocr_warnings = [], []
+        if mode == "paddle":
+            self.ocr_lines, self.ocr_warnings = ocr_paddle.extract_lines(self.full_res_image)
+        paddle_primary = bool(self.ocr_lines)
+        if not paddle_primary:
+            if not PYTESSERACT_AVAILABLE:
+                raise RuntimeError("PaddleOCR returned no text and the Tesseract fallback is unavailable.")
+            self.ocr_lines, warnings = extract_lines(self.full_res_image, pytesseract)
+            self.ocr_warnings.extend(warnings)
+        self.ocr_engine = "paddle" if paddle_primary else "tesseract"
+        if paddle_primary and PYTESSERACT_AVAILABLE:
+            from ocr_quantity import recover_quantities
+            self.ocr_warnings.extend(recover_quantities(self.full_res_image, self.ocr_lines, pytesseract))
+        if paddle_primary:
+            from field_recovery import recover_fields
+            recovered, warnings = recover_fields(self.full_res_image, self.ocr_lines)
+            self.ocr_lines = recovered + self.ocr_lines
+            self.ocr_warnings.extend(warnings)
+        scale = self.original_image.shape[0] / self.full_res_image.shape[0]
+        words = [word for line in self.ocr_lines for word in line["words"]]
+        self.ocr_data = {
+            "text": [word["text"] for word in words],
+            "height": [word["height"] * scale for word in words],
+            "conf": [word["confidence"] for word in words],
+        }
+        # Independent word boxes for the font check only. Never merge this text
+        # into Paddle's fields, evidence, or quantity correction results.
+        self.font_ocr_data = None
+        self.font_ocr_names = {}
+        self.font_ocr_error = None
+        if paddle_primary:
+            self.measure_font_words()
+        lines = [line["text"] for line in self.ocr_lines]
+        # Keep legacy Tesseract-first auto mode available.
+        import ocr_deep
+        if mode == "auto" and ocr_deep.needs_deep_pass("\n".join(lines)):
+            p_lines, _ = ocr_paddle.paddle_text(self.full_res_image)
+            if p_lines:
+                lines = p_lines + lines
+                self.ocr_warnings.append("Paddle readings supplement Tesseract; review discrepancies.")
+        # Rotations only supplement missing side-strip details, never replace the
+        # upright font measurements or append all the background texture.
+        preview = " ".join(lines)
+        if not paddle_primary and os.environ.get("OCR_ROTATION_PASSES", "1") != "0" and not (
+            re.search(r"\b(?:batch|lot|b\.?\s*no)\b", preview, re.I)
+            and re.search(r"\b(?:exp|expiry)\b", preview, re.I)
+        ):
+            from ocr_pipeline import _read_lines
+            for angle in (cv2.ROTATE_90_CLOCKWISE, cv2.ROTATE_90_COUNTERCLOCKWISE):
+                rotated = cv2.rotate(self.original_image, angle)
+                gray = cv2.cvtColor(rotated, cv2.COLOR_BGR2GRAY)
                 try:
-                    raw_chunk = pytesseract.image_to_string(rot_enh, config='--oem 3 --psm 11')
-                    for line in raw_chunk.splitlines():
-                        cleaned = line.strip()
-                        norm = re.sub(r'[^a-zA-Z0-9]', '', cleaned.lower())
-                        if len(norm) >= 3 and norm not in seen_lines:
-                            seen_lines.add(norm)
-                            combined_text_lines.append(cleaned)
-                except Exception:
-                    pass
-
-        self.extracted_text = "\n".join(combined_text_lines)
+                    for row in _read_lines(gray, pytesseract, "rotated", psm=11):
+                        if re.search(r"\b(?:batch|lot|b\.?\s*no|mfg|mfd|exp|expiry|licen[cs]e)\b", row["text"], re.I):
+                            lines.append(row["text"])
+                except RuntimeError as exc:
+                    self.ocr_warnings.append(str(exc))
+        self.extracted_text = "\n".join(dict.fromkeys(lines))
         return self.extracted_text
 
     # --------------------------------------------------------------------------
     # 2. GENERIC NAME VS BRAND NAME FONT SIZE COMPARISON (RULE 96(1)(i))
     # --------------------------------------------------------------------------
+    def measure_font_words(self):
+        """Read actual Tesseract word boxes in display-image pixel coordinates."""
+        if not PYTESSERACT_AVAILABLE:
+            self.font_ocr_error = "Tesseract is unavailable for font measurement"
+            return
+        from ocr_pipeline import _read_lines
+        from label_fields import extract_fields
+        self.font_heading_pair = None
+        try:
+            from font_regions import measure_heading_pair
+            self.font_heading_pair = measure_heading_pair(
+                self.full_res_image, getattr(self, 'ocr_lines', []), pytesseract,
+                self.original_image.shape[0] / self.full_res_image.shape[0])
+            if self.font_heading_pair:
+                return
+        except Exception as exc:
+            self.font_ocr_error = f"Heading crop measurement unavailable: {exc}"
+        try:
+            gray = cv2.cvtColor(self.original_image, cv2.COLOR_BGR2GRAY)
+            rows = _read_lines(gray, pytesseract, "font_tesseract", psm=11)
+            words = [word for row in rows for word in row["words"]]
+            self.font_ocr_data = {
+                "text": [word["text"] for word in words],
+                "height": [word["height"] for word in words],
+                "conf": [word["confidence"] for word in words],
+            }
+            # Sparse segmentation can separate a brand from an adjacent Rx
+            # symbol that Paddle grouped with it. This fallback is font-only.
+            fields = extract_fields("\n".join(row["text"] for row in rows))
+            self.font_ocr_names = {key: fields[key]["value"]
+                                   for key in ("generic", "brand") if key in fields}
+        except Exception as exc:
+            self.font_ocr_error = f"Tesseract font measurement unavailable: {exc}"
+
     def evaluate_font_size_rule(self, generic_match: str, brand_match: str) -> dict:
         """
         Under Drugs and Cosmetics Rules Rule 96(1)(i) amendment:
@@ -289,20 +315,43 @@ class MedicineLabelValidator:
         Uses Pytesseract bounding box heights (in pixels) to verify compliance.
         """
         result = {
-            "status": "PASS",
+            "status": "FAIL",
             "generic_font_height_px": 0,
             "brand_font_height_px": 0,
-            "ratio": 1.0,
-            "details": "Evaluation based on text bounding box analysis"
+            "ratio": None,
+            "details": "Unable to measure both generic and brand names reliably"
         }
 
-        if not self.ocr_data or "text" not in self.ocr_data:
-            result["details"] = "PASS (Generic name verified; font ratio within statutory threshold)"
+        pair = getattr(self, "font_heading_pair", None)
+        if pair:
+            gen_h, br_h = pair['generic']['height_px'], pair['brand']['height_px']
+            ratio = gen_h / br_h
+            result.update(status="PASS" if ratio >= 1 else "FAIL",
+                generic_font_height_px=round(gen_h, 1), brand_font_height_px=round(br_h, 1),
+                ratio=round(ratio, 2), measurement_source=pair['source'],
+                generic_name=pair['generic']['name'], brand_name=pair['brand']['name'],
+                measurement_evidence=pair,
+                details=f"Generic ({gen_h:.1f}px) / Brand ({br_h:.1f}px): {ratio:.2f}x (measured word heights)")
+            self.font_ratio_results = result
+            return result
+        font_data = getattr(self, "font_ocr_data", None) or self.ocr_data
+        if getattr(self, "ocr_engine", None) == "paddle":
+            result["measurement_source"] = "tesseract_font_only"
+            names = getattr(self, "font_ocr_names", {})
+            generic_match = generic_match or names.get("generic", "")
+            brand_match = brand_match or names.get("brand", "")
+            if getattr(self, "font_ocr_error", None):
+                result["details"] = self.font_ocr_error
+        else:
+            result["measurement_source"] = "tesseract_word_boxes"
+        result["generic_name"] = generic_match
+        result["brand_name"] = brand_match
+        if not font_data or "text" not in font_data:
             self.font_ratio_results = result
             return result
 
-        texts = self.ocr_data.get("text", [])
-        heights = self.ocr_data.get("height", [])
+        texts = font_data.get("text", [])
+        heights = font_data.get("height", [])
 
         # Helper to find average height of matching words
         def get_word_height(target_str: str) -> float:
@@ -317,7 +366,8 @@ class MedicineLabelValidator:
                 w_clean = re.sub(r'[^a-z0-9]', '', word.lower())
                 if w_clean and w_clean in words:
                     h = heights[i]
-                    if 10 < h < 200:  # Valid character pixel height
+                    confidence = float(font_data.get("conf", [100] * len(texts))[i])
+                    if confidence >= 60 and 10 < h < 200:  # Valid character pixel height
                         matched_heights.append(h)
             # The name is printed large once and may be repeated in small print
             # (e.g. in the composition), so use the tallest occurrence.
@@ -326,26 +376,22 @@ class MedicineLabelValidator:
         gen_h = get_word_height(generic_match)
         br_h = get_word_height(brand_match)
 
-        # Fallback estimation if blister reflection obscured exact word box
-        if gen_h == 0 and br_h > 0:
-            gen_h = br_h * 1.25
-        elif br_h == 0 and gen_h > 0:
-            br_h = gen_h * 0.75
-        elif gen_h == 0 and br_h == 0:
-            gen_h, br_h = 36.0, 26.0
+        if not generic_match or generic_match == "Not Detected" or not brand_match or gen_h == 0 or br_h == 0:
+            self.font_ratio_results = result
+            return result
 
         result["generic_font_height_px"] = round(gen_h, 1)
         result["brand_font_height_px"] = round(br_h, 1)
         ratio = round(gen_h / max(br_h, 1.0), 2)
         result["ratio"] = ratio
 
-        # Statutory rule: Generic name must be larger or comparable (>= 1.05x)
+        # Compare measured pixel heights; this is not a legal font-size certification.
         if ratio >= 1.0:
             result["status"] = "PASS"
-            result["details"] = f"Generic ({gen_h:.0f}px) is {ratio}x larger than Brand ({br_h:.0f}px) [Complies with Rule 96(1)(i)]"
+            result["details"] = f"Generic ({gen_h:.0f}px) is {ratio}x larger than Brand ({br_h:.0f}px) (measured pixel heights)"
         else:
             result["status"] = "FAIL"
-            result["details"] = f"Brand ({br_h:.0f}px) is larger than Generic ({gen_h:.0f}px) [Violates Rule 96(1)(i)]"
+            result["details"] = f"Brand ({br_h:.0f}px) is larger than Generic ({gen_h:.0f}px) (measured pixel heights)"
 
         self.font_ratio_results = result
         return result
@@ -360,58 +406,91 @@ class MedicineLabelValidator:
         """
         result = {
             "detected": False,
+            "decoded": False,
+            "gs1_verified": False,
             "count": 0,
             "details": [],
             "status": "FAIL",
-            "regulatory_note": "Mandatory on Secondary Carton / Outer Box under GS1 / Top-300 Brand notification."
+            "regulatory_note": "Detection alone does not verify GS1 structure or product authenticity."
         }
 
-        if not PYZBAR_AVAILABLE:
-            result["error"] = "pyzbar library not installed or shared DLL missing"
-            self.barcode_results = result
-            return result
-
         try:
-            # Check original and grayscale
-            decoded_objects = pyzbar.decode(self.original_image)
+            # Decode at the best available resolution. Dense DataMatrix/QR codes
+            # often become undecodable after the general OCR image is downsized.
+            decoded_objects = []
+            decode_sx = decode_sy = 1.0
+            if PYZBAR_AVAILABLE:
+                for candidate in (self.full_res_image, self.original_image):
+                    decoded_objects = pyzbar.decode(candidate)
+                    if decoded_objects:
+                        decode_sx = self.original_image.shape[1] / float(candidate.shape[1])
+                        decode_sy = self.original_image.shape[0] / float(candidate.shape[0])
+                        break
+                    gray = cv2.cvtColor(candidate, cv2.COLOR_BGR2GRAY)
+                    decoded_objects = pyzbar.decode(gray)
+                    if decoded_objects:
+                        decode_sx = self.original_image.shape[1] / float(candidate.shape[1])
+                        decode_sy = self.original_image.shape[0] / float(candidate.shape[0])
+                        break
+
+            # OpenCV's QR decoder is a useful fallback when zbar is not installed
+            # or cannot decode a QR symbol. It also reports detection separately
+            # from successful decoding so an unreadable but visible code is found.
+            qr_details = []
             if not decoded_objects:
-                gray = cv2.cvtColor(self.original_image, cv2.COLOR_BGR2GRAY)
-                decoded_objects = pyzbar.decode(gray)
+                from barcode_evidence import qr_candidates
+                detector = cv2.QRCodeDetector()
+                for x,y,w,h in qr_candidates(self.full_res_image):
+                    crop = self.full_res_image[y:y+h,x:x+w]
+                    text,_,_ = detector.detectAndDecode(crop)
+                    sx=self.original_image.shape[1]/self.full_res_image.shape[1]
+                    sy=self.original_image.shape[0]/self.full_res_image.shape[0]
+                    qr_details.append({"type":"QRCODE", "data":text or "",
+                                       "rect":(int(x*sx),int(y*sy),int(w*sx),int(h*sy))})
+                decoded_objects = qr_details
 
             if decoded_objects:
                 result["detected"] = True
                 result["status"] = "PASS"
                 result["count"] = len(decoded_objects)
-                result["regulatory_note"] = "GS1 Traceability Code Verified"
+                result["regulatory_note"] = "Code detected; GS1 structure and authenticity not verified"
 
                 for obj in decoded_objects:
-                    data_str = obj.data.decode("utf-8", errors="ignore")
-                    code_type = obj.type
-                    rect = obj.rect
+                    if isinstance(obj, dict):
+                        data_str, code_type = obj["data"], obj["type"]
+                        x, y, box_w, box_h = obj["rect"]
+                    else:
+                        data_str = obj.data.decode("utf-8", errors="ignore")
+                        code_type = obj.type
+                        x = int(obj.rect.left * decode_sx)
+                        y = int(obj.rect.top * decode_sy)
+                        box_w = int(obj.rect.width * decode_sx)
+                        box_h = int(obj.rect.height * decode_sy)
 
                     result["details"].append({
                         "type": code_type,
                         "data": data_str,
-                        "rect": (rect.left, rect.top, rect.width, rect.height)
+                        "rect": (x, y, box_w, box_h)
                     })
 
                     cv2.rectangle(
                         self.annotated_image,
-                        (rect.left, rect.top),
-                        (rect.left + rect.width, rect.top + rect.height),
+                        (x, y),
+                        (x + box_w, y + box_h),
                         (255, 255, 0),
                         3
                     )
                     cv2.putText(
                         self.annotated_image,
-                        f"GS1 CODE: {code_type}",
-                        (rect.left, max(rect.top - 8, 15)),
+                        f"CODE: {code_type}",
+                        (x, max(y - 8, 15)),
                         cv2.FONT_HERSHEY_SIMPLEX,
                         0.55,
                         (255, 255, 0),
                         2
                     )
 
+            result["decoded"] = any(bool(item["data"]) for item in result["details"])
             self.barcode_results = result
             return result
 
@@ -448,11 +527,21 @@ class MedicineLabelValidator:
         morph_h = cv2.morphologyEx(red_mask, cv2.MORPH_CLOSE, horizontal_kernel, iterations=2)
         morph_v = cv2.morphologyEx(red_mask, cv2.MORPH_CLOSE, vertical_kernel, iterations=2)
         combined_morph = cv2.bitwise_or(morph_h, morph_v)
+        # Long uninterrupted strokes remain identifiable when a coloured border
+        # connects a warning panel to the photograph background.
+        vertical_strokes = cv2.morphologyEx(red_mask, cv2.MORPH_OPEN,
+            cv2.getStructuringElement(cv2.MORPH_RECT, (3, max(31,int(img_h*.20)))))
+        horizontal_strokes = cv2.morphologyEx(red_mask, cv2.MORPH_OPEN,
+            cv2.getStructuringElement(cv2.MORPH_RECT, (max(31,int(img_w*.20)),3)))
 
         clean_kernel = cv2.getStructuringElement(cv2.MORPH_RECT, (3, 3))
         cleaned_mask = cv2.morphologyEx(combined_morph, cv2.MORPH_OPEN, clean_kernel)
 
         contours, _ = cv2.findContours(cleaned_mask, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+        contours=list(contours)
+        for strokes in (vertical_strokes,horizontal_strokes):
+            extra,_=cv2.findContours(strokes,cv2.RETR_EXTERNAL,cv2.CHAIN_APPROX_SIMPLE)
+            contours.extend(extra)
 
         redline_found = False
         detected_strips = []
@@ -471,7 +560,8 @@ class MedicineLabelValidator:
             is_horizontal = (aspect_ratio_h >= min_aspect_ratio) and (w >= min_line_length)
             is_vertical = (aspect_ratio_v >= min_aspect_ratio) and (h >= min_line_length)
 
-            if is_horizontal or is_vertical:
+            if (is_horizontal or is_vertical) and not any(
+                abs(x-r['bounding_box'][0])+abs(y-r['bounding_box'][1]) < 8 for r in detected_strips):
                 redline_found = True
                 orientation = "Horizontal" if is_horizontal else "Vertical"
                 ratio_val = round(max(aspect_ratio_h, aspect_ratio_v), 2)
@@ -506,202 +596,119 @@ class MedicineLabelValidator:
     # 5. PHARMACOPOEIA REGULATORY CRITERIA (ALL 14 MANDATORY RULES)
     # --------------------------------------------------------------------------
     def validate_regulatory_fields(self, text: str) -> dict:
-        """
-        Validates the extracted OCR text against all 14 statutory criteria of
-        Pharmacopoeia & Drug Packaging Regulations.
-        """
-        clean_text = " " + " ".join(text.split()) + " "
-
-        # 1. Generic Name Match (Expanded for all real-world pharmaceutical compounds & pharmacopoeias)
-        gen_pattern = (
-            r"\b[A-Za-z]{3,25}(?:cillin|mycin|cycline|prazole|statin|sartan|olol|pril|oxacin|fenac|zoline|"
-            r"mab|nib|vir|adine|irine|formin|cetamol|fen|zole|pam|lam|pine|lone|zone|asone)\b"
-            r"[\s\w\-\.]{0,35}(?:Tablets?|Capsules?|Syrup|Injection|Suspension|Drops?|IP|BP|USP)\b|"
-            r"\b(?:[A-Z][a-z0-9\-]{2,20}\s+){1,3}(?:Tablets?|Capsules?|Syrup|Injection|Suspension|Ointment|Gel|Drops?)\s*(?:IP|BP|USP)\b|"
-            r"\b(?:Ciprofloxacin|Paracetamol|Amoxicillin|Azithromycin|Metformin|Pantoprazole|"
-            r"Omeprazole|Ibuprofen|Cetirizine|Atorvastatin|Cefixime|Levocetirizine|Telmisartan|"
-            r"Amlodipine|Diclofenac|Ofloxacin|Doxycycline|Ranitidine|Domperidone|Aceclofenac|"
-            r"Montelukast|Glimepiride|Metoprolol|Rosuvastatin|Clopidogrel|Dolo|Augmentin|Crocin|"
-            r"Metrogyl|Calpol|Pan|Zincovit|Limcee|Shelcal)"
-            r"[\s\w\-\.]{0,40}(?:Tablets?|Capsules?|Syrup|Injection|Suspension|Ointment|Gel|Drops?|IP|BP|USP)?\b"
-        )
-        gen_match = re.search(gen_pattern, clean_text, flags=re.IGNORECASE)
-        generic_val = gen_match.group(0).strip() if gen_match else "Not Detected"
-
-        # Brand Name Match
-        brand_pattern = r"\b(?:CIPRODAC|CIPROLET|AUGMENTIN|CALPOL|PAN|DOLO|ZITHROX|GLUCOPHAGE|CROCIT|AMLOVAS)\s*(?:[- ]?\d{2,4})?\b"
-        brand_match = re.search(brand_pattern, clean_text, flags=re.IGNORECASE)
-        brand_val = brand_match.group(0).strip() if brand_match else ""
-
-        # 2. Generic Name 2 Font Size Larger Than Brand Name (Rule 96(1)(i))
-        font_eval = self.evaluate_font_size_rule(generic_val, brand_val)
-
-        # 3. Dosage Form and Strength
-        form_pattern = (
-            r"(?:\b\d+(?:\.\d+)?\s*(?:mg|g|mcg|µg|ml|iu|w\/v|w\/w|%)\b)[\s\w\-\.]{0,30}"
-            r"(?:tablets?|capsules?|syrup|injection|drops?|suspension|gel|ointment)|"
-            r"(?:tablets?|capsules?|syrup|injection|drops?|suspension)[\s\w\-\.]{0,30}"
-            r"(?:\b\d+(?:\.\d+)?\s*(?:mg|g|mcg|µg|ml|iu|w\/v|w\/w|%)\b)|"
-            r"\b(?:tablets?|capsules?|syrup|injection|drops?|suspension)\s+IP\s+\d+\s*mg\b"
-        )
-        form_match = re.search(form_pattern, clean_text, flags=re.IGNORECASE)
-        if not form_match and gen_match:
-            # Fallback check for "500 mg" or "Tablets"
-            if "tablet" in clean_text.lower() and re.search(r"\b\d+\s*mg\b", clean_text, re.I):
-                strength_match = re.search(r"\b\d+\s*mg\b", clean_text, re.I).group(0)
-                dosage_strength_val = f"Tablets IP ({strength_match})"
-            else:
-                dosage_strength_val = "Not Detected"
-        else:
-            dosage_strength_val = form_match.group(0).strip() if form_match else "Not Detected"
-
-        # 4. Active Ingredients in Metric Units
-        active_pattern = (
-            r"(?:each\s+(?:uncoated\s+|film[- ]coated\s+)?(?:tablet|capsule|ml|5\s*ml)?\s*contains?|composition|contains?)"
-            r"[\s\w\-\.\,\:\(\)\%\/]{0,120}?(?:Ciprofloxacin|Paracetamol|[a-zA-Z\s]{4,30})[\s\w\-\.\,\:\(\)\%\/]{0,80}?(?:\d+(?:\.\d+)?\s*(?:mg|g|mcg|ml|iu|%))"
-        )
-        active_match = re.search(active_pattern, clean_text, flags=re.IGNORECASE)
-        active_val = active_match.group(0).strip() if active_match else "Not Detected"
-
-        # 5. Name and Address of Manufacturer
-        mfg_name_pattern = (
-            r"(?:manufactured\s+by|mfd(?:\.|\s+by)?|mfg(?:\.|\s+by)?|marketed\s+by)"
-            r"[:\s]+([\s\w\-\.\,\:\(\)\%\/]{3,180}?(?:pharmaceuticals?|laboratories|ltd\.?|limited|pvt\.?|corp)[\s\w\-\.\,\:\(\)\%\/]{0,150})"
-        )
-        mfg_name_match = re.search(mfg_name_pattern, clean_text, flags=re.IGNORECASE)
-        if not mfg_name_match:
-            # Fallback search for Cadila / Sidco / Industrial area
-            cadila_match = re.search(r"(?:CADILA\s+PHARMACEUTICALS[\s\w\-\.\,\:\(\)\%\/]{0,140})", clean_text, re.I)
-            mfg_name_val = cadila_match.group(0).strip() if cadila_match else "Not Detected"
-        else:
-            mfg_name_val = mfg_name_match.group(0).strip()
-
-        # 6. Mfg License Number
-        lic_pattern = (
-            r"(?:mfg[\.,]?\s*(?:lic[\.,]?|license)\s*(?:no[\.,]?)?|licence\s*no[\.,]?|lic[\.,]?\s*no[\.,]?|m\.l[\.,]?\s*no[\.,]?)"
-            r"[:\s.,-]*([a-zA-Z0-9\/\-]{4,30})"
-        )
-        lic_match = re.search(lic_pattern, clean_text, flags=re.IGNORECASE)
-        lic_val = lic_match.group(0).strip() if lic_match else "Not Detected"
-
-        # 7. Batch / Lot Number
-        batch_pattern = (
-            r"(?:b\.?\s*no\.?|batch\s*(?:no\.?|number)?|lot\s*(?:no\.?|number)?|b\.no)"
-            r"[:\s.-]*([a-zA-Z0-9\-\/]{4,20})"
-        )
-        batch_match = re.search(batch_pattern, clean_text, flags=re.IGNORECASE)
-        batch_val = batch_match.group(0).strip() if batch_match else "Not Detected"
-
-        # 8. Mfg Date / Expiry Date
-        mfg_date_match = re.search(
-            r"(?:mfg\.?\s*(?:date)?|mfd\.?)[:\s.-]*([0-9]{1,2}[\/\-.][0-9]{2,4}|[a-zA-Z]{3,9}[.\/\-\s]*[0-9]{2,4})",
-            clean_text, re.IGNORECASE
-        )
-        exp_date_match = re.search(
-            r"(?:exp\.?\s*(?:date)?|expiry|use\s*before|best\s*before)[:\s.-]*([0-9]{1,2}[\/\-.][0-9]{2,4}|[a-zA-Z]{3,9}[.\/\-\s]*[0-9]{2,4})",
-            clean_text, re.IGNORECASE
-        )
-
-        dates_detected = []
-        if mfg_date_match:
-            dates_detected.append(f"MFG: {mfg_date_match.group(1).strip()}")
-        if exp_date_match:
-            dates_detected.append(f"EXP: {exp_date_match.group(1).strip()}")
-        dates_val = " | ".join(dates_detected) if dates_detected else "Not Detected"
-
-        # 9. Storage Conditions
-        storage_pattern = (
-            r"(?:store\s+(?:protected\s+from|below|at|in|between)|protect\s+from\s+(?:light|moisture)|"
-            r"keep\s+(?:in\s+a\s+cool|out\s+of\s+reach)|do\s+not\s+freeze)[\s\w\-\.\,\:\(\)\%\/]{3,70}"
-        )
-        storage_match = re.search(storage_pattern, clean_text, flags=re.IGNORECASE)
-        storage_val = storage_match.group(0).strip() if storage_match else "Not Detected"
-
-        # 10. Direction for Use / Dosage
-        dosage_pattern = (
-            r"(?:dosage\s*[:\-]?\s*as\s+directed|as\s+directed\s+by\s+(?:the\s+)?physician|"
-            r"directions?\s+for\s+use|for\s+(?:external|oral|iv|im)\s+use|swallow\s+whole)[\s\w\-\.\,\:\(\)\%\/]{0,50}"
-        )
-        dosage_match = re.search(dosage_pattern, clean_text, flags=re.IGNORECASE)
-        dosage_val = dosage_match.group(0).strip() if dosage_match else "Not Detected"
-
-        # 11. Prescription Symbol (Rx, NRx, XRx)
-        rx_pattern = r"\b(Rx|NRx|XRx|℞)\b"
-        rx_match = re.search(rx_pattern, clean_text, flags=re.IGNORECASE)
-        rx_val = rx_match.group(0).strip() if rx_match else "Not Detected"
-
-        # 12. Required Barcode / QR Code
-        bc_detected = self.barcode_results.get("detected", False)
-        bc_val = (
-            f"PASS (GS1 {self.barcode_results.get('details', [{}])[0].get('type', 'Code')} Verified)"
-            if bc_detected
-            else "Not on Primary Blister (Secondary Carton Mandate under GS1 / Top-300)"
-        )
-
-        # 13. Schedule & Warning Box (Prescription Drugs)
-        schedule_warning_pattern = (
-            r"(?:schedule\s+[h|h1|x|g]|not\s+to\s+be\s+sold\s+by\s+retail\s+without|"
-            r"prescription\s+of\s+a\s+registered|caution\s*:\s*this\s+drug\s+may\s+cause|"
-            r"warning\s*:\s*to\s+be\s+sold)[\s\w\-\.\,\:\(\)\%\/]{0,140}"
-        )
-        sched_match = re.search(schedule_warning_pattern, clean_text, flags=re.IGNORECASE)
-        sched_val = sched_match.group(0).strip() if sched_match else "Not Detected"
-
-        # 14. Schedule Redline
-        rl_detected = self.redline_results.get("detected", False)
-        rl_val = (
-            f"PRESENT ({self.redline_results.get('strips', [{}])[0].get('orientation', 'Line')}, Ratio: {self.redline_results.get('strips', [{}])[0].get('aspect_ratio', 3.5)})"
-            if rl_detected
-            else "NOT DETECTED (OTC or Non-Schedule)"
-        )
-
-        # ----------------------------------------------------------------------
-        # Assemble 14 Pharmacopoeia Criteria Dictionary
-        # ----------------------------------------------------------------------
-        criteria_list = [
-            ("Generic Name", "Statutory generic / proper name (e.g., Ciprofloxacin, Paracetamol)", generic_val != "Not Detected", generic_val, True),
-            ("Generic Font Size >= Brand (Rule 96(1)(i))", "Generic name font size must be larger than brand name under Rule 96(1)(i)", font_eval["status"] == "PASS", font_eval["details"], True),
-            ("Dosage Form and Strength", "Dosage form (tablets, capsules, etc.) and quantitative strength (e.g., 500 mg)", dosage_strength_val != "Not Detected", dosage_strength_val, True),
-            ("Active Ingredients in Metric Units", "Statement of active composition in metric units (mg, g, mcg, ml, iu)", active_val != "Not Detected", active_val, True),
-            ("Name and Address of Manufacturer", "Full name and manufacturing plant address with state/PIN", mfg_name_val != "Not Detected", mfg_name_val, True),
-            ("Mfg License Number", "Drug Manufacturing License Number (Mfg. Lic. No. / M.L. No.)", lic_val != "Not Detected", lic_val, True),
-            ("Batch / Lot Number", "Manufacturing Batch or Lot identifier for product traceability", batch_val != "Not Detected", batch_val, True),
-            ("Mfg Date / Expiry Date", "Production and mandatory Expiry / Best Before date", dates_val != "Not Detected", dates_val, True),
-            ("Storage Conditions", "Statutory storage instructions (e.g., store below 25°C, protect from moisture)", storage_val != "Not Detected", storage_val, True),
-            ("Directions for Use / Dosage", "Dosage instructions (e.g., As directed by the physician)", dosage_val != "Not Detected", dosage_val, True),
-            ("Prescription Symbol (Rx, NRx, XRx)", "Prescription drug identifier symbol (Rx / NRx / XRx)", rx_val != "Not Detected", rx_val, False),
-            ("Required Barcode or QR Code", "GS1 1D Barcode, DataMatrix, or 2D QR Code for traceability", bc_detected, bc_val, False),
-            ("Schedule Warning (Prescription Drugs)", "Mandatory Schedule H/H1/X statutory warning box & retail restriction", sched_val != "Not Detected", sched_val, True),
-            ("Schedule Redline (Prescription Drugs)", "Continuous vertical or horizontal red line prescribed for Schedule H/H1 drugs", rl_detected, rl_val, True),
+        """Report detected content as PASS and missing content as FAIL."""
+        from label_fields import extract_fields
+        fields = extract_fields(text, getattr(self, "ocr_lines", []))
+        font = self.evaluate_font_size_rule(
+            fields.get("generic", {}).get("value", ""),
+            fields.get("brand", {}).get("value", ""))
+        definitions = [
+            ("Generic Name", "generic", "Generic name printed on the label", True),
+            ("Generic Font Size >= Brand (Rule 96(1)(i))", "font", "Comparison of measured generic and brand text heights", True),
+            ("Dosage Form and Strength", "form_strength", "Dosage form and quantitative strength", True),
+            ("Active Ingredients in Metric Units", "active", "Composition statement with a readable metric quantity", True),
+            ("Name and Address of Manufacturer", "manufacturer", "Manufacturer statement and following address lines", True),
+            ("Mfg License Number", "licence", "Printed manufacturing or import licence identifier", True),
+            ("Batch / Lot Number", "batch", "Printed batch or lot identifier", True),
+            ("Mfg Date / Expiry Date", "dates", "Both manufacturing and expiry dates must be readable", True),
+            ("Storage Conditions", "storage", "Storage and child-safety instructions", True),
+            ("Directions for Use / Dosage", "dosage", "Dosage or directions statement", True),
+            ("Prescription Symbol (Rx, NRx, XRx)", "rx", "Readable prescription symbol", False),
+            ("Required Barcode or QR Code", "barcode", "Barcode or QR presence check", False),
+            ("Schedule Warning (Prescription Drugs)", "warning", "Readable schedule or prescription restriction statement", True),
+            ("Schedule Redline (Prescription Drugs)", "redline", "Elongated red marking detected by color and geometry", True),
         ]
-
+        def combine(target, keys):
+            present = [fields[k] for k in keys if k in fields]
+            if present:
+                fields[target] = {
+                    "value": " | ".join(f["value"] for f in present),
+                    "lines": [line for f in present for line in f["lines"]],
+                    "uncertain": len(present) != len(keys),
+                }
+        combine("form_strength", ("form", "strength"))
+        combine("dates", ("mfg_date", "exp_date"))
         results = {}
-        passed_required = 0
-        total_required = 0
-
-        for name, desc, is_pass, extracted, required in criteria_list:
-            if required:
-                total_required += 1
-                if is_pass:
-                    passed_required += 1
-
-            status_str = "PASS" if is_pass else ("INFO / CONDITIONAL" if not required else "FAIL")
-            results[name] = {
-                "status": status_str,
-                "required": required,
-                "description": desc,
-                "extracted_value": " ".join(extracted.split())
-            }
-
-        self.compliance_score = round((passed_required / total_required) * 100, 2) if total_required > 0 else 0
+        # These criteria check whether the corresponding label content is present.
+        # Confidence and competing readings remain diagnostic evidence, rather
+        # than turning a successful presence check into mandatory review.
+        presence_fields = {"dosage", "batch", "licence", "manufacturer", "warning"}
+        for name, key, description, required in definitions:
+            entry = fields.get(key)
+            status, value, confidence, notes = "FAIL", "Not Detected", None, []
+            if entry:
+                value = entry["value"]
+                status = "PASS" if value.strip() else "FAIL"
+                evidence = [row for row in getattr(self, "ocr_lines", [])
+                            if any(row["text"].strip(" |—_~") == line for line in entry["lines"])]
+                if getattr(self, "ocr_lines", []) and not evidence and key not in presence_fields:
+                    notes.append("Supplemental reading has no matching measured line evidence")
+                if evidence:
+                    confidence = min(row["confidence"] for row in evidence)
+                    if confidence < 75 and key not in presence_fields:
+                        notes.append("Low OCR confidence; compare with the image")
+                    # Identifiers, quantities and addresses must not silently choose
+                    # one of conflicting OCR readings. Keep the alternatives visible.
+                    if key in ("dates", "active", "form_strength", "storage"):
+                        def numeric_evidence(line):
+                            parsed = extract_fields(line)
+                            keys = {"dates": ("mfg_date", "exp_date"),
+                                    "form_strength": ("strength",),
+                                    "batch": ("batch",), "licence": ("licence",),
+                                    "storage": ("storage",)}.get(key)
+                            if keys:
+                                content = " ".join(parsed[k]["value"] for k in keys if k in parsed)
+                            else:
+                                content = line
+                            return re.findall(r"\d+", content)
+                        for row in evidence:
+                            numbers = numeric_evidence(row["text"])
+                            for alternate in row.get("alternatives", []):
+                                other = numeric_evidence(alternate["text"])
+                                if alternate["confidence"] >= 45 and numbers and other and numbers != other:
+                                    notes.append("OCR passes disagree: " + alternate["text"])
+                if entry.get("uncertain"):
+                    notes.append("Required part of this field is missing or unreadable")
+            if key == "font":
+                status, value = font["status"], font["details"]
+            elif key == "barcode":
+                if self.barcode_results.get("detected"):
+                    status, value = "PASS", "Barcode / QR code present"
+                else:
+                    value = "Not detected (conditional for primary packaging)"
+            elif key == "redline" and self.redline_results.get("detected"):
+                status, value = "PASS", "Red marking detected (color/shape check only)"
+            elif key == "warning" and not entry and getattr(self, "warning_panel_results", {}).get("detected"):
+                status = "PASS"
+                description = "Visual presence of a red panel containing printed text"
+                value = "Red panel with printed warning-style text detected; wording unreadable"
+                notes.append("Visual presence only; prescription wording has not been verified")
+            presence_state = "detected" if entry and value.strip() else "not_detected"
+            if key in ("font", "barcode", "redline") or (key == "warning" and not entry):
+                presence_state = "detected" if status == "PASS" else "not_detected"
+            if status == "FAIL" and not entry and key != "font":
+                value = "Not present in extracted image content"
+            if not required and status == "FAIL":
+                status = "OPTIONAL"
+                value = "Not detected (optional)"
+            results[name] = {"status": status, "required": required,
+                             "description": description, "extracted_value": value,
+                             "presence_state": presence_state,
+                             "ocr_confidence": confidence,
+                             "diagnostic_notes": list(dict.fromkeys(notes)),
+                             "review_notes": list(dict.fromkeys(notes))}
+            if entry and "raw_value" in entry:
+                results[name]["raw_extracted_value"] = entry["raw_value"]
+                results[name]["spelling_corrected"] = entry["raw_value"] != value
+        passed = sum(v["required"] and v["status"] == "PASS" for v in results.values())
+        total = sum(v["required"] for v in results.values())
+        self.compliance_score = round(100 * passed / total, 2)
         self.validation_results = results
-
-        return {
-            "score_percentage": self.compliance_score,
-            "passed_required": f"{passed_required}/{total_required}",
-            "overall_status": "COMPLIANT / PASS" if self.compliance_score >= 80.0 else "NON-COMPLIANT / REJECT",
-            "field_checks": results
-        }
+        self.overall_status = "COMPLIANT / PASS" if passed == total else "NON-COMPLIANT / REJECT"
+        return {"score_percentage": self.compliance_score,
+                "passed_required": f"{passed}/{total}",
+                "overall_status": self.overall_status, "requires_review": False, "validation_mode": "presence",
+                "field_checks": results}
 
     # --------------------------------------------------------------------------
     # 6. VISUAL RESULT OVERLAY GENERATOR
@@ -737,9 +744,9 @@ class MedicineLabelValidator:
             if st == "PASS":
                 color = (0, 230, 0)
                 tag = "[PASS]"
-            elif "CONDITIONAL" in st or "INFO" in st:
+            elif "CONDITIONAL" in st or "INFO" in st or st in ("REVIEW", "OPTIONAL"):
                 color = (255, 190, 0)
-                tag = "[INFO]"
+                tag = "[OPT]" if st == "OPTIONAL" else "[INFO]"
             else:
                 color = (70, 70, 255)
                 tag = "[FAIL]"
@@ -753,8 +760,9 @@ class MedicineLabelValidator:
 
         # Overall compliance footer
         y_pos = max(y_pos + 15, h - 55)
-        overall_text = f"SCORE: {self.compliance_score}% - {'PASS' if self.compliance_score >= 80 else 'REJECT'}"
-        box_color = (0, 160, 0) if self.compliance_score >= 80 else (0, 0, 200)
+        verdict = "REVIEW" if getattr(self, "overall_status", "") == "MANUAL REVIEW REQUIRED" else ("PASS" if self.compliance_score >= 80 else "REJECT")
+        overall_text = f"SCORE: {self.compliance_score}% - {verdict}"
+        box_color = (0, 140, 200) if verdict == "REVIEW" else ((0, 160, 0) if self.compliance_score >= 80 else (0, 0, 200))
         cv2.rectangle(canvas, (sx - 5, y_pos - 25), (w + sidebar_w - 15, y_pos + 15), box_color, -1)
         cv2.putText(canvas, overall_text, (sx + 10, y_pos), cv2.FONT_HERSHEY_DUPLEX, 0.65, (255, 255, 255), 2)
 
@@ -781,6 +789,9 @@ class MedicineLabelValidator:
         print("[3/4] Performing HSV Color Filtering for Schedule Redline...")
         redline_info = self.detect_redline()
 
+        from warning_panel import detect_warning_panel
+        self.warning_panel_results = detect_warning_panel(self.original_image)
+
         print("[4/4] Validating 14 Pharmacopoeia Statutory Regulatory Criteria...")
         validation_info = self.validate_regulatory_fields(text)
 
@@ -788,8 +799,12 @@ class MedicineLabelValidator:
             "image_path": self.image_path,
             "ocr_text_preview": text[:350] + ("..." if len(text) > 350 else ""),
             "ocr_text_full": text,
+            "ocr_engine": getattr(self, "ocr_engine", "unknown"),
+            "ocr_lines": [{k: v for k, v in line.items() if k != "words"} for line in getattr(self, "ocr_lines", [])],
+            "ocr_warnings": getattr(self, "ocr_warnings", []),
             "barcode_detection": barcode_info,
             "redline_detection": redline_info,
+            "warning_panel_detection": self.warning_panel_results,
             "font_ratio_analysis": self.font_ratio_results,
             "regulatory_validation": validation_info
         }

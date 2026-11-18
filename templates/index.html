@@ -57,7 +57,7 @@
 
                 <div class="dropzone" id="dropzone">
                     <input type="file" id="fileInput" accept="image/*" hidden>
-                    <div class="dropzone-content" id="dropzonePrompt">
+                    <div class="dropzone-content" id="dropzonePrompt" role="button" tabindex="0" aria-label="Choose a medicine label image">
                         <div class="upload-icon-circle">
                             <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
@@ -65,14 +65,14 @@
                                 <line x1="12" y1="3" x2="12" y2="15"></line>
                             </svg>
                         </div>
-                        <h3>Drag & drop medicine label here</h3>
-                        <p>or click to browse your files</p>
+                        <h3>Choose a medicine label photo</h3>
+                        <p>Tap to browse, or drag and drop an image</p>
                     </div>
 
                     <!-- Image Preview Container -->
                     <div class="preview-wrapper" id="previewWrapper" style="display: none;">
                         <img id="imagePreview" src="" alt="Label Preview">
-                        <button type="button" class="btn-clear" id="btnClearFile" title="Remove image">&times;</button>
+                        <button type="button" class="btn-clear" id="btnClearFile" title="Remove image" aria-label="Remove image">&times;</button>
                     </div>
                 </div>
 

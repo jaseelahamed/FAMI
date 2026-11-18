@@ -1,0 +1,815 @@
+{
+  "image_path": "static/uploads/TestingMedicineLabels/df4c15c9-8c7c-4f0b-ad9f-88c733b72a24.jpeg",
+  "ocr_text_preview": "Trypsin-Chymotrypsin\nChymobit-Forte\nTablets\nB.No.T25E637A MHG.MAY.2025 EXP.AAR.2027\nMR.P.Rs.310.00PHR10TABS.INCL.ALLITAXES\nComposition\nEach Enteric coated tablet contains\n2lack armour units of enzymatic activity\nChymobit-ForteChymobit-Forte Chymobit-Forte\n(Supplied by a purified concentrate whichhas specific\ntrypsin and chymotrypsin activity in a r...",
+  "ocr_text_full": "Trypsin-Chymotrypsin\nChymobit-Forte\nTablets\nB.No.T25E637A MHG.MAY.2025 EXP.AAR.2027\nMR.P.Rs.310.00PHR10TABS.INCL.ALLITAXES\nComposition\nEach Enteric coated tablet contains\n2lack armour units of enzymatic activity\nChymobit-ForteChymobit-Forte Chymobit-Forte\n(Supplied by a purified concentrate whichhas specific\ntrypsin and chymotrypsin activity in a ratio of\napproximately6:1)\nExcipients\nq.S\nColour:Titanium DioxideL.P.\nDosage :As directed by the Physician.\nSTORAGE:STORE INA COOL, DARK8\nDRY PLACE.PROTECTEDFROM LIGHT.\nKeep the\nLune\nreacr\nCAUTiON Not tobe soid by retail without the\nprescrlption ofa ReglsteredM\nlcelrrao\nMfg.LicNo.89/UA/SC/P-2016&90/UA/2016\nMfg. by:Bajaj Formulations\n(A WHO-GMP &ISO 9001:2015 CertifiedCO.\nKhasra No. 161 Village-Lakeshwary\nBhagwanpur Roorkee. Dist. Haridwar (U.K)\nnlera\n9001\nWHO-GNP\n®\nCertiied\nInlera Healthcare\nNV\nMarketed By\nAlcolabs\nuslrialArea, Phase-1,\nPlot No. 356\nPanchkula\nhcare@gm\nnal",
+  "ocr_engine": "paddle",
+  "ocr_lines": [
+    {
+      "text": "Trypsin-Chymotrypsin",
+      "confidence": 99.9,
+      "box": [
+        82.0,
+        17.0,
+        1174.0,
+        196.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "Chymobit-Forte",
+      "confidence": 98.5,
+      "box": [
+        1281.0,
+        71.0,
+        85.0,
+        520.0
+      ],
+      "source": "paddle_rotated",
+      "alternatives": []
+    },
+    {
+      "text": "Tablets",
+      "confidence": 99.9,
+      "box": [
+        470.0,
+        193.0,
+        393.0,
+        141.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "Chymobit-Forte",
+      "confidence": 99.9,
+      "box": [
+        217.0,
+        331.0,
+        923.0,
+        183.0
+      ],
+      "source": "paddle_rotated",
+      "alternatives": []
+    },
+    {
+      "text": "B.No.T25E637A MHG.MAY.2025 EXP.AAR.2027",
+      "confidence": 91.3,
+      "box": [
+        1412.0,
+        390.0,
+        114.0,
+        1327.0
+      ],
+      "source": "paddle_rotated",
+      "alternatives": []
+    },
+    {
+      "text": "MR.P.Rs.310.00PHR10TABS.INCL.ALLITAXES",
+      "confidence": 94.0,
+      "box": [
+        1511.0,
+        396.0,
+        105.0,
+        1319.0
+      ],
+      "source": "paddle_rotated",
+      "alternatives": []
+    },
+    {
+      "text": "Composition",
+      "confidence": 99.5,
+      "box": [
+        83.0,
+        490.0,
+        284.0,
+        63.0
+      ],
+      "source": "paddle_rotated",
+      "alternatives": []
+    },
+    {
+      "text": "Each Enteric coated tablet contains",
+      "confidence": 96.6,
+      "box": [
+        79.0,
+        541.0,
+        793.0,
+        76.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "2lack armour units of enzymatic activity",
+      "confidence": 95.5,
+      "box": [
+        79.0,
+        609.0,
+        884.0,
+        79.0
+      ],
+      "source": "paddle_rotated",
+      "alternatives": []
+    },
+    {
+      "text": "Chymobit-ForteChymobit-Forte Chymobit-Forte",
+      "confidence": 95.7,
+      "box": [
+        1272.0,
+        620.0,
+        92.0,
+        1600.0
+      ],
+      "source": "paddle_rotated",
+      "alternatives": []
+    },
+    {
+      "text": "(Supplied by a purified concentrate whichhas specific",
+      "confidence": 94.7,
+      "box": [
+        85.0,
+        667.0,
+        1169.0,
+        81.0
+      ],
+      "source": "paddle_rotated",
+      "alternatives": [
+        {
+          "text": "(Supplied by a purified concentrate which has specific",
+          "confidence": 94.2,
+          "source": "paddle"
+        }
+      ]
+    },
+    {
+      "text": "trypsin and chymotrypsin activity in a ratio of",
+      "confidence": 95.9,
+      "box": [
+        81.0,
+        730.0,
+        980.0,
+        67.0
+      ],
+      "source": "paddle",
+      "alternatives": [
+        {
+          "text": "trypsin andchymotrypsin activity in a ratio of",
+          "confidence": 90.7,
+          "source": "paddle_rotated"
+        }
+      ]
+    },
+    {
+      "text": "approximately6:1)",
+      "confidence": 98.4,
+      "box": [
+        81.0,
+        784.0,
+        469.0,
+        77.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "Excipients",
+      "confidence": 99.8,
+      "box": [
+        89.0,
+        854.0,
+        231.0,
+        58.0
+      ],
+      "source": "paddle_rotated",
+      "alternatives": []
+    },
+    {
+      "text": "q.S",
+      "confidence": 87.6,
+      "box": [
+        1146.0,
+        865.0,
+        87.0,
+        60.0
+      ],
+      "source": "paddle",
+      "alternatives": [
+        {
+          "text": "q.s.",
+          "confidence": 71.8,
+          "source": "paddle_rotated"
+        }
+      ]
+    },
+    {
+      "text": "Colour:Titanium DioxideL.P.",
+      "confidence": 95.7,
+      "box": [
+        83.0,
+        910.0,
+        662.0,
+        77.0
+      ],
+      "source": "paddle_rotated",
+      "alternatives": [
+        {
+          "text": "Colour:Titanium Dioxide-L.P.",
+          "confidence": 93.7,
+          "source": "paddle"
+        }
+      ]
+    },
+    {
+      "text": "Dosage :As directed by the Physician.",
+      "confidence": 96.7,
+      "box": [
+        85.0,
+        968.0,
+        861.0,
+        74.0
+      ],
+      "source": "paddle",
+      "alternatives": [
+        {
+          "text": "Dosage :As directed by the Physician",
+          "confidence": 95.9,
+          "source": "paddle_rotated"
+        }
+      ]
+    },
+    {
+      "text": "STORAGE:STORE INA COOL, DARK8",
+      "confidence": 93.7,
+      "box": [
+        83.0,
+        1027.0,
+        936.0,
+        81.0
+      ],
+      "source": "paddle_rotated",
+      "alternatives": [
+        {
+          "text": "STORAGE:STORE INA COOL, DARK&",
+          "confidence": 93.2,
+          "source": "paddle"
+        }
+      ]
+    },
+    {
+      "text": "DRY PLACE.PROTECTEDFROM LIGHT.",
+      "confidence": 96.6,
+      "box": [
+        81.0,
+        1087.0,
+        941.0,
+        72.0
+      ],
+      "source": "paddle",
+      "alternatives": [
+        {
+          "text": "DRY PLACE.PROTECTED FROMLIGHT.",
+          "confidence": 96.5,
+          "source": "paddle_rotated"
+        }
+      ]
+    },
+    {
+      "text": "Keep the",
+      "confidence": 95.2,
+      "box": [
+        71.0,
+        1157.0,
+        226.0,
+        74.0
+      ],
+      "source": "paddle_rotated",
+      "alternatives": []
+    },
+    {
+      "text": "Lune",
+      "confidence": 72.5,
+      "box": [
+        628.0,
+        1175.0,
+        107.0,
+        40.0
+      ],
+      "source": "paddle_rotated",
+      "alternatives": []
+    },
+    {
+      "text": "reacr",
+      "confidence": 72.7,
+      "box": [
+        718.0,
+        1182.0,
+        126.0,
+        31.0
+      ],
+      "source": "paddle_rotated",
+      "alternatives": []
+    },
+    {
+      "text": "CAUTiON Not tobe soid by retail without the",
+      "confidence": 81.3,
+      "box": [
+        98.0,
+        1246.0,
+        1148.0,
+        69.0
+      ],
+      "source": "paddle",
+      "alternatives": [
+        {
+          "text": "CAuTiOn Not tobe sald by retail without",
+          "confidence": 80.7,
+          "source": "paddle_rotated"
+        }
+      ]
+    },
+    {
+      "text": "prescrlption ofa ReglsteredM",
+      "confidence": 92.2,
+      "box": [
+        98.0,
+        1310.0,
+        652.0,
+        67.0
+      ],
+      "source": "paddle_rotated",
+      "alternatives": [
+        {
+          "text": "prescrlption of a Reglstered MedicalPractitioner",
+          "confidence": 89.3,
+          "source": "paddle"
+        }
+      ]
+    },
+    {
+      "text": "lcelrrao",
+      "confidence": 59.3,
+      "box": [
+        805.0,
+        1328.0,
+        174.0,
+        31.0
+      ],
+      "source": "paddle_rotated",
+      "alternatives": []
+    },
+    {
+      "text": "Mfg.LicNo.89/UA/SC/P-2016&90/UA/2016",
+      "confidence": 97.8,
+      "box": [
+        80.0,
+        1405.0,
+        1099.0,
+        69.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "Mfg. by:Bajaj Formulations",
+      "confidence": 96.5,
+      "box": [
+        79.0,
+        1467.0,
+        704.0,
+        71.0
+      ],
+      "source": "paddle",
+      "alternatives": [
+        {
+          "text": "Mfg. by: Bajai Formnulations",
+          "confidence": 91.0,
+          "source": "paddle_rotated"
+        }
+      ]
+    },
+    {
+      "text": "(A WHO-GMP &ISO 9001:2015 CertifiedCO.",
+      "confidence": 90.6,
+      "box": [
+        83.0,
+        1518.0,
+        1159.0,
+        78.0
+      ],
+      "source": "paddle",
+      "alternatives": [
+        {
+          "text": "(AWHO-GMP &ISO 9001:2015 CertifiedCo.",
+          "confidence": 90.5,
+          "source": "paddle_rotated"
+        }
+      ]
+    },
+    {
+      "text": "Khasra No. 161 Village-Lakeshwary",
+      "confidence": 94.5,
+      "box": [
+        81.0,
+        1587.0,
+        910.0,
+        80.0
+      ],
+      "source": "paddle_rotated",
+      "alternatives": [
+        {
+          "text": "Khasra No. 161, Village-Lakeshwary,",
+          "confidence": 93.9,
+          "source": "paddle"
+        }
+      ]
+    },
+    {
+      "text": "Bhagwanpur Roorkee. Dist. Haridwar (U.K)",
+      "confidence": 91.6,
+      "box": [
+        81.0,
+        1640.0,
+        1071.0,
+        86.0
+      ],
+      "source": "paddle_rotated",
+      "alternatives": [
+        {
+          "text": "Bhagwanpur.Roorkee, Distt. Haridwar (U.K)",
+          "confidence": 91.2,
+          "source": "paddle"
+        }
+      ]
+    },
+    {
+      "text": "nlera",
+      "confidence": 94.6,
+      "box": [
+        214.0,
+        1809.0,
+        440.0,
+        136.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "9001",
+      "confidence": 94.2,
+      "box": [
+        924.0,
+        1835.0,
+        48.0,
+        84.0
+      ],
+      "source": "paddle_rotated",
+      "alternatives": [
+        {
+          "text": "10060S1",
+          "confidence": 73.7,
+          "source": "paddle"
+        }
+      ]
+    },
+    {
+      "text": "WHO-GNP",
+      "confidence": 89.1,
+      "box": [
+        971.0,
+        1843.0,
+        187.0,
+        88.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "®",
+      "confidence": 61.4,
+      "box": [
+        690.0,
+        1903.0,
+        55.0,
+        58.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "Certiied",
+      "confidence": 86.8,
+      "box": [
+        977.0,
+        1910.0,
+        165.0,
+        73.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "Inlera Healthcare",
+      "confidence": 97.7,
+      "box": [
+        205.0,
+        1937.0,
+        512.0,
+        77.0
+      ],
+      "source": "paddle_rotated",
+      "alternatives": []
+    },
+    {
+      "text": "NV",
+      "confidence": 80.9,
+      "box": [
+        935.0,
+        1967.0,
+        58.0,
+        60.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "Marketed By",
+      "confidence": 97.9,
+      "box": [
+        213.0,
+        1997.0,
+        324.0,
+        61.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "Alcolabs",
+      "confidence": 98.2,
+      "box": [
+        217.0,
+        2050.0,
+        305.0,
+        62.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "uslrialArea, Phase-1,",
+      "confidence": 86.0,
+      "box": [
+        574.0,
+        2092.0,
+        439.0,
+        65.0
+      ],
+      "source": "paddle_rotated",
+      "alternatives": []
+    },
+    {
+      "text": "Plot No. 356",
+      "confidence": 91.3,
+      "box": [
+        218.0,
+        2105.0,
+        291.0,
+        57.0
+      ],
+      "source": "paddle_rotated",
+      "alternatives": [
+        {
+          "text": "Plot No. 356, IoduslrlalArea, Phase-1,",
+          "confidence": 88.9,
+          "source": "paddle"
+        }
+      ]
+    },
+    {
+      "text": "Panchkula",
+      "confidence": 99.3,
+      "box": [
+        214.0,
+        2152.0,
+        273.0,
+        54.0
+      ],
+      "source": "paddle_rotated",
+      "alternatives": [
+        {
+          "text": "E-mall ID.mlerahealthcare@gmail.com",
+          "confidence": 89.5,
+          "source": "paddle"
+        },
+        {
+          "text": "Panchkula (Haryana)-134113",
+          "confidence": 87.1,
+          "source": "paddle"
+        }
+      ]
+    },
+    {
+      "text": "hcare@gm",
+      "confidence": 99.0,
+      "box": [
+        679.0,
+        2187.0,
+        219.0,
+        39.0
+      ],
+      "source": "paddle_rotated",
+      "alternatives": []
+    },
+    {
+      "text": "nal",
+      "confidence": 79.0,
+      "box": [
+        889.0,
+        2191.0,
+        50.0,
+        27.0
+      ],
+      "source": "paddle_rotated",
+      "alternatives": []
+    }
+  ],
+  "ocr_warnings": [],
+  "barcode_detection": {
+    "detected": true,
+    "decoded": false,
+    "gs1_verified": false,
+    "count": 1,
+    "details": [
+      {
+        "type": "QRCODE",
+        "data": "",
+        "rect": [
+          110,
+          570,
+          229,
+          292
+        ]
+      }
+    ],
+    "status": "PASS",
+    "regulatory_note": "Code detected; GS1 structure and authenticity not verified"
+  },
+  "redline_detection": {
+    "detected": true,
+    "count": 2,
+    "strips": [
+      {
+        "bounding_box": [
+          0,
+          797,
+          46,
+          403
+        ],
+        "orientation": "Vertical",
+        "aspect_ratio": 8.76,
+        "area": 1482
+      },
+      {
+        "bounding_box": [
+          127,
+          186,
+          442,
+          62
+        ],
+        "orientation": "Horizontal",
+        "aspect_ratio": 7.13,
+        "area": 16712
+      }
+    ],
+    "status": "PASS (Schedule Redline Present)"
+  },
+  "font_ratio_analysis": {
+    "status": "REVIEW",
+    "generic_font_height_px": 0,
+    "brand_font_height_px": 0,
+    "ratio": null,
+    "details": "Unable to measure both generic and brand names reliably"
+  },
+  "regulatory_validation": {
+    "score_percentage": 33.33,
+    "passed_required": "4/12",
+    "overall_status": "MANUAL REVIEW REQUIRED",
+    "requires_review": true,
+    "field_checks": {
+      "Generic Name": {
+        "status": "FAIL",
+        "required": true,
+        "description": "Generic name printed on the label",
+        "extracted_value": "Not Detected",
+        "ocr_confidence": null,
+        "review_notes": []
+      },
+      "Generic Font Size >= Brand (Rule 96(1)(i))": {
+        "status": "REVIEW",
+        "required": true,
+        "description": "Comparison of measured generic and brand text heights",
+        "extracted_value": "Unable to measure both generic and brand names reliably",
+        "ocr_confidence": null,
+        "review_notes": []
+      },
+      "Dosage Form and Strength": {
+        "status": "FAIL",
+        "required": true,
+        "description": "Dosage form and quantitative strength",
+        "extracted_value": "Not Detected",
+        "ocr_confidence": null,
+        "review_notes": []
+      },
+      "Active Ingredients in Metric Units": {
+        "status": "FAIL",
+        "required": true,
+        "description": "Composition statement with a readable metric quantity",
+        "extracted_value": "Not Detected",
+        "ocr_confidence": null,
+        "review_notes": []
+      },
+      "Name and Address of Manufacturer": {
+        "status": "FAIL",
+        "required": true,
+        "description": "Manufacturer statement and following address lines",
+        "extracted_value": "Not Detected",
+        "ocr_confidence": null,
+        "review_notes": []
+      },
+      "Mfg License Number": {
+        "status": "FAIL",
+        "required": true,
+        "description": "Printed manufacturing or import licence identifier",
+        "extracted_value": "Not Detected",
+        "ocr_confidence": null,
+        "review_notes": []
+      },
+      "Batch / Lot Number": {
+        "status": "PASS",
+        "required": true,
+        "description": "Printed batch or lot identifier",
+        "extracted_value": "B.No.T25E637A",
+        "ocr_confidence": 91.3,
+        "review_notes": []
+      },
+      "Mfg Date / Expiry Date": {
+        "status": "PASS",
+        "required": true,
+        "description": "Both manufacturing and expiry dates must be readable",
+        "extracted_value": "Mfg.LicNo.89 | EXP.AAR.2027",
+        "ocr_confidence": 91.3,
+        "review_notes": []
+      },
+      "Storage Conditions": {
+        "status": "FAIL",
+        "required": true,
+        "description": "Storage and child-safety instructions",
+        "extracted_value": "Not Detected",
+        "ocr_confidence": null,
+        "review_notes": []
+      },
+      "Directions for Use / Dosage": {
+        "status": "PASS",
+        "required": true,
+        "description": "Dosage or directions statement",
+        "extracted_value": "Dosage :As directed by the Physician.",
+        "ocr_confidence": 96.7,
+        "review_notes": []
+      },
+      "Prescription Symbol (Rx, NRx, XRx)": {
+        "status": "INFO / CONDITIONAL",
+        "required": false,
+        "description": "Readable prescription symbol",
+        "extracted_value": "Not Detected",
+        "ocr_confidence": null,
+        "review_notes": []
+      },
+      "Required Barcode or QR Code": {
+        "status": "PASS",
+        "required": false,
+        "description": "Barcode or QR presence check",
+        "extracted_value": "Barcode / QR code present",
+        "ocr_confidence": null,
+        "review_notes": []
+      },
+      "Schedule Warning (Prescription Drugs)": {
+        "status": "FAIL",
+        "required": true,
+        "description": "Readable schedule or prescription restriction statement",
+        "extracted_value": "Not Detected",
+        "ocr_confidence": null,
+        "review_notes": []
+      },
+      "Schedule Redline (Prescription Drugs)": {
+        "status": "PASS",
+        "required": true,
+        "description": "Elongated red marking detected by color and geometry",
+        "extracted_value": "Red marking detected (color/shape check only)",
+        "ocr_confidence": null,
+        "review_notes": []
+      }
+    }
+  },
+  "elapsed_seconds": 38.47
+}

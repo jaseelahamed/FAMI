@@ -1,0 +1,1730 @@
+[
+  {
+    "image": "0dfb0b74-c01c-4f1c-aac5-b72cae74e38e.jpeg",
+    "brand": "SOBICLO-500",
+    "reference_notes": "",
+    "baseline": {
+      "engine": "paddle",
+      "seconds": 28.17,
+      "fields": {
+        "Generic Name": {
+          "finding": "MISSED VISIBLE FIELD",
+          "status": "FAIL",
+          "value": "Not Detected",
+          "notes": []
+        },
+        "Generic Font Size >= Brand (Rule 96(1)(i))": {
+          "finding": "MEASUREMENT REVIEW",
+          "status": "REVIEW",
+          "value": "Unable to measure both generic and brand names reliably",
+          "notes": []
+        },
+        "Dosage Form and Strength": {
+          "finding": "MISSED VISIBLE FIELD",
+          "status": "FAIL",
+          "value": "Not Detected",
+          "notes": []
+        },
+        "Active Ingredients in Metric Units": {
+          "finding": "INCORRECT / INCOMPLETE VALUE",
+          "status": "REVIEW",
+          "value": "Composition: rescrption of a registe Each film coated tablet contains: 10",
+          "notes": [
+            "Required part of this field is missing or unreadable"
+          ]
+        },
+        "Name and Address of Manufacturer": {
+          "finding": "INCORRECT / INCOMPLETE VALUE",
+          "status": "PASS",
+          "value": "Manufactured by: (AnISO9001 1:2008Certified Co.)",
+          "notes": []
+        },
+        "Mfg License Number": {
+          "finding": "INCORRECT / INCOMPLETE VALUE",
+          "status": "PASS",
+          "value": "Lic.No.: HP-MNB-00018",
+          "notes": []
+        },
+        "Batch / Lot Number": {
+          "finding": "MISSED VISIBLE FIELD",
+          "status": "FAIL",
+          "value": "Not Detected",
+          "notes": []
+        },
+        "Mfg Date / Expiry Date": {
+          "finding": "EXTRACTED (reference terms matched)",
+          "status": "PASS",
+          "value": "MFG.MAY 2026 | EXP.APR.2028",
+          "notes": []
+        },
+        "Storage Conditions": {
+          "finding": "DETECTED (presence only; full text not scored)",
+          "status": "PASS",
+          "value": "Store in a cool,",
+          "notes": []
+        },
+        "Directions for Use / Dosage": {
+          "finding": "DETECTED (presence only; full text not scored)",
+          "status": "PASS",
+          "value": "As directed by the physician.",
+          "notes": []
+        },
+        "Prescription Symbol (Rx, NRx, XRx)": {
+          "finding": "NO VISIBLE FIELD; correctly not passed",
+          "status": "INFO / CONDITIONAL",
+          "value": "Not Detected",
+          "notes": []
+        },
+        "Required Barcode or QR Code": {
+          "finding": "MISSED VISIBLE FIELD",
+          "status": "INFO / CONDITIONAL",
+          "value": "Not detected (conditional for primary packaging)",
+          "notes": []
+        },
+        "Schedule Warning (Prescription Drugs)": {
+          "finding": "MISSED VISIBLE FIELD",
+          "status": "FAIL",
+          "value": "Not Detected",
+          "notes": []
+        },
+        "Schedule Redline (Prescription Drugs)": {
+          "finding": "DETECTED (presence only; full text not scored)",
+          "status": "PASS",
+          "value": "Red marking detected (color/shape check only)",
+          "notes": []
+        }
+      }
+    },
+    "final": {
+      "engine": "paddle",
+      "seconds": 41.95,
+      "fields": {
+        "Generic Name": {
+          "finding": "EXTRACTED (reference terms matched)",
+          "status": "PASS",
+          "value": "Sodium Bicarbonate",
+          "notes": []
+        },
+        "Generic Font Size >= Brand (Rule 96(1)(i))": {
+          "finding": "MEASUREMENT REVIEW",
+          "status": "REVIEW",
+          "value": "Unable to measure both generic and brand names reliably",
+          "notes": []
+        },
+        "Dosage Form and Strength": {
+          "finding": "EXTRACTED (reference terms matched)",
+          "status": "PASS",
+          "value": "Tablets | 500mg",
+          "notes": []
+        },
+        "Active Ingredients in Metric Units": {
+          "finding": "EXTRACTED (reference terms matched)",
+          "status": "PASS",
+          "value": "Each film coated tablet contains: 500mg Sodium BicarbonateP",
+          "notes": []
+        },
+        "Name and Address of Manufacturer": {
+          "finding": "INCORRECT / INCOMPLETE VALUE",
+          "status": "PASS",
+          "value": "Manufactured by: Dwarka Global Lilesciences Plot No 89, Industrial Area. Lodhi Majra, Manpura, Baddi, Dist Solan (H.P.)Pin-174101 (A GMP, GLP&ISO 9004:2015 Certified Company)",
+          "notes": []
+        },
+        "Mfg License Number": {
+          "finding": "EXTRACTED (reference terms matched)",
+          "status": "PASS",
+          "value": "Mfg.Lic.No.:HP-MNB-00001",
+          "notes": []
+        },
+        "Batch / Lot Number": {
+          "finding": "EXTRACTED (reference terms matched)",
+          "status": "PASS",
+          "value": "BNODT-26475A",
+          "notes": []
+        },
+        "Mfg Date / Expiry Date": {
+          "finding": "EXTRACTED (reference terms matched)",
+          "status": "PASS",
+          "value": "MFG.MAY 2026 | EXP.APR.2028",
+          "notes": []
+        },
+        "Storage Conditions": {
+          "finding": "DETECTED (presence only; full text not scored)",
+          "status": "PASS",
+          "value": "Storage: Store in a cool, dry & dark place; below 25°c, protect from direct sunlight,; heat & moisture.; protect from direct sunlight,",
+          "notes": []
+        },
+        "Directions for Use / Dosage": {
+          "finding": "DETECTED (presence only; full text not scored)",
+          "status": "PASS",
+          "value": "Dosage: As directed by the physician.",
+          "notes": []
+        },
+        "Prescription Symbol (Rx, NRx, XRx)": {
+          "finding": "NO VISIBLE FIELD; correctly not passed",
+          "status": "INFO / CONDITIONAL",
+          "value": "Not Detected",
+          "notes": []
+        },
+        "Required Barcode or QR Code": {
+          "finding": "DETECTED (presence only; full text not scored)",
+          "status": "PASS",
+          "value": "Barcode / QR code present",
+          "notes": []
+        },
+        "Schedule Warning (Prescription Drugs)": {
+          "finding": "DETECTED (presence only; full text not scored)",
+          "status": "PASS",
+          "value": "CAUTON: Not to besoid stall without the prescrption of a register Meoirsal Practitioner",
+          "notes": []
+        },
+        "Schedule Redline (Prescription Drugs)": {
+          "finding": "DETECTED (presence only; full text not scored)",
+          "status": "PASS",
+          "value": "Red marking detected (color/shape check only)",
+          "notes": []
+        }
+      }
+    }
+  },
+  {
+    "image": "16f5d93b-6f37-49fd-a83d-f2297a8e53db.jpeg",
+    "brand": "LERAPREG-PN",
+    "reference_notes": "",
+    "baseline": {
+      "engine": "paddle",
+      "seconds": 22.21,
+      "fields": {
+        "Generic Name": {
+          "finding": "INCORRECT / INCOMPLETE VALUE",
+          "status": "PASS",
+          "value": "Nortriptyline",
+          "notes": []
+        },
+        "Generic Font Size >= Brand (Rule 96(1)(i))": {
+          "finding": "MEASUREMENT REVIEW",
+          "status": "REVIEW",
+          "value": "Unable to measure both generic and brand names reliably",
+          "notes": []
+        },
+        "Dosage Form and Strength": {
+          "finding": "INCORRECT / INCOMPLETE VALUE",
+          "status": "REVIEW",
+          "value": "Tablets",
+          "notes": [
+            "Required part of this field is missing or unreadable"
+          ]
+        },
+        "Active Ingredients in Metric Units": {
+          "finding": "INCORRECT / INCOMPLETE VALUE",
+          "status": "PASS",
+          "value": "Each film coated tablet contains: 75mg I.P. Pregabalin",
+          "notes": []
+        },
+        "Name and Address of Manufacturer": {
+          "finding": "MISSED VISIBLE FIELD",
+          "status": "FAIL",
+          "value": "Not Detected",
+          "notes": []
+        },
+        "Mfg License Number": {
+          "finding": "MISSED VISIBLE FIELD",
+          "status": "FAIL",
+          "value": "Not Detected",
+          "notes": []
+        },
+        "Batch / Lot Number": {
+          "finding": "MISSED VISIBLE FIELD",
+          "status": "FAIL",
+          "value": "Not Detected",
+          "notes": []
+        },
+        "Mfg Date / Expiry Date": {
+          "finding": "INCORRECT / INCOMPLETE VALUE",
+          "status": "PASS",
+          "value": "Mfg.LicNo.89 | EXP.JAN.2028",
+          "notes": []
+        },
+        "Storage Conditions": {
+          "finding": "DETECTED (presence only; full text not scored)",
+          "status": "PASS",
+          "value": "STORE IN A COOL & DRY",
+          "notes": []
+        },
+        "Directions for Use / Dosage": {
+          "finding": "DETECTED (presence only; full text not scored)",
+          "status": "PASS",
+          "value": "Dosage:Asdirectedbythe Physician.",
+          "notes": []
+        },
+        "Prescription Symbol (Rx, NRx, XRx)": {
+          "finding": "NO VISIBLE FIELD; correctly not passed",
+          "status": "INFO / CONDITIONAL",
+          "value": "Not Detected",
+          "notes": []
+        },
+        "Required Barcode or QR Code": {
+          "finding": "FALSE POSITIVE",
+          "status": "PASS",
+          "value": "Barcode / QR code present",
+          "notes": []
+        },
+        "Schedule Warning (Prescription Drugs)": {
+          "finding": "DETECTED (presence only; full text not scored)",
+          "status": "PASS",
+          "value": "Not to be sold by retail without the prescription ora Registered Medipal Practtoner",
+          "notes": []
+        },
+        "Schedule Redline (Prescription Drugs)": {
+          "finding": "DETECTED (presence only; full text not scored)",
+          "status": "PASS",
+          "value": "Red marking detected (color/shape check only)",
+          "notes": []
+        }
+      }
+    },
+    "final": {
+      "engine": "paddle",
+      "seconds": 29.09,
+      "fields": {
+        "Generic Name": {
+          "finding": "INCORRECT / INCOMPLETE VALUE",
+          "status": "PASS",
+          "value": "Pregabalin (SR)&Noriptine",
+          "notes": []
+        },
+        "Generic Font Size >= Brand (Rule 96(1)(i))": {
+          "finding": "MEASUREMENT REVIEW",
+          "status": "REVIEW",
+          "value": "Unable to measure both generic and brand names reliably",
+          "notes": []
+        },
+        "Dosage Form and Strength": {
+          "finding": "EXTRACTED (reference terms matched)",
+          "status": "PASS",
+          "value": "Tablet | 75mg + 10mg",
+          "notes": []
+        },
+        "Active Ingredients in Metric Units": {
+          "finding": "EXTRACTED; REVIEW REQUIRED",
+          "status": "REVIEW",
+          "value": "Each filmcoated tablet contains: 75mg. Pregabalin (In SustainedReleaseForm) Nortriptyline Hydrochloride 10mg Eg toNortriptyline",
+          "notes": [
+            "OCR passes disagree: 0.S 5r$"
+          ]
+        },
+        "Name and Address of Manufacturer": {
+          "finding": "EXTRACTED (reference terms matched)",
+          "status": "PASS",
+          "value": "Mfg.by:Bajaj Formulations (AWHO-GMP &ISO9001:2015CertifiedCo） Khasra No. 161, Village-Lakeshwary. Bhagwanpur,RoorkeeDistt.Haridwar (U.K)",
+          "notes": []
+        },
+        "Mfg License Number": {
+          "finding": "EXTRACTED (reference terms matched)",
+          "status": "PASS",
+          "value": "Mfg.LicNo.89/UA/SC/P-2016",
+          "notes": []
+        },
+        "Batch / Lot Number": {
+          "finding": "EXTRACTED; REVIEW REQUIRED",
+          "status": "REVIEW",
+          "value": "T26B267B",
+          "notes": [
+            "Required part of this field is missing or unreadable"
+          ]
+        },
+        "Mfg Date / Expiry Date": {
+          "finding": "INCORRECT / INCOMPLETE VALUE",
+          "status": "REVIEW",
+          "value": "EXP.JAN.2028",
+          "notes": [
+            "Required part of this field is missing or unreadable"
+          ]
+        },
+        "Storage Conditions": {
+          "finding": "DETECTED (presence only; full text not scored)",
+          "status": "PASS",
+          "value": "STORAGE: STORE IN A COOL & DRY; PLACE.PROTECTFROMLIGHT.",
+          "notes": []
+        },
+        "Directions for Use / Dosage": {
+          "finding": "DETECTED (presence only; full text not scored)",
+          "status": "PASS",
+          "value": "Dosage:As directed bythe Physician",
+          "notes": []
+        },
+        "Prescription Symbol (Rx, NRx, XRx)": {
+          "finding": "NO VISIBLE FIELD; correctly not passed",
+          "status": "INFO / CONDITIONAL",
+          "value": "Not Detected",
+          "notes": []
+        },
+        "Required Barcode or QR Code": {
+          "finding": "NO VISIBLE FIELD; correctly not passed",
+          "status": "INFO / CONDITIONAL",
+          "value": "Not detected (conditional for primary packaging)",
+          "notes": []
+        },
+        "Schedule Warning (Prescription Drugs)": {
+          "finding": "DETECTED (presence only; full text not scored)",
+          "status": "PASS",
+          "value": "CAUTION:Not to be sold by retail without the prescription orya Registered Medipal Piactitioner",
+          "notes": []
+        },
+        "Schedule Redline (Prescription Drugs)": {
+          "finding": "DETECTED (presence only; full text not scored)",
+          "status": "PASS",
+          "value": "Red marking detected (color/shape check only)",
+          "notes": []
+        }
+      }
+    }
+  },
+  {
+    "image": "5352ad15-5104-4aa1-92b3-604e2581d234.jpeg",
+    "brand": "Telney-40",
+    "reference_notes": "",
+    "baseline": {
+      "engine": "paddle",
+      "seconds": 38.69,
+      "fields": {
+        "Generic Name": {
+          "finding": "EXTRACTED (reference terms matched)",
+          "status": "PASS",
+          "value": "Telmisartan",
+          "notes": []
+        },
+        "Generic Font Size >= Brand (Rule 96(1)(i))": {
+          "finding": "MEASUREMENT REVIEW",
+          "status": "REVIEW",
+          "value": "Unable to measure both generic and brand names reliably",
+          "notes": []
+        },
+        "Dosage Form and Strength": {
+          "finding": "INCORRECT / INCOMPLETE VALUE",
+          "status": "REVIEW",
+          "value": "Tablets",
+          "notes": [
+            "Required part of this field is missing or unreadable"
+          ]
+        },
+        "Active Ingredients in Metric Units": {
+          "finding": "INCORRECT / INCOMPLETE VALUE",
+          "status": "REVIEW",
+          "value": "Each uncoated tablet contains:",
+          "notes": [
+            "Required part of this field is missing or unreadable"
+          ]
+        },
+        "Name and Address of Manufacturer": {
+          "finding": "EXTRACTED (reference terms matched)",
+          "status": "PASS",
+          "value": "Mfd. by :L.V.LIFE SCIENCES VPO Gurumajra, Baddi, Distt. Solan (H.P)-174101 (An IS09001:2015& GMP, GLP CertifiedCo.)",
+          "notes": []
+        },
+        "Mfg License Number": {
+          "finding": "EXTRACTED (reference terms matched)",
+          "status": "PASS",
+          "value": "Mfg. Lic. No.: MNB/07/656",
+          "notes": []
+        },
+        "Batch / Lot Number": {
+          "finding": "EXTRACTED (reference terms matched)",
+          "status": "PASS",
+          "value": "B.NO.LV25DT-127BMFG",
+          "notes": []
+        },
+        "Mfg Date / Expiry Date": {
+          "finding": "MISSED VISIBLE FIELD",
+          "status": "FAIL",
+          "value": "Not Detected",
+          "notes": []
+        },
+        "Storage Conditions": {
+          "finding": "DETECTED (presence only; full text not scored)",
+          "status": "PASS",
+          "value": "Store in a cool & dry place; Protect from light & moisture; Store in a cool & dry place; Protect from light & moisture",
+          "notes": []
+        },
+        "Directions for Use / Dosage": {
+          "finding": "DETECTED (presence only; full text not scored)",
+          "status": "PASS",
+          "value": "Dosage:As directed by the Physician.",
+          "notes": []
+        },
+        "Prescription Symbol (Rx, NRx, XRx)": {
+          "finding": "MISSED VISIBLE FIELD",
+          "status": "INFO / CONDITIONAL",
+          "value": "Not Detected",
+          "notes": []
+        },
+        "Required Barcode or QR Code": {
+          "finding": "NO VISIBLE FIELD; correctly not passed",
+          "status": "INFO / CONDITIONAL",
+          "value": "Not detected (conditional for primary packaging)",
+          "notes": []
+        },
+        "Schedule Warning (Prescription Drugs)": {
+          "finding": "DETECTED (presence only; full text not scored)",
+          "status": "PASS",
+          "value": "SCHEDULE H PRESCRIPTION DRUG - CAUTION Not to be sold by retail without the prescription of a Registered Medical Practitioner",
+          "notes": []
+        },
+        "Schedule Redline (Prescription Drugs)": {
+          "finding": "MISSED VISIBLE FIELD",
+          "status": "FAIL",
+          "value": "Not Detected",
+          "notes": []
+        }
+      }
+    },
+    "final": {
+      "engine": "paddle",
+      "seconds": 29.2,
+      "fields": {
+        "Generic Name": {
+          "finding": "EXTRACTED (reference terms matched)",
+          "status": "PASS",
+          "value": "Telmisartan",
+          "notes": []
+        },
+        "Generic Font Size >= Brand (Rule 96(1)(i))": {
+          "finding": "MEASUREMENT REVIEW",
+          "status": "REVIEW",
+          "value": "Unable to measure both generic and brand names reliably",
+          "notes": []
+        },
+        "Dosage Form and Strength": {
+          "finding": "EXTRACTED (reference terms matched)",
+          "status": "PASS",
+          "value": "Tablets | 40mg",
+          "notes": []
+        },
+        "Active Ingredients in Metric Units": {
+          "finding": "EXTRACTED (reference terms matched)",
+          "status": "PASS",
+          "value": "Composition Each uncoated tablet contains 40mg. Telmisartan",
+          "notes": []
+        },
+        "Name and Address of Manufacturer": {
+          "finding": "EXTRACTED (reference terms matched)",
+          "status": "PASS",
+          "value": "Mfd.by:L.V.LIFE SCIENCES VPO Gurumajra, Baddi, Distt Solan (H.P)-174101 (An IS0 9001:2015& GMP, GLP CertifiedCo.)",
+          "notes": []
+        },
+        "Mfg License Number": {
+          "finding": "EXTRACTED (reference terms matched)",
+          "status": "PASS",
+          "value": "Mfg. Lic.No.:MNB/07/656",
+          "notes": []
+        },
+        "Batch / Lot Number": {
+          "finding": "EXTRACTED (reference terms matched)",
+          "status": "PASS",
+          "value": "B.No.LV25DT-127B",
+          "notes": []
+        },
+        "Mfg Date / Expiry Date": {
+          "finding": "EXTRACTED (reference terms matched)",
+          "status": "PASS",
+          "value": "MFG.04/2025 | EXP.03/2027",
+          "notes": []
+        },
+        "Storage Conditions": {
+          "finding": "DETECTED (presence only; full text not scored)",
+          "status": "PASS",
+          "value": "Storage: Store in a cool & dry place; at a temperature not exceeding 25C.; Protect from light & moisture.; Protect from light & moisture",
+          "notes": []
+        },
+        "Directions for Use / Dosage": {
+          "finding": "DETECTED (presence only; full text not scored)",
+          "status": "PASS",
+          "value": "Dosage: As directed by the Physician.",
+          "notes": []
+        },
+        "Prescription Symbol (Rx, NRx, XRx)": {
+          "finding": "EXTRACTED; REVIEW REQUIRED",
+          "status": "REVIEW",
+          "value": "R$",
+          "notes": [
+            "Low OCR confidence; compare with the image",
+            "Required part of this field is missing or unreadable"
+          ]
+        },
+        "Required Barcode or QR Code": {
+          "finding": "NO VISIBLE FIELD; correctly not passed",
+          "status": "INFO / CONDITIONAL",
+          "value": "Not detected (conditional for primary packaging)",
+          "notes": []
+        },
+        "Schedule Warning (Prescription Drugs)": {
+          "finding": "DETECTED (presence only; full text not scored)",
+          "status": "PASS",
+          "value": "SCHEDULE H PRESCRIPTION DRUG - CAUTION Not to be sold by retail without the prescription of a Registered Medical Practitioner",
+          "notes": []
+        },
+        "Schedule Redline (Prescription Drugs)": {
+          "finding": "DETECTED (presence only; full text not scored)",
+          "status": "PASS",
+          "value": "Red marking detected (color/shape check only)",
+          "notes": []
+        }
+      }
+    }
+  },
+  {
+    "image": "67686598-b982-43a2-bbf5-d9da97efbfcb.jpeg",
+    "brand": "Lerahist-16",
+    "reference_notes": "",
+    "baseline": {
+      "engine": "paddle",
+      "seconds": 31.21,
+      "fields": {
+        "Generic Name": {
+          "finding": "INCORRECT / INCOMPLETE VALUE",
+          "status": "PASS",
+          "value": "ach uncoaled",
+          "notes": []
+        },
+        "Generic Font Size >= Brand (Rule 96(1)(i))": {
+          "finding": "MEASUREMENT REVIEW",
+          "status": "REVIEW",
+          "value": "Unable to measure both generic and brand names reliably",
+          "notes": []
+        },
+        "Dosage Form and Strength": {
+          "finding": "INCORRECT / INCOMPLETE VALUE",
+          "status": "REVIEW",
+          "value": "tablet",
+          "notes": [
+            "Required part of this field is missing or unreadable"
+          ]
+        },
+        "Active Ingredients in Metric Units": {
+          "finding": "INCORRECT / INCOMPLETE VALUE",
+          "status": "REVIEW",
+          "value": "Composition: Each uncoated tablet contains I.P. 16",
+          "notes": [
+            "Required part of this field is missing or unreadable"
+          ]
+        },
+        "Name and Address of Manufacturer": {
+          "finding": "MISSED VISIBLE FIELD",
+          "status": "FAIL",
+          "value": "Not Detected",
+          "notes": []
+        },
+        "Mfg License Number": {
+          "finding": "MISSED VISIBLE FIELD",
+          "status": "FAIL",
+          "value": "Not Detected",
+          "notes": []
+        },
+        "Batch / Lot Number": {
+          "finding": "MISSED VISIBLE FIELD",
+          "status": "FAIL",
+          "value": "Not Detected",
+          "notes": []
+        },
+        "Mfg Date / Expiry Date": {
+          "finding": "EXTRACTED (reference terms matched)",
+          "status": "PASS",
+          "value": "MFG.09/2026 | EXP.08/2028",
+          "notes": []
+        },
+        "Storage Conditions": {
+          "finding": "DETECTED (presence only; full text not scored)",
+          "status": "PASS",
+          "value": "Store protected from",
+          "notes": []
+        },
+        "Directions for Use / Dosage": {
+          "finding": "DETECTED (presence only; full text not scored)",
+          "status": "PASS",
+          "value": "As directed by the Physiqian.",
+          "notes": []
+        },
+        "Prescription Symbol (Rx, NRx, XRx)": {
+          "finding": "MISSED VISIBLE FIELD",
+          "status": "INFO / CONDITIONAL",
+          "value": "Not Detected",
+          "notes": []
+        },
+        "Required Barcode or QR Code": {
+          "finding": "NO VISIBLE FIELD; correctly not passed",
+          "status": "INFO / CONDITIONAL",
+          "value": "Not detected (conditional for primary packaging)",
+          "notes": []
+        },
+        "Schedule Warning (Prescription Drugs)": {
+          "finding": "MISSED VISIBLE FIELD",
+          "status": "FAIL",
+          "value": "Not Detected",
+          "notes": []
+        },
+        "Schedule Redline (Prescription Drugs)": {
+          "finding": "DETECTED (presence only; full text not scored)",
+          "status": "PASS",
+          "value": "Red marking detected (color/shape check only)",
+          "notes": []
+        }
+      }
+    },
+    "final": {
+      "engine": "paddle",
+      "seconds": 25.63,
+      "fields": {
+        "Generic Name": {
+          "finding": "INCORRECT / INCOMPLETE VALUE",
+          "status": "PASS",
+          "value": "Betahistine",
+          "notes": []
+        },
+        "Generic Font Size >= Brand (Rule 96(1)(i))": {
+          "finding": "MEASUREMENT REVIEW",
+          "status": "REVIEW",
+          "value": "Unable to measure both generic and brand names reliably",
+          "notes": []
+        },
+        "Dosage Form and Strength": {
+          "finding": "EXTRACTED (reference terms matched)",
+          "status": "PASS",
+          "value": "Tablets | 16mg",
+          "notes": []
+        },
+        "Active Ingredients in Metric Units": {
+          "finding": "INCORRECT / INCOMPLETE VALUE",
+          "status": "PASS",
+          "value": "Composition: Each uncoated tablet contains: Betahistine 16mg",
+          "notes": []
+        },
+        "Name and Address of Manufacturer": {
+          "finding": "EXTRACTED (reference terms matched)",
+          "status": "PASS",
+          "value": "Mfg. By.:Brit Lifescience (A GMP & GLP Certified Company) V.P.O. Moginand, Nahan Road Distt. Sirmour(H.P.)173030 Mg.LicNo.:N-MNB/18/202&N-ME 8",
+          "notes": []
+        },
+        "Mfg License Number": {
+          "finding": "EXTRACTED (reference terms matched)",
+          "status": "PASS",
+          "value": "LicNo.:N-MNB/18/202",
+          "notes": []
+        },
+        "Batch / Lot Number": {
+          "finding": "INCORRECT / INCOMPLETE VALUE",
+          "status": "REVIEW",
+          "value": ".NO.BLT-2677IC",
+          "notes": [
+            "Required part of this field is missing or unreadable"
+          ]
+        },
+        "Mfg Date / Expiry Date": {
+          "finding": "EXTRACTED (reference terms matched)",
+          "status": "PASS",
+          "value": "MFG.09/2026 | EXP.08/2028",
+          "notes": []
+        },
+        "Storage Conditions": {
+          "finding": "DETECTED (presence only; full text not scored)",
+          "status": "PASS",
+          "value": "Storage: Store protected from; moisture, at a temperature; not exceeding 30c",
+          "notes": []
+        },
+        "Directions for Use / Dosage": {
+          "finding": "DETECTED (presence only; full text not scored)",
+          "status": "PASS",
+          "value": "Dosage: As directed by the Physiqian.",
+          "notes": []
+        },
+        "Prescription Symbol (Rx, NRx, XRx)": {
+          "finding": "MISSED VISIBLE FIELD",
+          "status": "INFO / CONDITIONAL",
+          "value": "Not Detected",
+          "notes": []
+        },
+        "Required Barcode or QR Code": {
+          "finding": "NO VISIBLE FIELD; correctly not passed",
+          "status": "INFO / CONDITIONAL",
+          "value": "Not detected (conditional for primary packaging)",
+          "notes": []
+        },
+        "Schedule Warning (Prescription Drugs)": {
+          "finding": "DETECTED (presence only; full text not scored)",
+          "status": "PASS",
+          "value": "PRESCRIPTION DHUG CAUTION Nol lo be seld by retail withput the prescrjption ot a Registered Medical Practillaner",
+          "notes": []
+        },
+        "Schedule Redline (Prescription Drugs)": {
+          "finding": "DETECTED (presence only; full text not scored)",
+          "status": "PASS",
+          "value": "Red marking detected (color/shape check only)",
+          "notes": []
+        }
+      }
+    }
+  },
+  {
+    "image": "79bc8f4b-d729-436f-94bf-f975b8df0956.jpeg",
+    "brand": "Viameta-500SR",
+    "reference_notes": "",
+    "baseline": {
+      "engine": "paddle",
+      "seconds": 29.29,
+      "fields": {
+        "Generic Name": {
+          "finding": "INCORRECT / INCOMPLETE VALUE",
+          "status": "PASS",
+          "value": "not crush or chewthe",
+          "notes": []
+        },
+        "Generic Font Size >= Brand (Rule 96(1)(i))": {
+          "finding": "MEASUREMENT REVIEW",
+          "status": "REVIEW",
+          "value": "Unable to measure both generic and brand names reliably",
+          "notes": []
+        },
+        "Dosage Form and Strength": {
+          "finding": "INCORRECT / INCOMPLETE VALUE",
+          "status": "REVIEW",
+          "value": "tablet",
+          "notes": [
+            "Required part of this field is missing or unreadable"
+          ]
+        },
+        "Active Ingredients in Metric Units": {
+          "finding": "EXTRACTED (reference terms matched)",
+          "status": "PASS",
+          "value": "Each uncoated sustained release tablet contains: Marutactured in India by 500mg Metformin Hydrochloride IP",
+          "notes": []
+        },
+        "Name and Address of Manufacturer": {
+          "finding": "MISSED VISIBLE FIELD",
+          "status": "FAIL",
+          "value": "Not Detected",
+          "notes": []
+        },
+        "Mfg License Number": {
+          "finding": "EXTRACTED (reference terms matched)",
+          "status": "PASS",
+          "value": "Lic No:S-MNB/09/59",
+          "notes": []
+        },
+        "Batch / Lot Number": {
+          "finding": "EXTRACTED (reference terms matched)",
+          "status": "PASS",
+          "value": "B.NO.BGAFZ001",
+          "notes": []
+        },
+        "Mfg Date / Expiry Date": {
+          "finding": "INCORRECT / INCOMPLETE VALUE",
+          "status": "REVIEW",
+          "value": "MFG.05/2026",
+          "notes": [
+            "Required part of this field is missing or unreadable"
+          ]
+        },
+        "Storage Conditions": {
+          "finding": "DETECTED (presence only; full text not scored)",
+          "status": "PASS",
+          "value": "Protect from light.; Keep out of reach of children",
+          "notes": []
+        },
+        "Directions for Use / Dosage": {
+          "finding": "DETECTED (presence only; full text not scored)",
+          "status": "PASS",
+          "value": "Dosage:As directed by the Physician",
+          "notes": []
+        },
+        "Prescription Symbol (Rx, NRx, XRx)": {
+          "finding": "NO VISIBLE FIELD; correctly not passed",
+          "status": "INFO / CONDITIONAL",
+          "value": "Not Detected",
+          "notes": []
+        },
+        "Required Barcode or QR Code": {
+          "finding": "FALSE POSITIVE",
+          "status": "PASS",
+          "value": "Barcode / QR code present",
+          "notes": []
+        },
+        "Schedule Warning (Prescription Drugs)": {
+          "finding": "DETECTED (presence only; full text not scored)",
+          "status": "PASS",
+          "value": "SCHEDULE G PRESCRIPTION DRUG-CAUTION M.R.P.Z21.72",
+          "notes": []
+        },
+        "Schedule Redline (Prescription Drugs)": {
+          "finding": "DETECTED (presence only; full text not scored)",
+          "status": "PASS",
+          "value": "Red marking detected (color/shape check only)",
+          "notes": []
+        }
+      }
+    },
+    "final": {
+      "engine": "paddle",
+      "seconds": 24.59,
+      "fields": {
+        "Generic Name": {
+          "finding": "EXTRACTED (reference terms matched)",
+          "status": "PASS",
+          "value": "Metformin Hydrochloride Sustained Release",
+          "notes": []
+        },
+        "Generic Font Size >= Brand (Rule 96(1)(i))": {
+          "finding": "MEASUREMENT REVIEW",
+          "status": "REVIEW",
+          "value": "Unable to measure both generic and brand names reliably",
+          "notes": []
+        },
+        "Dosage Form and Strength": {
+          "finding": "EXTRACTED (reference terms matched)",
+          "status": "PASS",
+          "value": "Tablets | 500 mg",
+          "notes": []
+        },
+        "Active Ingredients in Metric Units": {
+          "finding": "EXTRACTED (reference terms matched)",
+          "status": "PASS",
+          "value": "Each uncoated sustained release tablet contains: Mrg Lic No s-MNB/og/sg Metformin Hydrochloride IP 500 mg",
+          "notes": []
+        },
+        "Name and Address of Manufacturer": {
+          "finding": "MISSED VISIBLE FIELD",
+          "status": "REVIEW",
+          "value": "Not detected in this image",
+          "notes": [
+            "Absence is not confirmed: inspect the image or photograph another side"
+          ]
+        },
+        "Mfg License Number": {
+          "finding": "INCORRECT / INCOMPLETE VALUE",
+          "status": "REVIEW",
+          "value": "Lic No s-MNB/og/sg",
+          "notes": [
+            "Required part of this field is missing or unreadable"
+          ]
+        },
+        "Batch / Lot Number": {
+          "finding": "EXTRACTED (reference terms matched)",
+          "status": "PASS",
+          "value": "B.No.BGAFZ001",
+          "notes": []
+        },
+        "Mfg Date / Expiry Date": {
+          "finding": "EXTRACTED (reference terms matched)",
+          "status": "PASS",
+          "value": "MFG.05/2026 | EXP.04/2028",
+          "notes": []
+        },
+        "Storage Conditions": {
+          "finding": "DETECTED (presence only; full text not scored)",
+          "status": "PASS",
+          "value": "Storage: Store in a dry place ata; temperature not exceeding 30°c.; Protect from light.",
+          "notes": []
+        },
+        "Directions for Use / Dosage": {
+          "finding": "DETECTED (presence only; full text not scored)",
+          "status": "PASS",
+          "value": "Dosage :As directed by the Physician",
+          "notes": []
+        },
+        "Prescription Symbol (Rx, NRx, XRx)": {
+          "finding": "NO VISIBLE FIELD; correctly not passed",
+          "status": "INFO / CONDITIONAL",
+          "value": "Not Detected",
+          "notes": []
+        },
+        "Required Barcode or QR Code": {
+          "finding": "NO VISIBLE FIELD; correctly not passed",
+          "status": "INFO / CONDITIONAL",
+          "value": "Not detected (conditional for primary packaging)",
+          "notes": []
+        },
+        "Schedule Warning (Prescription Drugs)": {
+          "finding": "DETECTED (presence only; full text not scored)",
+          "status": "PASS",
+          "value": "SCHEDULE G PRESCRIPTION DRUG-CAUTION: lt is dangerous to take this preparation",
+          "notes": []
+        },
+        "Schedule Redline (Prescription Drugs)": {
+          "finding": "DETECTED (presence only; full text not scored)",
+          "status": "PASS",
+          "value": "Red marking detected (color/shape check only)",
+          "notes": []
+        }
+      }
+    }
+  },
+  {
+    "image": "9aeaedfd-f337-49a4-b2fd-de465727985c.jpeg",
+    "brand": "ALVUNAC-SP",
+    "reference_notes": "",
+    "baseline": {
+      "engine": "paddle",
+      "seconds": 37.16,
+      "fields": {
+        "Generic Name": {
+          "finding": "INCORRECT / INCOMPLETE VALUE",
+          "status": "PASS",
+          "value": "Serratiopeptidase",
+          "notes": []
+        },
+        "Generic Font Size >= Brand (Rule 96(1)(i))": {
+          "finding": "MEASUREMENT REVIEW",
+          "status": "REVIEW",
+          "value": "Unable to measure both generic and brand names reliably",
+          "notes": []
+        },
+        "Dosage Form and Strength": {
+          "finding": "INCORRECT / INCOMPLETE VALUE",
+          "status": "REVIEW",
+          "value": "Tablets",
+          "notes": [
+            "Required part of this field is missing or unreadable"
+          ]
+        },
+        "Active Ingredients in Metric Units": {
+          "finding": "MISSED VISIBLE FIELD",
+          "status": "FAIL",
+          "value": "Not Detected",
+          "notes": []
+        },
+        "Name and Address of Manufacturer": {
+          "finding": "EXTRACTED (reference terms matched)",
+          "status": "PASS",
+          "value": "Manufactured byBrit Lifescience ALVUNAC-SP V.P.O. Moginand, Nahan Road,",
+          "notes": []
+        },
+        "Mfg License Number": {
+          "finding": "MISSED VISIBLE FIELD",
+          "status": "FAIL",
+          "value": "Not Detected",
+          "notes": []
+        },
+        "Batch / Lot Number": {
+          "finding": "EXTRACTED (reference terms matched)",
+          "status": "PASS",
+          "value": "B.NO.BLT-26487A",
+          "notes": []
+        },
+        "Mfg Date / Expiry Date": {
+          "finding": "INCORRECT / INCOMPLETE VALUE",
+          "status": "REVIEW",
+          "value": "MFG.06/2026",
+          "notes": [
+            "Required part of this field is missing or unreadable"
+          ]
+        },
+        "Storage Conditions": {
+          "finding": "MISSED VISIBLE FIELD",
+          "status": "FAIL",
+          "value": "Not Detected",
+          "notes": []
+        },
+        "Directions for Use / Dosage": {
+          "finding": "DETECTED (presence only; full text not scored)",
+          "status": "PASS",
+          "value": "Dosage:As directed by the Physician.",
+          "notes": []
+        },
+        "Prescription Symbol (Rx, NRx, XRx)": {
+          "finding": "MISSED VISIBLE FIELD",
+          "status": "INFO / CONDITIONAL",
+          "value": "Not Detected",
+          "notes": []
+        },
+        "Required Barcode or QR Code": {
+          "finding": "NO VISIBLE FIELD; correctly not passed",
+          "status": "INFO / CONDITIONAL",
+          "value": "Not detected (conditional for primary packaging)",
+          "notes": []
+        },
+        "Schedule Warning (Prescription Drugs)": {
+          "finding": "DETECTED (presence only; full text not scored)",
+          "status": "PASS",
+          "value": "SCHEDULE H' PRESCRIFTION DRUG -CAUTIO Not to be sold by retail without the prescription Regstered Medlcal Practitioner",
+          "notes": []
+        },
+        "Schedule Redline (Prescription Drugs)": {
+          "finding": "DETECTED (presence only; full text not scored)",
+          "status": "PASS",
+          "value": "Red marking detected (color/shape check only)",
+          "notes": []
+        }
+      }
+    },
+    "final": {
+      "engine": "paddle",
+      "seconds": 26.57,
+      "fields": {
+        "Generic Name": {
+          "finding": "EXTRACTED (reference terms matched)",
+          "status": "PASS",
+          "value": "RAceclofenac, Paracetamol & Serratiopeptidase",
+          "notes": []
+        },
+        "Generic Font Size >= Brand (Rule 96(1)(i))": {
+          "finding": "MEASUREMENT REVIEW",
+          "status": "REVIEW",
+          "value": "Unable to measure both generic and brand names reliably",
+          "notes": []
+        },
+        "Dosage Form and Strength": {
+          "finding": "EXTRACTED (reference terms matched)",
+          "status": "PASS",
+          "value": "Tablets | 100.mg + 325.mg + 15mg",
+          "notes": []
+        },
+        "Active Ingredients in Metric Units": {
+          "finding": "EXTRACTED (reference terms matched)",
+          "status": "PASS",
+          "value": "Composition Each film coated tablet con Aceclofenac 100.mg Paracetamol 325.mg Serratiopeptidase 15mg (as enteric coated granules) (eq.to enzyme activity 30000units)",
+          "notes": []
+        },
+        "Name and Address of Manufacturer": {
+          "finding": "EXTRACTED (reference terms matched)",
+          "status": "PASS",
+          "value": "Manufactured by:Brit Lifescience nlera ALVUNAC-SP V.P.O. Moginand, Nahan Road, Distt.Sirmour(H.P)173030 Inlera Healthcare",
+          "notes": []
+        },
+        "Mfg License Number": {
+          "finding": "EXTRACTED (reference terms matched)",
+          "status": "PASS",
+          "value": "Mfg.LicNo:N-MNB/18/202",
+          "notes": []
+        },
+        "Batch / Lot Number": {
+          "finding": "EXTRACTED (reference terms matched)",
+          "status": "PASS",
+          "value": "B.NO.BLT-26487A",
+          "notes": []
+        },
+        "Mfg Date / Expiry Date": {
+          "finding": "INCORRECT / INCOMPLETE VALUE",
+          "status": "REVIEW",
+          "value": "MFG.06/2026",
+          "notes": [
+            "Required part of this field is missing or unreadable"
+          ]
+        },
+        "Storage Conditions": {
+          "finding": "DETECTED (presence only; full text not scored)",
+          "status": "PASS",
+          "value": "Storage Instructions:Store in a cool, dry &darkpl",
+          "notes": []
+        },
+        "Directions for Use / Dosage": {
+          "finding": "DETECTED (presence only; full text not scored)",
+          "status": "PASS",
+          "value": "Dosage:As directed by the Physician.",
+          "notes": []
+        },
+        "Prescription Symbol (Rx, NRx, XRx)": {
+          "finding": "MISSED VISIBLE FIELD",
+          "status": "INFO / CONDITIONAL",
+          "value": "Not Detected",
+          "notes": []
+        },
+        "Required Barcode or QR Code": {
+          "finding": "NO VISIBLE FIELD; correctly not passed",
+          "status": "INFO / CONDITIONAL",
+          "value": "Not detected (conditional for primary packaging)",
+          "notes": []
+        },
+        "Schedule Warning (Prescription Drugs)": {
+          "finding": "DETECTED (presence only; full text not scored)",
+          "status": "PASS",
+          "value": "SCHEDULE H' PRESCRIFTION DRUG -CAUTION Not to be sold by retail without the prescription Reqstered Medlcal Practitioner",
+          "notes": []
+        },
+        "Schedule Redline (Prescription Drugs)": {
+          "finding": "DETECTED (presence only; full text not scored)",
+          "status": "PASS",
+          "value": "Red marking detected (color/shape check only)",
+          "notes": []
+        }
+      }
+    }
+  },
+  {
+    "image": "d589e274-b02b-4e2e-a401-5dc480b9be4e.jpeg",
+    "brand": "Azyclo-500",
+    "reference_notes": "",
+    "baseline": {
+      "engine": "paddle",
+      "seconds": 36.28,
+      "fields": {
+        "Generic Name": {
+          "finding": "EXTRACTED (reference terms matched)",
+          "status": "PASS",
+          "value": "Azithromycin",
+          "notes": []
+        },
+        "Generic Font Size >= Brand (Rule 96(1)(i))": {
+          "finding": "MEASUREMENT REVIEW",
+          "status": "REVIEW",
+          "value": "Unable to measure both generic and brand names reliably",
+          "notes": []
+        },
+        "Dosage Form and Strength": {
+          "finding": "EXTRACTED (reference terms matched)",
+          "status": "PASS",
+          "value": "Tablets | 500 mg",
+          "notes": []
+        },
+        "Active Ingredients in Metric Units": {
+          "finding": "INCORRECT / INCOMPLETE VALUE",
+          "status": "REVIEW",
+          "value": "Composition: (AWHO-GMP CERTIFIEDCOMPANYY SIDCO, Industial Complex Phase-1,Ghat Each film coated tablet contains",
+          "notes": [
+            "Required part of this field is missing or unreadable"
+          ]
+        },
+        "Name and Address of Manufacturer": {
+          "finding": "MISSED VISIBLE FIELD",
+          "status": "FAIL",
+          "value": "Not Detected",
+          "notes": []
+        },
+        "Mfg License Number": {
+          "finding": "MISSED VISIBLE FIELD",
+          "status": "FAIL",
+          "value": "Not Detected",
+          "notes": []
+        },
+        "Batch / Lot Number": {
+          "finding": "MISSED VISIBLE FIELD",
+          "status": "FAIL",
+          "value": "Not Detected",
+          "notes": []
+        },
+        "Mfg Date / Expiry Date": {
+          "finding": "MISSED VISIBLE FIELD",
+          "status": "FAIL",
+          "value": "Not Detected",
+          "notes": []
+        },
+        "Storage Conditions": {
+          "finding": "DETECTED (presence only; full text not scored)",
+          "status": "PASS",
+          "value": "Store at a temperature hot",
+          "notes": []
+        },
+        "Directions for Use / Dosage": {
+          "finding": "DETECTED (presence only; full text not scored)",
+          "status": "PASS",
+          "value": "Dosage:As directed by the physician □",
+          "notes": []
+        },
+        "Prescription Symbol (Rx, NRx, XRx)": {
+          "finding": "MISSED VISIBLE FIELD",
+          "status": "INFO / CONDITIONAL",
+          "value": "Not Detected",
+          "notes": []
+        },
+        "Required Barcode or QR Code": {
+          "finding": "DETECTED (presence only; full text not scored)",
+          "status": "PASS",
+          "value": "Barcode / QR code present",
+          "notes": []
+        },
+        "Schedule Warning (Prescription Drugs)": {
+          "finding": "MISSED VISIBLE FIELD",
+          "status": "FAIL",
+          "value": "Not Detected",
+          "notes": []
+        },
+        "Schedule Redline (Prescription Drugs)": {
+          "finding": "DETECTED (presence only; full text not scored)",
+          "status": "PASS",
+          "value": "Red marking detected (color/shape check only)",
+          "notes": []
+        }
+      }
+    },
+    "final": {
+      "engine": "paddle",
+      "seconds": 18.72,
+      "fields": {
+        "Generic Name": {
+          "finding": "EXTRACTED (reference terms matched)",
+          "status": "PASS",
+          "value": "Azithromycin",
+          "notes": []
+        },
+        "Generic Font Size >= Brand (Rule 96(1)(i))": {
+          "finding": "MEASUREMENT REVIEW",
+          "status": "REVIEW",
+          "value": "Unable to measure both generic and brand names reliably",
+          "notes": []
+        },
+        "Dosage Form and Strength": {
+          "finding": "EXTRACTED (reference terms matched)",
+          "status": "PASS",
+          "value": "Tablets | 500 mg",
+          "notes": []
+        },
+        "Active Ingredients in Metric Units": {
+          "finding": "INCORRECT / INCOMPLETE VALUE",
+          "status": "REVIEW",
+          "value": "Composition: Each film coated tablet contains Azithromycin Dihydrate",
+          "notes": [
+            "Required part of this field is missing or unreadable"
+          ]
+        },
+        "Name and Address of Manufacturer": {
+          "finding": "INCORRECT / INCOMPLETE VALUE",
+          "status": "PASS",
+          "value": "Mfd.by:JamkasPharmaceutiealsPvt.Ltd. (AWHO-GMPCERTIFIEDCOMPANYY SIDCO, Industrial Complex, Phase-1,Ghati Dist. Kathua-184143(Jak) alco labs",
+          "notes": []
+        },
+        "Mfg License Number": {
+          "finding": "INCORRECT / INCOMPLETE VALUE",
+          "status": "PASS",
+          "value": "Mfg.LicNo.MLF282025JKO000028",
+          "notes": []
+        },
+        "Batch / Lot Number": {
+          "finding": "MISSED VISIBLE FIELD",
+          "status": "REVIEW",
+          "value": "Not detected in this image",
+          "notes": [
+            "Absence is not confirmed: inspect the image or photograph another side"
+          ]
+        },
+        "Mfg Date / Expiry Date": {
+          "finding": "INCORRECT / INCOMPLETE VALUE",
+          "status": "REVIEW",
+          "value": "EXP.DATE:APR.2028",
+          "notes": [
+            "Required part of this field is missing or unreadable"
+          ]
+        },
+        "Storage Conditions": {
+          "finding": "DETECTED (presence only; full text not scored)",
+          "status": "PASS",
+          "value": "Storage: Store at a temperature hot",
+          "notes": []
+        },
+        "Directions for Use / Dosage": {
+          "finding": "DETECTED (presence only; full text not scored)",
+          "status": "PASS",
+          "value": "Dosage:As directed by the physician",
+          "notes": []
+        },
+        "Prescription Symbol (Rx, NRx, XRx)": {
+          "finding": "MISSED VISIBLE FIELD",
+          "status": "INFO / CONDITIONAL",
+          "value": "Not Detected",
+          "notes": []
+        },
+        "Required Barcode or QR Code": {
+          "finding": "DETECTED (presence only; full text not scored)",
+          "status": "PASS",
+          "value": "Barcode / QR code present",
+          "notes": []
+        },
+        "Schedule Warning (Prescription Drugs)": {
+          "finding": "MISSED VISIBLE FIELD",
+          "status": "REVIEW",
+          "value": "Not detected in this image",
+          "notes": [
+            "Absence is not confirmed: inspect the image or photograph another side"
+          ]
+        },
+        "Schedule Redline (Prescription Drugs)": {
+          "finding": "DETECTED (presence only; full text not scored)",
+          "status": "PASS",
+          "value": "Red marking detected (color/shape check only)",
+          "notes": []
+        }
+      }
+    }
+  },
+  {
+    "image": "df4c15c9-8c7c-4f0b-ad9f-88c733b72a24.jpeg",
+    "brand": "Chymobit-Forte",
+    "reference_notes": "Enzyme activity is stated as 2 lack armour units, not mg.",
+    "baseline": {
+      "engine": "paddle",
+      "seconds": 38.47,
+      "fields": {
+        "Generic Name": {
+          "finding": "MISSED VISIBLE FIELD",
+          "status": "FAIL",
+          "value": "Not Detected",
+          "notes": []
+        },
+        "Generic Font Size >= Brand (Rule 96(1)(i))": {
+          "finding": "MEASUREMENT REVIEW",
+          "status": "REVIEW",
+          "value": "Unable to measure both generic and brand names reliably",
+          "notes": []
+        },
+        "Dosage Form and Strength": {
+          "finding": "MISSED VISIBLE FIELD",
+          "status": "FAIL",
+          "value": "Not Detected",
+          "notes": []
+        },
+        "Active Ingredients in Metric Units": {
+          "finding": "UNIT REVIEW (activity units, not metric mass)",
+          "status": "FAIL",
+          "value": "Not Detected",
+          "notes": []
+        },
+        "Name and Address of Manufacturer": {
+          "finding": "MISSED VISIBLE FIELD",
+          "status": "FAIL",
+          "value": "Not Detected",
+          "notes": []
+        },
+        "Mfg License Number": {
+          "finding": "MISSED VISIBLE FIELD",
+          "status": "FAIL",
+          "value": "Not Detected",
+          "notes": []
+        },
+        "Batch / Lot Number": {
+          "finding": "EXTRACTED (reference terms matched)",
+          "status": "PASS",
+          "value": "B.No.T25E637A",
+          "notes": []
+        },
+        "Mfg Date / Expiry Date": {
+          "finding": "INCORRECT / INCOMPLETE VALUE",
+          "status": "PASS",
+          "value": "Mfg.LicNo.89 | EXP.AAR.2027",
+          "notes": []
+        },
+        "Storage Conditions": {
+          "finding": "MISSED VISIBLE FIELD",
+          "status": "FAIL",
+          "value": "Not Detected",
+          "notes": []
+        },
+        "Directions for Use / Dosage": {
+          "finding": "DETECTED (presence only; full text not scored)",
+          "status": "PASS",
+          "value": "Dosage :As directed by the Physician.",
+          "notes": []
+        },
+        "Prescription Symbol (Rx, NRx, XRx)": {
+          "finding": "NO VISIBLE FIELD; correctly not passed",
+          "status": "INFO / CONDITIONAL",
+          "value": "Not Detected",
+          "notes": []
+        },
+        "Required Barcode or QR Code": {
+          "finding": "FALSE POSITIVE",
+          "status": "PASS",
+          "value": "Barcode / QR code present",
+          "notes": []
+        },
+        "Schedule Warning (Prescription Drugs)": {
+          "finding": "MISSED VISIBLE FIELD",
+          "status": "FAIL",
+          "value": "Not Detected",
+          "notes": []
+        },
+        "Schedule Redline (Prescription Drugs)": {
+          "finding": "DETECTED (presence only; full text not scored)",
+          "status": "PASS",
+          "value": "Red marking detected (color/shape check only)",
+          "notes": []
+        }
+      }
+    },
+    "final": {
+      "engine": "paddle",
+      "seconds": 30.07,
+      "fields": {
+        "Generic Name": {
+          "finding": "EXTRACTED (reference terms matched)",
+          "status": "PASS",
+          "value": "Trypsin-Chymotrypsin",
+          "notes": []
+        },
+        "Generic Font Size >= Brand (Rule 96(1)(i))": {
+          "finding": "MEASUREMENT REVIEW",
+          "status": "REVIEW",
+          "value": "Unable to measure both generic and brand names reliably",
+          "notes": []
+        },
+        "Dosage Form and Strength": {
+          "finding": "EXTRACTED (reference terms matched)",
+          "status": "PASS",
+          "value": "Tablets | 2lack armour units",
+          "notes": []
+        },
+        "Active Ingredients in Metric Units": {
+          "finding": "UNIT REVIEW (activity units, not metric mass)",
+          "status": "REVIEW",
+          "value": "Composition Each Enteric coated tablet contains 2lack armour units of enzymatic activity (Supplied by a purified concentrate which has specific trypsin and chymotrypsin activity in a ratio of approximately 6:1)",
+          "notes": [
+            "Required part of this field is missing or unreadable"
+          ]
+        },
+        "Name and Address of Manufacturer": {
+          "finding": "EXTRACTED (reference terms matched)",
+          "status": "PASS",
+          "value": "Mfg.by:Bajaj Formulations (AWHO-GMP &ISO 9001:2015 CertifiedCo.） Khasra No. 161, Village-Lakeshwary, Bhagwanpur.Roorkee, Distt. Haridwar （(U.K)",
+          "notes": []
+        },
+        "Mfg License Number": {
+          "finding": "EXTRACTED (reference terms matched)",
+          "status": "PASS",
+          "value": "Mfg.LicNo.89/UA/SC/P-2016",
+          "notes": []
+        },
+        "Batch / Lot Number": {
+          "finding": "EXTRACTED (reference terms matched)",
+          "status": "PASS",
+          "value": "B.No.T25E637A",
+          "notes": []
+        },
+        "Mfg Date / Expiry Date": {
+          "finding": "MISSED VISIBLE FIELD",
+          "status": "REVIEW",
+          "value": "Not detected in this image",
+          "notes": [
+            "Absence is not confirmed: inspect the image or photograph another side"
+          ]
+        },
+        "Storage Conditions": {
+          "finding": "DETECTED (presence only; full text not scored)",
+          "status": "PASS",
+          "value": "STORAGE:STOREINACOOL,DARK&; DRY PLACE.PROTECTED FROM LIGHT",
+          "notes": []
+        },
+        "Directions for Use / Dosage": {
+          "finding": "DETECTED (presence only; full text not scored)",
+          "status": "PASS",
+          "value": "Dosage :As directed by the Physician.",
+          "notes": []
+        },
+        "Prescription Symbol (Rx, NRx, XRx)": {
+          "finding": "NO VISIBLE FIELD; correctly not passed",
+          "status": "INFO / CONDITIONAL",
+          "value": "Not Detected",
+          "notes": []
+        },
+        "Required Barcode or QR Code": {
+          "finding": "NO VISIBLE FIELD; correctly not passed",
+          "status": "INFO / CONDITIONAL",
+          "value": "Not detected (conditional for primary packaging)",
+          "notes": []
+        },
+        "Schedule Warning (Prescription Drugs)": {
+          "finding": "EXTRACTED; REVIEW REQUIRED",
+          "status": "REVIEW",
+          "value": "CAUTION Not tabe sold by retail without he prescrlption ofa Reglstered MedicslPracitionsr",
+          "notes": [
+            "Required part of this field is missing or unreadable"
+          ]
+        },
+        "Schedule Redline (Prescription Drugs)": {
+          "finding": "DETECTED (presence only; full text not scored)",
+          "status": "PASS",
+          "value": "Red marking detected (color/shape check only)",
+          "notes": []
+        }
+      }
+    }
+  },
+  {
+    "image": "f70dc928-34b2-4666-98d5-98e2f337ff3a.jpeg",
+    "brand": "LOPERWELL",
+    "reference_notes": "Batch prefix is difficult to distinguish; only numeric suffix scored.",
+    "baseline": {
+      "engine": "paddle",
+      "seconds": 29.88,
+      "fields": {
+        "Generic Name": {
+          "finding": "EXTRACTED (reference terms matched)",
+          "status": "PASS",
+          "value": "RLoperamide Hydrochloride",
+          "notes": []
+        },
+        "Generic Font Size >= Brand (Rule 96(1)(i))": {
+          "finding": "MEASUREMENT REVIEW",
+          "status": "REVIEW",
+          "value": "Unable to measure both generic and brand names reliably",
+          "notes": []
+        },
+        "Dosage Form and Strength": {
+          "finding": "INCORRECT / INCOMPLETE VALUE",
+          "status": "REVIEW",
+          "value": "Tablets",
+          "notes": [
+            "Required part of this field is missing or unreadable"
+          ]
+        },
+        "Active Ingredients in Metric Units": {
+          "finding": "MISSED VISIBLE FIELD",
+          "status": "FAIL",
+          "value": "Not Detected",
+          "notes": []
+        },
+        "Name and Address of Manufacturer": {
+          "finding": "MISSED VISIBLE FIELD",
+          "status": "FAIL",
+          "value": "Not Detected",
+          "notes": []
+        },
+        "Mfg License Number": {
+          "finding": "MISSED VISIBLE FIELD",
+          "status": "FAIL",
+          "value": "Not Detected",
+          "notes": []
+        },
+        "Batch / Lot Number": {
+          "finding": "MISSED VISIBLE FIELD",
+          "status": "FAIL",
+          "value": "Not Detected",
+          "notes": []
+        },
+        "Mfg Date / Expiry Date": {
+          "finding": "MISSED VISIBLE FIELD",
+          "status": "FAIL",
+          "value": "Not Detected",
+          "notes": []
+        },
+        "Storage Conditions": {
+          "finding": "DETECTED (presence only; full text not scored)",
+          "status": "PASS",
+          "value": "Store at a temperature not exceeding 30°c; Store at a temperature not exceeding 30c",
+          "notes": []
+        },
+        "Directions for Use / Dosage": {
+          "finding": "DETECTED (presence only; full text not scored)",
+          "status": "PASS",
+          "value": "Dosage:As directed by the Physician. INTRA LIFE",
+          "notes": []
+        },
+        "Prescription Symbol (Rx, NRx, XRx)": {
+          "finding": "MISSED VISIBLE FIELD",
+          "status": "INFO / CONDITIONAL",
+          "value": "Not Detected",
+          "notes": []
+        },
+        "Required Barcode or QR Code": {
+          "finding": "FALSE POSITIVE",
+          "status": "PASS",
+          "value": "Barcode / QR code present",
+          "notes": []
+        },
+        "Schedule Warning (Prescription Drugs)": {
+          "finding": "MISSED VISIBLE FIELD",
+          "status": "FAIL",
+          "value": "Not Detected",
+          "notes": []
+        },
+        "Schedule Redline (Prescription Drugs)": {
+          "finding": "DETECTED (presence only; full text not scored)",
+          "status": "PASS",
+          "value": "Red marking detected (color/shape check only)",
+          "notes": []
+        }
+      }
+    },
+    "final": {
+      "engine": "paddle",
+      "seconds": 31.61,
+      "fields": {
+        "Generic Name": {
+          "finding": "EXTRACTED (reference terms matched)",
+          "status": "PASS",
+          "value": "RLoperamide Hydrochloride",
+          "notes": []
+        },
+        "Generic Font Size >= Brand (Rule 96(1)(i))": {
+          "finding": "MEASUREMENT REVIEW",
+          "status": "REVIEW",
+          "value": "Unable to measure both generic and brand names reliably",
+          "notes": []
+        },
+        "Dosage Form and Strength": {
+          "finding": "EXTRACTED (reference terms matched)",
+          "status": "PASS",
+          "value": "Tablets | 2mg",
+          "notes": []
+        },
+        "Active Ingredients in Metric Units": {
+          "finding": "INCORRECT / INCOMPLETE VALUE",
+          "status": "PASS",
+          "value": "Composition: Each uncoated tablet contains: Loperamide Hydrochlonide IP 2mg.",
+          "notes": []
+        },
+        "Name and Address of Manufacturer": {
+          "finding": "MISSED VISIBLE FIELD",
+          "status": "REVIEW",
+          "value": "Not detected in this image",
+          "notes": [
+            "Absence is not confirmed: inspect the image or photograph another side"
+          ]
+        },
+        "Mfg License Number": {
+          "finding": "MISSED VISIBLE FIELD",
+          "status": "REVIEW",
+          "value": "Not detected in this image",
+          "notes": [
+            "Absence is not confirmed: inspect the image or photograph another side"
+          ]
+        },
+        "Batch / Lot Number": {
+          "finding": "MISSED VISIBLE FIELD",
+          "status": "REVIEW",
+          "value": "Not detected in this image",
+          "notes": [
+            "Absence is not confirmed: inspect the image or photograph another side"
+          ]
+        },
+        "Mfg Date / Expiry Date": {
+          "finding": "MISSED VISIBLE FIELD",
+          "status": "REVIEW",
+          "value": "Not detected in this image",
+          "notes": [
+            "Absence is not confirmed: inspect the image or photograph another side"
+          ]
+        },
+        "Storage Conditions": {
+          "finding": "DETECTED (presence only; full text not scored)",
+          "status": "PASS",
+          "value": "Store at a temperature not exceeding 30°c; Store at a temperature not exceeding 30c",
+          "notes": []
+        },
+        "Directions for Use / Dosage": {
+          "finding": "DETECTED (presence only; full text not scored)",
+          "status": "PASS",
+          "value": "Dosage:As directed by the Physician.",
+          "notes": []
+        },
+        "Prescription Symbol (Rx, NRx, XRx)": {
+          "finding": "MISSED VISIBLE FIELD",
+          "status": "INFO / CONDITIONAL",
+          "value": "Not Detected",
+          "notes": []
+        },
+        "Required Barcode or QR Code": {
+          "finding": "NO VISIBLE FIELD; correctly not passed",
+          "status": "INFO / CONDITIONAL",
+          "value": "Not detected (conditional for primary packaging)",
+          "notes": []
+        },
+        "Schedule Warning (Prescription Drugs)": {
+          "finding": "DETECTED (presence only; full text not scored)",
+          "status": "PASS",
+          "value": "SCHEDULEH PRESC Fo be sctlby rehil oo Dosage:As directed by the Physician.",
+          "notes": []
+        },
+        "Schedule Redline (Prescription Drugs)": {
+          "finding": "DETECTED (presence only; full text not scored)",
+          "status": "PASS",
+          "value": "Red marking detected (color/shape check only)",
+          "notes": []
+        }
+      }
+    }
+  }
+]

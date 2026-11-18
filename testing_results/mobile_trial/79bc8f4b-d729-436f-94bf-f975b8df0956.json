@@ -1,0 +1,556 @@
+{
+  "image_path": "static/uploads/TestingMedicineLabels/79bc8f4b-d729-436f-94bf-f975b8df0956.jpeg",
+  "ocr_text_preview": "TabletsIP 500 mg DRUG-CAUTION:\nEXP.04/2028INCL.OFALLTAXES\nB.No.BGAFZ001 M.R.P.Z21.72\nMFG.05/2026 PER 10 TABS.\nViameta-500SR except under medical supervision.\nEach uncoated sustained release tablet contains: Mrg Lic No s-MNB/og/sg\nMetformin Hydrochloride IP 500 mg Mediforce Healthcare Pvt.Ltd.\nExcipients\nq.S.\nPlot No.8-13, Phase-lll, Industrial Area...",
+  "ocr_text_full": "TabletsIP 500 mg DRUG-CAUTION:\nEXP.04/2028INCL.OFALLTAXES\nB.No.BGAFZ001 M.R.P.Z21.72\nMFG.05/2026 PER 10 TABS.\nViameta-500SR except under medical supervision.\nEach uncoated sustained release tablet contains: Mrg Lic No s-MNB/og/sg\nMetformin Hydrochloride IP 500 mg Mediforce Healthcare Pvt.Ltd.\nExcipients\nq.S.\nPlot No.8-13, Phase-lll, Industrial Area,\nGondpur, Paonta Sahib.Distt Sirmour, H.P.173025\nDosage :As directed by the Physician\nMarketed by:\nStorage: Store in a dry place ata\ntemperature not exceeding 30°c.\nAFBGTPFOFT000\nProtect from light.\nKeep out ofreach of children.\nINTRALIFE\nTablet should be swallowed whole.\n81/C. 6uh Maln Road, 4tn Phas\nDo not crush or chew the tablet.\n7th Block, B.S.K. 3rd Stag6,3anzalore-560085.\nMetformin Hydrochloride Sustained Release\nTablets IP500mg\nSCHEDULE'G PRESCRIPTION\nDRUG-CAUTION\nViameta-500SR excoptunder madical sup\nfaranacr-sooerame\nEach uncoaled sustained release tablet containsMlyGe No, s-MNB/oa/s",
+  "ocr_engine": "paddle",
+  "ocr_lines": [
+    {
+      "text": "TabletsIP 500 mg DRUG-CAUTION:",
+      "confidence": 96.3,
+      "box": [
+        181.0,
+        0.0,
+        1846.0,
+        164.0
+      ],
+      "source": "paddle",
+      "alternatives": [
+        {
+          "text": "SCHEDULE G PRESCRIPTION",
+          "confidence": 96.7,
+          "source": "paddle"
+        }
+      ]
+    },
+    {
+      "text": "EXP.04/2028INCL.OFALLTAXES",
+      "confidence": 95.8,
+      "box": [
+        2740.0,
+        70.0,
+        212.0,
+        1486.0
+      ],
+      "source": "paddle_rotated",
+      "alternatives": []
+    },
+    {
+      "text": "B.No.BGAFZ001 M.R.P.Z21.72",
+      "confidence": 93.5,
+      "box": [
+        2524.0,
+        108.0,
+        149.0,
+        1432.0
+      ],
+      "source": "paddle_rotated",
+      "alternatives": []
+    },
+    {
+      "text": "MFG.05/2026 PER 10 TABS.",
+      "confidence": 96.7,
+      "box": [
+        2642.0,
+        148.0,
+        162.0,
+        1394.0
+      ],
+      "source": "paddle_rotated",
+      "alternatives": [
+        {
+          "text": "G",
+          "confidence": 92.8,
+          "source": "paddle"
+        }
+      ]
+    },
+    {
+      "text": "Viameta-500SR except under medical supervision.",
+      "confidence": 96.5,
+      "box": [
+        178.0,
+        155.0,
+        2068.0,
+        124.0
+      ],
+      "source": "paddle",
+      "alternatives": [
+        {
+          "text": "lt is dangerous to take this preparation",
+          "confidence": 93.2,
+          "source": "paddle"
+        }
+      ]
+    },
+    {
+      "text": "Each uncoated sustained release tablet contains: Mrg Lic No s-MNB/og/sg",
+      "confidence": 91.3,
+      "box": [
+        163.0,
+        322.0,
+        1621.0,
+        97.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "Metformin Hydrochloride IP 500 mg Mediforce Healthcare Pvt.Ltd.",
+      "confidence": 95.9,
+      "box": [
+        156.0,
+        398.0,
+        1729.0,
+        99.0
+      ],
+      "source": "paddle",
+      "alternatives": [
+        {
+          "text": "Mariutactured in India by:",
+          "confidence": 93.5,
+          "source": "paddle"
+        }
+      ]
+    },
+    {
+      "text": "Excipients",
+      "confidence": 99.7,
+      "box": [
+        154.0,
+        475.0,
+        258.0,
+        74.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "q.S.",
+      "confidence": 84.6,
+      "box": [
+        926.0,
+        484.0,
+        103.0,
+        69.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "Plot No.8-13, Phase-lll, Industrial Area,",
+      "confidence": 92.0,
+      "box": [
+        1293.0,
+        493.0,
+        777.0,
+        51.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "Gondpur, Paonta Sahib.Distt Sirmour, H.P.173025",
+      "confidence": 92.0,
+      "box": [
+        1290.0,
+        535.0,
+        1017.0,
+        70.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "Dosage :As directed by the Physician",
+      "confidence": 95.7,
+      "box": [
+        147.0,
+        541.0,
+        900.0,
+        75.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "Marketed by:",
+      "confidence": 97.3,
+      "box": [
+        1286.0,
+        608.0,
+        298.0,
+        62.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "Storage: Store in a dry place ata",
+      "confidence": 93.9,
+      "box": [
+        144.0,
+        610.0,
+        834.0,
+        73.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "temperature not exceeding 30°c.",
+      "confidence": 95.5,
+      "box": [
+        139.0,
+        672.0,
+        827.0,
+        86.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "AFBGTPFOFT000",
+      "confidence": 93.4,
+      "box": [
+        2239.0,
+        702.0,
+        57.0,
+        310.0
+      ],
+      "source": "paddle_rotated",
+      "alternatives": []
+    },
+    {
+      "text": "Protect from light.",
+      "confidence": 97.0,
+      "box": [
+        142.0,
+        747.0,
+        463.0,
+        75.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "Keep out ofreach of children.",
+      "confidence": 95.9,
+      "box": [
+        138.0,
+        835.0,
+        689.0,
+        70.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "INTRALIFE",
+      "confidence": 99.5,
+      "box": [
+        1314.0,
+        866.0,
+        508.0,
+        100.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "Tablet should be swallowed whole.",
+      "confidence": 96.0,
+      "box": [
+        141.0,
+        911.0,
+        807.0,
+        65.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "81/C. 6uh Maln Road, 4tn Phas",
+      "confidence": 87.2,
+      "box": [
+        1321.0,
+        962.0,
+        550.0,
+        55.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "Do not crush or chew the tablet.",
+      "confidence": 92.6,
+      "box": [
+        139.0,
+        981.0,
+        746.0,
+        65.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "7th Block, B.S.K. 3rd Stag6,3anzalore-560085.",
+      "confidence": 84.6,
+      "box": [
+        1320.0,
+        1008.0,
+        870.0,
+        67.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "Metformin Hydrochloride Sustained Release",
+      "confidence": 96.8,
+      "box": [
+        118.0,
+        1099.0,
+        2286.0,
+        186.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "Tablets IP500mg",
+      "confidence": 91.2,
+      "box": [
+        126.0,
+        1270.0,
+        949.0,
+        216.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "SCHEDULE'G PRESCRIPTION",
+      "confidence": 96.5,
+      "box": [
+        1327.0,
+        1306.0,
+        917.0,
+        73.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "DRUG-CAUTION",
+      "confidence": 98.2,
+      "box": [
+        1520.0,
+        1379.0,
+        510.0,
+        69.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "Viameta-500SR excoptunder madical sup",
+      "confidence": 90.9,
+      "box": [
+        154.0,
+        1470.0,
+        1864.0,
+        133.0
+      ],
+      "source": "paddle",
+      "alternatives": [
+        {
+          "text": "Iedangerous to tako Ihis preparation",
+          "confidence": 86.1,
+          "source": "paddle"
+        }
+      ]
+    },
+    {
+      "text": "faranacr-sooerame",
+      "confidence": 59.0,
+      "box": [
+        637.0,
+        1596.0,
+        487.0,
+        66.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "Each uncoaled sustained release tablet containsMlyGe No, s-MNB/oa/s",
+      "confidence": 86.4,
+      "box": [
+        163.0,
+        1645.0,
+        1627.0,
+        101.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    }
+  ],
+  "ocr_warnings": [],
+  "barcode_detection": {
+    "detected": false,
+    "decoded": false,
+    "gs1_verified": false,
+    "count": 0,
+    "details": [],
+    "status": "FAIL",
+    "regulatory_note": "Detection alone does not verify GS1 structure or product authenticity."
+  },
+  "redline_detection": {
+    "detected": true,
+    "count": 1,
+    "strips": [
+      {
+        "bounding_box": [
+          497,
+          0,
+          443,
+          124
+        ],
+        "orientation": "Horizontal",
+        "aspect_ratio": 3.57,
+        "area": 52763
+      }
+    ],
+    "status": "PASS (Schedule Redline Present)"
+  },
+  "font_ratio_analysis": {
+    "status": "REVIEW",
+    "generic_font_height_px": 0,
+    "brand_font_height_px": 0,
+    "ratio": null,
+    "details": "Unable to measure both generic and brand names reliably"
+  },
+  "regulatory_validation": {
+    "score_percentage": 75.0,
+    "passed_required": "9/12",
+    "overall_status": "MANUAL REVIEW REQUIRED",
+    "requires_review": true,
+    "field_checks": {
+      "Generic Name": {
+        "status": "FAIL",
+        "required": true,
+        "description": "Generic name printed on the label",
+        "extracted_value": "Not Detected",
+        "ocr_confidence": null,
+        "review_notes": []
+      },
+      "Generic Font Size >= Brand (Rule 96(1)(i))": {
+        "status": "REVIEW",
+        "required": true,
+        "description": "Comparison of measured generic and brand text heights",
+        "extracted_value": "Unable to measure both generic and brand names reliably",
+        "ocr_confidence": null,
+        "review_notes": []
+      },
+      "Dosage Form and Strength": {
+        "status": "PASS",
+        "required": true,
+        "description": "Dosage form and quantitative strength",
+        "extracted_value": "tablet | 500 mg",
+        "ocr_confidence": 91.3,
+        "review_notes": []
+      },
+      "Active Ingredients in Metric Units": {
+        "status": "PASS",
+        "required": true,
+        "description": "Composition statement with a readable metric quantity",
+        "extracted_value": "Each uncoated sustained release tablet contains: Mrg Lic No s-MNB/og/sg Metformin Hydrochloride IP 500 mg Mediforce Healthcare Pvt.Ltd.",
+        "ocr_confidence": 91.3,
+        "review_notes": [],
+        "raw_extracted_value": "Each uncoated sustained release tablet contains: Mrg Lic No s-MNB/og/sg Metformin Hydrochloride IP 500 mg Mediforce Healthcare Pvt.Ltd.",
+        "spelling_corrected": false
+      },
+      "Name and Address of Manufacturer": {
+        "status": "FAIL",
+        "required": true,
+        "description": "Manufacturer statement and following address lines",
+        "extracted_value": "Not Detected",
+        "ocr_confidence": null,
+        "review_notes": []
+      },
+      "Mfg License Number": {
+        "status": "PASS",
+        "required": true,
+        "description": "Printed manufacturing or import licence identifier",
+        "extracted_value": "Lic No s-MNB/og/sg",
+        "ocr_confidence": 91.3,
+        "review_notes": []
+      },
+      "Batch / Lot Number": {
+        "status": "PASS",
+        "required": true,
+        "description": "Printed batch or lot identifier",
+        "extracted_value": "B.No.BGAFZ001",
+        "ocr_confidence": 93.5,
+        "review_notes": []
+      },
+      "Mfg Date / Expiry Date": {
+        "status": "PASS",
+        "required": true,
+        "description": "Both manufacturing and expiry dates must be readable",
+        "extracted_value": "MFG.05/2026 | EXP.04/2028",
+        "ocr_confidence": 95.8,
+        "review_notes": []
+      },
+      "Storage Conditions": {
+        "status": "PASS",
+        "required": true,
+        "description": "Storage and child-safety instructions",
+        "extracted_value": "Store in a dry place ata; Protect from light.",
+        "ocr_confidence": 93.9,
+        "review_notes": []
+      },
+      "Directions for Use / Dosage": {
+        "status": "PASS",
+        "required": true,
+        "description": "Dosage or directions statement",
+        "extracted_value": "Dosage :As directed by the Physician",
+        "ocr_confidence": 95.7,
+        "review_notes": []
+      },
+      "Prescription Symbol (Rx, NRx, XRx)": {
+        "status": "INFO / CONDITIONAL",
+        "required": false,
+        "description": "Readable prescription symbol",
+        "extracted_value": "Not Detected",
+        "ocr_confidence": null,
+        "review_notes": []
+      },
+      "Required Barcode or QR Code": {
+        "status": "INFO / CONDITIONAL",
+        "required": false,
+        "description": "Barcode or QR presence check",
+        "extracted_value": "Not detected (conditional for primary packaging)",
+        "ocr_confidence": null,
+        "review_notes": []
+      },
+      "Schedule Warning (Prescription Drugs)": {
+        "status": "PASS",
+        "required": true,
+        "description": "Readable schedule or prescription restriction statement",
+        "extracted_value": "SCHEDULE'G PRESCRIPTION DRUG-CAUTION",
+        "ocr_confidence": 96.5,
+        "review_notes": []
+      },
+      "Schedule Redline (Prescription Drugs)": {
+        "status": "PASS",
+        "required": true,
+        "description": "Elongated red marking detected by color and geometry",
+        "extracted_value": "Red marking detected (color/shape check only)",
+        "ocr_confidence": null,
+        "review_notes": []
+      }
+    }
+  },
+  "elapsed_seconds": 19.83
+}

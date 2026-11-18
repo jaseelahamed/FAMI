@@ -1,0 +1,162 @@
+{
+  "method": "Revalidated saved OCR and measured font results; no fresh OCR inference.",
+  "regulatory_validation": {
+    "score_percentage": 83.33,
+    "passed_required": "10/12",
+    "overall_status": "NON-COMPLIANT / REJECT",
+    "requires_review": false,
+    "validation_mode": "presence",
+    "field_checks": {
+      "Generic Name": {
+        "status": "PASS",
+        "required": true,
+        "description": "Generic name printed on the label",
+        "extracted_value": "Trypsin-Chymotrypsin",
+        "presence_state": "detected",
+        "ocr_confidence": 99.9,
+        "diagnostic_notes": [],
+        "review_notes": []
+      },
+      "Generic Font Size >= Brand (Rule 96(1)(i))": {
+        "status": "FAIL",
+        "required": true,
+        "description": "Comparison of measured generic and brand text heights",
+        "extracted_value": "Unable to measure both generic and brand names reliably",
+        "presence_state": "not_detected",
+        "ocr_confidence": null,
+        "diagnostic_notes": [],
+        "review_notes": []
+      },
+      "Dosage Form and Strength": {
+        "status": "PASS",
+        "required": true,
+        "description": "Dosage form and quantitative strength",
+        "extracted_value": "Tablets | 2lack armour units",
+        "presence_state": "detected",
+        "ocr_confidence": 93.2,
+        "diagnostic_notes": [],
+        "review_notes": []
+      },
+      "Active Ingredients in Metric Units": {
+        "status": "PASS",
+        "required": true,
+        "description": "Composition statement with a readable metric quantity",
+        "extracted_value": "Composition Each Enteric coated tablet contains 2lack armour units of enzymatic activity (Supplied by a purified concentrate which has specific trypsin and chymotrypsin activity in a ratio of approximately 6:1)",
+        "presence_state": "detected",
+        "ocr_confidence": 93.2,
+        "diagnostic_notes": [
+          "Required part of this field is missing or unreadable"
+        ],
+        "review_notes": [
+          "Required part of this field is missing or unreadable"
+        ],
+        "raw_extracted_value": "Composition Each Enteric coated tablet contains 2lack armour units of enzymatic activity (Supplied by a purified concentrate which has specific trypsin and chymotrypsin activity in a ratio of approximately 6:1)",
+        "spelling_corrected": false
+      },
+      "Name and Address of Manufacturer": {
+        "status": "PASS",
+        "required": true,
+        "description": "Manufacturer statement and following address lines",
+        "extracted_value": "Mfg.by:Bajaj Formulations (AWHO-GMP &ISO 9001:2015 CertifiedCo.\uff09 Khasra No. 161, Village-Lakeshwary, Bhagwanpur.Roorkee, Distt. Haridwar \uff08(U.K)",
+        "presence_state": "detected",
+        "ocr_confidence": 88.5,
+        "diagnostic_notes": [],
+        "review_notes": []
+      },
+      "Mfg License Number": {
+        "status": "PASS",
+        "required": true,
+        "description": "Printed manufacturing or import licence identifier",
+        "extracted_value": "Mfg.LicNo.89/UA/SC/P-2016",
+        "presence_state": "detected",
+        "ocr_confidence": 97.6,
+        "diagnostic_notes": [],
+        "review_notes": []
+      },
+      "Batch / Lot Number": {
+        "status": "PASS",
+        "required": true,
+        "description": "Printed batch or lot identifier",
+        "extracted_value": "B.No.T25E637A",
+        "presence_state": "detected",
+        "ocr_confidence": 92.4,
+        "diagnostic_notes": [],
+        "review_notes": []
+      },
+      "Mfg Date / Expiry Date": {
+        "status": "FAIL",
+        "required": true,
+        "description": "Both manufacturing and expiry dates must be readable",
+        "extracted_value": "Not present in extracted image content",
+        "presence_state": "not_detected",
+        "ocr_confidence": null,
+        "diagnostic_notes": [],
+        "review_notes": []
+      },
+      "Storage Conditions": {
+        "status": "PASS",
+        "required": true,
+        "description": "Storage and child-safety instructions",
+        "extracted_value": "STORAGE:STOREINACOOL,DARK&; DRY PLACE.PROTECTED FROM LIGHT",
+        "presence_state": "detected",
+        "ocr_confidence": 95.3,
+        "diagnostic_notes": [],
+        "review_notes": []
+      },
+      "Directions for Use / Dosage": {
+        "status": "PASS",
+        "required": true,
+        "description": "Dosage or directions statement",
+        "extracted_value": "Dosage :As directed by the Physician.",
+        "presence_state": "detected",
+        "ocr_confidence": 95.8,
+        "diagnostic_notes": [],
+        "review_notes": []
+      },
+      "Prescription Symbol (Rx, NRx, XRx)": {
+        "status": "FAIL",
+        "required": false,
+        "description": "Readable prescription symbol",
+        "extracted_value": "Not present in extracted image content",
+        "presence_state": "not_detected",
+        "ocr_confidence": null,
+        "diagnostic_notes": [],
+        "review_notes": []
+      },
+      "Required Barcode or QR Code": {
+        "status": "FAIL",
+        "required": false,
+        "description": "Barcode or QR presence check",
+        "extracted_value": "Not present in extracted image content",
+        "presence_state": "not_detected",
+        "ocr_confidence": null,
+        "diagnostic_notes": [],
+        "review_notes": []
+      },
+      "Schedule Warning (Prescription Drugs)": {
+        "status": "PASS",
+        "required": true,
+        "description": "Readable schedule or prescription restriction statement",
+        "extracted_value": "CAUTION Not tabe sold by retail without he prescrlption ofa Reglstered MedicslPracitionsr",
+        "presence_state": "detected",
+        "ocr_confidence": 86.0,
+        "diagnostic_notes": [
+          "Required part of this field is missing or unreadable"
+        ],
+        "review_notes": [
+          "Required part of this field is missing or unreadable"
+        ]
+      },
+      "Schedule Redline (Prescription Drugs)": {
+        "status": "PASS",
+        "required": true,
+        "description": "Elongated red marking detected by color and geometry",
+        "extracted_value": "Red marking detected (color/shape check only)",
+        "presence_state": "detected",
+        "ocr_confidence": null,
+        "diagnostic_notes": [],
+        "review_notes": []
+      }
+    }
+  }
+}

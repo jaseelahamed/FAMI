@@ -12,6 +12,84 @@ This project delivers an automated computer vision and text mining system that v
 
 ## 🛠️ System Architecture & Workflow
 
+### Current OCR implementation
+
+**PaddleOCR is the default OCR engine.** Install `requirements.txt`; PP-OCRv5
+mobile detection and recognition models download on first use. Set
+`PADDLE_MODEL=server` for the larger PP-OCRv5 models. Text-region coordinates and
+confidence are retained in reports. A separate Tesseract sparse-text pass measures
+individual word heights for the generic-versus-brand font check only; its text
+is not merged into the other criteria. `font_regions.py` first pairs generic and
+brand headings on the same panel and re-reads those crops. Character components
+inside recognized words exclude surrounding foil noise and trademark padding.
+A colored-text search can recover a brand missed by Paddle. Measurements and
+source boxes are retained in `font_ratio_analysis.measurement_evidence`.
+The whole-page Tesseract pass remains a fallback when heading crops cannot be matched.
+Run `python audit_font_measurements.py` to repeat the nine-photo font audit using
+saved Paddle evidence, without rerunning the unrelated OCR criteria. Missing or unreliable measurements
+fail the font check. This compares pixel heights, not certified typographic point sizes.
+`PADDLE_MAX_SIDE` defaults to 2000 and `PADDLE_CPU_THREADS` defaults to 4.
+Cached model directories are used directly so an unavailable model host does not
+force a fallback when the files are already present.
+If PaddleOCR cannot run or returns no text, Tesseract is used with a report warning.
+`field_recovery.py` uses PP-OCRv6 medium on targeted stamp/manufacturer crops
+when those fields are missing. This requires PaddleOCR 3.7+ (`pip install -r
+requirements.txt`). The additional models download on first use unless cached.
+Blue-ink localization recovers missed sideways stamps; original and filtered
+readings remain attached as crop evidence. Set `OCR_FIELD_RECOVERY=0` to disable
+this additional pass. It increases processing time and model memory usage.
+A visual warning fallback detects a red panel with multiple printed text rows;
+its result explicitly says the wording was not verified. A solid red rectangle
+or one-line brand badge alone does not satisfy that fallback.
+`OCR_ENGINE=tesseract` explicitly selects the older pipeline; `OCR_ENGINE=auto`
+retains the legacy Tesseract-first supplement behavior. `ocr_engine` reports the
+primary engine actually used. PaddleOCR requires more memory than Tesseract;
+the existing free-tier deployment configuration must be capacity-tested.
+
+The following describes the Tesseract fallback pipeline:
+
+The current pipeline is implemented in `ocr_pipeline.py` and `label_fields.py`.
+It preserves images up to 4800 pixels on the longest side for OCR, corrects uneven
+illumination before thresholding, and uses the red channel to read black print on
+red warning panels. Grayscale and sparse-text passes complement those readings.
+Text is grouped using block, paragraph, and line identifiers, and competing
+readings of the same spatial line are retained as alternatives rather than
+concatenated into a noisy text stream. Field extraction respects section boundaries.
+
+Reports include `ocr_lines` (text, confidence, coordinates, source, alternatives)
+and per-field `diagnostic_notes` (also exposed as `review_notes` for compatibility).
+Checks now use binary presence scoring: extracted text passes, missing content
+fails. Low confidence, incomplete content and alternate readings remain diagnostic
+notes and do not change a presence PASS. PASS therefore means content was detected,
+not that every character or required subpart has been verified. Font comparison
+still requires measured generic and brand heights; unavailable measurements fail.
+Redline checks pass when detected and fail otherwise. Rx and barcode/QR checks
+are optional: detected content passes; missing content displays OPTIONAL. The overall
+verdict passes only when all mandatory checks pass; optional checks remain outside
+the mandatory score. There is no manual-review status.
+Composition spelling corrections use close OCR matches and the generic name read
+elsewhere on the same label, preserve quantities, and retain `raw_extracted_value`.
+A targeted glyph crop also handles stylized Rx symbols misread as IX in headers.
+OCR confidence is an engine score, not a calibrated probability of correctness.
+Detected codes do not establish GS1 validity or product authenticity. The score
+counts confirmed passes among 12 required checks; 14 checks are displayed in total.
+
+To diagnose a real image:
+
+```bash
+python debug_ocr.py static/uploads/test2.jpeg
+python -m unittest -v test_label_validation
+```
+
+The diagnostic script writes `ocr_debug.txt` and `ocr_debug.json`. `OCR_MAX_DIM`
+controls the maximum OCR image size (default 4800), `OCR_PASS_TIMEOUT` limits each
+Tesseract pass (default 45 seconds), and `OCR_ROTATION_PASSES=0` disables supplemental
+sideways scans. Retaining more pixels and running several passes costs time and
+memory; deployment capacity should be measured with representative photos.
+`OCR_ENGINE=auto` enables the legacy PaddleOCR supplement.
+The older preprocessing diagram and sample output below describe the original
+implementation and are not an exact description of these current settings.
+
 ```mermaid
 graph TD
     A[Input Medicine Label Image] --> B[Module 1: OCR Preprocessing & Extraction]
@@ -178,3 +256,36 @@ FINAL AUDIT VERDICT:       COMPLIANT / PASS
 
 ### Q4: How does your preprocessing pipeline improve OCR accuracy?
 > **Answer**: Blister foils and medicine labels are prone to specular reflections and glare. Applying **CLAHE** equalizes local contrast without overamplifying background noise. The **Bilateral Filter** removes surface texture while preserving sharp character contours, enabling **Otsu’s binarization** to produce a crisp black-and-white mask for Tesseract’s LSTM engine.
+
+
+## Testing the supplied medicine photographs
+
+```bash
+python audit_testing_images.py
+python -m unittest -v test_label_validation
+```
+
+The batch command scans every JPEG in `static/uploads/TestingMedicineLabels` and
+writes full OCR evidence and all 14 checks to `testing_results/latest`. The
+November 2026 audit's baseline and revised reports are in `testing_results/baseline`
+and `testing_results/final`. `testing_results/visual_reference.json` contains the
+independently inspected photo reference; it is never loaded by the application.
+Run `python compare_testing_results.py` to regenerate the comparison and detailed
+`testing_results/audit_report.txt` for those saved baseline/final reports. `--revalidate` first reruns field parsing
+against the saved final OCR regions without rerunning OCR.
+
+A field that OCR cannot extract now produces **REVIEW**, with "Not detected in this
+image", rather than establishing physical absence or rejecting the label.
+Optional Rx/barcode checks remain conditional when not detected. An isolated
+`R$` reading is retained as an uncertain Rx candidate, not silently corrected.
+The overall pass requires all required checks to pass; the score is evidence
+coverage and does not certify regulatory compliance. The supplied photos do not
+establish performance on unseen packaging.
+
+QR presence now requires decoded evidence or three finder patterns checked for
+geometry and pixel structure. Generic headings, separated composition quantities,
+manufacturer columns, concatenated batch/date labels, and numeric versus named
+months have dedicated parsing handling. Font-size compliance, unreadable
+characters, incomplete ingredients and non-metric enzyme activity still need
+review. A detected field is not a guarantee that every transcribed character is
+correct: consult the full audit report for remaining errors.

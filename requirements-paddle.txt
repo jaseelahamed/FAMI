@@ -1,0 +1,2 @@
+# Compatibility entry point; PaddleOCR is now installed by default.
+-r requirements.txt

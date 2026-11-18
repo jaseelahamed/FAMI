@@ -1,0 +1,800 @@
+{
+  "image_path": "static/uploads/TestingMedicineLabels/0dfb0b74-c01c-4f1c-aac5-b72cae74e38e.jpeg",
+  "ocr_text_preview": "Panchkula(Haryana)134113\n(A GMPGLP&ISO 9001:2015 Certied Company)\nEmail.alcolabs2017@gmail.com\nSodium Bicarbonate\nOBICLO-500 SOBICLO-500 SOBICLO-500\nEXP.APR.2028 INCLOE ALL TAXES\nTablets USP 500 mg\nBNODT-26475AMRP.43.10\nMFG.MAY 2026 PER 1 10 TABS.\nKeep the medicine out of reach of children\nSOBICLO-500\nCAUTON: Not to besoid stall without\nComposiion:...",
+  "ocr_text_full": "Panchkula(Haryana)134113\n(A GMPGLP&ISO 9001:2015 Certied Company)\nEmail.alcolabs2017@gmail.com\nSodium Bicarbonate\nOBICLO-500 SOBICLO-500 SOBICLO-500\nEXP.APR.2028 INCLOE ALL TAXES\nTablets USP 500 mg\nBNODT-26475AMRP.43.10\nMFG.MAY 2026 PER 1 10 TABS.\nKeep the medicine out of reach of children\nSOBICLO-500\nCAUTON: Not to besoid stall without\nComposiion:\nthe prescrption of a register\nEach film coated tablet contains:\nMeoirsal Practitioner\n500mg\nSodium BicarbonateP\nExcipients\nq.S.\nMfg.Lic.No.:HP-MNB-00001&HP-MB-00002\nColour:Titanium Dioxide IP\nDosage: As directed by the physician.\nManufactured in india for:\nStorage: Store in a cool, dry & dark place\nbelow 25°c, protect from direct sunlight,\nheat & moisture.\nGlcolabs alcolab\nManufactured by:\n(An ISO 9001:2008 Certified Co.)\nDwarka Global Lilesciences\nPlot No 89, Industrial Area. Lodhi Majra,\nPlot No-356, Industrial Area Phase 1,\nManpura, Baddi, Dist Solan (H.P.)Pin-174101\n(A GMP, GLP&ISO 9004:2015 Certified Company)\nEmail:alcolabs2017@gmail.com\nSodium B icarbonate",
+  "ocr_engine": "paddle",
+  "ocr_lines": [
+    {
+      "text": "Panchkula(Haryana)134113",
+      "confidence": 95.5,
+      "box": [
+        1326.0,
+        0.0,
+        456.0,
+        29.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "(A GMPGLP&ISO 9001:2015 Certied Company)",
+      "confidence": 90.3,
+      "box": [
+        255.0,
+        4.0,
+        763.0,
+        55.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "Email.alcolabs2017@gmail.com",
+      "confidence": 94.1,
+      "box": [
+        1319.0,
+        27.0,
+        533.0,
+        54.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "Sodium Bicarbonate",
+      "confidence": 98.7,
+      "box": [
+        257.0,
+        84.0,
+        1618.0,
+        184.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "OBICLO-500 SOBICLO-500 SOBICLO-500",
+      "confidence": 97.1,
+      "box": [
+        1945.0,
+        127.0,
+        100.0,
+        1662.0
+      ],
+      "source": "paddle_rotated",
+      "alternatives": []
+    },
+    {
+      "text": "EXP.APR.2028 INCLOE ALL TAXES",
+      "confidence": 90.9,
+      "box": [
+        2444.0,
+        185.0,
+        155.0,
+        1509.0
+      ],
+      "source": "paddle_rotated",
+      "alternatives": []
+    },
+    {
+      "text": "Tablets USP 500 mg",
+      "confidence": 92.5,
+      "box": [
+        233.0,
+        233.0,
+        1670.0,
+        249.0
+      ],
+      "source": "paddle",
+      "alternatives": [
+        {
+          "text": "500",
+          "confidence": 99.3,
+          "source": "paddle_rotated"
+        },
+        {
+          "text": "mg",
+          "confidence": 97.8,
+          "source": "paddle_rotated"
+        }
+      ]
+    },
+    {
+      "text": "BNODT-26475AMRP.43.10",
+      "confidence": 97.9,
+      "box": [
+        2187.0,
+        374.0,
+        196.0,
+        1342.0
+      ],
+      "source": "paddle_rotated",
+      "alternatives": []
+    },
+    {
+      "text": "MFG.MAY 2026 PER 1 10 TABS.",
+      "confidence": 95.3,
+      "box": [
+        2321.0,
+        378.0,
+        157.0,
+        1323.0
+      ],
+      "source": "paddle_rotated",
+      "alternatives": []
+    },
+    {
+      "text": "Keep the medicine out of reach of children",
+      "confidence": 94.6,
+      "box": [
+        1029.0,
+        474.0,
+        747.0,
+        54.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "SOBICLO-500",
+      "confidence": 98.8,
+      "box": [
+        259.0,
+        489.0,
+        685.0,
+        106.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "CAUTON: Not to besoid stall without",
+      "confidence": 88.3,
+      "box": [
+        1050.0,
+        568.0,
+        803.0,
+        52.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "Composiion:",
+      "confidence": 96.7,
+      "box": [
+        251.0,
+        595.0,
+        228.0,
+        52.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "the prescrption of a register",
+      "confidence": 90.8,
+      "box": [
+        1052.0,
+        627.0,
+        523.0,
+        46.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "Each film coated tablet contains:",
+      "confidence": 93.0,
+      "box": [
+        250.0,
+        642.0,
+        531.0,
+        49.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "Meoirsal Practitioner",
+      "confidence": 87.3,
+      "box": [
+        1048.0,
+        676.0,
+        381.0,
+        46.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "500mg",
+      "confidence": 99.7,
+      "box": [
+        748.0,
+        684.0,
+        131.0,
+        58.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "Sodium BicarbonateP",
+      "confidence": 95.2,
+      "box": [
+        252.0,
+        689.0,
+        373.0,
+        43.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "Excipients",
+      "confidence": 99.5,
+      "box": [
+        249.0,
+        733.0,
+        176.0,
+        52.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "q.S.",
+      "confidence": 87.0,
+      "box": [
+        794.0,
+        742.0,
+        74.0,
+        48.0
+      ],
+      "source": "paddle_rotated",
+      "alternatives": [
+        {
+          "text": "q.5.",
+          "confidence": 75.8,
+          "source": "paddle"
+        }
+      ]
+    },
+    {
+      "text": "Mfg.Lic.No.:HP-MNB-00001&HP-MB-00002",
+      "confidence": 94.6,
+      "box": [
+        1030.0,
+        760.0,
+        786.0,
+        51.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "Colour:Titanium Dioxide IP",
+      "confidence": 90.7,
+      "box": [
+        250.0,
+        779.0,
+        453.0,
+        44.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "Dosage: As directed by the physician.",
+      "confidence": 94.0,
+      "box": [
+        251.0,
+        852.0,
+        577.0,
+        41.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "Manufactured in india for:",
+      "confidence": 92.1,
+      "box": [
+        1033.0,
+        868.0,
+        376.0,
+        47.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "Storage: Store in a cool, dry & dark place",
+      "confidence": 91.3,
+      "box": [
+        252.0,
+        916.0,
+        706.0,
+        45.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "below 25°c, protect from direct sunlight,",
+      "confidence": 90.3,
+      "box": [
+        254.0,
+        960.0,
+        685.0,
+        47.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "heat & moisture.",
+      "confidence": 96.4,
+      "box": [
+        255.0,
+        1006.0,
+        284.0,
+        45.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "Glcolabs alcolab",
+      "confidence": 95.8,
+      "box": [
+        1127.0,
+        1022.0,
+        460.0,
+        87.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "Manufactured by:",
+      "confidence": 96.4,
+      "box": [
+        252.0,
+        1058.0,
+        272.0,
+        52.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "(An ISO 9001:2008 Certified Co.)",
+      "confidence": 89.8,
+      "box": [
+        1319.0,
+        1099.0,
+        552.0,
+        55.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "Dwarka Global Lilesciences",
+      "confidence": 93.3,
+      "box": [
+        255.0,
+        1102.0,
+        419.0,
+        43.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "Plot No 89, Industrial Area. Lodhi Majra,",
+      "confidence": 89.7,
+      "box": [
+        257.0,
+        1144.0,
+        596.0,
+        41.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "Plot No-356, Industrial Area Phase 1,",
+      "confidence": 93.6,
+      "box": [
+        1318.0,
+        1145.0,
+        586.0,
+        56.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "Manpura, Baddi, Dist Solan (H.P.)Pin-174101",
+      "confidence": 93.0,
+      "box": [
+        254.0,
+        1179.0,
+        697.0,
+        51.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "Panchkula(Haryana)134113",
+      "confidence": 98.3,
+      "box": [
+        1318.0,
+        1190.0,
+        470.0,
+        55.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "(A GMP, GLP&ISO 9004:2015 Certified Company)",
+      "confidence": 87.9,
+      "box": [
+        255.0,
+        1222.0,
+        763.0,
+        48.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "Email:alcolabs2017@gmail.com",
+      "confidence": 96.1,
+      "box": [
+        1319.0,
+        1235.0,
+        529.0,
+        55.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "Sodium B icarbonate",
+      "confidence": 97.2,
+      "box": [
+        262.0,
+        1304.0,
+        1607.0,
+        161.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "Tablets USP 500 mg",
+      "confidence": 90.9,
+      "box": [
+        246.0,
+        1449.0,
+        1649.0,
+        230.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "Keep the medicine out of reach of children",
+      "confidence": 94.7,
+      "box": [
+        1037.0,
+        1674.0,
+        734.0,
+        46.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "SOBICLO-500",
+      "confidence": 99.5,
+      "box": [
+        274.0,
+        1682.0,
+        684.0,
+        109.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    }
+  ],
+  "ocr_warnings": [],
+  "barcode_detection": {
+    "detected": true,
+    "decoded": false,
+    "gs1_verified": false,
+    "count": 1,
+    "details": [
+      {
+        "type": "QRCODE",
+        "data": "",
+        "rect": [
+          708,
+          355,
+          106,
+          106
+        ]
+      }
+    ],
+    "status": "PASS",
+    "regulatory_note": "Code detected; GS1 structure and authenticity not verified"
+  },
+  "redline_detection": {
+    "detected": true,
+    "count": 10,
+    "strips": [
+      {
+        "bounding_box": [
+          120,
+          224,
+          222,
+          35
+        ],
+        "orientation": "Horizontal",
+        "aspect_ratio": 6.34,
+        "area": 6536
+      },
+      {
+        "bounding_box": [
+          1138,
+          0,
+          62,
+          300
+        ],
+        "orientation": "Vertical",
+        "aspect_ratio": 4.84,
+        "area": 1622
+      },
+      {
+        "bounding_box": [
+          0,
+          671,
+          4,
+          122
+        ],
+        "orientation": "Vertical",
+        "aspect_ratio": 30.5,
+        "area": 277
+      },
+      {
+        "bounding_box": [
+          896,
+          0,
+          23,
+          793
+        ],
+        "orientation": "Vertical",
+        "aspect_ratio": 34.48,
+        "area": 14418
+      },
+      {
+        "bounding_box": [
+          853,
+          0,
+          22,
+          793
+        ],
+        "orientation": "Vertical",
+        "aspect_ratio": 36.05,
+        "area": 14377
+      },
+      {
+        "bounding_box": [
+          465,
+          773,
+          363,
+          20
+        ],
+        "orientation": "Horizontal",
+        "aspect_ratio": 18.15,
+        "area": 6392
+      },
+      {
+        "bounding_box": [
+          462,
+          316,
+          367,
+          13
+        ],
+        "orientation": "Horizontal",
+        "aspect_ratio": 28.23,
+        "area": 4390
+      },
+      {
+        "bounding_box": [
+          462,
+          295,
+          367,
+          10
+        ],
+        "orientation": "Horizontal",
+        "aspect_ratio": 36.7,
+        "area": 2771
+      },
+      {
+        "bounding_box": [
+          462,
+          271,
+          367,
+          11
+        ],
+        "orientation": "Horizontal",
+        "aspect_ratio": 33.36,
+        "area": 3285
+      },
+      {
+        "bounding_box": [
+          462,
+          246,
+          367,
+          11
+        ],
+        "orientation": "Horizontal",
+        "aspect_ratio": 33.36,
+        "area": 3605
+      }
+    ],
+    "status": "PASS (Schedule Redline Present)"
+  },
+  "font_ratio_analysis": {
+    "status": "REVIEW",
+    "generic_font_height_px": 0,
+    "brand_font_height_px": 0,
+    "ratio": null,
+    "details": "Unable to measure both generic and brand names reliably"
+  },
+  "regulatory_validation": {
+    "score_percentage": 91.67,
+    "passed_required": "11/12",
+    "overall_status": "MANUAL REVIEW REQUIRED",
+    "requires_review": true,
+    "field_checks": {
+      "Generic Name": {
+        "status": "PASS",
+        "required": true,
+        "description": "Generic name printed on the label",
+        "extracted_value": "Sodium Bicarbonate",
+        "presence_state": "detected",
+        "ocr_confidence": 90.9,
+        "review_notes": []
+      },
+      "Generic Font Size >= Brand (Rule 96(1)(i))": {
+        "status": "REVIEW",
+        "required": true,
+        "description": "Comparison of measured generic and brand text heights",
+        "extracted_value": "Unable to measure both generic and brand names reliably",
+        "presence_state": "uncertain",
+        "ocr_confidence": null,
+        "review_notes": []
+      },
+      "Dosage Form and Strength": {
+        "status": "PASS",
+        "required": true,
+        "description": "Dosage form and quantitative strength",
+        "extracted_value": "Tablets | 500mg",
+        "presence_state": "detected",
+        "ocr_confidence": 90.9,
+        "review_notes": []
+      },
+      "Active Ingredients in Metric Units": {
+        "status": "PASS",
+        "required": true,
+        "description": "Composition statement with a readable metric quantity",
+        "extracted_value": "Each film coated tablet contains: 500mg Sodium BicarbonateP",
+        "presence_state": "detected",
+        "ocr_confidence": 93.0,
+        "review_notes": [],
+        "raw_extracted_value": "Each film coated tablet contains: 500mg Sodium BicarbonateP",
+        "spelling_corrected": false
+      },
+      "Name and Address of Manufacturer": {
+        "status": "PASS",
+        "required": true,
+        "description": "Manufacturer statement and following address lines",
+        "extracted_value": "Manufactured by: Dwarka Global Lilesciences Plot No 89, Industrial Area. Lodhi Majra, Manpura, Baddi, Dist Solan (H.P.)Pin-174101 (A GMP, GLP&ISO 9004:2015 Certified Company)",
+        "presence_state": "detected",
+        "ocr_confidence": 87.9,
+        "review_notes": []
+      },
+      "Mfg License Number": {
+        "status": "PASS",
+        "required": true,
+        "description": "Printed manufacturing or import licence identifier",
+        "extracted_value": "Mfg.Lic.No.:HP-MNB-00001",
+        "presence_state": "detected",
+        "ocr_confidence": 94.6,
+        "review_notes": []
+      },
+      "Batch / Lot Number": {
+        "status": "PASS",
+        "required": true,
+        "description": "Printed batch or lot identifier",
+        "extracted_value": "BNODT-26475A",
+        "presence_state": "detected",
+        "ocr_confidence": 97.9,
+        "review_notes": []
+      },
+      "Mfg Date / Expiry Date": {
+        "status": "PASS",
+        "required": true,
+        "description": "Both manufacturing and expiry dates must be readable",
+        "extracted_value": "MFG.MAY 2026 | EXP.APR.2028",
+        "presence_state": "detected",
+        "ocr_confidence": 90.9,
+        "review_notes": []
+      },
+      "Storage Conditions": {
+        "status": "PASS",
+        "required": true,
+        "description": "Storage and child-safety instructions",
+        "extracted_value": "Storage: Store in a cool, dry & dark place; below 25°c, protect from direct sunlight,; heat & moisture.; protect from direct sunlight,",
+        "presence_state": "detected",
+        "ocr_confidence": 90.3,
+        "review_notes": []
+      },
+      "Directions for Use / Dosage": {
+        "status": "PASS",
+        "required": true,
+        "description": "Dosage or directions statement",
+        "extracted_value": "Dosage: As directed by the physician.",
+        "presence_state": "detected",
+        "ocr_confidence": 94.0,
+        "review_notes": []
+      },
+      "Prescription Symbol (Rx, NRx, XRx)": {
+        "status": "INFO / CONDITIONAL",
+        "required": false,
+        "description": "Readable prescription symbol",
+        "extracted_value": "Not Detected",
+        "presence_state": "not_detected",
+        "ocr_confidence": null,
+        "review_notes": []
+      },
+      "Required Barcode or QR Code": {
+        "status": "PASS",
+        "required": false,
+        "description": "Barcode or QR presence check",
+        "extracted_value": "Barcode / QR code present",
+        "presence_state": "detected",
+        "ocr_confidence": null,
+        "review_notes": []
+      },
+      "Schedule Warning (Prescription Drugs)": {
+        "status": "PASS",
+        "required": true,
+        "description": "Readable schedule or prescription restriction statement",
+        "extracted_value": "CAUTON: Not to besoid stall without the prescrption of a register Meoirsal Practitioner",
+        "presence_state": "detected",
+        "ocr_confidence": 87.3,
+        "review_notes": []
+      },
+      "Schedule Redline (Prescription Drugs)": {
+        "status": "PASS",
+        "required": true,
+        "description": "Elongated red marking detected by color and geometry",
+        "extracted_value": "Red marking detected (color/shape check only)",
+        "presence_state": "detected",
+        "ocr_confidence": null,
+        "review_notes": []
+      }
+    }
+  },
+  "elapsed_seconds": 41.95,
+  "audit_note": "Field parsing revalidated against unchanged saved PaddleOCR text and coordinates; elapsed_seconds is the original full scan time."
+}

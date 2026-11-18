@@ -803,3 +803,91 @@ body {
 body, .card, .navbar, .metric-card, .check-item, .dropzone, .footer {
     transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
 }
+
+/* Responsive sizing: allow grid children and OCR strings to shrink to the viewport. */
+.workbench-grid {
+    grid-template-columns: minmax(0, 460px) minmax(0, 1fr);
+}
+.card, .metric-card, .check-item, .brand-text, .nav-actions {
+    min-width: 0;
+}
+.checklist-grid {
+    grid-template-columns: repeat(auto-fill, minmax(min(280px, 100%), 1fr));
+}
+.card-header, .image-box-header, .ocr-header {
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+.check-title, .check-desc, .metric-sub, .ocr-text-box, .verdict-pill {
+    overflow-wrap: anywhere;
+}
+.btn, .theme-toggle, .tab-btn, .btn-copy, .btn-link {
+    min-height: 44px;
+    touch-action: manipulation;
+}
+.btn-link {
+    display: inline-flex;
+    align-items: center;
+}
+.btn-clear {
+    width: 44px;
+    height: 44px;
+}
+button:focus-visible, a:focus-visible, [role="button"]:focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 3px;
+}
+.brand-icon, .pulse-dot {
+    flex-shrink: 0;
+}
+
+@media (max-width: 1080px) {
+    .workbench-grid { grid-template-columns: minmax(0, 1fr); }
+    .nav-container { gap: 1rem; }
+    .system-status { display: none; }
+}
+
+@media (max-width: 600px) {
+    .nav-container { padding: 0.65rem 1rem; }
+    .brand { gap: 0.5rem; }
+    .brand-subtitle { display: none; }
+    .brand-title { font-size: 1.1rem; }
+    .theme-toggle { white-space: nowrap; padding: 0.4rem 0.65rem; }
+    .main-container { padding: 1.25rem 0.75rem; }
+    .hero-section { margin-bottom: 1.25rem; }
+    .hero-title { font-size: 1.5rem; line-height: 1.25; }
+    .hero-subtitle { font-size: 0.88rem; margin-top: 0.75rem; }
+    .workbench-grid { gap: 1rem; }
+    .card { padding: 1rem; }
+    .card-header { margin-bottom: 1rem; }
+    .card-header h2 { font-size: 1rem; }
+    .dropzone { padding: 1.25rem 0.75rem; min-height: 190px; }
+    .button-group { grid-template-columns: minmax(0, 1fr); gap: 0.5rem; }
+    .empty-state { padding: 2rem 0.5rem; }
+    .metrics-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.5rem;
+        margin-bottom: 1rem;
+    }
+    .metric-card { padding: 0.75rem; }
+    .metric-label { font-size: 0.68rem; letter-spacing: 0.02em; }
+    .metric-value { font-size: 1.4rem; }
+    .status-badge { font-size: 1rem; }
+    .results-tabs {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        overflow: visible;
+    }
+    .tab-btn { white-space: normal; padding: 0.6rem 0.35rem; font-size: 0.8rem; }
+    .checklist-grid { gap: 0.75rem; }
+    .check-item { padding: 0.75rem; }
+    .check-item-header { flex-wrap: wrap; }
+    .check-title { flex: 1 1 150px; }
+    .image-box-header, .ocr-header, .ocr-text-box { padding: 0.75rem; }
+    .image-box img { padding: 0.5rem; }
+    .footer { padding: 1rem; margin-top: 0.5rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { transition: none !important; }
+}

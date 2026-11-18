@@ -1,0 +1,956 @@
+{
+  "image_path": "static/uploads/TestingMedicineLabels/67686598-b982-43a2-bbf5-d9da97efbfcb.jpeg",
+  "ocr_text_preview": "Lerahist-1\nInlera Healthcare\nMarketed By\nAlcolabe\nPanchkula(Haryana)-134113\nE-mall ID:Inlerahealthcare@gail.com\nLerahist-16\nBetahistine\nHydrochloride\nTablets IP\nRPRS.107.0UPER10TABS.INCL.OFALLTAXES\nEXP.08/2028\nComposition:\nEach uncoated tablet contains\nI.P.\n16\nmg\n9.s.\nExcipients\nDosage: As directed by the Physiqian.\nKeep all Medicines out ot reach ...",
+  "ocr_text_full": "Lerahist-1\nInlera Healthcare\nMarketed By\nAlcolabe\nPanchkula(Haryana)-134113\nE-mall ID:Inlerahealthcare@gail.com\nLerahist-16\nBetahistine\nHydrochloride\nTablets IP\nRPRS.107.0UPER10TABS.INCL.OFALLTAXES\nEXP.08/2028\nComposition:\nEach uncoated tablet contains\nI.P.\n16\nmg\n9.s.\nExcipients\nDosage: As directed by the Physiqian.\nKeep all Medicines out ot reach ol chlldren.\nNO.BLT-26771C MFG.09/2026\nSCHEDUCE HPRESCRIPTION DHUG CAUTION\n1lo be sold by retail\nRegistered Medical Pracillner\nStorage: Store protected from\nmoisture, at a temperature\nnot exceeding 30℃\nLerahist-16Leahist-16\nMfg.By:Brit Lifescience\n(A GMP & GLP Certified Company)\nV.P.O. Moginand, Nahan Roac\nDistt. Sirmour(H.P.)173030\nMg.LicNo.:N-MNB/18/202.8\n1\nnlera\nAlcolabt\nPlot No. 358, Industrlal\nPanchkula (Haryana)-134\nE-mall ID:inleraheall\nm\n1st16Lorahic6\nydroch\nTabletsIP\nComposition\nach uncoaled tablet conta\nlsline",
+  "ocr_engine": "paddle",
+  "ocr_lines": [
+    {
+      "text": "Lerahist-1",
+      "confidence": 99.5,
+      "box": [
+        954.0,
+        8.0,
+        83.0,
+        319.0
+      ],
+      "source": "paddle_rotated",
+      "alternatives": []
+    },
+    {
+      "text": "Inlera Healthcare",
+      "confidence": 98.4,
+      "box": [
+        223.0,
+        41.0,
+        404.0,
+        78.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "Marketed By",
+      "confidence": 94.8,
+      "box": [
+        226.0,
+        101.0,
+        210.0,
+        46.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "Alcolabe",
+      "confidence": 93.1,
+      "box": [
+        231.0,
+        137.0,
+        166.0,
+        58.0
+      ],
+      "source": "paddle_rotated",
+      "alternatives": [
+        {
+          "text": "Alcolabs",
+          "confidence": 90.6,
+          "source": "paddle"
+        },
+        {
+          "text": "Plot No. 356, Industrial Area, Phose-1,",
+          "confidence": 90.6,
+          "source": "paddle"
+        }
+      ]
+    },
+    {
+      "text": "Panchkula(Haryana)-134113",
+      "confidence": 95.8,
+      "box": [
+        229.0,
+        188.0,
+        525.0,
+        80.0
+      ],
+      "source": "paddle",
+      "alternatives": [
+        {
+          "text": "Panchkula (Haryana)-134113",
+          "confidence": 94.1,
+          "source": "paddle_rotated"
+        },
+        {
+          "text": "Plot No. 356, Industrial Area,",
+          "confidence": 91.6,
+          "source": "paddle_rotated"
+        },
+        {
+          "text": "E-mall ID:Inlerahealthcare@gail.com",
+          "confidence": 88.6,
+          "source": "paddle"
+        }
+      ]
+    },
+    {
+      "text": "E-mall ID:Inlerahealthcare@gail.com",
+      "confidence": 94.2,
+      "box": [
+        232.0,
+        239.0,
+        652.0,
+        66.0
+      ],
+      "source": "paddle_rotated",
+      "alternatives": []
+    },
+    {
+      "text": "Lerahist-16",
+      "confidence": 99.8,
+      "box": [
+        956.0,
+        360.0,
+        86.0,
+        392.0
+      ],
+      "source": "paddle_rotated",
+      "alternatives": []
+    },
+    {
+      "text": "Betahistine",
+      "confidence": 99.8,
+      "box": [
+        127.0,
+        414.0,
+        485.0,
+        105.0
+      ],
+      "source": "paddle_rotated",
+      "alternatives": []
+    },
+    {
+      "text": "Hydrochloride",
+      "confidence": 99.6,
+      "box": [
+        144.0,
+        509.0,
+        593.0,
+        108.0
+      ],
+      "source": "paddle_rotated",
+      "alternatives": []
+    },
+    {
+      "text": "Tablets IP",
+      "confidence": 96.2,
+      "box": [
+        161.0,
+        610.0,
+        400.0,
+        123.0
+      ],
+      "source": "paddle_rotated",
+      "alternatives": []
+    },
+    {
+      "text": "RPRS.107.0UPER10TABS.INCL.OFALLTAXES",
+      "confidence": 92.6,
+      "box": [
+        1267.0,
+        698.0,
+        192.0,
+        2105.0
+      ],
+      "source": "paddle_rotated",
+      "alternatives": []
+    },
+    {
+      "text": "EXP.08/2028",
+      "confidence": 97.5,
+      "box": [
+        1106.0,
+        703.0,
+        163.0,
+        574.0
+      ],
+      "source": "paddle_rotated",
+      "alternatives": []
+    },
+    {
+      "text": "Lerahist-16",
+      "confidence": 99.7,
+      "box": [
+        158.0,
+        774.0,
+        338.0,
+        77.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "Lerahist-16",
+      "confidence": 99.8,
+      "box": [
+        965.0,
+        845.0,
+        80.0,
+        375.0
+      ],
+      "source": "paddle_rotated",
+      "alternatives": []
+    },
+    {
+      "text": "Composition:",
+      "confidence": 98.8,
+      "box": [
+        135.0,
+        921.0,
+        310.0,
+        71.0
+      ],
+      "source": "paddle_rotated",
+      "alternatives": []
+    },
+    {
+      "text": "Each uncoated tablet contains",
+      "confidence": 98.9,
+      "box": [
+        138.0,
+        974.0,
+        556.0,
+        71.0
+      ],
+      "source": "paddle_rotated",
+      "alternatives": []
+    },
+    {
+      "text": "Betahistine",
+      "confidence": 99.8,
+      "box": [
+        142.0,
+        1045.0,
+        209.0,
+        51.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "I.P.",
+      "confidence": 75.4,
+      "box": [
+        512.0,
+        1107.0,
+        66.0,
+        48.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "16",
+      "confidence": 99.9,
+      "box": [
+        711.0,
+        1107.0,
+        48.0,
+        39.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "mg",
+      "confidence": 99.9,
+      "box": [
+        750.0,
+        1110.0,
+        74.0,
+        42.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "Hydrochloride",
+      "confidence": 99.3,
+      "box": [
+        138.0,
+        1112.0,
+        273.0,
+        63.0
+      ],
+      "source": "paddle_rotated",
+      "alternatives": []
+    },
+    {
+      "text": "9.s.",
+      "confidence": 68.8,
+      "box": [
+        752.0,
+        1171.0,
+        81.0,
+        55.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "Excipients",
+      "confidence": 99.8,
+      "box": [
+        142.0,
+        1177.0,
+        203.0,
+        59.0
+      ],
+      "source": "paddle_rotated",
+      "alternatives": []
+    },
+    {
+      "text": "Dosage: As directed by the Physiqian.",
+      "confidence": 94.0,
+      "box": [
+        138.0,
+        1230.0,
+        695.0,
+        77.0
+      ],
+      "source": "paddle_rotated",
+      "alternatives": [
+        {
+          "text": "Dosage: As directed by ihe Physician.",
+          "confidence": 93.8,
+          "source": "paddle"
+        }
+      ]
+    },
+    {
+      "text": "Keep all Medicines out ot reach ol chlldren.",
+      "confidence": 94.8,
+      "box": [
+        133.0,
+        1304.0,
+        728.0,
+        59.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "NO.BLT-26771C MFG.09/2026",
+      "confidence": 96.3,
+      "box": [
+        1108.0,
+        1308.0,
+        201.0,
+        1442.0
+      ],
+      "source": "paddle_rotated",
+      "alternatives": []
+    },
+    {
+      "text": "Lerahist-16",
+      "confidence": 90.4,
+      "box": [
+        968.0,
+        1324.0,
+        79.0,
+        386.0
+      ],
+      "source": "paddle_rotated",
+      "alternatives": []
+    },
+    {
+      "text": "SCHEDUCE HPRESCRIPTION DHUG CAUTION",
+      "confidence": 77.3,
+      "box": [
+        155.0,
+        1397.0,
+        683.0,
+        65.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "1lo be sold by retail",
+      "confidence": 84.9,
+      "box": [
+        209.0,
+        1444.0,
+        259.0,
+        66.0
+      ],
+      "source": "paddle_rotated",
+      "alternatives": [
+        {
+          "text": "Nol lo be soldby retail wthout the prescption ota",
+          "confidence": 80.3,
+          "source": "paddle"
+        }
+      ]
+    },
+    {
+      "text": "Registered Medical Pracillner",
+      "confidence": 84.2,
+      "box": [
+        161.0,
+        1484.0,
+        462.0,
+        57.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "Storage: Store protected from",
+      "confidence": 97.3,
+      "box": [
+        139.0,
+        1591.0,
+        725.0,
+        65.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "moisture, at a temperature",
+      "confidence": 98.6,
+      "box": [
+        144.0,
+        1650.0,
+        607.0,
+        68.0
+      ],
+      "source": "paddle_rotated",
+      "alternatives": [
+        {
+          "text": "'moisture, at a temperature",
+          "confidence": 96.1,
+          "source": "paddle"
+        }
+      ]
+    },
+    {
+      "text": "not exceeding 30℃",
+      "confidence": 94.8,
+      "box": [
+        138.0,
+        1689.0,
+        469.0,
+        92.0
+      ],
+      "source": "paddle_rotated",
+      "alternatives": []
+    },
+    {
+      "text": "Lerahist-16Leahist-16",
+      "confidence": 98.6,
+      "box": [
+        959.0,
+        1802.0,
+        112.0,
+        897.0
+      ],
+      "source": "paddle_rotated",
+      "alternatives": []
+    },
+    {
+      "text": "Mfg.By:Brit Lifescience",
+      "confidence": 96.0,
+      "box": [
+        144.0,
+        1805.0,
+        440.0,
+        57.0
+      ],
+      "source": "paddle",
+      "alternatives": [
+        {
+          "text": "Mfg.By.:Brit Lifescience",
+          "confidence": 93.3,
+          "source": "paddle_rotated"
+        }
+      ]
+    },
+    {
+      "text": "(A GMP & GLP Certified Company)",
+      "confidence": 93.7,
+      "box": [
+        147.0,
+        1845.0,
+        603.0,
+        56.0
+      ],
+      "source": "paddle",
+      "alternatives": [
+        {
+          "text": "(A GMP & GLP Certified Compal",
+          "confidence": 89.5,
+          "source": "paddle_rotated"
+        }
+      ]
+    },
+    {
+      "text": "V.P.O. Moginand, Nahan Roac",
+      "confidence": 93.6,
+      "box": [
+        147.0,
+        1893.0,
+        513.0,
+        48.0
+      ],
+      "source": "paddle",
+      "alternatives": [
+        {
+          "text": "V.P.O. Moginand, Nahan Road",
+          "confidence": 90.7,
+          "source": "paddle_rotated"
+        }
+      ]
+    },
+    {
+      "text": "Distt. Sirmour(H.P.)173030",
+      "confidence": 92.4,
+      "box": [
+        144.0,
+        1929.0,
+        499.0,
+        57.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "Mg.LicNo.:N-MNB/18/202.8",
+      "confidence": 90.9,
+      "box": [
+        153.0,
+        2005.0,
+        493.0,
+        57.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "1",
+      "confidence": 96.8,
+      "box": [
+        753.0,
+        2017.0,
+        25.0,
+        25.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "nlera",
+      "confidence": 99.0,
+      "box": [
+        207.0,
+        2217.0,
+        387.0,
+        191.0
+      ],
+      "source": "paddle_rotated",
+      "alternatives": []
+    },
+    {
+      "text": "Inlera Healthcare",
+      "confidence": 98.6,
+      "box": [
+        238.0,
+        2380.0,
+        405.0,
+        59.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "Marketed By",
+      "confidence": 91.3,
+      "box": [
+        243.0,
+        2433.0,
+        221.0,
+        40.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "Alcolabt",
+      "confidence": 98.7,
+      "box": [
+        246.0,
+        2470.0,
+        156.0,
+        39.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "Plot No. 358, Industrlal",
+      "confidence": 92.3,
+      "box": [
+        238.0,
+        2507.0,
+        405.0,
+        56.0
+      ],
+      "source": "paddle_rotated",
+      "alternatives": [
+        {
+          "text": "Plot No.358, Industrlal Aroa",
+          "confidence": 89.1,
+          "source": "paddle"
+        }
+      ]
+    },
+    {
+      "text": "Panchkula (Haryana)-134",
+      "confidence": 95.8,
+      "box": [
+        237.0,
+        2534.0,
+        468.0,
+        69.0
+      ],
+      "source": "paddle",
+      "alternatives": [
+        {
+          "text": "Panchkula (Haryana)-",
+          "confidence": 94.9,
+          "source": "paddle_rotated"
+        }
+      ]
+    },
+    {
+      "text": "E-mall ID:inleraheall",
+      "confidence": 92.6,
+      "box": [
+        243.0,
+        2591.0,
+        368.0,
+        48.0
+      ],
+      "source": "paddle_rotated",
+      "alternatives": [
+        {
+          "text": "E-mall ID:inleraheallhe",
+          "confidence": 88.7,
+          "source": "paddle"
+        }
+      ]
+    },
+    {
+      "text": "m",
+      "confidence": 99.2,
+      "box": [
+        759.0,
+        2591.0,
+        34.0,
+        40.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "1st16Lorahic6",
+      "confidence": 63.7,
+      "box": [
+        979.0,
+        2712.0,
+        111.0,
+        730.0
+      ],
+      "source": "paddle_rotated",
+      "alternatives": []
+    },
+    {
+      "text": "ydroch",
+      "confidence": 84.8,
+      "box": [
+        209.0,
+        2872.0,
+        279.0,
+        89.0
+      ],
+      "source": "paddle_rotated",
+      "alternatives": [
+        {
+          "text": "lydrochlo",
+          "confidence": 82.2,
+          "source": "paddle"
+        }
+      ]
+    },
+    {
+      "text": "TabletsIP",
+      "confidence": 90.3,
+      "box": [
+        176.0,
+        2974.0,
+        396.0,
+        90.0
+      ],
+      "source": "paddle",
+      "alternatives": [
+        {
+          "text": "Tablets IP",
+          "confidence": 88.2,
+          "source": "paddle_rotated"
+        }
+      ]
+    },
+    {
+      "text": "Lerahist-16",
+      "confidence": 95.5,
+      "box": [
+        173.0,
+        3140.0,
+        334.0,
+        79.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "Composition",
+      "confidence": 95.9,
+      "box": [
+        152.0,
+        3283.0,
+        276.0,
+        69.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "ach uncoaled tablet conta",
+      "confidence": 90.8,
+      "box": [
+        189.0,
+        3348.0,
+        451.0,
+        60.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "lsline",
+      "confidence": 76.4,
+      "box": [
+        249.0,
+        3425.0,
+        111.0,
+        39.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    }
+  ],
+  "ocr_warnings": [],
+  "barcode_detection": {
+    "detected": false,
+    "decoded": false,
+    "gs1_verified": false,
+    "count": 0,
+    "details": [],
+    "status": "FAIL",
+    "regulatory_note": "Detection alone does not verify GS1 structure or product authenticity."
+  },
+  "redline_detection": {
+    "detected": true,
+    "count": 4,
+    "strips": [
+      {
+        "bounding_box": [
+          0,
+          997,
+          20,
+          203
+        ],
+        "orientation": "Vertical",
+        "aspect_ratio": 10.15,
+        "area": 843
+      },
+      {
+        "bounding_box": [
+          492,
+          0,
+          20,
+          158
+        ],
+        "orientation": "Vertical",
+        "aspect_ratio": 7.9,
+        "area": 854
+      },
+      {
+        "bounding_box": [
+          53,
+          0,
+          311,
+          1200
+        ],
+        "orientation": "Vertical",
+        "aspect_ratio": 3.86,
+        "area": 53767
+      },
+      {
+        "bounding_box": [
+          54,
+          0,
+          128,
+          29
+        ],
+        "orientation": "Horizontal",
+        "aspect_ratio": 4.41,
+        "area": 2003
+      }
+    ],
+    "status": "PASS (Schedule Redline Present)"
+  },
+  "font_ratio_analysis": {
+    "status": "REVIEW",
+    "generic_font_height_px": 0,
+    "brand_font_height_px": 0,
+    "ratio": null,
+    "details": "Unable to measure both generic and brand names reliably"
+  },
+  "regulatory_validation": {
+    "score_percentage": 41.67,
+    "passed_required": "5/12",
+    "overall_status": "MANUAL REVIEW REQUIRED",
+    "requires_review": true,
+    "field_checks": {
+      "Generic Name": {
+        "status": "PASS",
+        "required": true,
+        "description": "Generic name printed on the label",
+        "extracted_value": "ach uncoaled",
+        "ocr_confidence": 90.8,
+        "review_notes": []
+      },
+      "Generic Font Size >= Brand (Rule 96(1)(i))": {
+        "status": "REVIEW",
+        "required": true,
+        "description": "Comparison of measured generic and brand text heights",
+        "extracted_value": "Unable to measure both generic and brand names reliably",
+        "ocr_confidence": null,
+        "review_notes": []
+      },
+      "Dosage Form and Strength": {
+        "status": "REVIEW",
+        "required": true,
+        "description": "Dosage form and quantitative strength",
+        "extracted_value": "tablet",
+        "ocr_confidence": 90.8,
+        "review_notes": [
+          "Required part of this field is missing or unreadable"
+        ]
+      },
+      "Active Ingredients in Metric Units": {
+        "status": "REVIEW",
+        "required": true,
+        "description": "Composition statement with a readable metric quantity",
+        "extracted_value": "Composition: Each uncoated tablet contains I.P. 16",
+        "ocr_confidence": 75.4,
+        "review_notes": [
+          "Required part of this field is missing or unreadable"
+        ],
+        "raw_extracted_value": "Composition: Each uncoated tablet contains I.P. 16",
+        "spelling_corrected": false
+      },
+      "Name and Address of Manufacturer": {
+        "status": "FAIL",
+        "required": true,
+        "description": "Manufacturer statement and following address lines",
+        "extracted_value": "Not Detected",
+        "ocr_confidence": null,
+        "review_notes": []
+      },
+      "Mfg License Number": {
+        "status": "FAIL",
+        "required": true,
+        "description": "Printed manufacturing or import licence identifier",
+        "extracted_value": "Not Detected",
+        "ocr_confidence": null,
+        "review_notes": []
+      },
+      "Batch / Lot Number": {
+        "status": "FAIL",
+        "required": true,
+        "description": "Printed batch or lot identifier",
+        "extracted_value": "Not Detected",
+        "ocr_confidence": null,
+        "review_notes": []
+      },
+      "Mfg Date / Expiry Date": {
+        "status": "PASS",
+        "required": true,
+        "description": "Both manufacturing and expiry dates must be readable",
+        "extracted_value": "MFG.09/2026 | EXP.08/2028",
+        "ocr_confidence": 96.3,
+        "review_notes": []
+      },
+      "Storage Conditions": {
+        "status": "PASS",
+        "required": true,
+        "description": "Storage and child-safety instructions",
+        "extracted_value": "Store protected from",
+        "ocr_confidence": 97.3,
+        "review_notes": []
+      },
+      "Directions for Use / Dosage": {
+        "status": "PASS",
+        "required": true,
+        "description": "Dosage or directions statement",
+        "extracted_value": "As directed by the Physiqian.",
+        "ocr_confidence": 94.0,
+        "review_notes": []
+      },
+      "Prescription Symbol (Rx, NRx, XRx)": {
+        "status": "INFO / CONDITIONAL",
+        "required": false,
+        "description": "Readable prescription symbol",
+        "extracted_value": "Not Detected",
+        "ocr_confidence": null,
+        "review_notes": []
+      },
+      "Required Barcode or QR Code": {
+        "status": "INFO / CONDITIONAL",
+        "required": false,
+        "description": "Barcode or QR presence check",
+        "extracted_value": "Not detected (conditional for primary packaging)",
+        "ocr_confidence": null,
+        "review_notes": []
+      },
+      "Schedule Warning (Prescription Drugs)": {
+        "status": "FAIL",
+        "required": true,
+        "description": "Readable schedule or prescription restriction statement",
+        "extracted_value": "Not Detected",
+        "ocr_confidence": null,
+        "review_notes": []
+      },
+      "Schedule Redline (Prescription Drugs)": {
+        "status": "PASS",
+        "required": true,
+        "description": "Elongated red marking detected by color and geometry",
+        "extracted_value": "Red marking detected (color/shape check only)",
+        "ocr_confidence": null,
+        "review_notes": []
+      }
+    }
+  },
+  "elapsed_seconds": 31.21
+}

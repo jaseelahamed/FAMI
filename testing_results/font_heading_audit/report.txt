@@ -1,0 +1,22 @@
+FONT HEADING AUDIT
+
+Fresh Tesseract crop measurements on all nine supplied images.
+Paddle OCR text and barcode/redline detections replayed from testing_results/final.
+All 13 non-font checks compared before/after: unchanged on every image.
+Heights are measured image pixels, not typographic point sizes.
+
+Brand | Generic px | Brand px | Ratio | Font result
+SOBICLO-500 | 53.6 | 34.5 | 1.55 | PASS
+LERAPREG-PN | 46.7 | 32.1 | 1.45 | PASS
+Telney-40 | 34.6 | 30.9 | 1.12 | PASS
+Lerahist-16 | 23.3 | 11.3 | 2.06 | PASS
+Viameta-500SR | 51.6 | 38.3 | 1.35 | PASS
+ALVUNAC-SP | 30.4 | 21.5 | 1.42 | PASS
+Azyclo-500 | 62.5 | 36.6 | 1.71 | PASS
+Chymobit-Forte | 55.0 | 48.3 | 1.14 | PASS
+LOPERWELL | 44.0 | 30.4 | 1.45 | PASS
+
+All nine now have a measured comparison. All nine pass the configured generic >= brand pixel-height comparison.
+Azyclo brand crop OCR spells the name Azycl®-500; word geometry is measured directly, without substituting a known brand name.
+Demo: full pipeline rerun; font check PASS (27px / 22px). Its separate batch check failed on this OCR run.
+See measurement_boxes.jpg: generic words green, brand words blue.

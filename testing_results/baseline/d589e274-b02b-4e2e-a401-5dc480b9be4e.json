@@ -1,0 +1,1167 @@
+{
+  "image_path": "static/uploads/TestingMedicineLabels/d589e274-b02b-4e2e-a401-5dc480b9be4e.jpeg",
+  "ocr_text_preview": "Azitnromycin\nlablets\nAzycl-500 Azycl0-50\nIP50\nKeep themedicineoutofreachofchildren.\n500\nAzyclo\nMfg.LicNo.MLF282025JKO000028\nMLF252025JK000003\nSCHED\nTablets\nhe\nSAUTIO\n-200\nMfd.by\nutieals Pvt. Ltd,\nComposition:\n(AWHO-GMP CERTIFIEDCOMPANYY\nSIDCO, Industial Complex Phase-1,Ghat\nEach film coated tablet contains\n3X85\n76\nDist.Kathua-184143(Jak)\nAzithromyc...",
+  "ocr_text_full": "Azitnromycin\nlablets\nAzycl-500 Azycl0-50\nIP50\nKeep themedicineoutofreachofchildren.\n500\nAzyclo\nMfg.LicNo.MLF282025JKO000028\nMLF252025JK000003\nSCHED\nTablets\nhe\nSAUTIO\n-200\nMfd.by\nutieals Pvt. Ltd,\nComposition:\n(AWHO-GMP CERTIFIEDCOMPANYY\nSIDCO, Industial Complex Phase-1,Ghat\nEach film coated tablet contains\n3X85\n76\nDist.Kathua-184143(Jak)\nAzithromycin Dihydrate\nP\nPF/25/0903/00\neq.toAnhydrous Azithromycin500\nM.R.P.文\nmg\nExcipients\nalco labs\nColour:Titanium Dioxide IR\nAzycl@-500\nDosage:As directed by the physician\n□\nMarketed By.\nPER\nStorage: Store at a temperature hot\nlabs\nexceeding 30°C, Proteat fromlight\nNo.356, Industrial Area, Phase\nMEGDATEAY2026\nPanchkula(Haryana)-134113\nand moisture\nE-mall ID:alcolabs2017@gmall.com\nAzithromycin Tablets IP 500 mg\nBNF260158D\n1O-500Azyc1O-500\nAzycIO-\nMIg. LioNo MLF28202\n25JK0000Q28\nCAUTONSN\nondposaud eu\n-y00\nMfd.byJamkas Pharmaceuticals Pvt. Ltd.\n(AWHO-GMP CERTIFIED COMPANY)\nComposition\nSIDCO Industrial Complex, Phase-1, Ghati\nDist.Kathua- 184143(J&K)",
+  "ocr_engine": "paddle",
+  "ocr_lines": [
+    {
+      "text": "Azitnromycin",
+      "confidence": 97.4,
+      "box": [
+        108.0,
+        0.0,
+        557.0,
+        80.0
+      ],
+      "source": "paddle",
+      "alternatives": [
+        {
+          "text": "cin",
+          "confidence": 72.3,
+          "source": "paddle_rotated"
+        }
+      ]
+    },
+    {
+      "text": "lablets",
+      "confidence": 92.5,
+      "box": [
+        707.0,
+        0.0,
+        293.0,
+        92.0
+      ],
+      "source": "paddle_rotated",
+      "alternatives": [
+        {
+          "text": "lablets IPbuu mg",
+          "confidence": 76.6,
+          "source": "paddle"
+        }
+      ]
+    },
+    {
+      "text": "Azycl-500 Azycl0-50",
+      "confidence": 81.9,
+      "box": [
+        1456.0,
+        6.0,
+        61.0,
+        429.0
+      ],
+      "source": "paddle_rotated",
+      "alternatives": []
+    },
+    {
+      "text": "IP50",
+      "confidence": 86.2,
+      "box": [
+        958.0,
+        7.0,
+        256.0,
+        73.0
+      ],
+      "source": "paddle_rotated",
+      "alternatives": []
+    },
+    {
+      "text": "Keep themedicineoutofreachofchildren.",
+      "confidence": 88.9,
+      "box": [
+        648.0,
+        79.0,
+        435.0,
+        50.0
+      ],
+      "source": "paddle",
+      "alternatives": [
+        {
+          "text": "Keep the medicineoutofreachofchildren",
+          "confidence": 86.0,
+          "source": "paddle_rotated"
+        }
+      ]
+    },
+    {
+      "text": "500",
+      "confidence": 98.9,
+      "box": [
+        367.0,
+        95.0,
+        138.0,
+        78.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "Azyclo",
+      "confidence": 86.7,
+      "box": [
+        102.0,
+        105.0,
+        255.0,
+        78.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "Mfg.LicNo.MLF282025JKO000028",
+      "confidence": 89.9,
+      "box": [
+        648.0,
+        120.0,
+        424.0,
+        44.0
+      ],
+      "source": "paddle",
+      "alternatives": [
+        {
+          "text": "Mfg. Lic No.MLF2",
+          "confidence": 87.1,
+          "source": "paddle_rotated"
+        }
+      ]
+    },
+    {
+      "text": "MLF252025JK000003",
+      "confidence": 96.7,
+      "box": [
+        793.0,
+        160.0,
+        251.0,
+        45.0
+      ],
+      "source": "paddle_rotated",
+      "alternatives": []
+    },
+    {
+      "text": "SCHED",
+      "confidence": 90.5,
+      "box": [
+        1348.0,
+        164.0,
+        27.0,
+        84.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "Tablets",
+      "confidence": 99.8,
+      "box": [
+        372.0,
+        165.0,
+        128.0,
+        48.0
+      ],
+      "source": "paddle",
+      "alternatives": [
+        {
+          "text": "AzyclO-500",
+          "confidence": 92.4,
+          "source": "paddle_rotated"
+        }
+      ]
+    },
+    {
+      "text": "he",
+      "confidence": 81.8,
+      "box": [
+        1288.0,
+        166.0,
+        30.0,
+        45.0
+      ],
+      "source": "paddle",
+      "alternatives": [
+        {
+          "text": "edey",
+          "confidence": 50.1,
+          "source": "paddle_rotated"
+        }
+      ]
+    },
+    {
+      "text": "SAUTIO",
+      "confidence": 88.0,
+      "box": [
+        1317.0,
+        170.0,
+        31.0,
+        86.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "-200",
+      "confidence": 65.9,
+      "box": [
+        97.0,
+        180.0,
+        171.0,
+        52.0
+      ],
+      "source": "paddle_rotated",
+      "alternatives": [
+        {
+          "text": "0-400",
+          "confidence": 64.6,
+          "source": "paddle"
+        }
+      ]
+    },
+    {
+      "text": "Mfd.by",
+      "confidence": 95.6,
+      "box": [
+        644.0,
+        193.0,
+        108.0,
+        48.0
+      ],
+      "source": "paddle_rotated",
+      "alternatives": [
+        {
+          "text": "Mfd.by:Jamkas Pharmaceutieals Pvt.Ltd.",
+          "confidence": 89.4,
+          "source": "paddle"
+        }
+      ]
+    },
+    {
+      "text": "utieals Pvt. Ltd,",
+      "confidence": 87.3,
+      "box": [
+        947.0,
+        199.0,
+        167.0,
+        47.0
+      ],
+      "source": "paddle_rotated",
+      "alternatives": []
+    },
+    {
+      "text": "Composition:",
+      "confidence": 97.4,
+      "box": [
+        94.0,
+        224.0,
+        191.0,
+        50.0
+      ],
+      "source": "paddle",
+      "alternatives": [
+        {
+          "text": "Composition",
+          "confidence": 96.6,
+          "source": "paddle_rotated"
+        }
+      ]
+    },
+    {
+      "text": "(AWHO-GMP CERTIFIEDCOMPANYY",
+      "confidence": 93.4,
+      "box": [
+        643.0,
+        224.0,
+        438.0,
+        50.0
+      ],
+      "source": "paddle",
+      "alternatives": [
+        {
+          "text": "YAWHO-GMPCERTIFIEDCOMPANY",
+          "confidence": 92.8,
+          "source": "paddle_rotated"
+        }
+      ]
+    },
+    {
+      "text": "SIDCO, Industial Complex Phase-1,Ghat",
+      "confidence": 90.0,
+      "box": [
+        642.0,
+        252.0,
+        488.0,
+        62.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "Each film coated tablet contains",
+      "confidence": 95.7,
+      "box": [
+        93.0,
+        261.0,
+        432.0,
+        53.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "3X85",
+      "confidence": 57.4,
+      "box": [
+        1662.0,
+        263.0,
+        68.0,
+        244.0
+      ],
+      "source": "paddle_rotated",
+      "alternatives": []
+    },
+    {
+      "text": "76",
+      "confidence": 85.5,
+      "box": [
+        1593.0,
+        275.0,
+        65.0,
+        105.0
+      ],
+      "source": "paddle_rotated",
+      "alternatives": []
+    },
+    {
+      "text": "Dist.Kathua-184143(Jak)",
+      "confidence": 92.6,
+      "box": [
+        642.0,
+        292.0,
+        328.0,
+        53.0
+      ],
+      "source": "paddle",
+      "alternatives": [
+        {
+          "text": "Dist Kathua-184143(Jak)",
+          "confidence": 88.8,
+          "source": "paddle_rotated"
+        },
+        {
+          "text": "SiDCO Industial Complex Phase-1,Ghatt",
+          "confidence": 88.7,
+          "source": "paddle_rotated"
+        }
+      ]
+    },
+    {
+      "text": "Azithromycin Dihydrate",
+      "confidence": 98.5,
+      "box": [
+        95.0,
+        301.0,
+        298.0,
+        47.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "P",
+      "confidence": 98.5,
+      "box": [
+        439.0,
+        310.0,
+        38.0,
+        33.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "PF/25/0903/00",
+      "confidence": 97.9,
+      "box": [
+        1390.0,
+        320.0,
+        55.0,
+        248.0
+      ],
+      "source": "paddle_rotated",
+      "alternatives": []
+    },
+    {
+      "text": "eq.toAnhydrous Azithromycin500",
+      "confidence": 94.3,
+      "box": [
+        92.0,
+        340.0,
+        466.0,
+        47.0
+      ],
+      "source": "paddle",
+      "alternatives": [
+        {
+          "text": "eq.to Anhydrous Azithromycin",
+          "confidence": 93.7,
+          "source": "paddle_rotated"
+        }
+      ]
+    },
+    {
+      "text": "M.R.P.文",
+      "confidence": 84.9,
+      "box": [
+        1580.0,
+        345.0,
+        81.0,
+        254.0
+      ],
+      "source": "paddle_rotated",
+      "alternatives": []
+    },
+    {
+      "text": "mg",
+      "confidence": 98.0,
+      "box": [
+        553.0,
+        359.0,
+        37.0,
+        25.0
+      ],
+      "source": "paddle",
+      "alternatives": [
+        {
+          "text": "500mg",
+          "confidence": 81.4,
+          "source": "paddle_rotated"
+        }
+      ]
+    },
+    {
+      "text": "Excipients",
+      "confidence": 99.6,
+      "box": [
+        91.0,
+        376.0,
+        138.0,
+        44.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "alco labs",
+      "confidence": 90.2,
+      "box": [
+        699.0,
+        392.0,
+        146.0,
+        64.0
+      ],
+      "source": "paddle_rotated",
+      "alternatives": []
+    },
+    {
+      "text": "Colour:Titanium Dioxide IR",
+      "confidence": 95.0,
+      "box": [
+        86.0,
+        413.0,
+        383.0,
+        57.0
+      ],
+      "source": "paddle_rotated",
+      "alternatives": []
+    },
+    {
+      "text": "Azycl@-500",
+      "confidence": 87.8,
+      "box": [
+        1448.0,
+        437.0,
+        59.0,
+        227.0
+      ],
+      "source": "paddle_rotated",
+      "alternatives": []
+    },
+    {
+      "text": "Dosage:As directed by the physician",
+      "confidence": 96.7,
+      "box": [
+        87.0,
+        466.0,
+        477.0,
+        54.0
+      ],
+      "source": "paddle",
+      "alternatives": [
+        {
+          "text": "the physician",
+          "confidence": 96.2,
+          "source": "paddle_rotated"
+        },
+        {
+          "text": "Dosage :As directed by",
+          "confidence": 95.2,
+          "source": "paddle_rotated"
+        }
+      ]
+    },
+    {
+      "text": "□",
+      "confidence": 51.5,
+      "box": [
+        888.0,
+        490.0,
+        37.0,
+        31.0
+      ],
+      "source": "paddle_rotated",
+      "alternatives": []
+    },
+    {
+      "text": "Marketed By.",
+      "confidence": 91.6,
+      "box": [
+        645.0,
+        493.0,
+        150.0,
+        39.0
+      ],
+      "source": "paddle",
+      "alternatives": [
+        {
+          "text": "Keted By",
+          "confidence": 78.5,
+          "source": "paddle_rotated"
+        }
+      ]
+    },
+    {
+      "text": "PER",
+      "confidence": 98.9,
+      "box": [
+        1662.0,
+        495.0,
+        55.0,
+        108.0
+      ],
+      "source": "paddle_rotated",
+      "alternatives": [
+        {
+          "text": "EXP.DATE:APR.2028(INCL.OFALLTAXES)",
+          "confidence": 89.1,
+          "source": "paddle_rotated"
+        }
+      ]
+    },
+    {
+      "text": "Storage: Store at a temperature hot",
+      "confidence": 95.1,
+      "box": [
+        87.0,
+        521.0,
+        478.0,
+        53.0
+      ],
+      "source": "paddle",
+      "alternatives": [
+        {
+          "text": "Storage:Store at a temperature",
+          "confidence": 93.8,
+          "source": "paddle_rotated"
+        }
+      ]
+    },
+    {
+      "text": "labs",
+      "confidence": 95.6,
+      "box": [
+        718.0,
+        538.0,
+        69.0,
+        26.0
+      ],
+      "source": "paddle_rotated",
+      "alternatives": [
+        {
+          "text": "alcolabs",
+          "confidence": 93.8,
+          "source": "paddle"
+        }
+      ]
+    },
+    {
+      "text": "exceeding 30°C, Proteat fromlight",
+      "confidence": 87.4,
+      "box": [
+        84.0,
+        555.0,
+        461.0,
+        57.0
+      ],
+      "source": "paddle",
+      "alternatives": [
+        {
+          "text": "exceeding 30C, Proteot fromigh",
+          "confidence": 90.1,
+          "source": "paddle_rotated"
+        }
+      ]
+    },
+    {
+      "text": "No.356, Industrial Area, Phase",
+      "confidence": 95.2,
+      "box": [
+        695.0,
+        558.0,
+        334.0,
+        44.0
+      ],
+      "source": "paddle_rotated",
+      "alternatives": [
+        {
+          "text": "lotNo. 356, IndustrialArea, Phase",
+          "confidence": 89.4,
+          "source": "paddle"
+        }
+      ]
+    },
+    {
+      "text": "MEGDATEAY2026",
+      "confidence": 78.6,
+      "box": [
+        1622.0,
+        581.0,
+        103.0,
+        413.0
+      ],
+      "source": "paddle_rotated",
+      "alternatives": []
+    },
+    {
+      "text": "Panchkula(Haryana)-134113",
+      "confidence": 97.5,
+      "box": [
+        642.0,
+        585.0,
+        334.0,
+        34.0
+      ],
+      "source": "paddle",
+      "alternatives": [
+        {
+          "text": "anchkula (Haryana)-134113",
+          "confidence": 94.8,
+          "source": "paddle_rotated"
+        }
+      ]
+    },
+    {
+      "text": "and moisture",
+      "confidence": 99.5,
+      "box": [
+        86.0,
+        602.0,
+        187.0,
+        45.0
+      ],
+      "source": "paddle_rotated",
+      "alternatives": []
+    },
+    {
+      "text": "E-mall ID:alcolabs2017@gmall.com",
+      "confidence": 92.4,
+      "box": [
+        637.0,
+        607.0,
+        404.0,
+        45.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "Azithromycin Tablets IP 500 mg",
+      "confidence": 95.6,
+      "box": [
+        76.0,
+        667.0,
+        1364.0,
+        178.0
+      ],
+      "source": "paddle",
+      "alternatives": [
+        {
+          "text": "Keep themedicinequtofreachofchildren.",
+          "confidence": 84.8,
+          "source": "paddle"
+        },
+        {
+          "text": "Keepthemedicieutofreahohidn",
+          "confidence": 70.4,
+          "source": "paddle_rotated"
+        }
+      ]
+    },
+    {
+      "text": "BNF260158D",
+      "confidence": 80.3,
+      "box": [
+        1555.0,
+        678.0,
+        91.0,
+        318.0
+      ],
+      "source": "paddle_rotated",
+      "alternatives": [
+        {
+          "text": "085109210K8",
+          "confidence": 51.8,
+          "source": "paddle"
+        }
+      ]
+    },
+    {
+      "text": "1O-500Azyc1O-500",
+      "confidence": 79.7,
+      "box": [
+        1421.0,
+        697.0,
+        81.0,
+        343.0
+      ],
+      "source": "paddle_rotated",
+      "alternatives": []
+    },
+    {
+      "text": "500",
+      "confidence": 99.6,
+      "box": [
+        343.0,
+        830.0,
+        145.0,
+        73.0
+      ],
+      "source": "paddle_rotated",
+      "alternatives": [
+        {
+          "text": "Azyclo-500",
+          "confidence": 86.2,
+          "source": "paddle"
+        }
+      ]
+    },
+    {
+      "text": "AzycIO-",
+      "confidence": 75.8,
+      "box": [
+        87.0,
+        834.0,
+        278.0,
+        85.0
+      ],
+      "source": "paddle_rotated",
+      "alternatives": []
+    },
+    {
+      "text": "MIg. LioNo MLF28202",
+      "confidence": 86.7,
+      "box": [
+        633.0,
+        845.0,
+        275.0,
+        55.0
+      ],
+      "source": "paddle_rotated",
+      "alternatives": []
+    },
+    {
+      "text": "25JK0000Q28",
+      "confidence": 88.4,
+      "box": [
+        897.0,
+        855.0,
+        156.0,
+        41.0
+      ],
+      "source": "paddle_rotated",
+      "alternatives": [
+        {
+          "text": "MIg.LicNo.MLF282025JK00Q2&",
+          "confidence": 85.1,
+          "source": "paddle"
+        }
+      ]
+    },
+    {
+      "text": "MLF252025JK000003",
+      "confidence": 98.4,
+      "box": [
+        778.0,
+        885.0,
+        250.0,
+        38.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "CAUTONSN",
+      "confidence": 91.1,
+      "box": [
+        1285.0,
+        886.0,
+        41.0,
+        128.0
+      ],
+      "source": "paddle",
+      "alternatives": [
+        {
+          "text": "SCHEDUCEH",
+          "confidence": 90.0,
+          "source": "paddle"
+        },
+        {
+          "text": "the prascrptic",
+          "confidence": 77.7,
+          "source": "paddle"
+        },
+        {
+          "text": "TONSNOLLOYS",
+          "confidence": 62.7,
+          "source": "paddle_rotated"
+        }
+      ]
+    },
+    {
+      "text": "ondposaud eu",
+      "confidence": 79.0,
+      "box": [
+        1252.0,
+        887.0,
+        43.0,
+        153.0
+      ],
+      "source": "paddle_rotated",
+      "alternatives": []
+    },
+    {
+      "text": "Tablets",
+      "confidence": 99.9,
+      "box": [
+        358.0,
+        895.0,
+        129.0,
+        45.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "-y00",
+      "confidence": 57.2,
+      "box": [
+        84.0,
+        907.0,
+        177.0,
+        48.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "Mfd.byJamkas Pharmaceuticals Pvt. Ltd.",
+      "confidence": 91.8,
+      "box": [
+        633.0,
+        914.0,
+        463.0,
+        46.0
+      ],
+      "source": "paddle",
+      "alternatives": [
+        {
+          "text": "naceuticals Pvt. Ltd.",
+          "confidence": 90.4,
+          "source": "paddle_rotated"
+        }
+      ]
+    },
+    {
+      "text": "(AWHO-GMP CERTIFIED COMPANY)",
+      "confidence": 92.6,
+      "box": [
+        633.0,
+        950.0,
+        421.0,
+        38.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "Composition",
+      "confidence": 97.9,
+      "box": [
+        93.0,
+        961.0,
+        165.0,
+        39.0
+      ],
+      "source": "paddle_rotated",
+      "alternatives": [
+        {
+          "text": "Composition:",
+          "confidence": 96.5,
+          "source": "paddle"
+        }
+      ]
+    },
+    {
+      "text": "SIDCO Industrial Complex, Phase-1, Ghati",
+      "confidence": 93.1,
+      "box": [
+        632.0,
+        982.0,
+        477.0,
+        46.0
+      ],
+      "source": "paddle_rotated",
+      "alternatives": [
+        {
+          "text": "SIDCO, Industial Complex, Phase-1, Ghati",
+          "confidence": 88.6,
+          "source": "paddle"
+        }
+      ]
+    },
+    {
+      "text": "Each film coated tablet contains",
+      "confidence": 95.3,
+      "box": [
+        90.0,
+        996.0,
+        428.0,
+        35.0
+      ],
+      "source": "paddle_rotated",
+      "alternatives": []
+    },
+    {
+      "text": "Dist.Kathua- 184143(J&K)",
+      "confidence": 86.4,
+      "box": [
+        635.0,
+        1015.0,
+        314.0,
+        25.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    }
+  ],
+  "ocr_warnings": [],
+  "barcode_detection": {
+    "detected": true,
+    "decoded": true,
+    "gs1_verified": false,
+    "count": 1,
+    "details": [
+      {
+        "type": "QRCODE",
+        "data": "AZYCLO-500 TABLETS 10X3 BLISTER",
+        "rect": [
+          557,
+          240,
+          92,
+          92
+        ]
+      }
+    ],
+    "status": "PASS",
+    "regulatory_note": "Code detected; GS1 structure and authenticity not verified"
+  },
+  "redline_detection": {
+    "detected": true,
+    "count": 4,
+    "strips": [
+      {
+        "bounding_box": [
+          61,
+          533,
+          163,
+          42
+        ],
+        "orientation": "Horizontal",
+        "aspect_ratio": 3.88,
+        "area": 3913
+      },
+      {
+        "bounding_box": [
+          1188,
+          415,
+          12,
+          124
+        ],
+        "orientation": "Vertical",
+        "aspect_ratio": 10.33,
+        "area": 712
+      },
+      {
+        "bounding_box": [
+          70,
+          71,
+          163,
+          43
+        ],
+        "orientation": "Horizontal",
+        "aspect_ratio": 3.79,
+        "area": 3892
+      },
+      {
+        "bounding_box": [
+          773,
+          0,
+          194,
+          657
+        ],
+        "orientation": "Vertical",
+        "aspect_ratio": 3.39,
+        "area": 81544
+      }
+    ],
+    "status": "PASS (Schedule Redline Present)"
+  },
+  "font_ratio_analysis": {
+    "status": "REVIEW",
+    "generic_font_height_px": 0,
+    "brand_font_height_px": 0,
+    "ratio": null,
+    "details": "Unable to measure both generic and brand names reliably"
+  },
+  "regulatory_validation": {
+    "score_percentage": 41.67,
+    "passed_required": "5/12",
+    "overall_status": "MANUAL REVIEW REQUIRED",
+    "requires_review": true,
+    "field_checks": {
+      "Generic Name": {
+        "status": "PASS",
+        "required": true,
+        "description": "Generic name printed on the label",
+        "extracted_value": "Azithromycin",
+        "ocr_confidence": 95.6,
+        "review_notes": []
+      },
+      "Generic Font Size >= Brand (Rule 96(1)(i))": {
+        "status": "REVIEW",
+        "required": true,
+        "description": "Comparison of measured generic and brand text heights",
+        "extracted_value": "Unable to measure both generic and brand names reliably",
+        "ocr_confidence": null,
+        "review_notes": []
+      },
+      "Dosage Form and Strength": {
+        "status": "PASS",
+        "required": true,
+        "description": "Dosage form and quantitative strength",
+        "extracted_value": "Tablets | 500 mg",
+        "ocr_confidence": 95.6,
+        "review_notes": []
+      },
+      "Active Ingredients in Metric Units": {
+        "status": "REVIEW",
+        "required": true,
+        "description": "Composition statement with a readable metric quantity",
+        "extracted_value": "Composition: (AWHO-GMP CERTIFIEDCOMPANYY SIDCO, Industial Complex Phase-1,Ghat Each film coated tablet contains",
+        "ocr_confidence": 90.0,
+        "review_notes": [
+          "Required part of this field is missing or unreadable"
+        ],
+        "raw_extracted_value": "Composition: (AWHO-GMP CERTIFIEDCOMPANYY SIDCO, Industial Complex Phase-1,Ghat Each film coated tablet contains",
+        "spelling_corrected": false
+      },
+      "Name and Address of Manufacturer": {
+        "status": "FAIL",
+        "required": true,
+        "description": "Manufacturer statement and following address lines",
+        "extracted_value": "Not Detected",
+        "ocr_confidence": null,
+        "review_notes": []
+      },
+      "Mfg License Number": {
+        "status": "FAIL",
+        "required": true,
+        "description": "Printed manufacturing or import licence identifier",
+        "extracted_value": "Not Detected",
+        "ocr_confidence": null,
+        "review_notes": []
+      },
+      "Batch / Lot Number": {
+        "status": "FAIL",
+        "required": true,
+        "description": "Printed batch or lot identifier",
+        "extracted_value": "Not Detected",
+        "ocr_confidence": null,
+        "review_notes": []
+      },
+      "Mfg Date / Expiry Date": {
+        "status": "FAIL",
+        "required": true,
+        "description": "Both manufacturing and expiry dates must be readable",
+        "extracted_value": "Not Detected",
+        "ocr_confidence": null,
+        "review_notes": []
+      },
+      "Storage Conditions": {
+        "status": "PASS",
+        "required": true,
+        "description": "Storage and child-safety instructions",
+        "extracted_value": "Store at a temperature hot",
+        "ocr_confidence": 95.1,
+        "review_notes": []
+      },
+      "Directions for Use / Dosage": {
+        "status": "PASS",
+        "required": true,
+        "description": "Dosage or directions statement",
+        "extracted_value": "Dosage:As directed by the physician □",
+        "ocr_confidence": 51.5,
+        "review_notes": []
+      },
+      "Prescription Symbol (Rx, NRx, XRx)": {
+        "status": "INFO / CONDITIONAL",
+        "required": false,
+        "description": "Readable prescription symbol",
+        "extracted_value": "Not Detected",
+        "ocr_confidence": null,
+        "review_notes": []
+      },
+      "Required Barcode or QR Code": {
+        "status": "PASS",
+        "required": false,
+        "description": "Barcode or QR presence check",
+        "extracted_value": "Barcode / QR code present",
+        "ocr_confidence": null,
+        "review_notes": []
+      },
+      "Schedule Warning (Prescription Drugs)": {
+        "status": "FAIL",
+        "required": true,
+        "description": "Readable schedule or prescription restriction statement",
+        "extracted_value": "Not Detected",
+        "ocr_confidence": null,
+        "review_notes": []
+      },
+      "Schedule Redline (Prescription Drugs)": {
+        "status": "PASS",
+        "required": true,
+        "description": "Elongated red marking detected by color and geometry",
+        "extracted_value": "Red marking detected (color/shape check only)",
+        "ocr_confidence": null,
+        "review_notes": []
+      }
+    }
+  },
+  "elapsed_seconds": 36.28
+}

@@ -1,0 +1,751 @@
+{
+  "image_path": "static/uploads/TestingMedicineLabels/5352ad15-5104-4aa1-92b3-604e2581d234.jpeg",
+  "ocr_text_preview": "Composition\nEach uncoated tablet contains\nney-40 Telney-40 Telney-40 Telney-40 Telney-40 Telney-40 Telney-40\nTelmisartan I.P. 40mg.\nq.s.\nExcipients\nDosage: As directed by the Physician.\nStorage: Store in a cool & dry place\nat a temperature not exceeding 25C.\nProtect from light & moisture.\nKeep the medicines out of reach of children.\nWARNING: When p...",
+  "ocr_text_full": "Composition\nEach uncoated tablet contains\nney-40 Telney-40 Telney-40 Telney-40 Telney-40 Telney-40 Telney-40\nTelmisartan I.P. 40mg.\nq.s.\nExcipients\nDosage: As directed by the Physician.\nStorage: Store in a cool & dry place\nat a temperature not exceeding 25C.\nProtect from light & moisture.\nKeep the medicines out of reach of children.\nWARNING: When pregnancy is detected, Telmisartan\nshould be discontinued as soon as possible, as it can\ncause injury & even death to the developing foetus,\nwhen used in pregnancy during second & third\nB.No.LV25DT-127B MFG.04/2025EXP.03/2027\nM.R.P.RS.113.56PER15TABS.INCL.OFALLTAXES\ntrimester of pregnancy.\nSCHEDULE H PRESCRIPTION DRUG - CAUTION\nNot to be sold by retail without the prescription\nof a Registered Medical Practitioner\nMfg. Lic.No.:MNB/07/656&MB/07/657\nMfd.by:L.V.LIFE SCIENCES\nVPO Gurumajra, Baddi, Distt Solan (H.P)-174101\n(An IS0 9001:2015& GMP, GLP CertifiedCo.)\nnlera\nInlera Healthcare\nMarketed By\nAlcolabs\nPlot No. 356.Industrial Area,Phase-1\nPanchkula (Haryana)-134113\nE-mail iDinlerahealthcare@gmail.com\nR$\nTelmisartan Tablets SIP\nTelney-40\nTablets\nEach uncoated tablet contains:\nq.S\nDosage :As directed by the Physician.\nata temperature not exceeding25c\nProtect from light & moisture\nKeep the medicines out of reach of children\nshouid be discontnued as soon as possible as lt can",
+  "ocr_engine": "paddle",
+  "ocr_lines": [
+    {
+      "text": "Composition",
+      "confidence": 99.7,
+      "box": [
+        206.0,
+        17.0,
+        359.0,
+        88.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "Each uncoated tablet contains",
+      "confidence": 95.6,
+      "box": [
+        206.0,
+        107.0,
+        797.0,
+        77.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "ney-40 Telney-40 Telney-40 Telney-40 Telney-40 Telney-40 Telney-40",
+      "confidence": 97.3,
+      "box": [
+        1391.0,
+        124.0,
+        124.0,
+        3722.0
+      ],
+      "source": "paddle_rotated",
+      "alternatives": [
+        {
+          "text": "WARNING: When pregnancy is detected, Telmisartan Aa",
+          "confidence": 92.4,
+          "source": "paddle"
+        }
+      ]
+    },
+    {
+      "text": "Telmisartan I.P. 40mg.",
+      "confidence": 98.2,
+      "box": [
+        206.0,
+        179.0,
+        1009.0,
+        97.0
+      ],
+      "source": "paddle",
+      "alternatives": [
+        {
+          "text": "r",
+          "confidence": 50.3,
+          "source": "paddle_rotated"
+        }
+      ]
+    },
+    {
+      "text": "q.s.",
+      "confidence": 85.7,
+      "box": [
+        1105.0,
+        269.0,
+        118.0,
+        86.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "Excipients",
+      "confidence": 99.7,
+      "box": [
+        199.0,
+        273.0,
+        279.0,
+        88.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "Dosage: As directed by the Physician.",
+      "confidence": 95.8,
+      "box": [
+        197.0,
+        355.0,
+        1003.0,
+        85.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "Storage: Store in a cool & dry place",
+      "confidence": 93.8,
+      "box": [
+        193.0,
+        442.0,
+        1039.0,
+        89.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "at a temperature not exceeding 25C.",
+      "confidence": 97.2,
+      "box": [
+        191.0,
+        521.0,
+        1051.0,
+        113.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "Protect from light & moisture.",
+      "confidence": 96.5,
+      "box": [
+        197.0,
+        622.0,
+        848.0,
+        90.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "Keep the medicines out of reach of children.",
+      "confidence": 96.8,
+      "box": [
+        197.0,
+        711.0,
+        1132.0,
+        84.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "WARNING: When pregnancy is detected, Telmisartan",
+      "confidence": 95.9,
+      "box": [
+        216.0,
+        837.0,
+        1111.0,
+        80.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "should be discontinued as soon as possible, as it can",
+      "confidence": 97.2,
+      "box": [
+        218.0,
+        903.0,
+        1107.0,
+        70.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "cause injury & even death to the developing foetus,",
+      "confidence": 96.9,
+      "box": [
+        212.0,
+        963.0,
+        1111.0,
+        72.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "when used in pregnancy during second & third",
+      "confidence": 98.0,
+      "box": [
+        210.0,
+        1021.0,
+        1119.0,
+        80.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "B.No.LV25DT-127B MFG.04/2025EXP.03/2027",
+      "confidence": 96.1,
+      "box": [
+        1600.0,
+        1080.0,
+        131.0,
+        2031.0
+      ],
+      "source": "paddle_rotated",
+      "alternatives": []
+    },
+    {
+      "text": "M.R.P.RS.113.56PER15TABS.INCL.OFALLTAXES",
+      "confidence": 96.0,
+      "box": [
+        1727.0,
+        1082.0,
+        121.0,
+        2022.0
+      ],
+      "source": "paddle_rotated",
+      "alternatives": []
+    },
+    {
+      "text": "trimester of pregnancy.",
+      "confidence": 99.0,
+      "box": [
+        216.0,
+        1083.0,
+        478.0,
+        77.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "SCHEDULE H PRESCRIPTION DRUG - CAUTION",
+      "confidence": 93.0,
+      "box": [
+        303.0,
+        1213.0,
+        929.0,
+        74.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "Not to be sold by retail without the prescription",
+      "confidence": 96.8,
+      "box": [
+        265.0,
+        1279.0,
+        999.0,
+        72.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "of a Registered Medical Practitioner",
+      "confidence": 96.8,
+      "box": [
+        362.0,
+        1339.0,
+        789.0,
+        74.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "Mfg. Lic.No.:MNB/07/656&MB/07/657",
+      "confidence": 97.7,
+      "box": [
+        189.0,
+        1454.0,
+        856.0,
+        70.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "Mfd.by:L.V.LIFE SCIENCES",
+      "confidence": 95.2,
+      "box": [
+        187.0,
+        1512.0,
+        606.0,
+        68.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "VPO Gurumajra, Baddi, Distt Solan (H.P)-174101",
+      "confidence": 91.6,
+      "box": [
+        186.0,
+        1560.0,
+        1022.0,
+        86.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "(An IS0 9001:2015& GMP, GLP CertifiedCo.)",
+      "confidence": 90.2,
+      "box": [
+        187.0,
+        1624.0,
+        934.0,
+        80.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "nlera",
+      "confidence": 98.9,
+      "box": [
+        262.0,
+        1840.0,
+        436.0,
+        192.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "Inlera Healthcare",
+      "confidence": 97.4,
+      "box": [
+        280.0,
+        2002.0,
+        484.0,
+        72.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "Marketed By",
+      "confidence": 98.6,
+      "box": [
+        291.0,
+        2070.0,
+        265.0,
+        61.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "Alcolabs",
+      "confidence": 99.7,
+      "box": [
+        293.0,
+        2118.0,
+        191.0,
+        59.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "Plot No. 356.Industrial Area,Phase-1",
+      "confidence": 92.5,
+      "box": [
+        290.0,
+        2163.0,
+        737.0,
+        62.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "Panchkula (Haryana)-134113",
+      "confidence": 95.9,
+      "box": [
+        299.0,
+        2218.0,
+        601.0,
+        46.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "E-mail iDinlerahealthcare@gmail.com",
+      "confidence": 93.1,
+      "box": [
+        296.0,
+        2258.0,
+        779.0,
+        61.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "R$",
+      "confidence": 53.5,
+      "box": [
+        172.0,
+        2348.0,
+        65.0,
+        77.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "Telmisartan Tablets SIP",
+      "confidence": 96.4,
+      "box": [
+        184.0,
+        2421.0,
+        1169.0,
+        150.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "Telney-40",
+      "confidence": 99.3,
+      "box": [
+        456.0,
+        2638.0,
+        617.0,
+        156.0
+      ],
+      "source": "paddle",
+      "alternatives": [
+        {
+          "text": "TM",
+          "confidence": 98.8,
+          "source": "paddle"
+        },
+        {
+          "text": "TM",
+          "confidence": 98.7,
+          "source": "paddle_rotated"
+        }
+      ]
+    },
+    {
+      "text": "Tablets",
+      "confidence": 99.7,
+      "box": [
+        830.0,
+        2791.0,
+        239.0,
+        95.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "Composition",
+      "confidence": 99.4,
+      "box": [
+        180.0,
+        2886.0,
+        358.0,
+        74.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "Each uncoated tablet contains:",
+      "confidence": 96.0,
+      "box": [
+        174.0,
+        2970.0,
+        821.0,
+        72.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "Telmisartan I.P. 40mg.",
+      "confidence": 95.3,
+      "box": [
+        172.0,
+        3046.0,
+        1032.0,
+        102.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "Excipients",
+      "confidence": 99.6,
+      "box": [
+        172.0,
+        3136.0,
+        278.0,
+        88.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "q.S",
+      "confidence": 83.6,
+      "box": [
+        1084.0,
+        3164.0,
+        104.0,
+        60.0
+      ],
+      "source": "paddle_rotated",
+      "alternatives": [
+        {
+          "text": "q.S.",
+          "confidence": 82.2,
+          "source": "paddle"
+        }
+      ]
+    },
+    {
+      "text": "Dosage :As directed by the Physician.",
+      "confidence": 96.1,
+      "box": [
+        168.0,
+        3218.0,
+        1015.0,
+        101.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "Storage: Store in a cool & dry place",
+      "confidence": 94.5,
+      "box": [
+        168.0,
+        3313.0,
+        1040.0,
+        95.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "ata temperature not exceeding25c",
+      "confidence": 95.0,
+      "box": [
+        172.0,
+        3404.0,
+        1034.0,
+        93.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "Protect from light & moisture",
+      "confidence": 92.6,
+      "box": [
+        174.0,
+        3495.0,
+        842.0,
+        90.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "Keep the medicines out of reach of children",
+      "confidence": 94.3,
+      "box": [
+        176.0,
+        3584.0,
+        1136.0,
+        90.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "shouid be discontnued as soon as possible as lt can",
+      "confidence": 86.1,
+      "box": [
+        193.0,
+        3780.0,
+        1115.0,
+        66.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    }
+  ],
+  "ocr_warnings": [],
+  "barcode_detection": {
+    "detected": false,
+    "decoded": false,
+    "gs1_verified": false,
+    "count": 0,
+    "details": [],
+    "status": "FAIL",
+    "regulatory_note": "Detection alone does not verify GS1 structure or product authenticity."
+  },
+  "redline_detection": {
+    "detected": false,
+    "count": 0,
+    "strips": [],
+    "status": "NOT DETECTED (OTC or Non-Schedule)"
+  },
+  "font_ratio_analysis": {
+    "status": "REVIEW",
+    "generic_font_height_px": 0,
+    "brand_font_height_px": 0,
+    "ratio": null,
+    "details": "Unable to measure both generic and brand names reliably"
+  },
+  "regulatory_validation": {
+    "score_percentage": 66.67,
+    "passed_required": "8/12",
+    "overall_status": "MANUAL REVIEW REQUIRED",
+    "requires_review": true,
+    "field_checks": {
+      "Generic Name": {
+        "status": "PASS",
+        "required": true,
+        "description": "Generic name printed on the label",
+        "extracted_value": "Telmisartan",
+        "ocr_confidence": 96.4,
+        "review_notes": []
+      },
+      "Generic Font Size >= Brand (Rule 96(1)(i))": {
+        "status": "REVIEW",
+        "required": true,
+        "description": "Comparison of measured generic and brand text heights",
+        "extracted_value": "Unable to measure both generic and brand names reliably",
+        "ocr_confidence": null,
+        "review_notes": []
+      },
+      "Dosage Form and Strength": {
+        "status": "REVIEW",
+        "required": true,
+        "description": "Dosage form and quantitative strength",
+        "extracted_value": "Tablets",
+        "ocr_confidence": 96.4,
+        "review_notes": [
+          "Required part of this field is missing or unreadable"
+        ]
+      },
+      "Active Ingredients in Metric Units": {
+        "status": "REVIEW",
+        "required": true,
+        "description": "Composition statement with a readable metric quantity",
+        "extracted_value": "Each uncoated tablet contains:",
+        "ocr_confidence": 96.0,
+        "review_notes": [
+          "Required part of this field is missing or unreadable"
+        ],
+        "raw_extracted_value": "Each uncoated tablet contains:",
+        "spelling_corrected": false
+      },
+      "Name and Address of Manufacturer": {
+        "status": "PASS",
+        "required": true,
+        "description": "Manufacturer statement and following address lines",
+        "extracted_value": "Mfd.by:L.V.LIFE SCIENCES VPO Gurumajra, Baddi, Distt Solan (H.P)-174101 (An IS0 9001:2015& GMP, GLP CertifiedCo.) nlera Inlera Healthcare",
+        "ocr_confidence": 90.2,
+        "review_notes": []
+      },
+      "Mfg License Number": {
+        "status": "PASS",
+        "required": true,
+        "description": "Printed manufacturing or import licence identifier",
+        "extracted_value": "Mfg. Lic.No.:MNB/07/656",
+        "ocr_confidence": 97.7,
+        "review_notes": []
+      },
+      "Batch / Lot Number": {
+        "status": "PASS",
+        "required": true,
+        "description": "Printed batch or lot identifier",
+        "extracted_value": "B.No.LV25DT-127B",
+        "ocr_confidence": 96.1,
+        "review_notes": []
+      },
+      "Mfg Date / Expiry Date": {
+        "status": "PASS",
+        "required": true,
+        "description": "Both manufacturing and expiry dates must be readable",
+        "extracted_value": "MFG.04/2025 | EXP.03/2027",
+        "ocr_confidence": 96.1,
+        "review_notes": []
+      },
+      "Storage Conditions": {
+        "status": "PASS",
+        "required": true,
+        "description": "Storage and child-safety instructions",
+        "extracted_value": "Store in a cool & dry place; Protect from light & moisture; Protect from light & moisture",
+        "ocr_confidence": 92.6,
+        "review_notes": []
+      },
+      "Directions for Use / Dosage": {
+        "status": "PASS",
+        "required": true,
+        "description": "Dosage or directions statement",
+        "extracted_value": "As directed by the Physician. at a temperature not exceeding 25C.",
+        "ocr_confidence": 95.8,
+        "review_notes": []
+      },
+      "Prescription Symbol (Rx, NRx, XRx)": {
+        "status": "INFO / CONDITIONAL",
+        "required": false,
+        "description": "Readable prescription symbol",
+        "extracted_value": "Not Detected",
+        "ocr_confidence": null,
+        "review_notes": []
+      },
+      "Required Barcode or QR Code": {
+        "status": "INFO / CONDITIONAL",
+        "required": false,
+        "description": "Barcode or QR presence check",
+        "extracted_value": "Not detected (conditional for primary packaging)",
+        "ocr_confidence": null,
+        "review_notes": []
+      },
+      "Schedule Warning (Prescription Drugs)": {
+        "status": "PASS",
+        "required": true,
+        "description": "Readable schedule or prescription restriction statement",
+        "extracted_value": "SCHEDULE H PRESCRIPTION DRUG - CAUTION Not to be sold by retail without the prescription of a Registered Medical Practitioner",
+        "ocr_confidence": 93.0,
+        "review_notes": []
+      },
+      "Schedule Redline (Prescription Drugs)": {
+        "status": "FAIL",
+        "required": true,
+        "description": "Elongated red marking detected by color and geometry",
+        "extracted_value": "Not Detected",
+        "ocr_confidence": null,
+        "review_notes": []
+      }
+    }
+  },
+  "elapsed_seconds": 32.59
+}

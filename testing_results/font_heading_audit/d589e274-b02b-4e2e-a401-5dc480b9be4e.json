@@ -1,0 +1,224 @@
+{
+  "image": "d589e274-b02b-4e2e-a401-5dc480b9be4e.jpeg",
+  "brand": "Azyclo-500",
+  "font": {
+    "status": "PASS",
+    "generic_font_height_px": 62.5,
+    "brand_font_height_px": 36.6,
+    "ratio": 1.71,
+    "details": "Generic (62.5px) / Brand (36.6px): 1.71x (measured word heights)",
+    "measurement_source": "tesseract_heading_crops",
+    "generic_name": "Azithromycin Tablets IP500 mg",
+    "brand_name": "Azycl\u00ae-500",
+    "measurement_evidence": {
+      "generic": {
+        "name": "Azithromycin Tablets IP500 mg",
+        "height_px": 62.54134615384615,
+        "confidence": 85.0,
+        "words": [
+          {
+            "text": "\u2018Azithromycin",
+            "height_px": 62.54134615384615,
+            "confidence": 85.0,
+            "box": [
+              67.33333333333334,
+              699.6666666666666,
+              693.3333333333334,
+              118.33333333333334
+            ],
+            "height_method": "character_components_in_recognized_word"
+          }
+        ],
+        "region": [
+          76.0,
+          665.0,
+          1365.0,
+          179.0
+        ]
+      },
+      "brand": {
+        "name": "Azycl\u00ae-500",
+        "height_px": 36.64038461538461,
+        "confidence": 43.0,
+        "words": [
+          {
+            "text": "Azycl\u00ae-500",
+            "height_px": 36.64038461538461,
+            "confidence": 43.0,
+            "box": [
+              93,
+              831,
+              388,
+              92
+            ],
+            "height_method": "character_components_in_recognized_word"
+          }
+        ],
+        "region": [
+          98,
+          844,
+          412,
+          66
+        ]
+      },
+      "source": "tesseract_heading_crops"
+    }
+  },
+  "other_criteria_changed": [],
+  "overall_status": "NON-COMPLIANT / REJECT",
+  "font_seconds": 6.72,
+  "method": "Fresh Tesseract font pass on image; existing Paddle text and detections replayed unchanged.",
+  "font_recognized_names": {},
+  "field_checks": {
+    "Generic Name": {
+      "status": "PASS",
+      "required": true,
+      "description": "Generic name printed on the label",
+      "extracted_value": "Azithromycin",
+      "presence_state": "detected",
+      "ocr_confidence": 94.6,
+      "diagnostic_notes": [],
+      "review_notes": []
+    },
+    "Generic Font Size >= Brand (Rule 96(1)(i))": {
+      "status": "PASS",
+      "required": true,
+      "description": "Comparison of measured generic and brand text heights",
+      "extracted_value": "Generic (62.5px) / Brand (36.6px): 1.71x (measured word heights)",
+      "presence_state": "detected",
+      "ocr_confidence": null,
+      "diagnostic_notes": [],
+      "review_notes": []
+    },
+    "Dosage Form and Strength": {
+      "status": "PASS",
+      "required": true,
+      "description": "Dosage form and quantitative strength",
+      "extracted_value": "Tablets | 500 mg",
+      "presence_state": "detected",
+      "ocr_confidence": 94.6,
+      "diagnostic_notes": [],
+      "review_notes": []
+    },
+    "Active Ingredients in Metric Units": {
+      "status": "PASS",
+      "required": true,
+      "description": "Composition statement with a readable metric quantity",
+      "extracted_value": "Composition: Each film coated tablet contains Azithromycin Dihydrate",
+      "presence_state": "detected",
+      "ocr_confidence": 92.7,
+      "diagnostic_notes": [
+        "Required part of this field is missing or unreadable"
+      ],
+      "review_notes": [
+        "Required part of this field is missing or unreadable"
+      ],
+      "raw_extracted_value": "Composition: Each film coated tablet contains Azithromycin Dihydrate",
+      "spelling_corrected": false
+    },
+    "Name and Address of Manufacturer": {
+      "status": "PASS",
+      "required": true,
+      "description": "Manufacturer statement and following address lines",
+      "extracted_value": "Mfd.by:JamkasPharmaceutiealsPvt.Ltd. (AWHO-GMPCERTIFIEDCOMPANYY SIDCO, Industrial Complex, Phase-1,Ghati Dist. Kathua-184143(Jak) alco labs",
+      "presence_state": "detected",
+      "ocr_confidence": 86.5,
+      "diagnostic_notes": [],
+      "review_notes": []
+    },
+    "Mfg License Number": {
+      "status": "PASS",
+      "required": true,
+      "description": "Printed manufacturing or import licence identifier",
+      "extracted_value": "Mfg.LicNo.MLF282025JKO000028",
+      "presence_state": "detected",
+      "ocr_confidence": 93.3,
+      "diagnostic_notes": [],
+      "review_notes": []
+    },
+    "Batch / Lot Number": {
+      "status": "FAIL",
+      "required": true,
+      "description": "Printed batch or lot identifier",
+      "extracted_value": "Not present in extracted image content",
+      "presence_state": "not_detected",
+      "ocr_confidence": null,
+      "diagnostic_notes": [],
+      "review_notes": []
+    },
+    "Mfg Date / Expiry Date": {
+      "status": "PASS",
+      "required": true,
+      "description": "Both manufacturing and expiry dates must be readable",
+      "extracted_value": "EXP.DATE:APR.2028",
+      "presence_state": "detected",
+      "ocr_confidence": 85.3,
+      "diagnostic_notes": [
+        "Required part of this field is missing or unreadable"
+      ],
+      "review_notes": [
+        "Required part of this field is missing or unreadable"
+      ]
+    },
+    "Storage Conditions": {
+      "status": "PASS",
+      "required": true,
+      "description": "Storage and child-safety instructions",
+      "extracted_value": "Storage: Store at a temperature hot",
+      "presence_state": "detected",
+      "ocr_confidence": 95.2,
+      "diagnostic_notes": [],
+      "review_notes": []
+    },
+    "Directions for Use / Dosage": {
+      "status": "PASS",
+      "required": true,
+      "description": "Dosage or directions statement",
+      "extracted_value": "Dosage:As directed by the physician",
+      "presence_state": "detected",
+      "ocr_confidence": 95.9,
+      "diagnostic_notes": [],
+      "review_notes": []
+    },
+    "Prescription Symbol (Rx, NRx, XRx)": {
+      "status": "OPTIONAL",
+      "required": false,
+      "description": "Readable prescription symbol",
+      "extracted_value": "Not detected (optional)",
+      "presence_state": "not_detected",
+      "ocr_confidence": null,
+      "diagnostic_notes": [],
+      "review_notes": []
+    },
+    "Required Barcode or QR Code": {
+      "status": "PASS",
+      "required": false,
+      "description": "Barcode or QR presence check",
+      "extracted_value": "Barcode / QR code present",
+      "presence_state": "detected",
+      "ocr_confidence": null,
+      "diagnostic_notes": [],
+      "review_notes": []
+    },
+    "Schedule Warning (Prescription Drugs)": {
+      "status": "FAIL",
+      "required": true,
+      "description": "Readable schedule or prescription restriction statement",
+      "extracted_value": "Not present in extracted image content",
+      "presence_state": "not_detected",
+      "ocr_confidence": null,
+      "diagnostic_notes": [],
+      "review_notes": []
+    },
+    "Schedule Redline (Prescription Drugs)": {
+      "status": "PASS",
+      "required": true,
+      "description": "Elongated red marking detected by color and geometry",
+      "extracted_value": "Red marking detected (color/shape check only)",
+      "presence_state": "detected",
+      "ocr_confidence": null,
+      "diagnostic_notes": [],
+      "review_notes": []
+    }
+  }
+}

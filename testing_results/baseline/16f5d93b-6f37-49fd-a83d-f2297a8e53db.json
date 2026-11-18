@@ -1,0 +1,837 @@
+{
+  "image_path": "static/uploads/TestingMedicineLabels/16f5d93b-6f37-49fd-a83d-f2297a8e53db.jpeg",
+  "ocr_text_preview": "Pregabalin(SR)&Nortriptyline Tablets\nLERAPREG-PN\nLERAPREG-PN Tablets\nEach film coated tablet contains:\n75mg\n1.P.\nPregabalin\n(In SustainedRelease Form)\n0\nNortriptyline Hydrochloride\nBTET26B267B MFGFEB:2026 EXP.JAN.2028\nMPB:149.00PER10TABSINCL.ALLTAXES\n10mg\nEg.to Nertriptyline\n9.S.\nExcipients\nColour:Erythrosine\nDosage:Asdirectedbythe Physician.\nSTORA...",
+  "ocr_text_full": "Pregabalin(SR)&Nortriptyline Tablets\nLERAPREG-PN\nLERAPREG-PN Tablets\nEach film coated tablet contains:\n75mg\n1.P.\nPregabalin\n(In SustainedRelease Form)\n0\nNortriptyline Hydrochloride\nBTET26B267B MFGFEB:2026 EXP.JAN.2028\nMPB:149.00PER10TABSINCL.ALLTAXES\n10mg\nEg.to Nertriptyline\n9.S.\nExcipients\nColour:Erythrosine\nDosage:Asdirectedbythe Physician.\nSTORAGE: STORE IN A COOL & DRY\nPLACE.PROTECTFROMLIGHT\nKeepthe medicine outofthe reach-ofchildren\nCAUTlON:Not to be sold by retail without the\nprescription ora Registered Medipal\nPracttoner\nMfg.LicNo.89/UA/SC/P-2016\nMHO-GNT\n8907UA/2016\nCertinod\nMfg.by:Bajaj Formulations\n15CertifiedCo)\n(AWHO-GMP&ISO9001\nKhasra No. 161, Viliage-Lakeshwary\nBhagwanpur,Roorkee.Distt.Haridwar(U.K)\nManufactured in India for\nmlera\nHEALTHCARE\nINLERA HEALTHCARE\n(ADivision ofAlcolabs)\nPlot No. 356, IndustrialArea, Phase 1\nPanchkula-134113.Haryana\nEmail:Inlerahealthcare@gmail.com\n®-Registered Tradamark",
+  "ocr_engine": "paddle",
+  "ocr_lines": [
+    {
+      "text": "Pregabalin(SR)&Nortriptyline Tablets",
+      "confidence": 89.6,
+      "box": [
+        86.0,
+        27.0,
+        1693.0,
+        245.0
+      ],
+      "source": "paddle",
+      "alternatives": [
+        {
+          "text": "Pregabalin (R)&NortiptylineTablet",
+          "confidence": 71.3,
+          "source": "paddle_rotated"
+        }
+      ]
+    },
+    {
+      "text": "LERAPREG-PN",
+      "confidence": 99.4,
+      "box": [
+        1787.0,
+        92.0,
+        114.0,
+        687.0
+      ],
+      "source": "paddle_rotated",
+      "alternatives": []
+    },
+    {
+      "text": "LERAPREG-PN Tablets",
+      "confidence": 97.6,
+      "box": [
+        392.0,
+        277.0,
+        1060.0,
+        148.0
+      ],
+      "source": "paddle_rotated",
+      "alternatives": []
+    },
+    {
+      "text": "Each film coated tablet contains:",
+      "confidence": 94.5,
+      "box": [
+        113.0,
+        416.0,
+        1074.0,
+        106.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "75mg",
+      "confidence": 99.6,
+      "box": [
+        1409.0,
+        482.0,
+        239.0,
+        113.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "1.P.",
+      "confidence": 84.0,
+      "box": [
+        975.0,
+        497.0,
+        141.0,
+        103.0
+      ],
+      "source": "paddle",
+      "alternatives": [
+        {
+          "text": "I.P",
+          "confidence": 75.6,
+          "source": "paddle_rotated"
+        }
+      ]
+    },
+    {
+      "text": "Pregabalin",
+      "confidence": 99.8,
+      "box": [
+        113.0,
+        527.0,
+        375.0,
+        90.0
+      ],
+      "source": "paddle_rotated",
+      "alternatives": []
+    },
+    {
+      "text": "(In SustainedRelease Form)",
+      "confidence": 93.1,
+      "box": [
+        107.0,
+        591.0,
+        965.0,
+        111.0
+      ],
+      "source": "paddle",
+      "alternatives": [
+        {
+          "text": "(In SustainedRelease Farm)",
+          "confidence": 92.4,
+          "source": "paddle_rotated"
+        }
+      ]
+    },
+    {
+      "text": "0",
+      "confidence": 65.3,
+      "box": [
+        1560.0,
+        669.0,
+        89.0,
+        92.0
+      ],
+      "source": "paddle_rotated",
+      "alternatives": []
+    },
+    {
+      "text": "Nortriptyline Hydrochloride",
+      "confidence": 99.0,
+      "box": [
+        115.0,
+        686.0,
+        900.0,
+        101.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "BTET26B267B MFGFEB:2026 EXP.JAN.2028",
+      "confidence": 88.2,
+      "box": [
+        1977.0,
+        701.0,
+        179.0,
+        1891.0
+      ],
+      "source": "paddle_rotated",
+      "alternatives": []
+    },
+    {
+      "text": "MPB:149.00PER10TABSINCL.ALLTAXES",
+      "confidence": 93.9,
+      "box": [
+        2124.0,
+        707.0,
+        176.0,
+        1880.0
+      ],
+      "source": "paddle_rotated",
+      "alternatives": []
+    },
+    {
+      "text": "10mg",
+      "confidence": 98.6,
+      "box": [
+        1392.0,
+        761.0,
+        247.0,
+        93.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "Eg.to Nertriptyline",
+      "confidence": 91.2,
+      "box": [
+        115.0,
+        781.0,
+        633.0,
+        88.0
+      ],
+      "source": "paddle",
+      "alternatives": [
+        {
+          "text": "Eq.to Nertriptyline",
+          "confidence": 90.7,
+          "source": "paddle_rotated"
+        }
+      ]
+    },
+    {
+      "text": "9.S.",
+      "confidence": 61.5,
+      "box": [
+        1523.0,
+        859.0,
+        139.0,
+        104.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "Excipients",
+      "confidence": 99.5,
+      "box": [
+        118.0,
+        872.0,
+        367.0,
+        90.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "LERAPREG-PN",
+      "confidence": 99.4,
+      "box": [
+        1800.0,
+        881.0,
+        109.0,
+        724.0
+      ],
+      "source": "paddle_rotated",
+      "alternatives": []
+    },
+    {
+      "text": "Colour:Erythrosine",
+      "confidence": 98.3,
+      "box": [
+        115.0,
+        961.0,
+        692.0,
+        93.0
+      ],
+      "source": "paddle_rotated",
+      "alternatives": []
+    },
+    {
+      "text": "Dosage:Asdirectedbythe Physician.",
+      "confidence": 96.4,
+      "box": [
+        118.0,
+        1036.0,
+        1254.0,
+        119.0
+      ],
+      "source": "paddle_rotated",
+      "alternatives": [
+        {
+          "text": "Dosage:As directed by the Physician.",
+          "confidence": 94.6,
+          "source": "paddle"
+        }
+      ]
+    },
+    {
+      "text": "STORAGE: STORE IN A COOL & DRY",
+      "confidence": 93.3,
+      "box": [
+        115.0,
+        1113.0,
+        1596.0,
+        127.0
+      ],
+      "source": "paddle",
+      "alternatives": [
+        {
+          "text": "STORE IN A COOL & DRY",
+          "confidence": 91.9,
+          "source": "paddle_rotated"
+        },
+        {
+          "text": "STORAGE:",
+          "confidence": 93.0,
+          "source": "paddle_rotated"
+        }
+      ]
+    },
+    {
+      "text": "PLACE.PROTECTFROMLIGHT",
+      "confidence": 98.7,
+      "box": [
+        128.0,
+        1218.0,
+        1118.0,
+        117.0
+      ],
+      "source": "paddle_rotated",
+      "alternatives": [
+        {
+          "text": "PLACE.PROTECTFROMLIGHT.",
+          "confidence": 97.2,
+          "source": "paddle"
+        }
+      ]
+    },
+    {
+      "text": "Keepthe medicine outofthe reach-ofchildren",
+      "confidence": 94.8,
+      "box": [
+        125.0,
+        1306.0,
+        1496.0,
+        116.0
+      ],
+      "source": "paddle",
+      "alternatives": [
+        {
+          "text": "Keep the medicine outofthe reach of childrer",
+          "confidence": 89.1,
+          "source": "paddle_rotated"
+        }
+      ]
+    },
+    {
+      "text": "CAUTlON:Not to be sold by retail without the",
+      "confidence": 89.3,
+      "box": [
+        143.0,
+        1447.0,
+        1563.0,
+        117.0
+      ],
+      "source": "paddle",
+      "alternatives": [
+        {
+          "text": "CAUTION:Not to be sold by retail without he",
+          "confidence": 86.6,
+          "source": "paddle_rotated"
+        }
+      ]
+    },
+    {
+      "text": "prescription ora Registered Medipal",
+      "confidence": 90.4,
+      "box": [
+        141.0,
+        1534.0,
+        1550.0,
+        138.0
+      ],
+      "source": "paddle_rotated",
+      "alternatives": [
+        {
+          "text": "prescription orya Registered Medibal",
+          "confidence": 90.1,
+          "source": "paddle"
+        }
+      ]
+    },
+    {
+      "text": "LERAPREG-PN",
+      "confidence": 97.9,
+      "box": [
+        1810.0,
+        1624.0,
+        117.0,
+        686.0
+      ],
+      "source": "paddle_rotated",
+      "alternatives": []
+    },
+    {
+      "text": "Practtoner",
+      "confidence": 94.3,
+      "box": [
+        140.0,
+        1639.0,
+        426.0,
+        103.0
+      ],
+      "source": "paddle",
+      "alternatives": [
+        {
+          "text": "Piacttoner",
+          "confidence": 90.3,
+          "source": "paddle_rotated"
+        }
+      ]
+    },
+    {
+      "text": "Mfg.LicNo.89/UA/SC/P-2016",
+      "confidence": 96.5,
+      "box": [
+        125.0,
+        1766.0,
+        857.0,
+        104.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "MHO-GNT",
+      "confidence": 62.0,
+      "box": [
+        1087.0,
+        1838.0,
+        154.0,
+        67.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "8907UA/2016",
+      "confidence": 93.4,
+      "box": [
+        570.0,
+        1845.0,
+        404.0,
+        94.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "Certinod",
+      "confidence": 67.8,
+      "box": [
+        1089.0,
+        1887.0,
+        152.0,
+        54.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "Mfg.by:Bajaj Formulations",
+      "confidence": 96.2,
+      "box": [
+        128.0,
+        1933.0,
+        877.0,
+        114.0
+      ],
+      "source": "paddle_rotated",
+      "alternatives": []
+    },
+    {
+      "text": "15CertifiedCo)",
+      "confidence": 86.3,
+      "box": [
+        978.0,
+        2005.0,
+        495.0,
+        107.0
+      ],
+      "source": "paddle_rotated",
+      "alternatives": []
+    },
+    {
+      "text": "(AWHO-GMP&ISO9001",
+      "confidence": 94.1,
+      "box": [
+        125.0,
+        2018.0,
+        770.0,
+        109.0
+      ],
+      "source": "paddle_rotated",
+      "alternatives": [
+        {
+          "text": "(AWHO-GMP&.ISO9001:2015CertifiedCo）",
+          "confidence": 89.2,
+          "source": "paddle"
+        }
+      ]
+    },
+    {
+      "text": "Khasra No. 161, Viliage-Lakeshwary",
+      "confidence": 92.5,
+      "box": [
+        133.0,
+        2090.0,
+        1159.0,
+        93.0
+      ],
+      "source": "paddle",
+      "alternatives": [
+        {
+          "text": "Khasra No. 161, Viliage-Lakeshwary.",
+          "confidence": 91.1,
+          "source": "paddle_rotated"
+        }
+      ]
+    },
+    {
+      "text": "Bhagwanpur,Roorkee.Distt.Haridwar(U.K)",
+      "confidence": 90.6,
+      "box": [
+        128.0,
+        2151.0,
+        1380.0,
+        120.0
+      ],
+      "source": "paddle",
+      "alternatives": [
+        {
+          "text": "Bhagwanpur, RoorkeeDistt.Haridwar （UK)）",
+          "confidence": 88.9,
+          "source": "paddle_rotated"
+        }
+      ]
+    },
+    {
+      "text": "Manufactured in India for",
+      "confidence": 95.0,
+      "box": [
+        146.0,
+        2252.0,
+        738.0,
+        93.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "LERAPREG-PN",
+      "confidence": 98.0,
+      "box": [
+        1826.0,
+        2378.0,
+        121.0,
+        769.0
+      ],
+      "source": "paddle_rotated",
+      "alternatives": []
+    },
+    {
+      "text": "mlera",
+      "confidence": 86.9,
+      "box": [
+        191.0,
+        2438.0,
+        376.0,
+        165.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "HEALTHCARE",
+      "confidence": 99.6,
+      "box": [
+        256.0,
+        2578.0,
+        323.0,
+        71.0
+      ],
+      "source": "paddle_rotated",
+      "alternatives": [
+        {
+          "text": "ntera",
+          "confidence": 85.9,
+          "source": "paddle_rotated"
+        }
+      ]
+    },
+    {
+      "text": "INLERA HEALTHCARE",
+      "confidence": 97.7,
+      "box": [
+        148.0,
+        2632.0,
+        839.0,
+        120.0
+      ],
+      "source": "paddle_rotated",
+      "alternatives": []
+    },
+    {
+      "text": "(ADivision ofAlcolabs)",
+      "confidence": 96.1,
+      "box": [
+        154.0,
+        2730.0,
+        774.0,
+        88.0
+      ],
+      "source": "paddle",
+      "alternatives": [
+        {
+          "text": "(A Division ofAlcolabs)",
+          "confidence": 95.0,
+          "source": "paddle_rotated"
+        }
+      ]
+    },
+    {
+      "text": "Plot No. 356, IndustrialArea, Phase 1",
+      "confidence": 94.7,
+      "box": [
+        144.0,
+        2807.0,
+        1261.0,
+        111.0
+      ],
+      "source": "paddle_rotated",
+      "alternatives": []
+    },
+    {
+      "text": "Panchkula-134113.Haryana",
+      "confidence": 96.8,
+      "box": [
+        146.0,
+        2895.0,
+        969.0,
+        103.0
+      ],
+      "source": "paddle_rotated",
+      "alternatives": []
+    },
+    {
+      "text": "Email:Inlerahealthcare@gmail.com",
+      "confidence": 94.7,
+      "box": [
+        154.0,
+        2982.0,
+        1218.0,
+        91.0
+      ],
+      "source": "paddle",
+      "alternatives": []
+    },
+    {
+      "text": "®-Registered Tradamark",
+      "confidence": 93.4,
+      "box": [
+        154.0,
+        3064.0,
+        828.0,
+        99.0
+      ],
+      "source": "paddle",
+      "alternatives": [
+        {
+          "text": "®-Registered Trademark",
+          "confidence": 91.8,
+          "source": "paddle_rotated"
+        }
+      ]
+    }
+  ],
+  "ocr_warnings": [],
+  "barcode_detection": {
+    "detected": true,
+    "decoded": false,
+    "gs1_verified": false,
+    "count": 1,
+    "details": [
+      {
+        "type": "QRCODE",
+        "data": "",
+        "rect": [
+          -263,
+          201,
+          725,
+          647
+        ]
+      }
+    ],
+    "status": "PASS",
+    "regulatory_note": "Code detected; GS1 structure and authenticity not verified"
+  },
+  "redline_detection": {
+    "detected": true,
+    "count": 2,
+    "strips": [
+      {
+        "bounding_box": [
+          152,
+          110,
+          369,
+          36
+        ],
+        "orientation": "Horizontal",
+        "aspect_ratio": 10.25,
+        "area": 9920
+      },
+      {
+        "bounding_box": [
+          875,
+          0,
+          24,
+          360
+        ],
+        "orientation": "Vertical",
+        "aspect_ratio": 15.0,
+        "area": 1832
+      }
+    ],
+    "status": "PASS (Schedule Redline Present)"
+  },
+  "font_ratio_analysis": {
+    "status": "REVIEW",
+    "generic_font_height_px": 0,
+    "brand_font_height_px": 0,
+    "ratio": null,
+    "details": "Unable to measure both generic and brand names reliably"
+  },
+  "regulatory_validation": {
+    "score_percentage": 58.33,
+    "passed_required": "7/12",
+    "overall_status": "MANUAL REVIEW REQUIRED",
+    "requires_review": true,
+    "field_checks": {
+      "Generic Name": {
+        "status": "PASS",
+        "required": true,
+        "description": "Generic name printed on the label",
+        "extracted_value": "Nortriptyline",
+        "ocr_confidence": 89.6,
+        "review_notes": []
+      },
+      "Generic Font Size >= Brand (Rule 96(1)(i))": {
+        "status": "REVIEW",
+        "required": true,
+        "description": "Comparison of measured generic and brand text heights",
+        "extracted_value": "Unable to measure both generic and brand names reliably",
+        "ocr_confidence": null,
+        "review_notes": []
+      },
+      "Dosage Form and Strength": {
+        "status": "REVIEW",
+        "required": true,
+        "description": "Dosage form and quantitative strength",
+        "extracted_value": "Tablets",
+        "ocr_confidence": 89.6,
+        "review_notes": [
+          "Required part of this field is missing or unreadable"
+        ]
+      },
+      "Active Ingredients in Metric Units": {
+        "status": "PASS",
+        "required": true,
+        "description": "Composition statement with a readable metric quantity",
+        "extracted_value": "Each film coated tablet contains: 75mg I.P. Pregabalin",
+        "ocr_confidence": 84.0,
+        "review_notes": [],
+        "raw_extracted_value": "Each film coated tablet contains: 75mg 1.P. Pregabalin",
+        "spelling_corrected": true
+      },
+      "Name and Address of Manufacturer": {
+        "status": "FAIL",
+        "required": true,
+        "description": "Manufacturer statement and following address lines",
+        "extracted_value": "Not Detected",
+        "ocr_confidence": null,
+        "review_notes": []
+      },
+      "Mfg License Number": {
+        "status": "FAIL",
+        "required": true,
+        "description": "Printed manufacturing or import licence identifier",
+        "extracted_value": "Not Detected",
+        "ocr_confidence": null,
+        "review_notes": []
+      },
+      "Batch / Lot Number": {
+        "status": "FAIL",
+        "required": true,
+        "description": "Printed batch or lot identifier",
+        "extracted_value": "Not Detected",
+        "ocr_confidence": null,
+        "review_notes": []
+      },
+      "Mfg Date / Expiry Date": {
+        "status": "PASS",
+        "required": true,
+        "description": "Both manufacturing and expiry dates must be readable",
+        "extracted_value": "Mfg.LicNo.89 | EXP.JAN.2028",
+        "ocr_confidence": 88.2,
+        "review_notes": []
+      },
+      "Storage Conditions": {
+        "status": "PASS",
+        "required": true,
+        "description": "Storage and child-safety instructions",
+        "extracted_value": "STORE IN A COOL & DRY",
+        "ocr_confidence": 93.3,
+        "review_notes": []
+      },
+      "Directions for Use / Dosage": {
+        "status": "PASS",
+        "required": true,
+        "description": "Dosage or directions statement",
+        "extracted_value": "Dosage:Asdirectedbythe Physician.",
+        "ocr_confidence": 96.4,
+        "review_notes": []
+      },
+      "Prescription Symbol (Rx, NRx, XRx)": {
+        "status": "INFO / CONDITIONAL",
+        "required": false,
+        "description": "Readable prescription symbol",
+        "extracted_value": "Not Detected",
+        "ocr_confidence": null,
+        "review_notes": []
+      },
+      "Required Barcode or QR Code": {
+        "status": "PASS",
+        "required": false,
+        "description": "Barcode or QR presence check",
+        "extracted_value": "Barcode / QR code present",
+        "ocr_confidence": null,
+        "review_notes": []
+      },
+      "Schedule Warning (Prescription Drugs)": {
+        "status": "PASS",
+        "required": true,
+        "description": "Readable schedule or prescription restriction statement",
+        "extracted_value": "Not to be sold by retail without the prescription ora Registered Medipal Practtoner",
+        "ocr_confidence": 89.3,
+        "review_notes": []
+      },
+      "Schedule Redline (Prescription Drugs)": {
+        "status": "PASS",
+        "required": true,
+        "description": "Elongated red marking detected by color and geometry",
+        "extracted_value": "Red marking detected (color/shape check only)",
+        "ocr_confidence": null,
+        "review_notes": []
+      }
+    }
+  },
+  "elapsed_seconds": 22.21
+}

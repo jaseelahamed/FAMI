@@ -1,0 +1,166 @@
+{
+  "method": "Revalidated saved OCR and measured font results; no fresh OCR inference.",
+  "regulatory_validation": {
+    "score_percentage": 91.67,
+    "passed_required": "11/12",
+    "overall_status": "NON-COMPLIANT / REJECT",
+    "requires_review": false,
+    "validation_mode": "presence",
+    "field_checks": {
+      "Generic Name": {
+        "status": "PASS",
+        "required": true,
+        "description": "Generic name printed on the label",
+        "extracted_value": "Pregabalin (SR)&Noriptine",
+        "presence_state": "detected",
+        "ocr_confidence": 80.0,
+        "diagnostic_notes": [],
+        "review_notes": []
+      },
+      "Generic Font Size >= Brand (Rule 96(1)(i))": {
+        "status": "FAIL",
+        "required": true,
+        "description": "Comparison of measured generic and brand text heights",
+        "extracted_value": "Unable to measure both generic and brand names reliably",
+        "presence_state": "not_detected",
+        "ocr_confidence": null,
+        "diagnostic_notes": [],
+        "review_notes": []
+      },
+      "Dosage Form and Strength": {
+        "status": "PASS",
+        "required": true,
+        "description": "Dosage form and quantitative strength",
+        "extracted_value": "Tablet | 75mg + 10mg",
+        "presence_state": "detected",
+        "ocr_confidence": 80.0,
+        "diagnostic_notes": [],
+        "review_notes": []
+      },
+      "Active Ingredients in Metric Units": {
+        "status": "PASS",
+        "required": true,
+        "description": "Composition statement with a readable metric quantity",
+        "extracted_value": "Each filmcoated tablet contains: 75mg. Pregabalin (In SustainedReleaseForm) Nortriptyline Hydrochloride 10mg Eg toNortriptyline",
+        "presence_state": "detected",
+        "ocr_confidence": 91.1,
+        "diagnostic_notes": [
+          "OCR passes disagree: 0.S 5r$"
+        ],
+        "review_notes": [
+          "OCR passes disagree: 0.S 5r$"
+        ],
+        "raw_extracted_value": "Each filmcoated tablet contains: 75mg. Pregabalin (In SustainedReleaseForm) Nortriptyline Hydrochloride 10mg Eg toNortriptyline",
+        "spelling_corrected": false
+      },
+      "Name and Address of Manufacturer": {
+        "status": "PASS",
+        "required": true,
+        "description": "Manufacturer statement and following address lines",
+        "extracted_value": "Mfg.by:Bajaj Formulations (AWHO-GMP &ISO9001:2015CertifiedCo\uff09 Khasra No. 161, Village-Lakeshwary. Bhagwanpur,RoorkeeDistt.Haridwar (U.K)",
+        "presence_state": "detected",
+        "ocr_confidence": 91.3,
+        "diagnostic_notes": [],
+        "review_notes": []
+      },
+      "Mfg License Number": {
+        "status": "PASS",
+        "required": true,
+        "description": "Printed manufacturing or import licence identifier",
+        "extracted_value": "Mfg.LicNo.89/UA/SC/P-2016",
+        "presence_state": "detected",
+        "ocr_confidence": 95.1,
+        "diagnostic_notes": [],
+        "review_notes": []
+      },
+      "Batch / Lot Number": {
+        "status": "PASS",
+        "required": true,
+        "description": "Printed batch or lot identifier",
+        "extracted_value": "T26B267B",
+        "presence_state": "detected",
+        "ocr_confidence": 92.2,
+        "diagnostic_notes": [
+          "Required part of this field is missing or unreadable"
+        ],
+        "review_notes": [
+          "Required part of this field is missing or unreadable"
+        ]
+      },
+      "Mfg Date / Expiry Date": {
+        "status": "PASS",
+        "required": true,
+        "description": "Both manufacturing and expiry dates must be readable",
+        "extracted_value": "EXP.JAN.2028",
+        "presence_state": "detected",
+        "ocr_confidence": 92.2,
+        "diagnostic_notes": [
+          "Required part of this field is missing or unreadable"
+        ],
+        "review_notes": [
+          "Required part of this field is missing or unreadable"
+        ]
+      },
+      "Storage Conditions": {
+        "status": "PASS",
+        "required": true,
+        "description": "Storage and child-safety instructions",
+        "extracted_value": "STORAGE: STORE IN A COOL & DRY; PLACE.PROTECTFROMLIGHT.",
+        "presence_state": "detected",
+        "ocr_confidence": 91.5,
+        "diagnostic_notes": [],
+        "review_notes": []
+      },
+      "Directions for Use / Dosage": {
+        "status": "PASS",
+        "required": true,
+        "description": "Dosage or directions statement",
+        "extracted_value": "Dosage:As directed bythe Physician",
+        "presence_state": "detected",
+        "ocr_confidence": 96.2,
+        "diagnostic_notes": [],
+        "review_notes": []
+      },
+      "Prescription Symbol (Rx, NRx, XRx)": {
+        "status": "FAIL",
+        "required": false,
+        "description": "Readable prescription symbol",
+        "extracted_value": "Not present in extracted image content",
+        "presence_state": "not_detected",
+        "ocr_confidence": null,
+        "diagnostic_notes": [],
+        "review_notes": []
+      },
+      "Required Barcode or QR Code": {
+        "status": "FAIL",
+        "required": false,
+        "description": "Barcode or QR presence check",
+        "extracted_value": "Not present in extracted image content",
+        "presence_state": "not_detected",
+        "ocr_confidence": null,
+        "diagnostic_notes": [],
+        "review_notes": []
+      },
+      "Schedule Warning (Prescription Drugs)": {
+        "status": "PASS",
+        "required": true,
+        "description": "Readable schedule or prescription restriction statement",
+        "extracted_value": "CAUTION:Not to be sold by retail without the prescription orya Registered Medipal Piactitioner",
+        "presence_state": "detected",
+        "ocr_confidence": 88.5,
+        "diagnostic_notes": [],
+        "review_notes": []
+      },
+      "Schedule Redline (Prescription Drugs)": {
+        "status": "PASS",
+        "required": true,
+        "description": "Elongated red marking detected by color and geometry",
+        "extracted_value": "Red marking detected (color/shape check only)",
+        "presence_state": "detected",
+        "ocr_confidence": null,
+        "diagnostic_notes": [],
+        "review_notes": []
+      }
+    }
+  }
+}
