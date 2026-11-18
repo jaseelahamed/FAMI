@@ -51,6 +51,17 @@ document.addEventListener("DOMContentLoaded", () => {
     let selectedFile = null;
     let progressTimer = null;
 
+    // Check engine status
+    fetch("/health")
+        .then(res => res.json())
+        .then(data => {
+            const badge = document.getElementById("systemStatusBadge");
+            if (badge && data.ai_engine) {
+                badge.innerHTML = `${data.ai_engine} &bull; Active`;
+            }
+        })
+        .catch(() => {});
+
     // --------------------------------------------------------------------------
     // Drag & Drop / File Selection
     // --------------------------------------------------------------------------
@@ -105,40 +116,37 @@ document.addEventListener("DOMContentLoaded", () => {
 
     btnClearFile.addEventListener("click", (e) => {
         e.stopPropagation();
-        clearFileSelection();
-    });
-
-    function clearFileSelection() {
         selectedFile = null;
         fileInput.value = "";
         imagePreview.src = "";
-        dropzonePrompt.style.display = "block";
         previewWrapper.style.display = "none";
+        dropzonePrompt.style.display = "flex";
         btnScan.disabled = true;
-    }
+    });
 
     // --------------------------------------------------------------------------
-    // Tab Navigation
+    // Tab Switching
     // --------------------------------------------------------------------------
     tabButtons.forEach((btn) => {
         btn.addEventListener("click", () => {
             const targetTab = btn.getAttribute("data-tab");
-
             tabButtons.forEach((b) => b.classList.remove("active"));
             tabPanes.forEach((p) => p.classList.remove("active"));
 
             btn.classList.add("active");
-            document.getElementById(targetTab).classList.add("active");
+            const targetPane = document.getElementById("tab-" + targetTab);
+            if (targetPane) targetPane.classList.add("active");
         });
     });
 
     // --------------------------------------------------------------------------
-    // Scanning API Trigger
+    // Scan Trigger Buttons
     // --------------------------------------------------------------------------
     btnScan.addEventListener("click", () => {
         if (!selectedFile) return;
         const formData = new FormData();
         formData.append("image", selectedFile);
+        formData.append("is_sample", "false");
         performScan(formData);
     });
 
@@ -148,6 +156,9 @@ document.addEventListener("DOMContentLoaded", () => {
         performScan(formData);
     });
 
+    // --------------------------------------------------------------------------
+    // Scanning Progress Simulator
+    // --------------------------------------------------------------------------
     function startProgressAnimation() {
         scanProgress.style.display = "block";
         progressBarFill.style.width = "0%";
@@ -155,11 +166,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
         let percent = 5;
         const steps = [
-            { threshold: 18, text: "Auto-Cropping Letterbox Margins & Enhancing Contrast..." },
-            { threshold: 40, text: "Multi-Orientation OCR (0°, 90°, 270° Text Scanning)..." },
-            { threshold: 65, text: "HSV Dual-Band Schedule Redline Detection..." },
-            { threshold: 80, text: "Measuring Font Size Bounding Boxes (Rule 96(1)(i))..." },
-            { threshold: 92, text: "Verifying 14 Pharmacopoeia Statutory Regulatory Criteria..." }
+            { threshold: 18, text: "Auto-Cropping Letterbox Margins & Enhancing Image..." },
+            { threshold: 38, text: "Connecting to Google Gemini Multimodal Vision AI..." },
+            { threshold: 60, text: "Semantically Auditing 14 Pharmacopoeia Statutory Criteria..." },
+            { threshold: 78, text: "Verifying Rule 96(1)(i) Brand vs Generic Font Hierarchy..." },
+            { threshold: 90, text: "Generating Inspection Scorecard & Annotated Overlay..." }
         ];
 
         let currentStep = 0;
@@ -221,7 +232,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 if (response.status === 502 || response.status === 504) {
                     showError(
                         "Cloud Server Timeout (HTTP " + response.status + ")",
-                        "Render Free Tier timed out processing the image. The image was downscaled, please try again or verify Tesseract OCR is installed."
+                        "The server timed out processing the image. Please try again."
                     );
                 } else {
                     showError(
@@ -242,7 +253,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         } catch (error) {
             console.error("Scan request failed:", error);
-            showError("Network Connection Error", "Could not connect to the inspection server. Please check your internet connection or server logs on Render.");
+            showError("Network Connection Error", "Could not connect to the inspection server.");
         } finally {
             stopProgressAnimation();
             btnScan.disabled = !selectedFile;
@@ -297,7 +308,7 @@ document.addEventListener("DOMContentLoaded", () => {
             metricRedline.textContent = "PRESENT";
             metricRedline.style.color = "var(--accent)";
             const strip = rl.strips[0];
-            metricRedlineSub.textContent = `${strip?.orientation || "Line"} (Ratio: ${strip?.aspect_ratio || "3.5+"})`;
+            metricRedlineSub.textContent = `${strip?.orientation || "Line"} (Schedule H)`;
         } else {
             metricRedline.textContent = "NONE";
             metricRedline.style.color = "var(--text-muted)";
@@ -341,7 +352,7 @@ document.addEventListener("DOMContentLoaded", () => {
             checklistContainer.appendChild(card);
         }
 
-        // 5. Annotated Image
+        // 6. Annotated Image
         annotatedImage.src = data.annotated_image_url + "?t=" + new Date().getTime();
         btnDownloadImage.href = data.annotated_image_url;
 
@@ -352,10 +363,10 @@ document.addEventListener("DOMContentLoaded", () => {
             previewWrapper.style.display = "block";
         }
 
-        // 6. OCR Text View
+        // 7. OCR Text View
         ocrTextBox.textContent = report.ocr_text_preview || "No text could be extracted.";
 
-        // 7. JSON View
+        // 8. JSON View
         jsonTextBox.textContent = JSON.stringify(report, null, 2);
         btnDownloadJson.href = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(report, null, 2));
     }

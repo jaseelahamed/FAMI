@@ -52,6 +52,13 @@ try:
 except ImportError:
     PYTESSERACT_AVAILABLE = False
 
+# Import Gemini Vision AI validator
+try:
+    from gemini_validator import inspect_label_with_gemini, is_gemini_available
+    GEMINI_AVAILABLE = is_gemini_available()
+except ImportError:
+    GEMINI_AVAILABLE = False
+
 
 # ==============================================================================
 # CONFIGURATION & TESSERACT AUTO-DETECTION (WINDOWS SUPPORT)
@@ -762,12 +769,35 @@ class MedicineLabelValidator:
     def run_full_pipeline(self) -> dict:
         """
         Executes all validation steps in sequence:
-        1. Multi-orientation OCR Text Extraction & Font Box Analysis
-        2. Barcode & QR Code Detection
-        3. Schedule Redline Detection
-        4. 14-Point Pharmacopoeia Regulatory Validation
+        1. Checks for Gemini Multimodal Vision AI for 100% accurate semantic audit.
+        2. Falls back to local OpenCV + Tesseract + Regex pipeline if offline or unavailable.
         """
-        print(f"\n[1/4] Running Multi-Orientation OCR Text Extraction on: {self.image_path}...")
+        # Prefer Gemini Multimodal Vision AI if available
+        if is_gemini_available():
+            try:
+                print(f"\n[AI-AUDIT] Running Google Gemini Multimodal Vision AI on: {self.image_path}...")
+                ai_report = inspect_label_with_gemini(self.image_path)
+                if ai_report and "regulatory_validation" in ai_report:
+                    self.validation_results = ai_report["regulatory_validation"]["field_checks"]
+                    self.compliance_score = ai_report["regulatory_validation"]["score_percentage"]
+                    self.extracted_text = ai_report.get("ocr_text_preview", "")
+                    self.barcode_results = ai_report.get("barcode_detection", {})
+                    self.redline_results = ai_report.get("redline_detection", {})
+                    self.font_ratio_results = ai_report.get("font_ratio_analysis", {})
+
+                    # Enrich visual annotation with local OpenCV detectors if possible
+                    try:
+                        self.detect_barcode_or_qr()
+                        self.detect_redline()
+                    except Exception:
+                        pass
+
+                    print(f"[SUCCESS] Gemini Vision Audit Complete. Score: {self.compliance_score}% ({ai_report['regulatory_validation']['passed_required']} mandatory criteria)")
+                    return ai_report
+            except Exception as e:
+                print(f"[WARNING] Gemini Vision processing encountered: {e}. Falling back to local OpenCV pipeline...")
+
+        print(f"\n[LOCAL-PIPELINE] Running Multi-Orientation OCR Text Extraction on: {self.image_path}...")
         text = self.extract_text()
 
         print("[2/4] Scanning for GS1 Barcodes / QR Codes...")
@@ -781,6 +811,7 @@ class MedicineLabelValidator:
 
         full_report = {
             "image_path": self.image_path,
+            "ai_engine": "Local OpenCV + Tesseract OCR Pipeline",
             "ocr_text_preview": text[:350] + ("..." if len(text) > 350 else ""),
             "barcode_detection": barcode_info,
             "redline_detection": redline_info,

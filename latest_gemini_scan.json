@@ -1,0 +1,34 @@
+{
+  "brand_name": "Okamet-500",
+  "generic_name": "Metformin Hydrochloride Tablets IP",
+  "dosage_form_and_strength": "Tablets, 500 mg",
+  "active_ingredients": "Each uncoated tablet contains: Metformin Hydrochloride IP 500 mg",
+  "manufacturer_name_and_address": "Mfd. by CIPLA LTD., 352 Kundaim Indl. Estate Goa 403 115 INDIA. Marketed by Cipla Pharma & Life Sciences Ltd., Tower A, 1st Floor, Peninsula Business Park, G. K. Marg, Lower Parel, Mumbai - 400 013 INDIA",
+  "mfg_license_number": "M.L. 480/L",
+  "batch_number": "5KG0422",
+  "mfg_date": "OCT.25",
+  "exp_date": "SEP.28",
+  "is_expired": false,
+  "mrp": "Rs.26.32 for 20 TABS (INCL. OF ALL TAXES)",
+  "storage_conditions": "Store in a cool dry place",
+  "directions_for_use": "As directed by the Physician",
+  "prescription_symbol": null,
+  "barcode_or_qr": null,
+  "schedule_warning": "SCHEDULE G PRESCRIPTION DRUG - CAUTION: It is dangerous to take this preparation except under medical supervision.",
+  "schedule_redline": {
+    "present": true,
+    "orientation": "Horizontal",
+    "details": "Two distinct red boxes containing statutory warnings: one for Schedule G and one for retail sale restriction."
+  },
+  "rule_96_1_i_font_compliance": {
+    "status": "PASS",
+    "generic_font_height_px": 38,
+    "brand_font_height_px": 28,
+    "ratio": 1.35,
+    "details": "The generic name font size is significantly larger than the brand name, complying with the requirement that the generic name be more prominent."
+  },
+  "is_prescription_drug": true,
+  "drug_classification": "Schedule G Prescription Drug",
+  "audit_verdict": "COMPLIANT",
+  "audit_summary": "The packaging is compliant with CDSCO Rule 96 requirements. It clearly displays the generic name, strength, manufacturer details, batch, expiry, and the mandatory Schedule G warning box. The font size ratio between the generic and brand names meets the regulatory requirement for prominence."
+}

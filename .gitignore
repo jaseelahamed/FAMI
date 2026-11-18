@@ -1,0 +1,16 @@
+# Environment variables & API keys (Never commit secrets to Git)
+.env
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Virtual environments
+venv/
+.venv/
+env/
+
+# Uploaded test images (keep folder clean)
+static/uploads/*
+!static/uploads/.gitkeep
+
