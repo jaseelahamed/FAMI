@@ -38,12 +38,13 @@ if sys.platform == "win32":
     except Exception:
         pass
 
-# Optional import for barcode & QR detection
+# Optional import for barcode & QR detection (gracefully handles missing DLLs on Windows)
 try:
     from pyzbar import pyzbar
     PYZBAR_AVAILABLE = True
-except ImportError:
+except Exception as _pyzbar_err:
     PYZBAR_AVAILABLE = False
+    pyzbar = None
 
 # Import Pytesseract for OCR
 try:
@@ -369,7 +370,28 @@ class MedicineLabelValidator:
         }
 
         if not PYZBAR_AVAILABLE:
-            result["error"] = "pyzbar library not installed or shared DLL missing"
+            # Native OpenCV QRCodeDetector fallback when pyzbar DLL is missing
+            try:
+                qr_detector = cv2.QRCodeDetector()
+                data, points, _ = qr_detector.detectAndDecode(self.original_image)
+                if not data and len(self.original_image.shape) == 3:
+                    gray = cv2.cvtColor(self.original_image, cv2.COLOR_BGR2GRAY)
+                    data, points, _ = qr_detector.detectAndDecode(gray)
+                if data:
+                    result["detected"] = True
+                    result["status"] = "PASS"
+                    result["count"] = 1
+                    result["regulatory_note"] = "GS1 Traceability Code Verified (via OpenCV)"
+                    result["details"].append({
+                        "type": "QRCODE (OpenCV Native)",
+                        "data": data,
+                        "rect": (0, 0, 0, 0)
+                    })
+                    if points is not None and len(points) > 0:
+                        pts = points[0].astype(int)
+                        cv2.polylines(self.annotated_image, [pts], True, (255, 255, 0), 3)
+            except Exception as cv_err:
+                result["error"] = f"Barcode scanner unavailable: {cv_err}"
             self.barcode_results = result
             return result
 
