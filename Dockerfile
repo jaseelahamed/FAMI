@@ -1,7 +1,7 @@
 # ==============================================================================
 # PHARMACEUTICAL MEDICINE LABEL VALIDATOR - DOCKERFILE (PRODUCTION)
 # ==============================================================================
-FROM python:3.10-slim
+FROM python:3.11-slim
 
 # Prevent Python from writing .pyc files & enable unbuffered stdout/stderr
 ENV PYTHONDONTWRITEBYTECODE=1 \
